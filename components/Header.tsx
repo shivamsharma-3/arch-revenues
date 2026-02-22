@@ -8,6 +8,7 @@ import { Menu, X } from 'lucide-react';
 export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     if (variant === 'solid') return;
@@ -17,6 +18,39 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [variant]);
+
+  useEffect(() => {
+    const sections = ['hero', 'system', 'process', 'fit', 'pricing', 'faq'];
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -40% 0px',
+      threshold: 0
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.history.pushState(null, '', '/');
+    setActiveSection('hero');
+  };
 
   const isSolid = variant === 'solid';
   const headerBgClass = isSolid 
@@ -71,7 +105,11 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
       }`}
     >
       <div className={`max-w-6xl mx-auto px-6 h-16 flex items-center justify-between rounded-full transition-all duration-700 ease-in-out ${headerBgClass}`}>
-        <Link href="/" className="flex items-center gap-2.5 group">
+        <Link 
+          href="/" 
+          onClick={scrollToTop}
+          className="flex items-center gap-2.5 group"
+        >
           <svg
             viewBox="0 0 100 100"
             fill="currentColor"
@@ -93,11 +131,36 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
         </Link>
         
         <nav className={`hidden md:flex items-center gap-8 text-sm font-medium ${navTextColorClass}`}>
-          <Link href="#system" className={`transition-colors ${navHoverColorClass}`}>The System</Link>
-          <Link href="#process" className={`transition-colors ${navHoverColorClass}`}>Process</Link>
-          <Link href="#fit" className={`transition-colors ${navHoverColorClass}`}>Who It&apos;s For</Link>
-          <Link href="#pricing" className={`transition-colors ${navHoverColorClass}`}>Pricing</Link>
-          <Link href="#faq" className={`transition-colors ${navHoverColorClass}`}>FAQ</Link>
+          <Link 
+            href="#system" 
+            className={`transition-all duration-300 ${activeSection === 'system' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            The System
+          </Link>
+          <Link 
+            href="#process" 
+            className={`transition-all duration-300 ${activeSection === 'process' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            Process
+          </Link>
+          <Link 
+            href="#fit" 
+            className={`transition-all duration-300 ${activeSection === 'fit' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            Who It&apos;s For
+          </Link>
+          <Link 
+            href="#pricing" 
+            className={`transition-all duration-300 ${activeSection === 'pricing' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            Pricing
+          </Link>
+          <Link 
+            href="#faq" 
+            className={`transition-all duration-300 ${activeSection === 'faq' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            FAQ
+          </Link>
         </nav>
 
         <Link 
