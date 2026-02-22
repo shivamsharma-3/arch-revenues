@@ -4,12 +4,22 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+    let apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
     if (!apiKey) {
-      console.error('Chat API Error: GEMINI_API_KEY is not set in environment variables.');
       return NextResponse.json(
-        { error: 'API Configuration Error: Please ensure GEMINI_API_KEY is set in your Vercel environment variables.' }, 
+        { error: 'API Configuration Error: GEMINI_API_KEY is missing from environment variables.' }, 
+        { status: 500 }
+      );
+    }
+
+    // Clean the API key (remove quotes and whitespace that often get pasted by accident)
+    apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
+
+    // Basic validation to help the user
+    if (apiKey.startsWith('re_')) {
+      return NextResponse.json(
+        { error: 'Configuration Error: It looks like you pasted a Resend API key (starting with re_) into the Gemini API key slot. Please use a Google Gemini key (starting with AIza).' },
         { status: 500 }
       );
     }
