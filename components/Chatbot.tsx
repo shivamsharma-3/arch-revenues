@@ -55,7 +55,7 @@ export function Chatbot() {
         throw new Error(data.error || 'Failed to get response');
       }
 
-      setMessages(prev => [...prev, { role: 'assistant', content: data.text }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
     } catch (error) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, { role: 'assistant', content: "I'm sorry, I encountered an error. Please try again later." }]);

@@ -1,23 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleGenAI } from "@google/genai";
 
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
-    if (!messages || !Array.isArray(messages)) {
-      return NextResponse.json({ error: 'Invalid messages format' }, { status: 400 });
-    }
-
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      return NextResponse.json({ error: 'GEMINI_API_KEY is not configured on the server' }, { status: 500 });
-    }
-
-    const ai = new GoogleGenAI({ apiKey });
-    
-    // The system instruction for the ARCH Revenues assistant
-    const systemInstruction = `You are the ARCH Revenues assistant. 
+    const response = await fetch(
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + 
+      process.env.GEMINI_API_KEY,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: messages.map((m: {role: string; content: string}) => ({
+            role: m.role === 'assistant' ? 'model' : 'user',
+            parts: [{ text: m.content }]
+          })),
+          systemInstruction: {
+            parts: [{
+              text: `You are the ARCH Revenues assistant. 
 ARCH Revenues is a Revenue Infrastructure company 
 that builds and operates outbound acquisition 
 systems exclusively for web design agencies 
@@ -45,7 +45,7 @@ Starts with a 30-day pilot.
 Expected results: 8-15 qualified calls/month by Month 2-3.
 
 Bad fit clients:
-- Solo freelancers under $10k/month
+- Solo freelancers under $5k/month
 - Agencies wanting commission-only deals
 - Agencies expecting guaranteed closed deals
 - Low-ticket service providers
@@ -63,30 +63,36 @@ No hype. No filler words.
 Answer in 2-4 sentences maximum unless 
 the question genuinely requires more detail.
 Never use bullet points in responses — 
-write in clean, confident prose.`;
+write in clean, confident prose.`
+            }]
+          },
+          generationConfig: {
+            maxOutputTokens: 300,
+            temperature: 0.7
+          }
+        })
+      }
+    );
 
-    // Convert messages to Gemini format
-    // Note: The SDK expects 'user' and 'model' (not 'assistant')
-    const history = messages.slice(0, -1).map((m: any) => ({
-      role: m.role === 'assistant' ? 'model' : 'user',
-      parts: [{ text: m.content }]
-    }));
+    const data = await response.json();
+    
+    if (!response.ok) {
+      console.error('Gemini API error:', data);
+      return NextResponse.json(
+        { error: 'API error' }, 
+        { status: 500 }
+      );
+    }
 
-    const lastMessage = messages[messages.length - 1].content;
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text 
+      || 'I could not generate a response.';
 
-    const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
-      contents: [...history, { role: 'user', parts: [{ text: lastMessage }] }],
-      config: {
-        systemInstruction: systemInstruction,
-      },
-    });
+    return NextResponse.json({ message: text });
 
-    return NextResponse.json({ text: response.text });
-  } catch (error: any) {
-    console.error('Chat API Error:', error);
+  } catch (error) {
+    console.error('Chat API error:', error);
     return NextResponse.json(
-      { error: error.message || 'An error occurred during the chat request' },
+      { error: 'An unexpected error occurred' }, 
       { status: 500 }
     );
   }
