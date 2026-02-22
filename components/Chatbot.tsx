@@ -3,57 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Send } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
-
-const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
-
-const systemInstruction = `You are the ARCH Revenues assistant. 
-ARCH Revenues is a Revenue Infrastructure company 
-that builds and operates outbound acquisition 
-systems exclusively for web design agencies 
-(2-15 employees) in the US, UK, Canada, and Australia.
-
-What ARCH does:
-- Defines Ideal Customer Profile (ICP)
-- Builds targeted lead lists
-- Writes and manages cold email outreach
-- Handles all follow-ups
-- Books qualified meetings directly on client calendar
-- Tracks and optimizes performance
-
-What ARCH is NOT:
-- Not a marketing agency
-- Not a branding agency  
-- Not a content agency
-- Not a social media agency
-- Does not run paid ads
-- Does not create content
-
-Pricing: Monthly retainer starting at $400-$750/month.
-No setup fees. No long-term contracts.
-Starts with a 30-day pilot.
-Expected results: 8-15 qualified calls/month by Month 2-3.
-
-Bad fit clients:
-- Solo freelancers under $10k/month
-- Agencies wanting commission-only deals
-- Agencies expecting guaranteed closed deals
-- Low-ticket service providers
-
-Your job is to answer questions about ARCH Revenues 
-clearly and confidently. If someone asks something 
-unrelated to ARCH Revenues or outbound sales, 
-politely redirect them back to what you can help with.
-
-If someone seems interested or ready, 
-guide them to apply for the free audit at /audit.
-
-Tone: Sharp, professional, direct. 
-No hype. No filler words. 
-Answer in 2-4 sentences maximum unless 
-the question genuinely requires more detail.
-Never use bullet points in responses — 
-write in clean, confident prose.`;
 
 type Message = {
   role: 'user' | 'assistant';
@@ -72,18 +21,6 @@ export function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Initialize chat session
-  const chatRef = useRef<any>(null);
-
-  useEffect(() => {
-    chatRef.current = ai.chats.create({
-      model: "gemini-3-flash-preview",
-      config: {
-        systemInstruction: systemInstruction,
-      },
-    });
-  }, []);
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -97,13 +34,28 @@ export function Chatbot() {
     if (!input.trim() || isLoading) return;
 
     const userMessage = input.trim();
+    const newMessages: Message[] = [...messages, { role: 'user', content: userMessage }];
+    
     setInput('');
-    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    setMessages(newMessages);
     setIsLoading(true);
 
     try {
-      const response = await chatRef.current.sendMessage({ message: userMessage });
-      setMessages(prev => [...prev, { role: 'assistant', content: response.text }]);
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ messages: newMessages }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to get response');
+      }
+
+      setMessages(prev => [...prev, { role: 'assistant', content: data.text }]);
     } catch (error) {
       console.error("Chat error:", error);
       setMessages(prev => [...prev, { role: 'assistant', content: "I'm sorry, I encountered an error. Please try again later." }]);
