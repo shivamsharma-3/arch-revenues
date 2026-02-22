@@ -105,7 +105,13 @@ export default function AuditPage() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    let processedValue = value;
+    
+    if (name === 'website') {
+      processedValue = value.replace(/^(https?:\/\/)/, '');
+    }
+    
+    setFormData(prev => ({ ...prev, [name]: processedValue }));
   };
 
   const handleCustomSelectChange = (name: string, value: string) => {
@@ -261,7 +267,7 @@ export default function AuditPage() {
                 </div>
                 <div className="md:col-span-2">
                   <label className="block text-sm font-medium text-zinc-700 mb-2">Website URL</label>
-                  <input type="url" name="website" value={formData.website} onChange={handleInputChange} placeholder="https://" className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
+                  <input type="text" name="website" value={formData.website} onChange={handleInputChange} placeholder="archrevenues.com" className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
                 </div>
                 <CustomSelect 
                   label="Team Size"

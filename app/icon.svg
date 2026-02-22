@@ -1,0 +1,8 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="48" fill="black" />
+  <path d="M50 2 L56 12 L50 22 L44 12 Z" fill="white" />
+  <path d="M43 28 L12 95 L38 95 L48 55 Z" fill="white" />
+  <path d="M57 28 L88 95 L62 95 L52 55 Z" fill="white" />
+  <path d="M49 28 L51 28 L51 65 L49 65 Z" fill="white" />
+  <path d="M50 75 L56 85 L50 95 L44 85 Z" fill="white" />
+</svg>
