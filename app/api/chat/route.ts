@@ -4,9 +4,18 @@ export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
 
+    const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+
+    if (!apiKey) {
+      console.error('Chat API Error: GEMINI_API_KEY is not set in environment variables.');
+      return NextResponse.json(
+        { error: 'API Configuration Error: Please ensure GEMINI_API_KEY is set in your Vercel environment variables.' }, 
+        { status: 500 }
+      );
+    }
+
     const response = await fetch(
-      'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + 
-      process.env.GEMINI_API_KEY,
+      'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + apiKey,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -77,10 +86,10 @@ write in clean, confident prose.`
     const data = await response.json();
     
     if (!response.ok) {
-      console.error('Gemini API error:', data);
+      console.error('Gemini API error details:', JSON.stringify(data));
       return NextResponse.json(
-        { error: 'API error' }, 
-        { status: 500 }
+        { error: data.error?.message || 'The AI service returned an error. Please check your API key and billing status.' }, 
+        { status: response.status }
       );
     }
 

@@ -56,9 +56,10 @@ export function Chatbot() {
       }
 
       setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Chat error:", error);
-      setMessages(prev => [...prev, { role: 'assistant', content: "I'm sorry, I encountered an error. Please try again later." }]);
+      const errorMessage = error instanceof Error ? error.message : "I'm sorry, I encountered an error. Please try again later.";
+      setMessages(prev => [...prev, { role: 'assistant', content: errorMessage }]);
     } finally {
       setIsLoading(false);
     }
