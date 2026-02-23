@@ -20,7 +20,7 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
   }, [variant]);
 
   useEffect(() => {
-    const sections = ['hero', 'system', 'process', 'fit', 'pricing', 'faq'];
+    const sections = ['hero', 'results', 'system', 'process', 'pricing', 'commitment', 'faq'];
     const observerOptions = {
       root: null,
       rootMargin: '-40% 0px -40% 0px',
@@ -132,6 +132,12 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
         
         <nav className={`hidden md:flex items-center gap-8 text-sm font-medium ${navTextColorClass}`}>
           <Link 
+            href="#results" 
+            className={`transition-all duration-300 ${activeSection === 'results' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            Results
+          </Link>
+          <Link 
             href="#system" 
             className={`transition-all duration-300 ${activeSection === 'system' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
           >
@@ -144,16 +150,16 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
             Process
           </Link>
           <Link 
-            href="#fit" 
-            className={`transition-all duration-300 ${activeSection === 'fit' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
-          >
-            Who It&apos;s For
-          </Link>
-          <Link 
             href="#pricing" 
             className={`transition-all duration-300 ${activeSection === 'pricing' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
           >
             Pricing
+          </Link>
+          <Link 
+            href="#commitment" 
+            className={`transition-all duration-300 ${activeSection === 'commitment' ? (isScrolled ? 'text-white scale-105' : 'text-zinc-900 scale-105') : navHoverColorClass}`}
+          >
+            Commitment
           </Link>
           <Link 
             href="#faq" 
@@ -197,10 +203,11 @@ export function Header({ variant = 'default' }: { variant?: 'default' | 'solid' 
             </div>
             
             <nav className="flex flex-col items-center gap-8 text-2xl font-medium text-white mb-auto">
+              <Link href="#results" onClick={() => setIsMobileMenuOpen(false)}>Results</Link>
               <Link href="#system" onClick={() => setIsMobileMenuOpen(false)}>The System</Link>
               <Link href="#process" onClick={() => setIsMobileMenuOpen(false)}>Process</Link>
-              <Link href="#fit" onClick={() => setIsMobileMenuOpen(false)}>Who It&apos;s For</Link>
               <Link href="#pricing" onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
+              <Link href="#commitment" onClick={() => setIsMobileMenuOpen(false)}>Commitment</Link>
               <Link href="#faq" onClick={() => setIsMobileMenuOpen(false)}>FAQ</Link>
             </nav>
 

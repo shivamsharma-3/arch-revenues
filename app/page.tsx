@@ -7,6 +7,9 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { WhoThisIsFor } from '@/components/WhoThisIsFor';
 import { WhyItWorks } from '@/components/WhyItWorks';
 import { EngagementModel } from '@/components/EngagementModel';
+import { Commitment } from '@/components/Commitment';
+import { Results } from '@/components/Results';
+import { AuditProcess } from '@/components/AuditProcess';
 import { Comparison } from '@/components/Comparison';
 import { FAQ } from '@/components/FAQ';
 import { FinalCTA } from '@/components/FinalCTA';
@@ -25,14 +28,17 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <Results />
         <Problem />
         <Positioning />
         <HowItWorks />
         <WhoThisIsFor />
         <WhyItWorks />
         <EngagementModel />
+        <Commitment />
         <Comparison />
         <FAQ />
+        <AuditProcess />
         <FinalCTA />
       </main>
       <Footer />
