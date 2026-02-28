@@ -16,7 +16,7 @@ export function Results() {
     },
     {
       label: "Acquisition Efficiency",
-      headline: "42 Qualified Calls in 120 Days",
+      headline: "14 Qualified Calls in 60 Days",
       body: "Without paid ads. Without hiring an SDR. Outbound infrastructure, when operated correctly, generates compounding results as messaging and targeting sharpen over time."
     }
   ];

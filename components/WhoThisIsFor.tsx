@@ -34,7 +34,7 @@ export function WhoThisIsFor() {
           </h3>
           <ul className="space-y-6">
             {[
-              "Web design agencies generating $10k–$80k/month.",
+              "Web design agencies generating $10k+/month.",
               "Founders who are exceptional at closing but lack consistent at-bats.",
               "Teams that want predictable pipeline, not hustle tips.",
               "Agencies ready to invest in long-term revenue infrastructure."
