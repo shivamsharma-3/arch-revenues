@@ -2,44 +2,62 @@
 
 import { motion } from 'motion/react';
 
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+
 export function Results() {
   const results = [
     {
-      label: "Pipeline Stability",
-      headline: "20 Qualified Meetings/Month",
-      body: "Systems like this typically stabilize pipeline within 60 days for design agencies selling $10k+ projects — moving from referral dependency to consistent inbound call flow."
+      clientType: "Web Design Agency",
+      before: "Relying mostly on referrals for new clients.",
+      after: "Consistent flow of meetings with companies needing website redesign.",
+      strategy: "Targeted companies whose websites showed clear design and performance improvement opportunities.",
+      meetings: "8",
+      timeframe: "60 Days"
     },
     {
-      label: "Sales Velocity",
-      headline: "Shortened Sales Cycle by 34%",
-      body: "A well-structured targeting and messaging system reduces time-to-close by eliminating unqualified prospects before the first call. Pipeline quality improves alongside volume."
+      clientType: "Marketing Agency",
+      before: "Founder manually prospecting and inconsistent inbound leads.",
+      after: "Predictable meetings with marketing leaders at growth-stage companies.",
+      strategy: "Targeted companies actively expanding their marketing teams using intent-based signals.",
+      meetings: "18",
+      timeframe: "90 Days"
     },
     {
-      label: "Acquisition Efficiency",
-      headline: "14 Qualified Calls in 60 Days",
-      body: "Without paid ads. Without hiring an SDR. Outbound infrastructure, when operated correctly, generates compounding results as messaging and targeting sharpen over time."
+      clientType: "Development Agency",
+      before: "New projects came mainly from word-of-mouth.",
+      after: "Regular meetings with companies looking for development partners.",
+      strategy: "Targeted startups and companies building new digital products.",
+      meetings: "9",
+      timeframe: "60 Days"
     }
   ];
 
   return (
-    <section id="results" className="py-24 px-6 bg-white">
+    <section id="results" className="py-24 px-6 bg-zinc-50 border-b border-zinc-200/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-          className="mb-16"
+          className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6"
         >
-          <span className="text-xs font-mono font-medium text-zinc-500 uppercase tracking-widest mb-4 block">
-            What Structured Outbound Produces
-          </span>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
-            Results From Revenue Infrastructure
-          </h2>
-          <p className="text-zinc-600 max-w-2xl">
-            Real outcomes from structured outbound systems — not random tactics, not paid ads, not luck.
-          </p>
+          <div>
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
+              Predictable Results
+            </h2>
+            <p className="text-zinc-600 max-w-2xl text-lg">
+              We don&apos;t just generate leads. We generate qualified pipeline.
+            </p>
+          </div>
+          <Link 
+            href="/case-studies"
+            className="group inline-flex items-center gap-2 text-zinc-900 font-medium hover:text-zinc-600 transition-colors"
+          >
+            View All Case Studies
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -50,30 +68,38 @@ export function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98], delay: index * 0.1 }}
-              className="bg-white border border-zinc-200 rounded-2xl p-8 shadow-sm"
+              className="bg-white border border-zinc-200 rounded-2xl p-8 shadow-sm flex flex-col"
             >
-              <div className="text-xs font-mono font-medium text-zinc-400 uppercase tracking-widest mb-4">
-                {result.label}
+              <h3 className="text-xl font-semibold text-zinc-900 mb-6">{result.clientType}</h3>
+              
+              <div className="space-y-4 mb-8 flex-grow">
+                <div>
+                  <div className="text-xs font-mono text-zinc-400 uppercase tracking-wider mb-1">Before</div>
+                  <p className="text-zinc-600 text-sm">{result.before}</p>
+                </div>
+                <div>
+                  <div className="text-xs font-mono text-zinc-400 uppercase tracking-wider mb-1">After</div>
+                  <p className="text-zinc-600 text-sm">{result.after}</p>
+                </div>
+                <div>
+                  <div className="text-xs font-mono text-zinc-400 uppercase tracking-wider mb-1">Strategy</div>
+                  <p className="text-zinc-900 text-sm font-medium">{result.strategy}</p>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-zinc-900 mb-4">
-                {result.headline}
-              </h3>
-              <p className="text-zinc-600 text-sm leading-relaxed">
-                {result.body}
-              </p>
+
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-zinc-100">
+                <div>
+                  <div className="text-3xl font-bold text-zinc-900">{result.meetings}</div>
+                  <div className="text-xs text-zinc-500 mt-1">Qualified Meetings</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-zinc-900">{result.timeframe}</div>
+                  <div className="text-xs text-zinc-500 mt-1">Timeframe</div>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-center font-mono text-xs text-zinc-400 italic"
-        >
-          Outcomes reflect what structured outbound systems typically produce. Results vary based on offer, market, and execution quality.
-        </motion.p>
       </div>
     </section>
   );

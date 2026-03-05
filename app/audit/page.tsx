@@ -1,22 +1,22 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import Link from 'next/link';
-import { ArrowLeft, CheckCircle2, Loader2, ChevronDown } from 'lucide-react';
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
+import { ArrowLeft, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
 
-function CustomSelect({ 
-  label, 
-  name, 
-  value, 
-  options, 
-  onChange, 
-  required = false 
-}: { 
-  label: string; 
-  name: string; 
-  value: string; 
-  options: { label: string; value: string }[]; 
+function CustomSelect({
+  label,
+  name,
+  value,
+  options,
+  onChange,
+  required = false,
+}: {
+  label: string;
+  name: string;
+  value: string;
+  options: { label: string; value: string }[];
   onChange: (name: string, value: string) => void;
   required?: boolean;
 }) {
@@ -25,28 +25,35 @@ function CustomSelect({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const selectedOption = options.find(opt => opt.value === value);
+  const selectedOption = options.find((opt) => opt.value === value);
 
   return (
     <div className="relative" ref={containerRef}>
-      <label className="block text-sm font-medium text-zinc-700 mb-2">{label} {required && '*'}</label>
+      <label className="block text-sm font-medium text-zinc-700 mb-2">
+        {label} {required && "*"}
+      </label>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 flex items-center justify-between hover:bg-zinc-100 transition-colors focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none"
       >
-        <span className={value ? 'text-zinc-900' : 'text-zinc-400'}>
-          {selectedOption ? selectedOption.label : 'Select...'}
+        <span className={value ? "text-zinc-900" : "text-zinc-400"}>
+          {selectedOption ? selectedOption.label : "Select..."}
         </span>
-        <ChevronDown className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown
+          className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+        />
       </button>
 
       <AnimatePresence>
@@ -68,9 +75,9 @@ function CustomSelect({
                     setIsOpen(false);
                   }}
                   className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
-                    value === option.value 
-                      ? 'bg-zinc-900 text-white' 
-                      : 'text-zinc-700 hover:bg-zinc-100'
+                    value === option.value
+                      ? "bg-zinc-900 text-white"
+                      : "text-zinc-700 hover:bg-zinc-100"
                   }`}
                 >
                   {option.label}
@@ -90,39 +97,41 @@ export default function AuditPage() {
   const [error, setError] = useState<string | null>(null);
 
   const [formData, setFormData] = useState({
-    agencyName: '',
-    yourName: '',
-    role: '',
-    website: '',
-    teamSize: '',
-    monthlyRevenue: '',
-    dealSize: '',
-    monthlyMeetings: '',
+    agencyName: "",
+    yourName: "",
+    role: "",
+    website: "",
+    teamSize: "",
+    monthlyRevenue: "",
+    dealSize: "",
+    monthlyMeetings: "",
     leadSources: [] as string[],
-    email: '',
-    phone: ''
+    email: "",
+    phone: "",
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     let processedValue = value;
-    
-    if (name === 'website') {
-      processedValue = value.replace(/^(https?:\/\/)/, '');
+
+    if (name === "website") {
+      processedValue = value.replace(/^(https?:\/\/)/, "");
     }
-    
-    setFormData(prev => ({ ...prev, [name]: processedValue }));
+
+    setFormData((prev) => ({ ...prev, [name]: processedValue }));
   };
 
   const handleCustomSelectChange = (name: string, value: string) => {
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleCheckboxChange = (source: string) => {
-    setFormData(prev => {
+    setFormData((prev) => {
       const current = prev.leadSources;
       if (current.includes(source)) {
-        return { ...prev, leadSources: current.filter(s => s !== source) };
+        return { ...prev, leadSources: current.filter((s) => s !== source) };
       } else {
         return { ...prev, leadSources: [...current, source] };
       }
@@ -137,23 +146,25 @@ export default function AuditPage() {
     setError(null);
 
     try {
-      const response = await fetch('/api/audit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/audit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit form');
+        throw new Error(data.error || "Failed to submit form");
       }
 
       setSubmitted(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
-      console.error('Form submission error:', err);
-      setError('Something went wrong submitting your request. Please try again or email us directly at hello@archrevenues.com');
+      console.error("Form submission error:", err);
+      setError(
+        "Something went wrong submitting your request. Please try again or email us directly at hello@archrevenues.com",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -162,7 +173,7 @@ export default function AuditPage() {
   if (submitted) {
     return (
       <div className="min-h-screen bg-zinc-50 flex flex-col items-center justify-center p-6">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           className="max-w-md w-full bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 text-center shadow-sm"
@@ -170,14 +181,18 @@ export default function AuditPage() {
           <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h1 className="text-2xl font-semibold text-zinc-900 mb-4">Application Received.</h1>
+          <h1 className="text-2xl font-semibold text-zinc-900 mb-4">
+            Application Received.
+          </h1>
           <p className="text-zinc-600 leading-relaxed mb-4">
-            We will review your revenue architecture details and deliver your audit within 1 business day to {formData.email}.
+            We will review your revenue architecture details and deliver your
+            audit within 1 business day to {formData.email}.
           </p>
           <p className="text-zinc-500 text-sm mb-8">
-            If your profile is a strong fit, your audit will include an invitation to schedule a strategy call. There is no obligation.
+            If your profile is a strong fit, your audit will include an
+            invitation to schedule a strategy call. There is no obligation.
           </p>
-          <Link 
+          <Link
             href="/"
             className="inline-flex items-center justify-center w-full bg-zinc-900 text-white px-6 py-3 rounded-md font-medium hover:bg-zinc-800 transition-colors"
           >
@@ -189,23 +204,17 @@ export default function AuditPage() {
   }
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-      className="min-h-screen bg-zinc-50 py-12 px-6"
-    >
+    <div className="min-h-screen bg-zinc-50 py-12 px-6">
       <div className="max-w-3xl mx-auto">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors mb-12">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors mb-12"
+        >
           <ArrowLeft className="w-4 h-4" />
           Back to Home
         </Link>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
-        >
+        <div>
           <div className="mb-6">
             <span className="inline-block py-1 px-3 rounded-full bg-zinc-200/50 text-zinc-600 text-xs font-mono font-medium tracking-wide uppercase border border-zinc-300/50">
               Selective Intake. Limited Capacity.
@@ -215,115 +224,182 @@ export default function AuditPage() {
             Apply for a Revenue Infrastructure Audit
           </h1>
           <p className="text-lg text-zinc-600 mb-2">
-            This assessment evaluates your outbound architecture, pipeline structure, and revenue predictability. We work exclusively with B2B service companies selling high-ticket services.
+            This assessment evaluates your outbound architecture, pipeline
+            structure, and revenue predictability. We work exclusively with B2B
+            agencies selling high-ticket services.
           </p>
           <p className="text-sm text-zinc-500 mb-12">
             Takes 3 minutes. Audit delivered within 1 business day.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-12 bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 shadow-sm">
-            
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-12 bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 shadow-sm"
+          >
             {/* Section 1: Contact Details */}
             <section>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">1. Contact Details</h2>
+              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">
+                1. Contact Details
+              </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">Your Name *</label>
-                  <input required type="text" name="yourName" value={formData.yourName} onChange={handleInputChange} className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
+                  <label className="block text-sm font-medium text-zinc-700 mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    name="yourName"
+                    value={formData.yourName}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">Contact Email *</label>
-                  <input required type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
+                  <label className="block text-sm font-medium text-zinc-700 mb-2">
+                    Contact Email *
+                  </label>
+                  <input
+                    required
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
-                <CustomSelect 
+                <CustomSelect
                   label="Role / Title"
                   name="role"
                   value={formData.role}
                   onChange={handleCustomSelectChange}
                   required
                   options={[
-                    { label: 'Founder', value: 'Founder' },
-                    { label: 'CEO', value: 'CEO' },
-                    { label: 'Head of Sales', value: 'Head of Sales' },
-                    { label: 'Operations', value: 'Operations' },
-                    { label: 'Marketing Lead', value: 'Marketing Lead' },
-                    { label: 'Other', value: 'Other' },
+                    { label: "Founder", value: "Founder" },
+                    { label: "CEO", value: "CEO" },
+                    { label: "Head of Sales", value: "Head of Sales" },
+                    { label: "Operations", value: "Operations" },
+                    { label: "Marketing Lead", value: "Marketing Lead" },
+                    { label: "Other", value: "Other" },
                   ]}
                 />
                 <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">Phone Number</label>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
+                  <label className="block text-sm font-medium text-zinc-700 mb-2">
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
               </div>
             </section>
 
             {/* Section 2: Agency Profile */}
             <section>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">2. Agency Profile</h2>
+              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">
+                2. Agency Profile
+              </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">Agency Name *</label>
-                  <input required type="text" name="agencyName" value={formData.agencyName} onChange={handleInputChange} className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
+                  <label className="block text-sm font-medium text-zinc-700 mb-2">
+                    Agency Name *
+                  </label>
+                  <input
+                    required
+                    type="text"
+                    name="agencyName"
+                    value={formData.agencyName}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
                 <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">Website URL</label>
-                  <input type="text" name="website" value={formData.website} onChange={handleInputChange} placeholder="archrevenues.com" className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all" />
+                  <label className="block text-sm font-medium text-zinc-700 mb-2">
+                    Website URL
+                  </label>
+                  <input
+                    type="text"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleInputChange}
+                    placeholder="archrevenues.com"
+                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
-                <CustomSelect 
+                <CustomSelect
                   label="Team Size"
                   name="teamSize"
                   value={formData.teamSize}
                   onChange={handleCustomSelectChange}
                   required
                   options={[
-                    { label: '1 (Solo)', value: '1 (Solo)' },
-                    { label: '2-5', value: '2-5' },
-                    { label: '6-15', value: '6-15' },
-                    { label: '16-50', value: '16-50' },
-                    { label: '51+', value: '51+' },
+                    { label: "1 (Solo)", value: "1 (Solo)" },
+                    { label: "2-5", value: "2-5" },
+                    { label: "6-15", value: "6-15" },
+                    { label: "16-50", value: "16-50" },
+                    { label: "51+", value: "51+" },
                   ]}
                 />
-                <CustomSelect 
+                <CustomSelect
                   label="Monthly Revenue"
                   name="monthlyRevenue"
                   value={formData.monthlyRevenue}
                   onChange={handleCustomSelectChange}
                   required
                   options={[
-                    { label: 'Under $5k', value: 'Under $5k' },
-                    { label: '$5k - $15k', value: '$5k - $15k' },
-                    { label: '$15k - $40k', value: '$15k - $40k' },
-                    { label: '$40k+', value: '$40k+' },
+                    { label: "Under $5k", value: "Under $5k" },
+                    { label: "$5k - $15k", value: "$5k - $15k" },
+                    { label: "$15k - $40k", value: "$15k - $40k" },
+                    { label: "$40k+", value: "$40k+" },
                   ]}
                 />
                 <div className="md:col-span-2">
-                  <CustomSelect 
+                  <CustomSelect
                     label="What is your average deal size?"
                     name="dealSize"
                     value={formData.dealSize}
                     onChange={handleCustomSelectChange}
                     required
                     options={[
-                      { label: 'Under $1k', value: 'Under $1k' },
-                      { label: '$1k–$5k', value: '$1k–$5k' },
-                      { label: '$5k–$15k', value: '$5k–$15k' },
-                      { label: '$15k+', value: '$15k+' },
+                      { label: "Under $1k", value: "Under $1k" },
+                      { label: "$1k–$5k", value: "$1k–$5k" },
+                      { label: "$5k–$15k", value: "$5k–$15k" },
+                      { label: "$15k+", value: "$15k+" },
                     ]}
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <CustomSelect 
+                  <CustomSelect
                     label="How many qualified sales meetings do you generate per month on average?"
                     name="monthlyMeetings"
                     value={formData.monthlyMeetings}
                     onChange={handleCustomSelectChange}
                     required
                     options={[
-                      { label: "0 — we don't track this", value: "0 — we don't track this" },
-                      { label: '1–3 meetings/month', value: '1–3 meetings/month' },
-                      { label: '4–6 meetings/month', value: '4–6 meetings/month' },
-                      { label: '7–10 meetings/month', value: '7–10 meetings/month' },
-                      { label: '10+ meetings/month', value: '10+ meetings/month' },
+                      {
+                        label: "0 — we don't track this",
+                        value: "0 — we don't track this",
+                      },
+                      {
+                        label: "1–3 meetings/month",
+                        value: "1–3 meetings/month",
+                      },
+                      {
+                        label: "4–6 meetings/month",
+                        value: "4–6 meetings/month",
+                      },
+                      {
+                        label: "7–10 meetings/month",
+                        value: "7–10 meetings/month",
+                      },
+                      {
+                        label: "10+ meetings/month",
+                        value: "10+ meetings/month",
+                      },
                     ]}
                   />
                 </div>
@@ -332,15 +408,31 @@ export default function AuditPage() {
 
             {/* Section 3: Pipeline & Lead Sources */}
             <section>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">3. Pipeline & Lead Sources</h2>
+              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">
+                3. Pipeline & Lead Sources
+              </h2>
               <div className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-3">Where do your current leads come from? (Select all that apply) *</label>
+                  <label className="block text-sm font-medium text-zinc-700 mb-3">
+                    Where do your current leads come from? (Select all that
+                    apply) *
+                  </label>
                   <div className="grid sm:grid-cols-2 gap-3">
-                    {['Referrals / Word of Mouth', 'Inbound / SEO', 'Paid Ads', 'Cold Email', 'LinkedIn Outreach', 'Partnerships', 'Other'].map(source => (
-                      <label key={source} className="flex items-center gap-3 p-3 border border-zinc-200 rounded-md cursor-pointer hover:bg-zinc-50 transition-colors">
-                        <input 
-                          type="checkbox" 
+                    {[
+                      "Referrals / Word of Mouth",
+                      "Inbound / SEO",
+                      "Paid Ads",
+                      "Cold Email",
+                      "LinkedIn Outreach",
+                      "Partnerships",
+                      "Other",
+                    ].map((source) => (
+                      <label
+                        key={source}
+                        className="flex items-center gap-3 p-3 border border-zinc-200 rounded-md cursor-pointer hover:bg-zinc-50 transition-colors"
+                      >
+                        <input
+                          type="checkbox"
                           checked={formData.leadSources.includes(source)}
                           onChange={() => handleCheckboxChange(source)}
                           className="w-4 h-4 text-zinc-900 border-zinc-300 rounded focus:ring-zinc-900"
@@ -360,8 +452,10 @@ export default function AuditPage() {
             )}
 
             <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5 text-sm text-zinc-500 leading-relaxed text-center">
-              This is not a marketing consultation.<br/>
-              This is a structured revenue system assessment.<br/>
+              This is not a marketing consultation.
+              <br />
+              This is a structured revenue system assessment.
+              <br />
               <span className="text-zinc-900 font-medium">
                 We onboard a limited number of companies per quarter.
               </span>
@@ -378,15 +472,15 @@ export default function AuditPage() {
                   Submitting Application...
                 </>
               ) : (
-                'Submit Application'
+                "Submit Application"
               )}
             </button>
             <p className="text-center text-sm text-zinc-500 mt-4">
               Your information is secure and will never be shared.
             </p>
           </form>
-        </motion.div>
+        </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

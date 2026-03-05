@@ -4,67 +4,55 @@ import { motion } from 'motion/react';
 import { X, Check } from 'lucide-react';
 
 export function Positioning() {
+  const steps = [
+    {
+      title: "Positioning Optimization",
+      description: "We don't blast generic messages. We analyze your best case studies, identify your most profitable market segments, and engineer angles that resonate with decision-makers."
+    },
+    {
+      title: "Targeting & Data Infrastructure",
+      description: "We build a pristine technical foundation. We set up sending domains, warm up inboxes, and scrape hyper-targeted lead lists using intent data and custom signals—ensuring your emails land in the primary inbox."
+    },
+    {
+      title: "Multi-Channel Outbound Deployment",
+      description: "We launch structured, multi-channel campaigns across Email and LinkedIn. We handle the copywriting, sequence building, reply management, and objection handling. You just take the calls."
+    }
+  ];
+
   return (
-    <section id="system" className="py-24 px-6 max-w-7xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="mb-16"
-      >
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 max-w-2xl">
-          We Are Not an Agency.<br />
-          We Are Infrastructure.
-        </h2>
-      </motion.div>
-
-      <div className="grid md:grid-cols-2 gap-px bg-zinc-200 border border-zinc-200 rounded-2xl overflow-hidden">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+    <section id="system" className="py-24 px-6 bg-white border-b border-zinc-200/50">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="bg-zinc-50 p-10 md:p-16"
+          transition={{ duration: 0.5 }}
+          className="mb-16"
         >
-          <h3 className="text-sm font-mono font-semibold text-zinc-500 uppercase tracking-widest mb-8">What We Are Not</h3>
-          <ul className="space-y-6">
-            {[
-              "A marketing agency running paid ads.",
-              "A content creation or branding firm.",
-              "A lead gen agency that blasts generic templates.",
-              "A software tool you have to learn and manage."
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 text-zinc-600">
-                <X className="w-5 h-5 text-zinc-400 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 max-w-2xl mb-4">
+            The ARCH Revenue Engine™
+          </h2>
+          <p className="text-xl text-zinc-600 max-w-2xl">
+            This is not random lead generation. This is a structured, predictable system designed to turn cold prospects into qualified pipeline.
+          </p>
         </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-zinc-900 p-10 md:p-16 text-zinc-100"
-        >
-          <h3 className="text-sm font-mono font-semibold text-zinc-400 uppercase tracking-widest mb-8">What We Are</h3>
-          <ul className="space-y-6">
-            {[
-              "An end-to-end outbound acquisition system.",
-              "Built exclusively for web design agencies.",
-              "Operated entirely on your behalf.",
-              "Focused purely on booking qualified meetings onto your calendar."
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-4 text-zinc-300">
-                <Check className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {steps.map((step, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-zinc-50 border border-zinc-200 p-8 rounded-2xl"
+            >
+              <div className="text-4xl font-bold text-zinc-200 mb-6">0{index + 1}</div>
+              <h3 className="text-xl font-semibold text-zinc-900 mb-4">{step.title}</h3>
+              <p className="text-zinc-600 leading-relaxed">{step.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

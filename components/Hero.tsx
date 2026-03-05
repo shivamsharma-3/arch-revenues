@@ -1,34 +1,28 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence } from 'motion/react';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from "motion/react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
-const phrases = [
-  "Revenue by Design",
-  "Acquisition, Systematized"
-];
+const phrases = ["Revenue by Design", "Acquisition, Systematized"];
 
 export function Hero() {
   const [currentPhrase, setCurrentPhrase] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentPhrase(prev => (prev + 1) % phrases.length);
+      setCurrentPhrase((prev) => (prev + 1) % phrases.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <motion.section 
+    <section
       id="hero"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.2 }}
-      className="pt-36 pb-24 px-6 max-w-7xl mx-auto"
+      className="pt-36 pb-24 px-6 bg-white border-b border-zinc-200/50"
     >
-      <div className="grid grid-cols-1 md:grid-cols-[3fr_2fr] items-center gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[3fr_2fr] items-center gap-6">
         <div className="max-w-xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -36,70 +30,77 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-zinc-200/50 text-zinc-600 text-xs font-mono font-medium tracking-wide uppercase mb-6 border border-zinc-300/50">
-              Revenue Infrastructure for Web Design Agencies
+              B2B Outbound Revenue Systems
             </span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.1] mb-8"
+            className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 leading-[1.1] mb-8"
           >
-            Stop relying on referrals.<br />
-            Build revenue infrastructure.
+            Predictable Client Acquisition for B2B Agencies
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-xl text-zinc-600 leading-relaxed max-w-2xl mb-10"
+            className="text-xl text-zinc-600 leading-relaxed max-w-2xl mb-4"
           >
-            We build and operate outbound acquisition systems exclusively for web design agencies. 
-            Get consistent, qualified sales calls without learning cold email or hiring a full-time SDR.
+            ARCH Revenues helps B2B agencies consistently book qualified sales meetings with companies that may need their services.
           </motion.p>
-          
-          <motion.div 
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
+            className="text-lg text-zinc-500 leading-relaxed max-w-2xl mb-10"
+          >
+            We identify the right prospects, reach out to them through targeted campaigns, and turn them into sales conversations for your team.
+          </motion.p>
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
           >
-            <Link 
-              href="/audit" 
+            <Link
+              href="/strategy-call"
               className="group flex items-center gap-2 bg-zinc-900 text-white px-6 py-3.5 rounded-md font-medium hover:bg-zinc-800 transition-all"
             >
-              Get Your Free System Audit
+              Book Strategy Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link 
-              href="#system" 
+            <Link
+              href="/audit"
               className="text-zinc-600 font-medium px-6 py-3.5 hover:text-zinc-900 transition-colors"
             >
-              See how the system works
+              Get Free Revenue Audit
             </Link>
           </motion.div>
         </div>
 
-        <div className="hidden md:flex items-start justify-center -mt-20">
+        <div className="hidden md:flex items-start justify-center -mt-4">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="relative flex items-center justify-center w-[500px] h-[500px]"
+            className="relative flex items-center justify-center w-[500px] h-[500px] md:-ml-28"
           >
             {/* Layer 1 — Deep ambient glow */}
             <motion.div
-              className="absolute w-80 h-80 rounded-full bg-zinc-200"
-              animate={{ 
+              className="absolute w-72 h-72 rounded-full bg-zinc-200"
+              animate={{
                 scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3]
+                opacity: [0.3, 0.6, 0.3],
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
               style={{ filter: "blur(40px)", willChange: "transform, opacity" }}
             />
@@ -108,16 +109,16 @@ export function Hero() {
             {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
-                className="absolute w-72 h-72 rounded-full border border-zinc-300"
-                animate={{ 
-                  scale: [1, 2.5], 
-                  opacity: [0.6, 0] 
+                className="absolute w-64 h-64 rounded-full border border-zinc-300"
+                animate={{
+                  scale: [1, 2.5],
+                  opacity: [0.6, 0],
                 }}
-                transition={{ 
-                  duration: 6, 
-                  repeat: Infinity, 
-                  delay: i * 2, 
-                  ease: "easeOut" 
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  delay: i * 2,
+                  ease: "easeOut",
                 }}
                 style={{ willChange: "transform, opacity" }}
               />
@@ -127,7 +128,7 @@ export function Hero() {
             <motion.svg
               viewBox="0 0 100 100"
               fill="currentColor"
-              className="relative z-10 w-72 h-72 text-zinc-900"
+              className="relative z-10 w-64 h-64 text-zinc-900"
               animate={{ y: [-12, 12, -12] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               style={{ willChange: "transform" }}
@@ -163,10 +164,9 @@ export function Hero() {
                 </motion.span>
               </AnimatePresence>
             </motion.div>
-
           </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
