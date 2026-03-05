@@ -66,7 +66,7 @@ export default function CaseStudiesPage() {
           <div className="max-w-7xl mx-auto space-y-24">
             {caseStudies.map((study, index) => (
               <div key={index} className="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
-                <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 sticky top-32">
+                <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:sticky md:top-32">
                   <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 flex items-center justify-center mb-6 shadow-sm">
                     {study.icon}
                   </div>

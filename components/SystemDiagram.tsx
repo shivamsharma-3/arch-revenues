@@ -34,67 +34,69 @@ export function SystemDiagram() {
   ];
 
   return (
-    <section className="py-16 px-6 bg-zinc-900 text-white overflow-hidden">
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+    <section className="py-24 px-6 bg-zinc-950 text-white overflow-hidden relative">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent)] pointer-events-none" />
+      <div className="max-w-4xl mx-auto relative z-10">
+        <div
+          className="text-center mb-16"
         >
-          <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-6">
-            The ARCH Revenue Engine
+          <div className="inline-block px-3 py-1 rounded-full bg-white/5 text-white/40 text-[10px] font-mono font-bold uppercase tracking-widest mb-6 border border-white/5">
+            The Architecture
+          </div>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-6 leading-[1.1]">
+            The Technical <span className="text-zinc-500">Pipeline Flow</span>
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            A technical, data-driven approach to outbound acquisition.
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            A high-precision, data-driven approach to outbound acquisition.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="relative">
+        <div className="relative space-y-3">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`w-full max-w-md p-5 rounded-2xl border ${
+              <div
+                className={`w-full max-w-xl p-5 rounded-[1.5rem] border ${
                   step.highlight 
-                    ? 'bg-white text-zinc-900 border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
-                    : 'bg-zinc-800/50 border-zinc-700 text-zinc-300'
-                } flex items-center gap-6 relative z-10`}
+                    ? 'bg-white text-zinc-900 border-white shadow-[0_0_40px_rgba(255,255,255,0.05)]' 
+                    : 'bg-zinc-900/50 border-zinc-800 text-zinc-300'
+                } flex items-center gap-4 relative z-10`}
               >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                  step.highlight ? 'bg-zinc-900 text-white' : 'bg-zinc-700 text-zinc-300'
+                <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
+                  step.highlight ? 'bg-zinc-900 text-white' : 'bg-zinc-800 text-zinc-400'
                 }`}>
                   {step.icon}
                 </div>
                 <div>
-                  <h3 className={`font-semibold ${step.highlight ? 'text-zinc-900' : 'text-white'}`}>
+                  <div className="text-[9px] font-mono font-bold text-zinc-500 uppercase tracking-widest">
+                    Step 0{index + 1}
+                  </div>
+                  <h3 className={`text-base font-bold ${step.highlight ? 'text-zinc-900' : 'text-white'}`}>
                     {step.title}
                   </h3>
-                  <p className="text-sm opacity-70">{step.description}</p>
+                  <p className={`text-[11px] leading-relaxed mt-0.5 ${step.highlight ? 'text-zinc-600' : 'text-zinc-500'}`}>
+                    {step.description}
+                  </p>
                 </div>
-              </motion.div>
+                {step.highlight && (
+                  <div className="absolute top-3 right-3">
+                    <div className="flex items-center gap-1.5 px-1.5 py-0.5 rounded bg-zinc-900 text-[7px] font-mono font-bold text-white uppercase tracking-widest">
+                      <div className="w-1 h-1 rounded-full bg-emerald-400" />
+                      Active
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {index < steps.length - 1 && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  whileInView={{ opacity: 1, height: 48 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                  className="flex flex-col items-center py-2"
+                <div
+                  className="flex flex-col items-center py-2 h-10"
                 >
-                  <div className="w-px h-full bg-gradient-to-b from-zinc-700 to-zinc-500" />
-                  <ArrowDown className="w-4 h-4 text-zinc-500 -mt-1" />
-                </motion.div>
+                  <div className="w-px h-full bg-gradient-to-b from-zinc-800 to-zinc-950" />
+                  <ArrowDown className="w-4 h-4 text-zinc-800 -mt-1" />
+                </div>
               )}
             </div>
           ))}
-
-          {/* Background Decorative Elements */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-zinc-800/20 rounded-full blur-3xl -z-0 pointer-events-none" />
         </div>
       </div>
     </section>

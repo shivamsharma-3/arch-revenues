@@ -5,37 +5,34 @@ import { ArrowLeft } from "lucide-react";
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-50">
-      {/* Hero Section */}
-      <section className="bg-zinc-900 pt-40 pb-20 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-4">
-            Privacy Policy
-          </h1>
-          <p className="text-zinc-400">Last updated January 2025</p>
-        </div>
-      </section>
-
-      <main className="flex-1 py-16 px-6">
+    <div className="min-h-screen flex flex-col bg-white">
+      <main className="flex-1 pt-32 pb-24 px-6">
         <div className="max-w-3xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-400 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-3 h-3" />
             Back to Home
           </Link>
 
-          <div className="space-y-6">
+          <header className="mb-16">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+              Privacy Policy
+            </h1>
+            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Last updated January 2025</p>
+          </header>
+
+          <div className="space-y-12">
             {/* Section 01 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                01
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 01
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 Overview
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 ARCH Revenues collects and processes personal information solely
                 to deliver the free system audit and associated services. We do
                 not sell, trade, or share your data with third parties for
@@ -44,14 +41,14 @@ export default function PrivacyPage() {
             </div>
 
             {/* Section 02 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                02
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 02
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 Information We Collect
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 When you submit our audit intake form, we collect: your name,
                 email address, phone number, company name and website,
                 approximate monthly revenue, team size, average project value,
@@ -62,14 +59,14 @@ export default function PrivacyPage() {
             </div>
 
             {/* Section 03 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                03
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 03
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 How We Use Your Information
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 We use your information to: prepare and deliver your tailored
                 system audit, contact you to discuss audit findings and our
                 services, fulfill our contractual obligations if you become a
@@ -80,14 +77,14 @@ export default function PrivacyPage() {
             </div>
 
             {/* Section 04 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                04
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 04
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 Data Retention
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 If you submit an audit form but do not become a client, your
                 data is retained for 12 months from our last communication, then
                 permanently deleted. If you become a client, your data is
@@ -97,14 +94,14 @@ export default function PrivacyPage() {
             </div>
 
             {/* Section 05 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                05
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 05
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 Your Rights
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 Depending on your location, you have the right to access,
                 correct, export, or request deletion of your personal data at
                 any time. You may also withdraw consent or object to processing.
@@ -120,14 +117,14 @@ export default function PrivacyPage() {
             </div>
 
             {/* Section 06 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                06
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 06
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 Data Security
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 We use reasonable technical and organizational measures to
                 protect your information. No method of internet transmission is
                 100% secure. We will notify you of any breach that affects your
@@ -136,14 +133,14 @@ export default function PrivacyPage() {
             </div>
 
             {/* Section 07 */}
-            <div className="bg-white border border-zinc-100 rounded-2xl p-8 shadow-sm">
-              <div className="w-8 h-8 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono text-sm mb-4">
-                07
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 07
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+              <h2 className="text-xl font-bold text-zinc-900 mb-4">
                 Contact
               </h2>
-              <p className="text-zinc-600 leading-relaxed">
+              <p className="text-zinc-600 leading-relaxed text-sm">
                 For any privacy-related questions:
                 <br />
                 <a

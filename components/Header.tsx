@@ -18,15 +18,13 @@ export function Header() {
   }, []);
 
   const headerBgClass = isScrolled 
-    ? 'bg-zinc-900/95 backdrop-blur-md border border-zinc-800 shadow-2xl shadow-black/50 text-white' 
-    : 'bg-transparent text-zinc-900';
+    ? 'bg-white/90 backdrop-blur-xl border border-black shadow-[0_8px_32px_rgba(0,0,0,0.04)] text-zinc-900' 
+    : 'bg-white/50 backdrop-blur-md border border-black text-zinc-900';
 
-  const navTextColorClass = isScrolled ? 'text-zinc-300' : 'text-zinc-600';
-  const navHoverColorClass = isScrolled ? 'hover:text-white' : 'hover:text-zinc-900';
-  const activeNavColorClass = isScrolled ? 'text-white font-semibold' : 'text-zinc-900 font-semibold';
-  const buttonClass = isScrolled 
-    ? 'bg-white text-zinc-950 hover:bg-zinc-200' 
-    : 'bg-zinc-900 text-white hover:bg-zinc-800';
+  const navTextColorClass = 'text-zinc-500';
+  const navHoverColorClass = 'hover:text-zinc-900';
+  const activeNavColorClass = 'text-zinc-900 font-semibold';
+  const buttonClass = 'bg-zinc-900 text-white hover:bg-zinc-800 shadow-sm active:scale-95';
 
   const navLinks = [
     { name: 'How It Works', href: '/how-it-works' },
@@ -37,48 +35,45 @@ export function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled ? 'py-4' : 'py-6'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}
     >
-      <div className={`max-w-6xl mx-auto px-6 h-16 flex items-center justify-between rounded-full transition-all duration-700 ease-in-out ${headerBgClass}`}>
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <svg viewBox="0 0 100 100" fill="currentColor" className="w-7 h-7 group-hover:scale-110 transition-transform duration-300">
+      <div className={`max-w-5xl mx-auto px-6 h-14 flex items-center justify-between rounded-full transition-all duration-300 ${headerBgClass}`}>
+        <Link href="/" className="flex items-center gap-2">
+          <svg viewBox="0 0 100 100" fill="currentColor" className="w-6 h-6">
             <path d="M50 2 L56 12 L50 22 L44 12 Z" />
             <path d="M43 28 L12 95 L38 95 L48 55 Z" />
             <path d="M57 28 L88 95 L62 95 L52 55 Z" />
             <path d="M49 28 L51 28 L51 65 L49 65 Z" />
             <path d="M50 75 L56 85 L50 95 L44 85 Z" />
           </svg>
-          <span className="font-mono font-bold tracking-tighter text-xl">
-            ARCH<span className="text-zinc-500 transition-colors duration-300">Revenues</span>
+          <span className="font-mono font-bold tracking-tighter text-lg">
+            ARCH<span className="text-zinc-400">Revenues</span>
           </span>
         </Link>
         
-        <nav className={`hidden md:flex items-center gap-8 text-sm font-medium ${navTextColorClass}`}>
+        <nav className={`hidden md:flex items-center gap-6 text-sm font-medium ${navTextColorClass}`}>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link 
                 key={link.name} 
                 href={link.href} 
-                className={`relative py-1 transition-all duration-300 ${isActive ? activeNavColorClass : navHoverColorClass} group`}
+                className={`relative py-1 transition-colors duration-200 ${isActive ? activeNavColorClass : navHoverColorClass}`}
               >
                 {link.name}
                 {isActive && (
                   <motion.div
                     layoutId="activeUnderline"
-                    className={`absolute -bottom-1.5 left-0 right-0 h-[1px] ${isScrolled ? 'bg-white' : 'bg-zinc-900'}`}
+                    className="absolute -bottom-1 left-0 right-0 h-[1px] bg-zinc-900"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
-                )}
-                {!isActive && (
-                  <div className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[1px] ${isScrolled ? 'bg-white/40' : 'bg-zinc-900/30'} transition-all duration-300 group-hover:w-full`} />
                 )}
               </Link>
             );
           })}
         </nav>
 
-        <Link href="/strategy-call" className={`hidden md:inline-flex text-sm font-medium px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105 ${buttonClass}`}>
+        <Link href="/strategy-call" className={`hidden md:inline-flex text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 ${buttonClass}`}>
           Book Strategy Call
         </Link>
 
