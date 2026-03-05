@@ -24,7 +24,7 @@ export default function StrategyCallPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-[1fr_1.5fr] gap-16 items-start">
               
-              <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:p-12 sticky top-32">
+              <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:p-12 md:sticky md:top-32">
                 <h2 className="text-2xl font-semibold text-zinc-900 mb-8">What Happens Next</h2>
                 
                 <ul className="space-y-8">

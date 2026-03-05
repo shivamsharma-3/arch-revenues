@@ -34,16 +34,16 @@ export function SystemDiagram() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-zinc-900 text-white overflow-hidden">
-      <div className="max-w-4xl mx-auto">
+    <section className="py-16 px-6 bg-zinc-900 text-white overflow-hidden">
+      <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-6">
+          <h2 className="text-2xl md:text-4xl font-semibold tracking-tight mb-6">
             The ARCH Revenue Engine
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
@@ -59,7 +59,7 @@ export function SystemDiagram() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`w-full max-w-md p-6 rounded-2xl border ${
+                className={`w-full max-w-md p-5 rounded-2xl border ${
                   step.highlight 
                     ? 'bg-white text-zinc-900 border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
                     : 'bg-zinc-800/50 border-zinc-700 text-zinc-300'

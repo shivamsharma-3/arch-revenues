@@ -20,19 +20,19 @@ export function Positioning() {
   ];
 
   return (
-    <section id="system" className="py-24 px-6 bg-white border-b border-zinc-200/50">
+    <section id="system" className="py-16 px-6 bg-white border-b border-zinc-200/50">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16"
+          className="mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 max-w-2xl mb-4">
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 max-w-2xl mb-4">
             The ARCH Revenue Engine™
           </h2>
-          <p className="text-xl text-zinc-600 max-w-2xl">
+          <p className="text-lg text-zinc-600 max-w-2xl">
             This is not random lead generation. This is a structured, predictable system designed to turn cold prospects into qualified pipeline.
           </p>
         </motion.div>
@@ -45,7 +45,7 @@ export function Positioning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-zinc-50 border border-zinc-200 p-8 rounded-2xl"
+              className="bg-zinc-50 border border-zinc-200 p-6 rounded-2xl"
             >
               <div className="text-4xl font-bold text-zinc-200 mb-6">0{index + 1}</div>
               <h3 className="text-xl font-semibold text-zinc-900 mb-4">{step.title}</h3>
