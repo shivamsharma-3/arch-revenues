@@ -97,7 +97,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <div className="relative hidden lg:flex items-center justify-end">
+        <div className="relative hidden lg:flex items-center justify-center lg:pr-8 xl:pr-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}

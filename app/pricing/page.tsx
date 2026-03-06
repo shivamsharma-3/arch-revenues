@@ -67,7 +67,7 @@ export default function PricingPage() {
                   </div>
                 </div>
                 <p className="text-sm text-zinc-500 font-medium italic text-center md:text-left">
-                  Typical engagements range between $500–$1k per month depending on campaign scope.
+                  Typical engagements range between $500–$1500 per month depending on campaign scope.
                 </p>
               </div>
 
