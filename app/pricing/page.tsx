@@ -1,6 +1,5 @@
 "use client";
 
-import { FinalCTA } from "@/components/FinalCTA";
 import { Check, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -49,10 +48,10 @@ export default function PricingPage() {
                   <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-8">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-10 rounded-full bg-zinc-900 text-white flex items-center justify-center font-mono font-bold">01</div>
-                      <h3 className="text-xl font-semibold text-zinc-900">The 2-Week Pilot</h3>
+                      <h3 className="text-xl font-semibold text-zinc-900">The 14-Day Free Pilot</h3>
                     </div>
                     <p className="text-zinc-600 leading-relaxed">
-                      We build the infrastructure, define the positioning, and launch the initial campaigns. The goal of the pilot is to validate targeting, messaging, and generate the first qualified conversations before moving into a full engagement.
+                      We build the infrastructure, define the positioning, and launch the initial campaigns. The goal of the free pilot is to validate targeting, messaging, and generate the first qualified conversations before you pay anything.
                     </p>
                   </div>
 
@@ -121,8 +120,6 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
-
-        <FinalCTA />
       </main>
     </div>
   );

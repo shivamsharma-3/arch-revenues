@@ -64,7 +64,7 @@ export function Problem() {
                   Ready to build your engine?
                 </p>
                 <p className="text-zinc-500 text-xs mb-4">
-                  Join 12+ agencies using ARCH to scale their outbound.
+                  Be one of the first 5 agencies to get our 14-day free pilot.
                 </p>
                 <Link 
                   href="/strategy-call"

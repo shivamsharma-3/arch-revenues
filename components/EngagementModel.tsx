@@ -23,7 +23,7 @@ export function EngagementModel() {
               <span className="text-zinc-400">Not Lock-In.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed mb-12 max-w-xl">
-              We don&apos;t ask you to commit to 12 months on faith. Start with a 30-day pilot to validate targeting and generate your first qualified conversations.
+              We don&apos;t ask you to commit to 12 months on faith. Start with a 14-day free pilot to validate targeting and generate your first qualified conversations.
             </p>
             <Link 
               href="/strategy-call" 

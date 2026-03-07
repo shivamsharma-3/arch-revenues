@@ -5,8 +5,6 @@ import { Problem } from "@/components/Problem";
 import { SystemDiagram } from "@/components/SystemDiagram";
 import { Positioning } from "@/components/Positioning";
 import { EngagementModel } from "@/components/EngagementModel";
-import { Results } from "@/components/Results";
-import { Testimonials } from "@/components/Testimonials";
 import { Comparison } from "@/components/Comparison";
 import { FinalCTA } from "@/components/FinalCTA";
 import { FAQ } from "@/components/FAQ";
@@ -20,8 +18,6 @@ export default function Home() {
         <Problem />
         <SystemDiagram />
         <Positioning />
-        <Results />
-        <Testimonials />
         <Comparison />
         <EngagementModel />
         <FAQ />
