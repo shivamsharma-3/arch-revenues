@@ -1,6 +1,5 @@
 "use client";
 
-import { FinalCTA } from "@/components/FinalCTA";
 import Link from "next/link";
 
 export default function PilotProgramPage() {
@@ -11,7 +10,7 @@ export default function PilotProgramPage() {
           <h1 
             className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6"
           >
-            Pilot Program
+            Founding Client Program
           </h1>
           <p 
             className="text-xl text-zinc-600 leading-relaxed"
@@ -25,10 +24,10 @@ export default function PilotProgramPage() {
             <h2 className="text-2xl font-semibold text-zinc-900 mb-6">We&apos;re Just Getting Started</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <p>
-                We&apos;re a brand-new service—no paying clients yet. But we&apos;re serious about building predictable outbound pipelines for B2B agencies.
+                We&apos;re a brand-new service. But we&apos;re serious about building predictable outbound pipelines for B2B agencies.
               </p>
               <p>
-                To prove the system works, the first five agencies get the full 14-day pilot completely free. No credit card. No contracts. No fluff.
+                To prove the system works, the first 7 agencies get the full program completely free in exchange for feedback and permission to create case studies. No credit card. No contracts. No fluff.
               </p>
               <p>
                 We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact LinkedIn messages and emails we send, the replies we get, and any meetings that come from it.
@@ -37,7 +36,7 @@ export default function PilotProgramPage() {
                 If it generates real qualified calls for your agency, great—we can talk about a monthly engagement after. If not, no hard feelings.
               </p>
               <p className="font-medium text-zinc-900 pt-4">
-                Sound fair? Grab one of the five pilot spots.
+                Sound fair? Grab one of the 7 founding spots.
               </p>
             </div>
             <div className="mt-8">
@@ -50,8 +49,6 @@ export default function PilotProgramPage() {
             </div>
           </div>
         </section>
-
-        <FinalCTA />
       </main>
     </div>
   );

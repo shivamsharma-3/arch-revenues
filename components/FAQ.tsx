@@ -26,7 +26,7 @@ export function FAQ() {
     },
     {
       q: "Do you guarantee meetings?",
-      a: "No. We guarantee the execution of a proven system. We don't offer extreme guarantees because we focus on qualified calls, not just any pulse with a calendar. Our 14-day free pilot is our risk reversal.",
+      a: "No. We guarantee the execution of a proven system. We focus on qualified calls, not just any pulse with a calendar. Our Founding Client Program is our risk reversal.",
     },
     {
       q: "We've tried cold email before — why would this be different?",
@@ -42,7 +42,7 @@ export function FAQ() {
     },
     {
       q: "Do we sign a long-term contract?",
-      a: "No. We start with a 14-day free pilot. After that, it's a month-to-month engagement. We keep you by delivering results, not through legal lock-in.",
+      a: "No. We start with the Founding Client Program. After that, it's a month-to-month engagement. We keep you by delivering results, not through legal lock-in.",
     },
     {
       q: 'What does a "qualified call" mean to you?',
@@ -50,7 +50,7 @@ export function FAQ() {
     },
     {
       q: "How much does it cost?",
-      a: "Engagements typically start between $400 and $750 per month, depending on the required volume. There are no setup fees.",
+      a: "Engagements typically start between $500 and $1500 per month, depending on the required volume. There are no setup fees.",
     },
     {
       q: "What do we need to provide on our end?",

@@ -7,15 +7,15 @@ export function Positioning() {
   const steps = [
     {
       title: "Positioning Optimization",
-      description: "We don't blast generic messages. We analyze your best case studies, identify your most profitable market segments, and engineer angles that resonate with decision-makers."
+      description: "We analyze your best case studies and engineer angles that resonate with decision-makers."
     },
     {
-      title: "Targeting & Data Infrastructure",
-      description: "We build a pristine technical foundation. We set up sending domains, warm up inboxes, and scrape hyper-targeted lead lists using intent data and custom signals—ensuring your emails land in the primary inbox."
+      title: "Targeting & Infrastructure",
+      description: "We set up sending domains, warm up inboxes, and scrape hyper-targeted lead lists using intent data."
     },
     {
-      title: "Multi-Channel Outbound Deployment",
-      description: "We launch structured, multi-channel campaigns across Email and LinkedIn. We handle the copywriting, sequence building, reply management, and objection handling. You just take the calls."
+      title: "Multi-Channel Deployment",
+      description: "We launch campaigns across Email and LinkedIn, handle replies, and book meetings. You just take the calls."
     }
   ];
 
@@ -37,7 +37,7 @@ export function Positioning() {
               The ARCH Revenue Engine™
             </h2>
             <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
-              This is not random lead generation. This is a structured, predictable system designed to turn cold prospects into qualified pipeline.
+              A structured, predictable system designed to turn cold prospects into qualified pipeline.
             </p>
           </motion.div>
           <div className="hidden lg:block w-px h-32 bg-zinc-200" />

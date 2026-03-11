@@ -23,7 +23,7 @@ export function EngagementModel() {
               <span className="text-zinc-400">Not Lock-In.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed mb-12 max-w-xl">
-              We don&apos;t ask you to commit to 12 months on faith. Start with a 14-day free pilot to validate targeting and generate your first qualified conversations.
+              We are currently accepting 7 Founding Clients to build our initial case studies. Get the entire system built and managed for free.
             </p>
             <Link 
               href="/strategy-call" 
@@ -43,7 +43,7 @@ export function EngagementModel() {
           >
             <div className="relative z-10 space-y-8">
               {[
-                { title: "The 2-Week Pilot", desc: "Prove the system with a low-risk initial launch." },
+                { title: "Founding Client Program", desc: "Free for the first 7 agencies in exchange for feedback and case studies." },
                 { title: "Monthly Engagement", desc: "Transition to a flat monthly retainer once targets are met." },
                 { title: "Transparent Pricing", desc: "Flat monthly retainer. No hidden costs or percentages." },
                 { title: "Month-to-Month", desc: "No long-term contracts. We earn your business every 30 days." }
@@ -60,7 +60,7 @@ export function EngagementModel() {
               ))}
               <div className="pt-6 border-t border-zinc-200">
                 <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">
-                  Start with a 14-day free pilot. We only win when you win.
+                  Founding Client Program: Free for the first 7 clients.
                 </p>
               </div>
             </div>

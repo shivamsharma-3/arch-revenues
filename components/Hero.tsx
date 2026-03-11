@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.05] mb-8"
           >
-            Predictable Client Acquisition for <span className="text-zinc-400">B2B Agencies</span>
+            Predictable pipeline for <span className="text-zinc-400">B2B Agencies.</span>
           </motion.h1>
 
           <div className="space-y-6 mb-12">
@@ -51,16 +51,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 leading-relaxed max-w-xl"
             >
-              ARCH Revenues helps B2B agencies consistently book qualified sales meetings with companies that may need their services.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="text-lg text-zinc-500 leading-relaxed max-w-xl border-l-2 border-zinc-100 pl-6"
-            >
-              We identify the right prospects, reach out to them through targeted campaigns, and turn them into sales conversations for your team.
+              We build and operate outbound acquisition systems that generate qualified sales meetings.
             </motion.p>
           </div>
 
@@ -92,7 +83,7 @@ export function Hero() {
             className="mt-8"
           >
             <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
-              Start with a 14-day free pilot. Zero risk, pure pipeline.
+              Founding Client Program: Free for the first 7 clients.
             </p>
           </motion.div>
         </div>

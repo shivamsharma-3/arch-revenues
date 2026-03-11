@@ -34,7 +34,7 @@ export function FinalCTA() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mt-1">
-              Start with a 14-day free pilot. Zero risk.
+              Founding Client Program: Free for the first 7 clients.
             </p>
           </div>
         </motion.div>
