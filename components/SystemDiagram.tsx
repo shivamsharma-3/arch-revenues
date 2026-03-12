@@ -24,37 +24,43 @@ export function SystemDiagram() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-2">
-          {steps.map((step, index) => (
-            <div key={index} className="flex flex-col lg:flex-row items-center gap-4 lg:gap-2">
-              <div
-                className={`w-[160px] h-[160px] md:w-[180px] md:h-[180px] p-4 md:p-6 rounded-2xl border text-center flex flex-col items-center justify-center shrink-0 ${
-                  step.highlight 
-                    ? 'bg-white text-zinc-900 border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
-                    : 'bg-zinc-900/50 border-zinc-800 text-zinc-300'
-                } relative z-10`}
-              >
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 shrink-0 ${
-                  step.highlight ? 'bg-zinc-100 text-zinc-900' : 'bg-zinc-800 text-zinc-400'
-                }`}>
-                  {step.icon}
+        <div className="w-full overflow-x-auto pb-6 lg:pb-0 -mx-6 px-6 lg:mx-0 lg:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex flex-row items-center justify-start lg:justify-center gap-2 min-w-max">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-row items-center gap-2">
+                <div
+                  className={`w-[160px] h-[160px] md:w-[180px] md:h-[180px] p-4 md:p-6 rounded-2xl border text-center flex flex-col items-center justify-center shrink-0 ${
+                    step.highlight 
+                      ? 'bg-white text-zinc-900 border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
+                      : 'bg-zinc-900/50 border-zinc-800 text-zinc-300'
+                  } relative z-10`}
+                >
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 shrink-0 ${
+                    step.highlight ? 'bg-zinc-100 text-zinc-900' : 'bg-zinc-800 text-zinc-400'
+                  }`}>
+                    {step.icon}
+                  </div>
+                  <h3 className={`text-sm font-bold mb-1 ${step.highlight ? 'text-zinc-900' : 'text-white'}`}>
+                    {step.title}
+                  </h3>
+                  <p className={`text-[11px] leading-tight ${step.highlight ? 'text-zinc-600' : 'text-zinc-500'}`}>
+                    {step.desc}
+                  </p>
                 </div>
-                <h3 className={`text-sm font-bold mb-1 ${step.highlight ? 'text-zinc-900' : 'text-white'}`}>
-                  {step.title}
-                </h3>
-                <p className={`text-[11px] leading-tight ${step.highlight ? 'text-zinc-600' : 'text-zinc-500'}`}>
-                  {step.desc}
-                </p>
-              </div>
 
-              {index < steps.length - 1 && (
-                <div className="flex items-center justify-center py-2 lg:py-0 lg:px-2">
-                  <ArrowRight className="hidden lg:block w-5 h-5 text-zinc-700" />
-                  <div className="lg:hidden w-px h-8 bg-zinc-800" />
-                </div>
-              )}
-            </div>
-          ))}
+                {index < steps.length - 1 && (
+                  <div className="flex items-center justify-center px-2 shrink-0">
+                    <ArrowRight className="w-5 h-5 text-zinc-700" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center gap-2 mt-6 text-zinc-500 lg:hidden">
+          <span className="text-[10px] uppercase tracking-widest font-mono">Swipe to explore</span>
+          <ArrowRight className="w-3 h-3 animate-pulse" />
         </div>
       </div>
     </section>

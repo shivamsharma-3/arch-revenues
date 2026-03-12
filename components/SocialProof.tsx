@@ -15,29 +15,26 @@ export function SocialProof() {
   return (
     <section className="py-16 border-b border-zinc-200/50 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="shrink-0">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
+          <div className="shrink-0 z-20">
             <p className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-[0.2em]">
               Specialized For
             </p>
           </div>
           
-          <div className="relative flex-grow overflow-hidden">
+          <div className="relative w-full md:w-auto flex-grow overflow-hidden">
             <motion.div 
-              className="flex items-center gap-16 md:gap-32 whitespace-nowrap opacity-40 grayscale py-2"
+              className="flex items-center gap-16 md:gap-32 whitespace-nowrap opacity-40 grayscale py-2 w-max"
               animate={{
                 x: ["0%", "-50%"],
               }}
               transition={{
-                x: {
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 40,
-                  ease: "linear",
-                },
+                repeat: Infinity,
+                ease: "linear",
+                duration: 40,
               }}
             >
-              {[...items, ...items].map((item, index) => (
+              {[...items, ...items, ...items, ...items].map((item, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-3 text-lg font-bold font-sans tracking-tight text-zinc-900"

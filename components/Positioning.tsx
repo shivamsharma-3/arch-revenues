@@ -22,26 +22,26 @@ export function Positioning() {
   return (
     <section id="system" className="py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 items-end mb-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-end justify-between mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="flex-grow"
+            className="max-w-2xl w-full"
           >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-200 text-zinc-600 text-[10px] font-mono font-bold uppercase tracking-widest mb-6">
               The Methodology
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 max-w-2xl mb-6 leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
               The ARCH Revenue Engine™
             </h2>
-            <p className="text-xl text-zinc-600 max-w-2xl leading-relaxed">
+            <p className="text-xl text-zinc-600 leading-relaxed">
               A structured, predictable system designed to turn cold prospects into qualified pipeline.
             </p>
           </motion.div>
-          <div className="hidden lg:block w-px h-32 bg-zinc-200" />
-          <div className="lg:max-w-xs">
+          <div className="hidden lg:block w-px h-32 bg-zinc-200 shrink-0" />
+          <div className="lg:max-w-xs w-full">
             <p className="text-sm text-zinc-500 font-medium leading-relaxed">
               We operate as a specialized extension of your revenue team, removing the friction from outbound acquisition.
             </p>
