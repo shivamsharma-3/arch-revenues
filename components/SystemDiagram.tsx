@@ -26,9 +26,9 @@ export function SystemDiagram() {
 
         <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-2">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col lg:flex-row items-center gap-4 lg:gap-2 w-full lg:w-auto">
+            <div key={index} className="flex flex-col lg:flex-row items-center gap-4 lg:gap-2">
               <div
-                className={`w-full lg:w-[180px] h-[180px] p-6 rounded-2xl border text-center flex flex-col items-center justify-center ${
+                className={`w-[160px] h-[160px] md:w-[180px] md:h-[180px] p-4 md:p-6 rounded-2xl border text-center flex flex-col items-center justify-center shrink-0 ${
                   step.highlight 
                     ? 'bg-white text-zinc-900 border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
                     : 'bg-zinc-900/50 border-zinc-800 text-zinc-300'

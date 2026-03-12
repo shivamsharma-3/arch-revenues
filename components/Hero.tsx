@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const phrases = ["Revenue by Design", "Acquisition, Systematized"];
+const phrases = ["Revenue by Design", "Acquisition, Systematized", "B2B Outbound Systems"];
 
 export function Hero() {
   const [currentPhrase, setCurrentPhrase] = useState(0);
@@ -13,7 +13,7 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhrase((prev) => (prev + 1) % phrases.length);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,10 +28,24 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            className="mb-8"
           >
-            <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-[11px] font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              B2B Outbound Revenue Systems
+            <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-[11px] font-mono font-bold tracking-wider uppercase border border-zinc-200 overflow-hidden relative">
+              <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse shrink-0" />
+              <div className="relative h-4 w-[200px] sm:w-[220px]">
+                <AnimatePresence mode="popLayout">
+                  <motion.span
+                    key={currentPhrase}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="absolute inset-0 whitespace-nowrap"
+                  >
+                    {phrases[currentPhrase]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
             </span>
           </motion.div>
 
@@ -114,20 +128,43 @@ export function Hero() {
               />
             ))}
 
+            {/* Pipeline UI Mockup */}
             <div className="relative z-10 w-full h-full flex items-center justify-center">
-              <motion.div
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="w-3/5 h-3/5 flex items-center justify-center"
-              >
-                <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full text-zinc-900 drop-shadow-xl">
-                  <path d="M50 2 L56 12 L50 22 L44 12 Z" />
-                  <path d="M43 28 L12 95 L38 95 L48 55 Z" />
-                  <path d="M57 28 L88 95 L62 95 L52 55 Z" />
-                  <path d="M49 28 L51 28 L51 65 L49 65 Z" />
-                  <path d="M50 75 L56 85 L50 95 L44 85 Z" />
-                </svg>
-              </motion.div>
+              <div className="w-full max-w-sm bg-white/80 backdrop-blur-xl border border-zinc-200/80 rounded-3xl p-8 shadow-2xl">
+                <div className="flex items-center justify-between mb-8">
+                  <div className="space-y-2">
+                    <div className="h-3 w-24 bg-zinc-200 rounded-full" />
+                    <div className="h-2 w-16 bg-zinc-100 rounded-full" />
+                  </div>
+                  <div className="h-10 w-10 rounded-full bg-zinc-50 border border-zinc-100 flex items-center justify-center shadow-sm">
+                    <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                  </div>
+                </div>
+                
+                <div className="space-y-5">
+                  {[
+                    { label: "Prospects", value: "2,400", width: "100%" },
+                    { label: "Contacted", value: "1,850", width: "75%" },
+                    { label: "Replies", value: "142", width: "35%" },
+                    { label: "Meetings", value: "18", width: "15%" },
+                  ].map((stat, i) => (
+                    <div key={i} className="space-y-2">
+                      <div className="flex justify-between text-[11px] font-mono font-semibold uppercase tracking-wider text-zinc-500">
+                        <span>{stat.label}</span>
+                        <span className="text-zinc-900">{stat.value}</span>
+                      </div>
+                      <div className="h-2.5 w-full bg-zinc-100 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: stat.width }}
+                          transition={{ duration: 1.5, delay: 0.5 + i * 0.2, ease: "easeOut" }}
+                          className="h-full bg-zinc-900 rounded-full"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Floating Stats/Labels */}
@@ -135,12 +172,12 @@ export function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
-              className="absolute top-1/4 -right-2 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
+              className="absolute top-1/4 -right-6 bg-white p-4 rounded-2xl border border-zinc-200 shadow-xl"
             >
-              <div className="text-[8px] font-mono uppercase tracking-widest text-zinc-400 mb-0.5">Status</div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-bold text-zinc-900">System Active</span>
+              <div className="text-[9px] font-mono uppercase tracking-widest text-zinc-400 mb-1">Status</div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-bold text-zinc-900">System Active</span>
               </div>
             </motion.div>
 
@@ -148,10 +185,10 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2 }}
-              className="absolute bottom-1/4 -left-2 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
+              className="absolute bottom-1/4 -left-6 bg-white p-4 rounded-2xl border border-zinc-200 shadow-xl"
             >
-              <div className="text-[8px] font-mono uppercase tracking-widest text-zinc-400 mb-0.5">Performance</div>
-              <div className="text-[10px] font-bold text-zinc-900">8-18 Meetings / Month</div>
+              <div className="text-[9px] font-mono uppercase tracking-widest text-zinc-400 mb-1">Performance</div>
+              <div className="text-xs font-bold text-zinc-900">8-18 Meetings / Mo</div>
             </motion.div>
           </motion.div>
         </div>
