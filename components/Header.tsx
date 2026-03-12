@@ -51,14 +51,14 @@ export function Header() {
           </span>
         </Link>
         
-        <nav className={`hidden md:flex items-center gap-6 text-sm font-medium ${navTextColorClass}`}>
+        <nav className={`hidden lg:flex items-center gap-6 text-sm font-medium ${navTextColorClass}`}>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link 
                 key={link.name} 
                 href={link.href} 
-                className={`relative py-1 transition-colors duration-200 ${isActive ? activeNavColorClass : navHoverColorClass}`}
+                className={`relative py-1 transition-colors duration-200 whitespace-nowrap ${isActive ? activeNavColorClass : navHoverColorClass}`}
               >
                 {link.name}
                 {isActive && (
@@ -73,11 +73,11 @@ export function Header() {
           })}
         </nav>
 
-        <Link href="/strategy-call" className={`hidden md:inline-flex text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 ${buttonClass}`}>
+        <Link href="/strategy-call" className={`hidden lg:inline-flex text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 shrink-0 ${buttonClass}`}>
           Book Strategy Call
         </Link>
 
-        <button className="md:hidden p-2" onClick={() => setIsMobileMenuOpen(true)}>
+        <button className="lg:hidden p-2" onClick={() => setIsMobileMenuOpen(true)}>
           <Menu className="w-6 h-6" />
         </button>
       </div>
