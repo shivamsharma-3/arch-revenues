@@ -24,9 +24,9 @@ export function SystemDiagram() {
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-2">
+        <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-2 lg:flex-nowrap lg:overflow-x-auto lg:pb-2">
           {steps.map((step, index) => (
-            <div key={index} className="flex flex-col lg:flex-row items-center gap-4 lg:gap-2">
+            <div key={index} className="flex items-center gap-4 lg:gap-2 shrink-0">
               <div
                 className={`w-[160px] h-[160px] md:w-[180px] md:h-[180px] p-4 md:p-6 rounded-2xl border text-center flex flex-col items-center justify-center shrink-0 ${
                   step.highlight 
