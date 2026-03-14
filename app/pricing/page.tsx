@@ -55,9 +55,6 @@ export default function PricingPage() {
                     </p>
                   </div>
                 </div>
-                <p className="text-sm text-zinc-500 italic">
-                  Typically $1000–$2000/mo based on scope.
-                </p>
               </div>
 
               <div className="bg-zinc-900 text-white rounded-3xl p-8 shadow-xl sticky top-32">

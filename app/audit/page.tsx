@@ -351,10 +351,10 @@ export default function AuditPage() {
                   onChange={handleCustomSelectChange}
                   required
                   options={[
-                    { label: "Under $5k", value: "Under $5k" },
-                    { label: "$5k - $15k", value: "$5k - $15k" },
-                    { label: "$15k - $40k", value: "$15k - $40k" },
-                    { label: "$40k+", value: "$40k+" },
+                    { label: "Under 5k", value: "Under 5k" },
+                    { label: "5k - 15k", value: "5k - 15k" },
+                    { label: "15k - 40k", value: "15k - 40k" },
+                    { label: "40k+", value: "40k+" },
                   ]}
                 />
                 <div className="md:col-span-2">
@@ -365,10 +365,10 @@ export default function AuditPage() {
                     onChange={handleCustomSelectChange}
                     required
                     options={[
-                      { label: "Under $1k", value: "Under $1k" },
-                      { label: "$1k–$5k", value: "$1k–$5k" },
-                      { label: "$5k–$15k", value: "$5k–$15k" },
-                      { label: "$15k+", value: "$15k+" },
+                      { label: "Under 1k", value: "Under 1k" },
+                      { label: "1k–5k", value: "1k–5k" },
+                      { label: "5k–15k", value: "5k–15k" },
+                      { label: "15k+", value: "15k+" },
                     ]}
                   />
                 </div>

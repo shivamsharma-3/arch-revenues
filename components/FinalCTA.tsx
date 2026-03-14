@@ -19,18 +19,18 @@ export function FinalCTA() {
             Ready to Scale?
           </div>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6 leading-[1.1]">
-            Stop hoping for referrals.<br />
-            <span className="text-zinc-500">Start engineering revenue.</span>
+            Stop waiting for referrals.<br />
+            <span className="text-zinc-500">Start building predictable revenue.</span>
           </h2>
           <p className="text-base text-zinc-400 leading-relaxed mb-8 max-w-lg mx-auto">
-            You already know how to deliver exceptional work. It&apos;s time to build the predictable acquisition system that scales your agency.
+            You already deliver exceptional work. Now it&apos;s time to build a reliable acquisition system to scale your agency.
           </p>
           <div className="flex flex-col items-center gap-4">
             <Link 
               href="/strategy-call" 
               className="group flex items-center gap-3 bg-white text-zinc-900 px-6 py-3 rounded-xl font-bold hover:bg-zinc-100 transition-all text-base shadow-xl shadow-white/5"
             >
-              Book Strategy Call
+              Book a Strategy Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mt-1">

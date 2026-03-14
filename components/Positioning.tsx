@@ -6,23 +6,23 @@ import { X, Check } from 'lucide-react';
 export function Positioning() {
   const steps = [
     {
-      title: "Positioning Optimization",
-      description: "We analyze your best case studies and engineer angles that resonate with decision-makers."
+      title: "Message Optimization",
+      description: "We analyze your best case studies to craft outreach that resonates with decision-makers."
     },
     {
       title: "Targeting & Infrastructure",
-      description: "We set up sending domains, warm up inboxes, and scrape hyper-targeted lead lists using intent data."
+      description: "We build verified lead lists and set up the technical infrastructure to ensure your emails land in the inbox."
     },
     {
       title: "Multi-Channel Deployment",
-      description: "We launch campaigns across Email and LinkedIn, handle replies, and book meetings. You just take the calls."
+      description: "We launch campaigns, handle the initial replies, and book the meetings. You just take the sales calls."
     }
   ];
 
   return (
     <section id="system" className="py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-end justify-between mb-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center justify-between mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -31,19 +31,19 @@ export function Positioning() {
             className="max-w-2xl w-full"
           >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-200 text-zinc-600 text-[10px] font-mono font-bold uppercase tracking-widest mb-6">
-              The Methodology
+              Our Methodology
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
-              The ARCH Revenue Engine™
+              The ARCH Revenue System
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed">
-              A structured, predictable system designed to turn cold prospects into qualified pipeline.
+              A proven, step-by-step system designed to turn cold prospects into qualified meetings.
             </p>
           </motion.div>
           <div className="hidden lg:block w-px h-32 bg-zinc-200 shrink-0" />
-          <div className="lg:max-w-xs w-full">
-            <p className="text-sm text-zinc-500 font-medium leading-relaxed">
-              We operate as a specialized extension of your revenue team, removing the friction from outbound acquisition.
+          <div className="lg:max-w-sm w-full">
+            <p className="text-lg text-zinc-500 font-medium leading-relaxed">
+              We act as a specialized extension of your team, taking the heavy lifting out of finding new clients.
             </p>
           </div>
         </div>
@@ -62,10 +62,10 @@ export function Positioning() {
                 <div className="text-4xl font-mono font-bold text-zinc-100 mb-6">
                   0{index + 1}
                 </div>
-                <h3 className="text-lg font-bold text-zinc-900 mb-3">
+                <h3 className="text-xl font-bold text-zinc-900 mb-3">
                   {step.title}
                 </h3>
-                <p className="text-zinc-600 leading-relaxed text-xs">
+                <p className="text-zinc-600 leading-relaxed text-sm md:text-base">
                   {step.description}
                 </p>
               </div>

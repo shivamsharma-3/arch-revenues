@@ -7,23 +7,23 @@ import Link from 'next/link';
 export function Problem() {
   const problems = [
     {
-      title: "Inconsistent Referrals",
-      description: "Word-of-mouth doesn't scale.",
+      title: "Unpredictable Referrals",
+      description: "Relying solely on word-of-mouth limits your growth.",
       icon: Users
     },
     {
       title: "Founder-Led Sales",
-      description: "Wasting hours on manual outreach.",
+      description: "Spending too much time on manual outreach instead of closing deals.",
       icon: Clock
     },
     {
-      title: "Expensive SDRs",
-      description: "Internal hires cost $60k+ and take months to ramp.",
+      title: "Expensive Sales Teams",
+      description: "Internal hires are costly and take months to become profitable.",
       icon: TrendingDown
     },
     {
-      title: "Poor Outreach",
-      description: "Generic campaigns damage your brand.",
+      title: "Ineffective Outreach",
+      description: "Generic campaigns yield low responses and damage your brand.",
       icon: Mail
     }
   ];
@@ -40,10 +40,10 @@ export function Problem() {
             className="lg:sticky lg:top-24"
           >
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
-              Why Agencies <span className="text-zinc-400">Struggle</span>
+              Why Agencies <span className="text-zinc-400">Struggle to Grow</span>
             </h2>
             <p className="text-lg text-zinc-600 mb-8">
-              You don&apos;t need more leads. You need a predictable revenue system.
+              You don&apos;t just need more leads. You need a reliable system to acquire clients.
             </p>
             <Link 
               href="/strategy-call"

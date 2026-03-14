@@ -74,7 +74,7 @@ export function Header() {
         </nav>
 
         <Link href="/strategy-call" className={`hidden lg:inline-flex text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 shrink-0 ${buttonClass}`}>
-          Book Strategy Call
+          Book a Strategy Call
         </Link>
 
         <button className="lg:hidden p-2" onClick={() => setIsMobileMenuOpen(true)}>
@@ -100,7 +100,7 @@ export function Header() {
               ))}
             </nav>
             <Link href="/strategy-call" onClick={() => setIsMobileMenuOpen(false)} className="w-full bg-white text-zinc-950 text-center py-4 rounded-xl font-semibold text-lg">
-              Book Strategy Call
+              Book a Strategy Call
             </Link>
           </motion.div>
         )}

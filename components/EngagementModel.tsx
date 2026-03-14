@@ -16,22 +16,36 @@ export function EngagementModel() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-500 text-[10px] font-mono font-bold uppercase tracking-widest mb-8">
-              The Engagement
+              The Engagement Model
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-8 leading-[1.1]">
-              Structured for ROI,<br />
-              <span className="text-zinc-400">Not Lock-In.</span>
+              Structured for Results,<br />
+              <span className="text-zinc-400">Not Long-Term Contracts.</span>
             </h2>
-            <p className="text-xl text-zinc-600 leading-relaxed mb-12 max-w-xl">
-              We are currently accepting 7 Founding Clients to build our initial case studies. Get the entire system built and managed for free.
+            <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-xl">
+              We are accepting 7 Founding Clients to build our initial case studies. Get the entire system built and managed for free.
             </p>
-            <Link 
-              href="/strategy-call" 
-              className="group inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all shadow-xl shadow-zinc-900/10"
-            >
-              Book Strategy Call
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+
+            <div className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl mb-12">
+              <div className="flex items-center justify-center w-6 h-6 rounded-full bg-zinc-900 text-white shrink-0">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-zinc-900 font-bold text-sm md:text-base tracking-tight">
+                10 Meetings in 60 Days or You Don&apos;t Pay.
+              </span>
+            </div>
+
+            <div>
+              <Link 
+                href="/strategy-call" 
+                className="group inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all shadow-xl shadow-zinc-900/10"
+              >
+                Book a Strategy Call
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </motion.div>
 
           <motion.div
@@ -44,9 +58,9 @@ export function EngagementModel() {
             <div className="relative z-10 space-y-8">
               {[
                 { title: "Founding Client Program", desc: "Free for the first 7 agencies in exchange for feedback and case studies." },
-                { title: "Monthly Engagement", desc: "Transition to a flat monthly retainer once targets are met." },
-                { title: "Transparent Pricing", desc: "Flat monthly retainer. No hidden costs or percentages." },
-                { title: "Month-to-Month", desc: "No long-term contracts. We earn your business every 30 days." }
+                { title: "Monthly Retainer", desc: "Transition to a flat monthly rate once we hit your targets." },
+                { title: "Transparent Pricing", desc: "A flat monthly rate with no hidden costs or percentages." },
+                { title: "Month-to-Month", desc: "No long-term lock-in. We earn your business every 30 days." }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-mono text-xs font-bold text-zinc-400">

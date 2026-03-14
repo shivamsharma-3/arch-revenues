@@ -14,27 +14,27 @@ export function FAQ() {
   const faqs = [
     {
       q: "What exactly does ARCH Revenues do?",
-      a: "ARCH Revenues builds and operates outbound acquisition systems for B2B agencies. We design targeted outreach campaigns that consistently book qualified sales meetings with potential clients.",
+      a: "We build and manage outbound sales systems for B2B agencies. We design targeted outreach campaigns that consistently book qualified sales meetings with your ideal clients.",
     },
     {
       q: "How long before we see results?",
-      a: "Month 1 is for building the infrastructure and launching. You may see initial calls late in Month 1, but the system is designed to hit full stride (8-15 calls/month) by Month 2 and 3.",
+      a: "Month 1 is dedicated to building the infrastructure and launching. While you may see initial calls late in Month 1, the system is designed to reach full performance (8-15 calls/month) by Months 2 and 3.",
     },
     {
       q: "What happens in Month 1?",
-      a: "We run an ICP refinement workshop, develop your messaging, build lead lists, set up domains and inboxes, and begin the warming process. By the end of the month, campaigns are live.",
+      a: "We refine your target audience, develop your messaging, build lead lists, set up sending domains, and begin the warming process. By the end of the month, campaigns are live.",
     },
     {
       q: "Do you guarantee meetings?",
-      a: "No. We guarantee the execution of a proven system. We focus on qualified calls, not just any pulse with a calendar. Our Founding Client Program is our risk reversal.",
+      a: "Yes. We guarantee 10 qualified meetings in your first 60 days, or you don't pay. We focus on qualified calls rather than just filling your calendar with anyone. Our Founding Client Program is designed to completely remove the risk for you.",
     },
     {
       q: "We've tried cold email before — why would this be different?",
-      a: "Cold email fails when one piece of the chain breaks—poor deliverability, bad lists, generic copy, or missed follow-ups. We build and operate the entire chain as a cohesive system, not a fragmented side project.",
+      a: "Cold email fails when one piece of the process breaks—like poor deliverability, bad lists, or generic copy. We build and operate the entire chain as a cohesive system.",
     },
     {
       q: "We mainly get referrals. Do we actually need this?",
-      a: "Referrals are excellent, but they are unpredictable. Outbound isn't meant to replace referrals; it's meant to provide a baseline of predictable pipeline so you aren't at the mercy of your network.",
+      a: "Referrals are excellent, but they are unpredictable. Outbound provides a baseline of predictable pipeline so you aren't entirely dependent on your network.",
     },
     {
       q: "Who handles the replies — you or us?",
@@ -42,19 +42,19 @@ export function FAQ() {
     },
     {
       q: "Do we sign a long-term contract?",
-      a: "No. We start with the Founding Client Program. After that, it's a month-to-month engagement. We keep you by delivering results, not through legal lock-in.",
+      a: "No. We start with the Founding Client Program. After that, it's a month-to-month engagement. We keep you by delivering results, not through long-term contracts.",
     },
     {
       q: 'What does a "qualified call" mean to you?',
-      a: "A decision-maker at a company that fits your exact ICP, who understands what you do, and has agreed to a meeting to discuss a potential engagement.",
+      a: "A decision-maker at a company that fits your ideal client profile, who understands what you do, and has agreed to a meeting to discuss working together.",
     },
     {
-      q: "How much does it cost?",
-      a: "Engagements typically start between $500 and $1500 per month, depending on the required volume. There are no setup fees.",
+      q: "How does the Founding Client Program work?",
+      a: "We are currently accepting 7 founding clients who get the entire system built and managed for free. In exchange, we ask for honest feedback and a case study. Once targets are met, we transition to a simple monthly retainer. Spots are limited — book a strategy call to apply.",
     },
     {
       q: "What do we need to provide on our end?",
-      a: "We need 30 minutes of your time for the initial ICP workshop, and you need to show up to the sales calls we book. We handle the rest.",
+      a: "We need 30 minutes of your time for an initial strategy workshop, and you need to show up to the sales calls we book. We handle the rest.",
     },
   ];
 
@@ -86,7 +86,7 @@ export function FAQ() {
           className="mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
-            Clear Answers to Reasonable Doubts
+            Frequently Asked Questions
           </h2>
         </motion.div>
 

@@ -21,7 +21,7 @@ export default function FounderPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-12 text-lg text-zinc-600 leading-relaxed">
               <p className="text-2xl font-medium text-zinc-900 leading-snug">
-                Hi, I&apos;m Shivam, founder of ARCH Revenues in Hyderabad. I started this because great B2B agencies struggle with one thing: unpredictable pipeline.
+                Hi, I&apos;m Shivam, founder of ARCH Revenues. I started this because great B2B agencies struggle with one thing: unpredictable pipeline.
               </p>
               
               <p>

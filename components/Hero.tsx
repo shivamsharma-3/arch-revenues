@@ -31,7 +31,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-[11px] font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              B2B Outbound Revenue Systems
+              B2B Client Acquisition
             </span>
           </motion.div>
 
@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.05] mb-8"
           >
-            Predictable pipeline for <span className="text-zinc-400">B2B Agencies.</span>
+            Predictable growth for <span className="text-zinc-400">B2B Agencies.</span>
           </motion.h1>
 
           <div className="space-y-6 mb-12">
@@ -51,8 +51,24 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 leading-relaxed max-w-xl"
             >
-              We build and operate outbound acquisition systems that generate qualified sales meetings.
+              We build and manage outbound sales systems that consistently generate qualified meetings.
             </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl"
+            >
+              <div className="flex items-center justify-center w-6 h-6 rounded-full bg-zinc-900 text-white shrink-0">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-zinc-900 font-bold text-sm md:text-base tracking-tight">
+                10 Meetings in 60 Days or You Don&apos;t Pay.
+              </span>
+            </motion.div>
           </div>
 
           <motion.div
@@ -65,14 +81,14 @@ export function Hero() {
               href="/strategy-call"
               className="group flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
-              Book Strategy Call
+              Book a Strategy Call
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/audit"
               className="flex items-center justify-center gap-2 text-zinc-600 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-50 transition-all border border-transparent hover:border-zinc-200"
             >
-              Get Free Revenue Audit
+              Get a Free Revenue Audit
             </Link>
           </motion.div>
 
@@ -151,7 +167,7 @@ export function Hero() {
               className="absolute bottom-1/4 -left-2 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
             >
               <div className="text-[8px] font-mono uppercase tracking-widest text-zinc-400 mb-0.5">Performance</div>
-              <div className="text-[10px] font-bold text-zinc-900">8-18 Meetings / Month</div>
+              <div className="text-[10px] font-bold text-zinc-900">10-20 Meetings / Month</div>
             </motion.div>
           </motion.div>
         </div>

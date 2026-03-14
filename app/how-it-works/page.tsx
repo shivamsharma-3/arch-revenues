@@ -18,10 +18,10 @@ export default function HowItWorksPage() {
   ];
 
   const tools = [
-    { name: "Apollo & Crunchbase", use: "Data & Intent" },
-    { name: "Smartlead / Instantly", use: "Email Sending" },
-    { name: "Clay", use: "Enrichment" },
-    { name: "LinkedIn Sales Nav", use: "Social Selling" }
+    { name: "Apollo", use: "Finding verified B2B contact data" },
+    { name: "Brevo", use: "High-volume email sending & delivery" },
+    { name: "Make", use: "Automating workflows & CRM syncing" },
+    { name: "LinkedIn", use: "Targeted social selling & prospect research" }
   ];
 
   return (
@@ -54,12 +54,13 @@ export default function HowItWorksPage() {
                 </div>
 
                 <div className="mt-16 pt-12 border-t border-zinc-200">
-                  <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Tools & Infrastructure</h2>
-                  <div className="grid grid-cols-2 gap-4">
+                  <h2 className="text-2xl font-semibold text-zinc-900 mb-6">The Modern Outbound Stack</h2>
+                  <p className="text-zinc-600 mb-8">We don&apos;t just guess. We use the best tools available to ensure your messages land in the primary inbox and actually get read.</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {tools.map((tool, index) => (
-                      <div key={index} className="bg-zinc-50 border border-zinc-200 p-4 rounded-xl">
-                        <h4 className="font-semibold text-zinc-900 text-sm mb-1">{tool.name}</h4>
-                        <p className="text-xs text-zinc-500">{tool.use}</p>
+                      <div key={index} className="bg-zinc-50 border border-zinc-200 p-5 rounded-xl hover:border-zinc-300 transition-colors">
+                        <h4 className="font-semibold text-zinc-900 text-sm mb-2">{tool.name}</h4>
+                        <p className="text-xs text-zinc-500 leading-relaxed">{tool.use}</p>
                       </div>
                     ))}
                   </div>
