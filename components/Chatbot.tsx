@@ -6,8 +6,9 @@ import { MessageSquare, X, Send, Loader2, Bot } from "lucide-react";
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import Markdown from "react-markdown";
 
-// Initialize Gemini
-const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
+// Initialize Gemini safely
+const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +23,7 @@ export function Chatbot() {
   const chatRef = useRef<any>(null);
 
   useEffect(() => {
-    if (!chatRef.current) {
+    if (!chatRef.current && ai) {
       chatRef.current = ai.chats.create({
         model: "gemini-3-flash-preview",
         config: {
@@ -57,7 +58,13 @@ That sounds great! We can help with that.
     setIsLoading(true);
 
     try {
-      if (!chatRef.current) return;
+      if (!chatRef.current) {
+        setMessages((prev) => [
+          ...prev,
+          { role: "model", text: "Chat is currently unavailable. Please check API configuration." },
+        ]);
+        return;
+      }
       
       const response = await chatRef.current.sendMessageStream({
         message: text,
