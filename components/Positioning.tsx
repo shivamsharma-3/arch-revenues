@@ -6,16 +6,16 @@ import { X, Check } from 'lucide-react';
 export function Positioning() {
   const steps = [
     {
-      title: "Message Optimization",
-      description: "We analyze your best case studies to craft outreach that resonates with decision-makers."
+      title: "AI Lead Enrichment",
+      description: "We use AI to deeply analyze and enrich lead lists, ensuring we only target highly qualified decision-makers."
     },
     {
-      title: "Targeting & Infrastructure",
-      description: "We build verified lead lists and set up the technical infrastructure to ensure your emails land in the inbox."
+      title: "AI-Drafted Personalization",
+      description: "We generate hyper-personalized first lines at scale, ensuring your outreach stands out in crowded inboxes."
     },
     {
-      title: "Multi-Channel Deployment",
-      description: "We launch campaigns, handle the initial replies, and book the meetings. You just take the sales calls."
+      title: "Human Closer Oversight",
+      description: "Our expert team handles the replies, overcomes objections, and books the meetings. You just take the sales calls."
     }
   ];
 

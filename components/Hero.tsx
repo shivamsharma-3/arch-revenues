@@ -51,7 +51,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 leading-relaxed max-w-xl"
             >
-              We build and manage outbound sales systems that consistently generate qualified meetings.
+              We build AI-driven outbound systems with human closer oversight to consistently generate qualified meetings.
             </motion.p>
             
             <motion.div

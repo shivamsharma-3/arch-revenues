@@ -18,7 +18,7 @@ export function FAQ() {
     },
     {
       q: "How long before we see results?",
-      a: "Month 1 is dedicated to building the infrastructure and launching. While you may see initial calls late in Month 1, the system is designed to reach full performance (8-15 calls/month) by Months 2 and 3.",
+      a: "Month 1 is dedicated to building the infrastructure and launching. While you may see initial calls late in Month 1, the system is designed to reach full performance (10-20 calls/month) by Months 2 and 3.",
     },
     {
       q: "What happens in Month 1?",
@@ -29,8 +29,8 @@ export function FAQ() {
       a: "Yes. We guarantee 10 qualified meetings in your first 60 days, or you don't pay. We focus on qualified calls rather than just filling your calendar with anyone. Our Founding Client Program is designed to completely remove the risk for you.",
     },
     {
-      q: "We've tried cold email before — why would this be different?",
-      a: "Cold email fails when one piece of the process breaks—like poor deliverability, bad lists, or generic copy. We build and operate the entire chain as a cohesive system.",
+      q: "We've tried outbound before — why would this be different?",
+      a: "Traditional outbound fails when one piece of the process breaks—like poor deliverability, bad lists, or generic copy. We use an AI-driven outbound system for deep lead enrichment and personalized first lines, combined with human closer oversight to ensure quality and book the meeting.",
     },
     {
       q: "We mainly get referrals. Do we actually need this?",

@@ -5,15 +5,15 @@ import { Check } from "lucide-react";
 export default function HowItWorksPage() {
   const steps = [
     { title: "Strategy & ICP", description: "Identify ideal customers and buying triggers." },
-    { title: "Infrastructure", description: "Build outbound system with warmed-up domains." },
-    { title: "Campaign Launch", description: "Personalized outreach via Email & LinkedIn." },
-    { title: "Reply Management", description: "Handle responses and book qualified meetings." },
+    { title: "AI Lead Enrichment", description: "Deep data scraping to build highly targeted, verified lead lists." },
+    { title: "AI-Drafted Personalization", description: "Generate hyper-personalized first lines at scale for Email & LinkedIn." },
+    { title: "Human Closer Oversight", description: "Our team handles responses, overcomes objections, and books qualified meetings." },
     { title: "Scale", description: "Optimize angles and scale volume." }
   ];
 
   const timeline = [
-    { time: "Week 1–2", title: "Setup", items: ["ICP Deep Dive", "Domain Warmup"] },
-    { time: "Week 3–4", title: "Launch", items: ["Campaign Activation", "A/B Testing"] },
+    { time: "Week 1–2", title: "Setup", items: ["ICP Deep Dive", "AI Enrichment Setup"] },
+    { time: "Week 3–4", title: "Launch", items: ["AI Personalization", "Campaign Activation"] },
     { time: "Month 2+", title: "Scale", items: ["Volume Scaling", "Predictable Flow"] }
   ];
 
@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
             How The Engine Works
           </h1>
           <p className="text-xl text-zinc-600">
-            A look under the hood of our predictable outbound system.
+            A look under the hood of our AI-driven outbound system.
           </p>
         </section>
 

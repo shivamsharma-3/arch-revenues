@@ -42,7 +42,7 @@ export function Comparison() {
             <div className="bg-white p-6 font-medium text-zinc-600">Approach</div>
             <div className="bg-white p-6 text-zinc-600">Manual prospecting</div>
             <div className="bg-white p-6 text-zinc-600">High-volume, generic outreach</div>
-            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">Targeted outbound system</div>
+            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">AI-driven outbound system</div>
 
             {/* Focus Row */}
             <div className="bg-white p-6 font-medium text-zinc-600">Primary Focus</div>

@@ -41,7 +41,7 @@ export default function PilotProgramPage() {
                 To prove the system works, the first 7 agencies get the full program completely free in exchange for feedback and permission to create case studies. No credit card. No contracts. No fluff.
               </p>
               <p>
-                We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact LinkedIn messages and emails we send, the replies we get, and any meetings that come from it.
+                We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact AI-personalized messages we send, the replies we get, and any meetings that come from it.
               </p>
               <p>
                 If it generates real qualified calls for your agency, great—we can talk about a monthly engagement after. If not, no hard feelings.

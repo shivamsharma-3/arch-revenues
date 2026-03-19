@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "ARCH Revenues | Outbound Acquisition Systems for B2B Agencies",
   description:
-    "We build and operate outbound acquisition systems exclusively for B2B agencies. Get consistent, qualified sales calls without learning cold email or hiring a full-time SDR.",
+    "We build and operate AI-driven outbound acquisition systems exclusively for B2B agencies. Get consistent, qualified sales calls without managing complex AI tools or hiring a full-time SDR.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "ARCH Revenues",
     "url": "https://archrevenues.com",
-    "description": "We build and operate outbound acquisition systems exclusively for B2B agencies.",
+    "description": "We build and operate AI-driven outbound acquisition systems exclusively for B2B agencies.",
   };
 
   return (

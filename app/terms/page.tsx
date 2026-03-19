@@ -51,7 +51,7 @@ export default function TermsPage() {
               <p className="text-zinc-600 leading-relaxed text-sm">
                 ARCH Revenues builds and operates outbound acquisition systems
                 for B2B service businesses. Services include ICP definition,
-                lead list construction, cold email copywriting and sequencing,
+                lead list construction, AI-drafted outbound copywriting and sequencing,
                 infrastructure setup, reply handling, meeting booking, and
                 performance reporting. Specific scope is defined in each
                 engagement agreement.
