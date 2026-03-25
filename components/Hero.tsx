@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.05] mb-8"
           >
-            Predictable growth for <span className="text-zinc-400">B2B Agencies.</span>
+            Predictable growth for <span className="text-zinc-400 italic font-serif">B2B Agencies.</span>
           </motion.h1>
 
           <div className="space-y-6 mb-12">
@@ -51,7 +51,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 leading-relaxed max-w-xl"
             >
-              We build AI-driven outbound systems with human closer oversight to consistently generate qualified meetings.
+              We aim to build and run a consistent AI + human outbound system designed to generate a steady flow of qualified meetings.
             </motion.p>
             
             <motion.div
@@ -66,7 +66,7 @@ export function Hero() {
                 </svg>
               </div>
               <span className="text-zinc-900 font-bold text-sm md:text-base tracking-tight">
-                10 Meetings in 60 Days or You Don&apos;t Pay.
+                Founding Client Program: Free for the first 7 Agencies.
               </span>
             </motion.div>
           </div>
@@ -81,14 +81,14 @@ export function Hero() {
               href="/strategy-call"
               className="group flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
-              Book a Strategy Call
+              Apply for Founding Program
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
-              href="/audit"
+              href="/how-it-works"
               className="flex items-center justify-center gap-2 text-zinc-600 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-50 transition-all border border-transparent hover:border-zinc-200"
             >
-              Get a Free Revenue Audit
+              How it works
             </Link>
           </motion.div>
 

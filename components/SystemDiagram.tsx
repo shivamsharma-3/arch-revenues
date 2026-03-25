@@ -4,15 +4,14 @@ import { ArrowRight, Database, Target, Calendar, BarChart3, TrendingUp } from 'l
 
 export function SystemDiagram() {
   const steps = [
-    { title: "AI Enrichment", desc: "Deeply verified lead lists", icon: <Database className="w-5 h-5" /> },
-    { title: "AI Personalization", desc: "Hyper-personalized outreach", icon: <Target className="w-5 h-5" />, highlight: true },
-    { title: "Human Oversight", desc: "Expert reply handling", icon: <Calendar className="w-5 h-5" /> },
-    { title: "Qualified Prospects", desc: "High-intent conversations", icon: <BarChart3 className="w-5 h-5" /> },
-    { title: "New Clients", desc: "Predictable revenue", icon: <TrendingUp className="w-5 h-5" /> },
+    { title: "AI Lead Enrichment", desc: "We find your ideal clients and verify their data with 99% accuracy.", icon: <Database className="w-5 h-5" /> },
+    { title: "AI Personalization", desc: "Hyper-personalized outreach that sounds like it was written by you.", icon: <Target className="w-5 h-5" />, highlight: true },
+    { title: "Human Oversight", desc: "Our team handles the replies and qualifies every single lead.", icon: <Calendar className="w-5 h-5" /> },
+    { title: "Qualified Meetings", desc: "You wake up to a calendar full of high-intent sales calls.", icon: <TrendingUp className="w-5 h-5" /> },
   ];
 
   return (
-    <section className="py-24 px-6 bg-zinc-950 text-white overflow-hidden relative">
+    <section id="how-it-works" className="py-24 px-6 bg-zinc-950 text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent)] pointer-events-none" />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">

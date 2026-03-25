@@ -26,7 +26,10 @@ export function Footer() {
         </div>
         
         <div className="text-center text-sm text-zinc-500">
-          © {new Date().getFullYear()} ARCH Revenues.
+          © {new Date().getFullYear()} ARCH Revenues. <br />
+          <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+            Hyderabad, India • shivam@archrevenues.com
+          </span>
         </div>
 
         <div className="flex items-center justify-center md:justify-end gap-6 text-sm text-zinc-500">

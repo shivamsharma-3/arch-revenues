@@ -19,23 +19,26 @@ export function FinalCTA() {
             Ready to Scale?
           </div>
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-6 leading-[1.1]">
-            Stop waiting for referrals.<br />
-            <span className="text-zinc-500">Start building predictable revenue.</span>
+            Ready to build your <br />
+            <span className="text-zinc-500 italic font-serif">Revenue Engine?</span>
           </h2>
           <p className="text-base text-zinc-400 leading-relaxed mb-8 max-w-lg mx-auto">
-            You already deliver exceptional work. Now it&apos;s time to build a reliable acquisition system to scale your agency.
+            We&apos;re currently looking for our first 7 partners to join our Founding Client Program for free. Let&apos;s see if we&apos;re a fit.
           </p>
           <div className="flex flex-col items-center gap-4">
             <Link 
               href="/strategy-call" 
               className="group flex items-center gap-3 bg-white text-zinc-900 px-6 py-3 rounded-xl font-bold hover:bg-zinc-100 transition-all text-base shadow-xl shadow-white/5"
             >
-              Book a Strategy Call
+              Apply for Founding Program
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <p className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mt-1">
-              Founding Client Program: Free for the first 7 clients.
-            </p>
+            <Link 
+              href="mailto:shivam@archrevenues.com" 
+              className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest mt-1 hover:text-white transition-colors"
+            >
+              Email the Founder: shivam@archrevenues.com
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -21,37 +21,41 @@ export default function FounderPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-12 text-lg text-zinc-600 leading-relaxed">
               <p className="text-2xl font-medium text-zinc-900 leading-snug">
-                Hi, I&apos;m Shivam, founder of ARCH Revenues. I started this because great B2B agencies struggle with one thing: unpredictable pipeline.
+                Hi, I&apos;m Shivam Sharma, founder of ARCH Revenues. I&apos;m a B.Tech graduate in AI & Data Science based in Hyderabad, India.
               </p>
               
               <p>
-                You have delivery dialed in, but don&apos;t know where the next deal is coming from. Referrals are great, but they dry up. 
+                I started ARCH Revenues because I saw a recurring problem: great B2B agencies have delivery dialed in, but lack a predictable way to get their offer in front of the right people. Referrals are great, but they aren&apos;t a system you can scale.
               </p>
               
               <p>
-                Founders usually try two things: manual LinkedIn outreach (too slow) or hiring an expensive SDR for &quot;spray and pray&quot; emails (burns your market). Neither works.
+                Most agencies try manual LinkedIn outreach (which is too slow) or hire expensive SDRs for &quot;spray and pray&quot; emails (which burns your market). Neither is sustainable.
               </p>
 
               <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:p-12 my-16">
-                <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Building Something Real</h2>
+                <h2 className="text-2xl font-semibold text-zinc-900 mb-6">A Founder-to-Founder Approach</h2>
                 <p className="text-xl text-zinc-800 font-medium italic">
-                  &quot;Outbound isn&apos;t a numbers game. It&apos;s about relevance.&quot;
+                  &quot;Outbound isn&apos;t just a numbers game. It&apos;s about relevance and timing.&quot;
                 </p>
                 <div className="mt-8 space-y-4 text-zinc-600">
                   <p>
-                    You don&apos;t need to email 10,000 people a month. You need to reach the right 500 people with a message that speaks to their problems.
+                    We don&apos;t believe in sending 10,000 generic emails. We believe in reaching the right 500 people with a message that actually speaks to their specific pain points.
                   </p>
                   <p>
-                    ARCH Revenues is a founder-led service. We don&apos;t have a massive corporate team. We have a genuine commitment to building outbound systems that work.
+                    As an early-stage service, I am personally involved in building and managing the systems for our Founding Clients. We are building this in public, with transparency and a genuine commitment to your results.
                   </p>
                 </div>
               </div>
 
-              <h2 className="text-3xl font-semibold text-zinc-900 mb-6">The Mission</h2>
+              <h2 className="text-3xl font-semibold text-zinc-900 mb-6">The Long-Term Vision</h2>
               <p>
-                My mission is simple: help B2B agencies build predictable outbound systems. I want to remove the anxiety of an empty calendar so you can focus on getting results for your clients.
+                My mission is simple: help B2B agencies build predictable outbound systems. I want to remove the anxiety of an empty calendar so you can focus on what you do best—getting results for your clients.
               </p>
               
+              <p>
+                ARCH Revenues isn&apos;t just a lead-gen agency. We are building the infrastructure for the next generation of founder-led growth. 
+              </p>
+
               <p>
                 I&apos;m personally building and managing campaigns for our Founding Clients. If you want a transparent, no-fluff approach to getting more meetings, let&apos;s talk.
               </p>

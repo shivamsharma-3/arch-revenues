@@ -6,21 +6,21 @@ import { X, Check } from 'lucide-react';
 export function Positioning() {
   const steps = [
     {
-      title: "AI Lead Enrichment",
-      description: "We use AI to deeply analyze and enrich lead lists, ensuring we only target highly qualified decision-makers."
+      title: "Meet the Founder",
+      description: "Shivam Sharma is a B.Tech graduate in AI & Data Science with a passion for building scalable outbound systems for B2B agencies."
     },
     {
-      title: "AI-Drafted Personalization",
-      description: "We generate hyper-personalized first lines at scale, ensuring your outreach stands out in crowded inboxes."
+      title: "Founding Client Program",
+      description: "We're currently looking for our first 7 partners to join our Founding Client Program for free. After those spots are filled, we'll move to a standard monthly retainer model."
     },
     {
-      title: "Human Closer Oversight",
-      description: "Our expert team handles the replies, overcomes objections, and books the meetings. You just take the sales calls."
+      title: "Our Commitment",
+      description: "We don't just provide leads. We build a long-term, predictable revenue engine that scales with your agency."
     }
   ];
 
   return (
-    <section id="system" className="py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
+    <section id="about" className="py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center justify-between mb-20">
           <motion.div
@@ -31,13 +31,13 @@ export function Positioning() {
             className="max-w-2xl w-full"
           >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-200 text-zinc-600 text-[10px] font-mono font-bold uppercase tracking-widest mb-6">
-              Our Methodology
+              About ARCH Revenues
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
-              The ARCH Revenue System
+              Built by a <span className="text-zinc-400 italic font-serif">Founder</span> for <span className="text-zinc-400 italic font-serif">Founders.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed">
-              A proven, step-by-step system designed to turn cold prospects into qualified meetings.
+              ARCH Revenues was born out of a simple observation: most agencies have a great offer but lack a predictable way to get it in front of the right people.
             </p>
           </motion.div>
           <div className="hidden lg:block w-px h-32 bg-zinc-200 shrink-0" />

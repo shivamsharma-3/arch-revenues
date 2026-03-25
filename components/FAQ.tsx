@@ -13,49 +13,25 @@ export function FAQ() {
 
   const faqs = [
     {
-      q: "What exactly does ARCH Revenues do?",
-      a: "We build and manage outbound sales systems for B2B agencies. We design targeted outreach campaigns that consistently book qualified sales meetings with your ideal clients.",
+      q: "What is the Founding Client Program?",
+      a: "We're currently in the early stages of our service. To build strong case studies, we're offering our full system build and management for free to the first 7 agencies who qualify. In return, we just ask for your honest feedback and a video testimonial if you're happy with the results."
     },
     {
-      q: "How long before we see results?",
-      a: "Month 1 is dedicated to building the infrastructure and launching. While you may see initial calls late in Month 1, the system is designed to reach full performance (10-20 calls/month) by Months 2 and 3.",
+      q: "What happens after the first 7 spots are filled?",
+      a: "Once we've filled our founding spots, we'll move to a standard monthly retainer model. This will be a flat fee with no long-term contracts and no revenue share."
     },
     {
-      q: "What happens in Month 1?",
-      a: "We refine your target audience, develop your messaging, build lead lists, set up sending domains, and begin the warming process. By the end of the month, campaigns are live.",
+      q: "Do you offer a guarantee?",
+      a: "While we aim to build a system that generates a steady flow of qualified meetings, we don't offer a '10 meetings or you don't pay' guarantee. Every agency and market is different. Our focus is on building a sustainable, high-quality outbound engine for your business."
     },
     {
-      q: "Do you guarantee meetings?",
-      a: "Yes. We guarantee 10 qualified meetings in your first 60 days, or you don't pay. We focus on qualified calls rather than just filling your calendar with anyone. Our Founding Client Program is designed to completely remove the risk for you.",
+      q: "How do the AI systems work?",
+      a: "We use a combination of advanced AI tools for lead enrichment and personalization, but every campaign is overseen by a human. This ensures that your outreach is both scalable and highly relevant to your prospects."
     },
     {
-      q: "We've tried outbound before — why would this be different?",
-      a: "Traditional outbound fails when one piece of the process breaks—like poor deliverability, bad lists, or generic copy. We use an AI-driven outbound system for deep lead enrichment and personalized first lines, combined with human closer oversight to ensure quality and book the meeting.",
-    },
-    {
-      q: "We mainly get referrals. Do we actually need this?",
-      a: "Referrals are excellent, but they are unpredictable. Outbound provides a baseline of predictable pipeline so you aren't entirely dependent on your network.",
-    },
-    {
-      q: "Who handles the replies — you or us?",
-      a: "We handle all initial replies and follow-ups. We only hand the prospect over to you when they are qualified and ready to book a call.",
-    },
-    {
-      q: "Do we sign a long-term contract?",
-      a: "No. We start with the Founding Client Program. After that, it's a month-to-month engagement. We keep you by delivering results, not through long-term contracts.",
-    },
-    {
-      q: 'What does a "qualified call" mean to you?',
-      a: "A decision-maker at a company that fits your ideal client profile, who understands what you do, and has agreed to a meeting to discuss working together.",
-    },
-    {
-      q: "How does the Founding Client Program work?",
-      a: "We are currently accepting 7 founding clients who get the entire system built and managed for free. In exchange, we ask for honest feedback and a case study. Once targets are met, we transition to a simple monthly retainer. Spots are limited — book a strategy call to apply.",
-    },
-    {
-      q: "What do we need to provide on our end?",
-      a: "We need 30 minutes of your time for an initial strategy workshop, and you need to show up to the sales calls we book. We handle the rest.",
-    },
+      q: "What's the catch?",
+      a: "No catch. We're a new service and we need to prove our value. The Founding Client Program is our way of building trust and showing what we can do."
+    }
   ];
 
   const schemaData = {

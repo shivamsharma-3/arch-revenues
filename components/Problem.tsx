@@ -40,10 +40,10 @@ export function Problem() {
             className="lg:sticky lg:top-24"
           >
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
-              Why Agencies <span className="text-zinc-400">Struggle to Grow</span>
+              The <span className="text-zinc-400 italic font-serif">Feast-or-Famine</span> Cycle Ends Here.
             </h2>
-            <p className="text-lg text-zinc-600 mb-8">
-              You don&apos;t just need more leads. You need a reliable system to acquire clients.
+            <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
+              Most agency founders are stuck in a cycle: they focus on delivery until the pipeline dries up, then scramble for leads, only to stop prospecting once they land a client. We build the system that keeps your calendar full while you focus on what you do best.
             </p>
             <Link 
               href="/strategy-call"

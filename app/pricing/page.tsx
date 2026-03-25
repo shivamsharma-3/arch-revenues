@@ -34,9 +34,9 @@ export default function PricingPage() {
             <div className="grid md:grid-cols-[1.2fr_1fr] gap-16 items-start">
               <div className="space-y-10">
                 <div>
-                  <h2 className="text-3xl font-semibold text-zinc-900 mb-4">The Model</h2>
-                  <p className="text-zinc-600">
-                    We act as your dedicated growth team. Pricing aligns with your success.
+                  <h2 className="text-3xl font-semibold text-zinc-900 mb-4">The ROI Focus</h2>
+                  <p className="text-zinc-600 leading-relaxed">
+                    We act as your dedicated growth team. Our goal is to ensure that every dollar spent on our system returns multiples in closed deals.
                   </p>
                 </div>
 
@@ -44,14 +44,14 @@ export default function PricingPage() {
                   <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
                     <h3 className="text-lg font-semibold text-zinc-900 mb-2">01. Founding Client Program</h3>
                     <p className="text-sm text-zinc-600">
-                      Free for 7 agencies. We build and launch your campaigns for feedback and case studies.
+                      Free for 7 agencies. We build and launch your campaigns for feedback and case studies. No upfront cost.
                     </p>
                   </div>
 
                   <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
-                    <h3 className="text-lg font-semibold text-zinc-900 mb-2">02. Monthly Engagement</h3>
+                    <h3 className="text-lg font-semibold text-zinc-900 mb-2">02. Monthly Retainer</h3>
                     <p className="text-sm text-zinc-600">
-                      Flat monthly retainer. No hidden costs. Month-to-month.
+                      Predictable flat monthly rate. No revenue share. No long-term contracts.
                     </p>
                   </div>
                 </div>

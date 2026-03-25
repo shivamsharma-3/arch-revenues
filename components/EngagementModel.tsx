@@ -19,11 +19,11 @@ export function EngagementModel() {
               The Engagement Model
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-8 leading-[1.1]">
-              Structured for Results,<br />
-              <span className="text-zinc-400">Not Long-Term Contracts.</span>
+              Predictable <span className="text-zinc-400 italic font-serif">Retainer</span> Model.<br />
+              <span className="text-zinc-400">No Long-Term Contracts.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-xl">
-              We are accepting 7 Founding Clients to build our initial case studies. Get the entire system built and managed for free.
+              We are currently looking for our first 7 partners to join our Founding Client Program for free. After those spots are filled, we&apos;ll be moving to a standard monthly retainer model.
             </p>
 
             <div className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl mb-12">
@@ -33,7 +33,7 @@ export function EngagementModel() {
                 </svg>
               </div>
               <span className="text-zinc-900 font-bold text-sm md:text-base tracking-tight">
-                10 Meetings in 60 Days or You Don&apos;t Pay.
+                No revenue share. No setup fees. Just results.
               </span>
             </div>
 

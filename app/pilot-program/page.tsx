@@ -28,20 +28,23 @@ export default function PilotProgramPage() {
                 </svg>
               </div>
               <span className="text-zinc-900 font-bold text-sm md:text-base tracking-tight">
-                Guarantee: 10 Meetings in 60 Days or You Don&apos;t Pay.
+                We aim to build and run a consistent AI + human outbound system.
               </span>
             </div>
 
-            <h2 className="text-2xl font-semibold text-zinc-900 mb-6">We&apos;re Just Getting Started</h2>
+            <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Founding Client Program?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <p>
                 We&apos;re a brand-new service. But we&apos;re serious about building predictable outbound pipelines for B2B agencies.
               </p>
               <p>
-                To prove the system works, the first 7 agencies get the full program completely free in exchange for feedback and permission to create case studies. No credit card. No contracts. No fluff.
+                To prove the system works, the first 7 agencies get the full program completely free in exchange for feedback and permission to create case studies. No upfront cost. No long contracts. No fluff.
               </p>
               <p>
                 We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact AI-personalized messages we send, the replies we get, and any meetings that come from it.
+              </p>
+              <p>
+                This program is a partnership. We provide the infrastructure, the data, and the execution. You provide the feedback and the case study if we hit our targets.
               </p>
               <p>
                 If it generates real qualified calls for your agency, great—we can talk about a monthly engagement after. If not, no hard feelings.
