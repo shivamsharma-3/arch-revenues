@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 mb-4">
               Privacy Policy
             </h1>
-            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Last updated January 2026</p>
+            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Last updated March 2026</p>
           </header>
 
           <div className="space-y-12">
@@ -30,13 +30,10 @@ export default function PrivacyPage() {
                 Section 01
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Overview
+                Overview & Commitment
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                ARCH Revenues collects and processes personal information solely
-                to deliver the free system audit and associated services. We do
-                not sell, trade, or share your data with third parties for
-                commercial purposes.
+                ARCH Revenues is committed to protecting the privacy and security of your personal and business information. This policy describes how we collect, use, and safeguard the data you provide to us. We process information solely to deliver our outbound acquisition services and associated audits. We do not sell, trade, or share your data with third parties for their own commercial purposes.
               </p>
             </div>
 
@@ -49,12 +46,7 @@ export default function PrivacyPage() {
                 Information We Collect
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                When you submit our audit intake form, we collect: your name,
-                email address, phone number, company name and website,
-                approximate monthly revenue, team size, average project value,
-                current lead sources, and your pipeline challenges and goals. We
-                also collect standard technical data when you visit our website,
-                including IP address, browser type, and pages visited.
+                When you interact with our website or submit an intake form, we collect: your full name, professional email address, company name, website URL, and business-related data such as approximate revenue, team size, and current lead generation challenges. We also collect standard technical data including IP addresses and browser information to ensure the security and performance of our platform.
               </p>
             </div>
 
@@ -64,15 +56,10 @@ export default function PrivacyPage() {
                 Section 03
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                How We Use Your Information
+                AI Tools & Data Processing
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                We use your information to: prepare and deliver your tailored
-                system audit, contact you to discuss audit findings and our
-                services, fulfill our contractual obligations if you become a
-                client, and improve our website and services. We do not use your
-                information for advertising or share it with marketing
-                platforms.
+                As part of our specialized outbound systems, we utilize advanced AI tools for lead enrichment and message personalization. We only process lead data strictly for the purpose of executing your specific campaign. This data is never sold, shared with other clients, or used to train public AI models. All AI-driven processing is conducted within secure, private environments to maintain the highest standards of confidentiality.
               </p>
             </div>
 
@@ -82,14 +69,10 @@ export default function PrivacyPage() {
                 Section 04
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Data Retention
+                How We Use Your Information
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                If you submit an audit form but do not become a client, your
-                data is retained for 12 months from our last communication, then
-                permanently deleted. If you become a client, your data is
-                retained for the duration of the engagement and a reasonable
-                period thereafter for legal and accounting purposes.
+                We use your information to: prepare and deliver tailored system audits, contact you regarding our services, fulfill our contractual obligations, and optimize our outreach strategies. We maintain a strict policy against using your information for third-party advertising or sharing it with external marketing platforms.
               </p>
             </div>
 
@@ -99,20 +82,10 @@ export default function PrivacyPage() {
                 Section 05
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Your Rights
+                Data Retention & Deletion
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Depending on your location, you have the right to access,
-                correct, export, or request deletion of your personal data at
-                any time. You may also withdraw consent or object to processing.
-                To exercise any right, email us at{" "}
-                <a
-                  href="mailto:hello@archrevenues.com"
-                  className="text-zinc-900 underline hover:text-zinc-600 transition-colors"
-                >
-                  hello@archrevenues.com
-                </a>
-                . We respond within 30 days.
+                For prospective clients who do not engage our services, we retain data for 12 months from the last point of contact before permanent deletion. For active clients, data is retained for the duration of the engagement and for a reasonable period thereafter to comply with legal, accounting, and reporting obligations.
               </p>
             </div>
 
@@ -122,13 +95,17 @@ export default function PrivacyPage() {
                 Section 06
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Data Security
+                Your Privacy Rights
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                We use reasonable technical and organizational measures to
-                protect your information. No method of internet transmission is
-                100% secure. We will notify you of any breach that affects your
-                data.
+                You have the right to access, correct, or request the deletion of your personal data at any time. You may also object to the processing of your data or request a portable copy of your information. To exercise these rights, please contact us at{" "}
+                <a
+                  href="mailto:legal@archrevenues.com"
+                  className="text-zinc-900 underline hover:text-zinc-600 transition-colors"
+                >
+                  legal@archrevenues.com
+                </a>
+                .
               </p>
             </div>
 
@@ -138,16 +115,16 @@ export default function PrivacyPage() {
                 Section 07
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Contact
+                Contact Information
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                For any privacy-related questions:
+                For any privacy-related inquiries or to report a concern:
                 <br />
                 <a
-                  href="mailto:hello@archrevenues.com"
+                  href="mailto:legal@archrevenues.com"
                   className="text-zinc-900 underline hover:text-zinc-600 transition-colors"
                 >
-                  privacy@archrevenues.com
+                  legal@archrevenues.com
                 </a>
                 <br />
                 ARCH Revenues

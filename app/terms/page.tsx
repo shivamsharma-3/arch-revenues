@@ -20,7 +20,7 @@ export default function TermsPage() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 mb-4">
               Terms of Service
             </h1>
-            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Last updated January 2026</p>
+            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Last updated March 2026</p>
           </header>
 
           <div className="space-y-12">
@@ -33,10 +33,7 @@ export default function TermsPage() {
                 Agreement to Terms
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                By accessing this website or submitting any form, you agree to
-                be bound by these Terms of Service. If you are acting on behalf
-                of a company, you confirm you have authority to bind that
-                entity.
+                By accessing this website, submitting any form, or engaging our services, you agree to be bound by these Terms of Service. If you are acting on behalf of a company, you confirm you have the legal authority to bind that entity to these terms.
               </p>
             </div>
 
@@ -46,15 +43,10 @@ export default function TermsPage() {
                 Section 02
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Services
+                Services & Scope
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                ARCH Revenues builds and operates outbound acquisition systems
-                for B2B service businesses. Services include ICP definition,
-                lead list construction, AI-drafted outbound copywriting and sequencing,
-                infrastructure setup, reply handling, meeting booking, and
-                performance reporting. Specific scope is defined in each
-                engagement agreement.
+                ARCH Revenues builds and operates specialized outbound acquisition systems for B2B agencies. Our services include ICP definition, lead list construction, AI-driven personalization, infrastructure setup, and response management. The specific scope of work is outlined in your individual engagement agreement or program onboarding materials.
               </p>
             </div>
 
@@ -64,14 +56,16 @@ export default function TermsPage() {
                 Section 03
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Payment Terms
+                Performance & Founding Client Program
               </h2>
+              <p className="text-zinc-600 leading-relaxed text-sm mb-4">
+                For participants in our Founding Client Program, we deliver the full AI + human outbound system at no upfront cost in exchange for active feedback and permission to use results as case studies.
+              </p>
+              <p className="text-zinc-600 leading-relaxed text-sm mb-4">
+                For paid engagements, we commit to building and running a system designed to generate 10-20 qualified meetings per month on average. We stand behind the system we build. While final results depend on your offer quality and specific market conditions, we guarantee professional execution and ongoing optimization of your campaigns.
+              </p>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Engagements operate on a monthly retainer basis. Fees are due at
-                the start of each billing period. Retainer fees are
-                non-refundable once the billing period has commenced and work
-                has begun. Late payment may result in a pause of services until
-                the outstanding balance is resolved.
+                If the system does not perform as expected, we will work closely with you to adjust strategy or pause billing until the issues are resolved, providing full month-to-month flexibility.
               </p>
             </div>
 
@@ -81,15 +75,10 @@ export default function TermsPage() {
                 Section 04
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Cancellation & Termination
+                Payment & Retainer Model
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Either party may terminate the engagement with written notice as
-                specified in the service agreement. Upon termination, ARCH
-                Revenues will cease all outreach activity. All work completed up
-                to the termination date is billable. All lead lists, messaging
-                assets, and campaign materials developed during the engagement
-                are transferred to the client upon final payment.
+                Paid engagements operate on a predictable monthly retainer basis. Fees are due at the start of each billing period. We do not charge setup fees or take revenue shares. Retainer fees are non-refundable once the billing period has commenced and system operations have begun.
               </p>
             </div>
 
@@ -99,14 +88,10 @@ export default function TermsPage() {
                 Section 05
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Client Responsibilities
+                Cancellation & Flexibility
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Clients agree to: provide accurate information about their
-                business and services, be available for onboarding and review
-                sessions, respond to forwarded leads in a timely manner, and
-                notify ARCH Revenues of any material changes to their offer or
-                target market that may affect campaigns.
+                Our model is built on month-to-month flexibility. Either party may terminate the engagement with written notice prior to the start of the next billing cycle. Upon termination, ARCH Revenues will cease all outreach activity. All messaging assets and lead lists developed during the engagement are transferred to the client upon final payment.
               </p>
             </div>
 
@@ -116,14 +101,10 @@ export default function TermsPage() {
                 Section 06
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                No Guarantee of Results
+                Intellectual Property
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                ARCH Revenues guarantees structured, professional execution of
-                the agreed outbound system. We do not guarantee specific numbers
-                of meetings, leads, closed deals, or revenue outcomes. Results
-                depend on factors including market conditions, offer quality,
-                and the client&apos;s ability to close sales conversations.
+                Upon full payment, clients own all deliverables produced specifically for their engagement, including lead lists and custom email sequences. ARCH Revenues retains ownership of its underlying proprietary methodologies, AI frameworks, and internal systems used to deliver the services.
               </p>
             </div>
 
@@ -133,14 +114,10 @@ export default function TermsPage() {
                 Section 07
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Intellectual Property
+                Limitation of Liability
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                Upon full payment, clients own all deliverables produced
-                specifically for their engagement including lead lists, email
-                sequences, and messaging frameworks. ARCH Revenues retains
-                ownership of all underlying methodologies, templates, and
-                systems used to deliver services.
+                To the maximum extent permitted by law, ARCH Revenues&apos; total liability shall not exceed the total fees paid by the client in the three months immediately preceding the claim.
               </p>
             </div>
 
@@ -150,43 +127,13 @@ export default function TermsPage() {
                 Section 08
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Limitation of Liability
-              </h2>
-              <p className="text-zinc-600 leading-relaxed text-sm">
-                To the maximum extent permitted by law, ARCH Revenues total
-                liability shall not exceed the total fees paid by the client in
-                the three months immediately preceding the claim.
-              </p>
-            </div>
-
-            {/* Section 09 */}
-            <div>
-              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
-                Section 09
-              </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Governing Law
-              </h2>
-              <p className="text-zinc-600 leading-relaxed text-sm">
-                These terms are governed by applicable law in the jurisdiction
-                where services are delivered. Disputes will first be subject to
-                good-faith negotiation before any formal proceedings.
-              </p>
-            </div>
-
-            {/* Section 10 */}
-            <div>
-              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
-                Section 10
-              </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Contact
+                Contact Information
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
                 For any questions regarding these terms:
                 <br />
                 <a
-                  href="mailto:hello@archrevenues.com"
+                  href="mailto:legal@archrevenues.com"
                   className="text-zinc-900 underline hover:text-zinc-600 transition-colors"
                 >
                   legal@archrevenues.com
