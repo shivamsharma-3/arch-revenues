@@ -22,7 +22,7 @@ export function Hero() {
       id="hero"
       className="pt-32 pb-24 px-6 bg-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] items-center gap-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] items-center gap-16">
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-[11px] font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              B2B Client Acquisition
+              Web Design Client Acquisition
             </span>
           </motion.div>
 
@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.05] mb-8"
           >
-            Predictable growth for <span className="text-zinc-400 italic font-serif">B2B Agencies.</span>
+            <span className="text-4xl md:text-6xl block mb-2">Web Design Agencies:</span> Stop Hunting for <span className="text-zinc-400 italic font-serif">Clients Every Month</span>
           </motion.h1>
 
           <div className="space-y-6 mb-12">
@@ -51,42 +51,26 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 leading-relaxed max-w-xl"
             >
-              We aim to build and run a consistent AI + human outbound system designed to generate a steady flow of qualified meetings.
+              We build an outbound system that reliably books you 3-5 qualified meetings a week so you can stop stressing about your pipeline and focus on delivering for your clients.
             </motion.p>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl"
-            >
-              <div className="flex items-center justify-center w-6 h-6 rounded-full bg-zinc-900 text-white shrink-0">
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <span className="text-zinc-900 font-bold text-sm md:text-base tracking-tight">
-                Founding Client Program: Free for the first 7 Agencies.
-              </span>
-            </motion.div>
           </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-row flex-wrap items-center gap-4"
+            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4"
           >
             <Link
               href="/strategy-call"
-              className="group flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
+              className="w-full sm:w-auto group flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
               Apply for Founding Program
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/how-it-works"
-              className="flex items-center justify-center gap-2 text-zinc-600 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-50 transition-all border border-transparent hover:border-zinc-200"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 text-zinc-600 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-50 transition-all border border-transparent hover:border-zinc-200"
             >
               How it works
             </Link>
@@ -98,8 +82,13 @@ export function Hero() {
             transition={{ delay: 0.5 }}
             className="mt-8"
           >
-            <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
-              Founding Client Program: Free for the first 7 clients.
+            <p className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
+              <span>Founding Program: Free System Build for 5 Agencies</span>
+              
+              <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-tight lowercase border border-amber-200">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                Only 2 spots left
+              </span>
             </p>
           </motion.div>
         </div>
@@ -164,7 +153,7 @@ export function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2 }}
-              className="absolute bottom-1/4 -left-2 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
+              className="absolute bottom-1/4 left-4 z-20 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
             >
               <div className="text-[8px] font-mono uppercase tracking-widest text-zinc-400 mb-0.5">Performance</div>
               <div className="text-[10px] font-bold text-zinc-900">10-20 Meetings / Month</div>

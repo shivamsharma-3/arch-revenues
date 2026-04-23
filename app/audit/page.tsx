@@ -225,7 +225,7 @@ export default function AuditPage() {
           </h1>
           <p className="text-lg text-zinc-600 mb-2">
             This assessment evaluates your outbound architecture, pipeline
-            structure, and revenue predictability. We work exclusively with B2B
+            structure, and revenue predictability. We work exclusively with web design
             agencies selling high-ticket services.
           </p>
           <p className="text-sm text-zinc-500 mb-12">
@@ -381,20 +381,20 @@ export default function AuditPage() {
                     required
                     options={[
                       {
-                        label: "0 — we don't track this",
-                        value: "0 — we don't track this",
+                        label: "0 / We don't track this",
+                        value: "0 / We don't track this",
                       },
                       {
-                        label: "1–3 meetings/month",
-                        value: "1–3 meetings/month",
+                        label: "1 to 3 meetings/month",
+                        value: "1 to 3 meetings/month",
                       },
                       {
-                        label: "4–6 meetings/month",
-                        value: "4–6 meetings/month",
+                        label: "4 to 6 meetings/month",
+                        value: "4 to 6 meetings/month",
                       },
                       {
-                        label: "7–10 meetings/month",
-                        value: "7–10 meetings/month",
+                        label: "7 to 10 meetings/month",
+                        value: "7 to 10 meetings/month",
                       },
                       {
                         label: "10+ meetings/month",

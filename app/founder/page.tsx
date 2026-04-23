@@ -25,11 +25,11 @@ export default function FounderPage() {
               </p>
               
               <p>
-                I started ARCH Revenues because I saw a recurring problem: great B2B agencies have delivery dialed in, but lack a predictable way to get their offer in front of the right people. Referrals are great, but they aren&apos;t a system you can scale.
+                I started ARCH Revenues because I saw a recurring problem: great web design agencies have delivery dialed in, but lack a predictable way to get their offer in front of the right people. Referrals are great, but they aren&apos;t a system you can scale.
               </p>
               
               <p>
-                Most agencies try manual LinkedIn outreach (which is too slow) or hire expensive SDRs for &quot;spray and pray&quot; emails (which burns your market). Neither is sustainable.
+                Most design agencies try manual LinkedIn outreach (which is too slow) or hire expensive SDRs for &quot;spray and pray&quot; emails (which burns your market). Neither is sustainable.
               </p>
 
               <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 md:p-12 my-16">
@@ -49,7 +49,7 @@ export default function FounderPage() {
 
               <h2 className="text-3xl font-semibold text-zinc-900 mb-6">The Long-Term Vision</h2>
               <p>
-                My mission is simple: help B2B agencies build predictable outbound systems. I want to remove the anxiety of an empty calendar so you can focus on what you do best—getting results for your clients.
+                My mission is simple: help web design agencies build predictable outbound systems. I want to remove the anxiety of an empty calendar so that you can simply focus on what you do best, which is getting results for your clients.
               </p>
               
               <p>

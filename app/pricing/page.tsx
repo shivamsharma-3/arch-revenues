@@ -8,7 +8,7 @@ export default function PricingPage() {
     "Positioning & ICP",
     "Infrastructure Setup",
     "Domain Warmup",
-    "B2B Data Sourcing",
+    "Niche Data Sourcing",
     "Copy & Sequences",
     "A/B Testing",
     "Inbox Management",
@@ -44,7 +44,7 @@ export default function PricingPage() {
                   <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
                     <h3 className="text-lg font-semibold text-zinc-900 mb-2">01. Founding Client Program</h3>
                     <p className="text-sm text-zinc-600">
-                      Free for 7 agencies. We build and launch your campaigns for feedback and case studies. No upfront cost.
+                      Free for 5 agencies. We build and launch your campaigns for feedback and case studies. No upfront cost.
                     </p>
                   </div>
 
@@ -60,7 +60,7 @@ export default function PricingPage() {
               <div className="bg-zinc-900 text-white rounded-3xl p-8 shadow-xl sticky top-32">
                 <h3 className="text-xl font-semibold mb-6">The Revenue Engine</h3>
                 
-                <div className="grid grid-cols-2 gap-y-4 gap-x-2 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10">
                   {included.map((item, i) => (
                     <div key={i} className="flex items-start gap-2">
                       <Check className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
@@ -71,7 +71,7 @@ export default function PricingPage() {
 
                 <div className="pt-8 border-t border-zinc-800">
                   <p className="text-sm text-zinc-400 mb-6">
-                    Best for: Web Design, Marketing, Dev, Automation, & Consulting Agencies.
+                    Best for: E-Commerce, SaaS Design, Webflow, UI/UX, & Branding Agencies.
                   </p>
                   
                   <Link 

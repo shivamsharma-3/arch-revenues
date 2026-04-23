@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     // Send Owner Notification Email
     const ownerEmailHtml = `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
-        <h2 style="border-bottom: 1px solid #e5e5e5; padding-bottom: 12px;">New Audit Request — ${agencyName}</h2>
+        <h2 style="border-bottom: 1px solid #e5e5e5; padding-bottom: 12px;">New Audit Request: ${agencyName}</h2>
         
         <h3 style="color: #4a4a4a; margin-top: 24px;">Section 1: Contact Details</h3>
         <ul style="list-style: none; padding: 0;">
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
         from: 'onboarding@archrevenues.com',
         to: 'hello@archrevenues.com',
         replyTo: email,
-        subject: `New Audit Request — ${agencyName}`,
+        subject: `New Audit Request: ${agencyName}`,
         html: ownerEmailHtml,
       }),
       resend.emails.send({

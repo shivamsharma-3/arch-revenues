@@ -46,7 +46,7 @@ export default function TermsPage() {
                 Services & Scope
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                ARCH Revenues builds and operates specialized outbound acquisition systems for B2B agencies. Our services include ICP definition, lead list construction, AI-driven personalization, infrastructure setup, and response management. The specific scope of work is outlined in your individual engagement agreement or program onboarding materials.
+                ARCH Revenues builds and operates specialized outbound acquisition systems for web design agencies. Our services include ICP definition, lead list construction, AI-driven personalization, infrastructure setup, and response management. The specific scope of work is outlined in your individual engagement agreement or program onboarding materials.
               </p>
             </div>
 

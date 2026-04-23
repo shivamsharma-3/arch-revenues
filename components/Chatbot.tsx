@@ -13,7 +13,7 @@ const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<{ role: "user" | "model"; text: string }[]>([
-    { role: "model", text: "Hi! I'm the ARCH Revenues AI assistant. How can I help you scale your agency today?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
+    { role: "model", text: "Hi! I'm the ARCH Revenues AI assistant. How can I help you scale your web design agency today?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -27,14 +27,15 @@ export function Chatbot() {
       chatRef.current = ai.chats.create({
         model: "gemini-3-flash-preview",
         config: {
-          systemInstruction: `You are a friendly, human-like AI assistant for ARCH Revenues (a B2B agency building AI-powered outbound systems).
+          systemInstruction: `You are a friendly, human-like AI assistant for ARCH Revenues (an outbound agency building AI-powered systems exclusively for web design agencies).
 Keep your answers very short, conversational, and well-structured. Use short paragraphs (1-2 sentences) or bullet points to make it easy to read. Don't be overly formal. 
 
 Tone: Professional, transparent, empathetic, founder-to-founder. No hype.
 Key Info:
 - Founder: Shivam Sharma (B.Tech in AI & Data Science).
+- Target Audience: Web Design, UI/UX, Webflow, E-Commerce, and SaaS Design Agencies.
 - Service: AI lead enrichment + personalized cold email + human oversight.
-- Founding Client Program: Free for the first 7 partners in exchange for feedback.
+- Founding Client Program: Free system build for 5 agencies in exchange for feedback. (Only a few spots left)
 - Pricing: Standard monthly retainer after the program (no revenue share, no long contracts).
 
 CRITICAL: At the very end of your response, you MUST provide 2-3 short options for the user to choose from. 
@@ -147,13 +148,13 @@ That sounds great! We can help with that.
       {/* Floating Button */}
       <AnimatePresence>
         {!isOpen && (
-          <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+          <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
             <motion.div
               initial={{ opacity: 0, y: 10, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.9 }}
               transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
-              className="bg-zinc-900 text-white text-sm font-semibold px-5 py-3 rounded-2xl shadow-2xl border border-zinc-800 relative flex items-center gap-2"
+              className="pointer-events-none bg-zinc-900 text-white text-sm font-semibold px-5 py-3 rounded-2xl shadow-2xl border border-zinc-800 relative flex items-center gap-2"
             >
               <span className="text-lg">👋</span> Have questions? Ask AI
               <div className="absolute -bottom-2 right-7 w-4 h-4 bg-zinc-900 border-b border-r border-zinc-800 transform rotate-45" />
@@ -166,7 +167,7 @@ That sounds great! We can help with that.
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(true)}
-              className="relative w-16 h-16 bg-gradient-to-tr from-teal-500 to-blue-600 text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(20,184,166,0.4)] hover:shadow-[0_0_40px_rgba(20,184,166,0.6)] transition-all"
+              className="pointer-events-auto relative w-16 h-16 bg-gradient-to-tr from-teal-500 to-blue-600 text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(20,184,166,0.4)] hover:shadow-[0_0_40px_rgba(20,184,166,0.6)] transition-all"
             >
               <motion.div
                 animate={{ rotate: [0, -10, 10, -10, 10, 0] }}

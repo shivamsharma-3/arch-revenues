@@ -15,11 +15,11 @@ export function SystemDiagram() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent)] pointer-events-none" />
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-            How the System Works
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 max-w-3xl mx-auto">
+            How You Go From Feast-or-Famine to Predictable Pipeline
           </h2>
           <p className="text-zinc-400 text-lg">
-            A reliable process for outbound client acquisition.
+            The 4-step system that books qualified meetings while you sleep.
           </p>
         </div>
 

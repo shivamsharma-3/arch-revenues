@@ -23,12 +23,12 @@ export function FinalCTA() {
             <span className="text-zinc-500 italic font-serif">Revenue Engine?</span>
           </h2>
           <p className="text-base text-zinc-400 leading-relaxed mb-8 max-w-lg mx-auto">
-            We&apos;re currently looking for our first 7 partners to join our Founding Client Program for free. Let&apos;s see if we&apos;re a fit.
+            We&apos;re currently looking for our first 5 partners to join our Founding Client Program for free. Let&apos;s see if we&apos;re a fit.
           </p>
           <div className="flex flex-col items-center gap-4">
             <Link 
               href="/strategy-call" 
-              className="group flex items-center gap-3 bg-white text-zinc-900 px-6 py-3 rounded-xl font-bold hover:bg-zinc-100 transition-all text-base shadow-xl shadow-white/5"
+              className="group w-full sm:w-auto flex items-center justify-center gap-3 bg-white text-zinc-900 px-6 py-3 rounded-xl font-bold hover:bg-zinc-100 transition-all text-base shadow-xl shadow-white/5"
             >
               Apply for Founding Program
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

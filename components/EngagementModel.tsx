@@ -23,7 +23,7 @@ export function EngagementModel() {
               <span className="text-zinc-400">No Long-Term Contracts.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-xl">
-              We are currently looking for our first 7 partners to join our Founding Client Program for free. After those spots are filled, we&apos;ll be moving to a standard monthly retainer model.
+              We are currently looking for our first 5 partners to join our Founding Client Program for free. After those spots are filled, we&apos;ll be moving to a standard monthly retainer model.
             </p>
 
             <div className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl mb-12">
@@ -40,7 +40,7 @@ export function EngagementModel() {
             <div>
               <Link 
                 href="/strategy-call" 
-                className="group inline-flex items-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all shadow-xl shadow-zinc-900/10"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all shadow-xl shadow-zinc-900/10"
               >
                 Book a Strategy Call
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -57,7 +57,7 @@ export function EngagementModel() {
           >
             <div className="relative z-10 space-y-8">
               {[
-                { title: "Founding Client Program", desc: "Free for the first 7 agencies in exchange for feedback and case studies." },
+                { title: "Founding Client Program", desc: "Free for the first 5 agencies in exchange for feedback and case studies." },
                 { title: "Monthly Retainer", desc: "Transition to a flat monthly rate once we hit your targets." },
                 { title: "Transparent Pricing", desc: "A flat monthly rate with no hidden costs or percentages." },
                 { title: "Month-to-Month", desc: "No long-term lock-in. We earn your business every 30 days." }

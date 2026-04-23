@@ -1,30 +1,30 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { Users, Clock, TrendingDown, Mail } from 'lucide-react';
+import { XCircle } from 'lucide-react';
 import Link from 'next/link';
 
 export function Problem() {
   const problems = [
     {
-      title: "Unpredictable Referrals",
-      description: "Relying solely on word-of-mouth limits your growth.",
-      icon: Users
+      title: "Referral Roulette",
+      description: "You get 2-3 referrals one month, zero the next. You can't scale a business on hope.",
+      icon: XCircle
     },
     {
-      title: "Founder-Led Sales",
-      description: "Spending too much time on manual outreach instead of closing deals.",
-      icon: Clock
+      title: "Outreach Burnout",
+      description: "You've tried cold email. Spent 10 hours building lists. Got 2% reply rates. Gave up after 3 weeks.",
+      icon: XCircle
     },
     {
-      title: "Expensive Sales Teams",
-      description: "Internal hires are costly and take months to become profitable.",
-      icon: TrendingDown
+      title: "Can't Afford an SDR",
+      description: "$60-100k/year for a full-time hire? Plus 3-4 months to train? You don't have that kind of runway.",
+      icon: XCircle
     },
     {
-      title: "Ineffective Outreach",
-      description: "Generic campaigns yield low responses and damage your brand.",
-      icon: Mail
+      title: "\"Spray and Pray\" Returns",
+      description: "Generic LinkedIn messages and mass emails destroy your reputation and get zero responses.",
+      icon: XCircle
     }
   ];
 
@@ -63,7 +63,7 @@ export function Problem() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-zinc-50 border border-zinc-200 p-6 rounded-2xl"
               >
-                <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 text-zinc-900 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-white border border-red-100 text-red-500 flex items-center justify-center mb-4 shadow-sm">
                   <problem.icon className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-bold text-zinc-900 mb-1">{problem.title}</h3>

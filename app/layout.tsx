@@ -14,9 +14,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ARCH Revenues | Outbound Acquisition Systems for B2B Agencies",
+  title: "ARCH Revenues | Outbound Acquisition Systems for Web Design Agencies",
   description:
-    "We build and operate AI-driven outbound acquisition systems exclusively for B2B agencies. Get consistent, qualified sales calls without managing complex AI tools or hiring a full-time SDR.",
+    "We build and operate AI-driven outbound acquisition systems exclusively for web design agencies. Get consistent, qualified sales calls without managing complex AI tools or hiring a full-time SDR.",
 };
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "ARCH Revenues",
     "url": "https://archrevenues.com",
-    "description": "We build and operate AI-driven outbound acquisition systems exclusively for B2B agencies.",
+    "description": "We build and operate AI-driven outbound acquisition systems exclusively for web design agencies.",
   };
 
   return (
@@ -44,7 +44,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="font-sans bg-zinc-50 text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white"
+        className="font-sans bg-zinc-50 text-zinc-900 antialiased selection:bg-zinc-900 selection:text-white overflow-x-hidden"
         suppressHydrationWarning
       >
         <AppWrapper>{children}</AppWrapper>

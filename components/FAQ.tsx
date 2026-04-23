@@ -14,10 +14,10 @@ export function FAQ() {
   const faqs = [
     {
       q: "What is the Founding Client Program?",
-      a: "We're currently in the early stages of our service. To build strong case studies, we're offering our full system build and management for free to the first 7 agencies who qualify. In return, we just ask for your honest feedback and a video testimonial if you're happy with the results."
+      a: "We're currently in the early stages of our service. To build strong case studies, we're offering our full system build and management for free to the first 5 agencies who qualify. In return, we just ask for your honest feedback and a video testimonial if you're happy with the results."
     },
     {
-      q: "What happens after the first 7 spots are filled?",
+      q: "What happens after the first 5 spots are filled?",
       a: "Once we've filled our founding spots, we'll move to a standard monthly retainer model. This will be a flat fee with no long-term contracts and no revenue share."
     },
     {
