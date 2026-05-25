@@ -25,7 +25,7 @@ export default function PricingPage() {
             Structured for ROI.
           </h1>
           <p className="text-xl text-zinc-600">
-            Start with our Founding Client Program. No 12-month commitments.
+            Start with our Paid Performance Pilot. No 12-month commitments.
           </p>
         </section>
 
@@ -42,9 +42,9 @@ export default function PricingPage() {
 
                 <div className="space-y-6">
                   <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
-                    <h3 className="text-lg font-semibold text-zinc-900 mb-2">01. Founding Client Program</h3>
+                    <h3 className="text-lg font-semibold text-zinc-900 mb-2">01. Paid Performance Pilot</h3>
                     <p className="text-sm text-zinc-600">
-                      Free for 5 agencies. We build and launch your campaigns for feedback and case studies. No upfront cost.
+                      Setup fee covers infrastructure costs. You only pay the full retainer when we book qualified meetings.
                     </p>
                   </div>
 

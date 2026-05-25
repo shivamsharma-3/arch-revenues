@@ -13,24 +13,24 @@ export function FAQ() {
 
   const faqs = [
     {
-      q: "What is the Founding Client Program?",
-      a: "We're currently in the early stages of our service. To build strong case studies, we're offering our full system build and management for free to the first 5 agencies who qualify. In return, we just ask for your honest feedback and a video testimonial if you're happy with the results."
+      q: "What is the Paid Performance Pilot?",
+      a: "We charge a setup fee to cover infrastructure and software costs, and you only pay the rest of the retainer after we hit our promise of booking qualified meetings. This aligns our success entirely with yours."
     },
     {
-      q: "What happens after the first 5 spots are filled?",
-      a: "Once we've filled our founding spots, we'll move to a standard monthly retainer model. This will be a flat fee with no long-term contracts and no revenue share."
+      q: "What happens after the pilot?",
+      a: "Once we prove the system works and generates consistent qualified meetings, we transition to a standard monthly retainer model. This is a flat fee with no long-term contracts and no revenue share."
     },
     {
       q: "Do you offer a guarantee?",
-      a: "While we aim to build a system that generates a steady flow of qualified meetings, we don't offer a '10 meetings or you don't pay' guarantee. Every agency and market is different. Our focus is on building a sustainable, high-quality outbound engine for your business."
+      a: "Yes. Our performance model guarantees results before you pay the full retainer. While we don't promise arbitrary numbers, our focus is on building a sustainable, high-quality outbound engine for your business."
     },
     {
       q: "How do the AI systems work?",
-      a: "We use a combination of advanced AI tools for lead enrichment and personalization, but every campaign is overseen by a human. This ensures that your outreach is both scalable and highly relevant to your prospects."
+      a: "We use a combination of advanced AI tools to build hyper-targeted lists of B2B SaaS and Healthcare companies. Every campaign is overseen by a human, ensuring your outreach is both scalable and highly relevant."
     },
     {
-      q: "What's the catch?",
-      a: "No catch. We're a new service and we need to prove our value. The Founding Client Program is our way of building trust and showing what we can do."
+      q: "Who is this for?",
+      a: "This is exclusively for B2B SaaS and Healthcare Web Design Agencies that want to build a predictable outbound pipeline and stop relying on referrals."
     }
   ];
 

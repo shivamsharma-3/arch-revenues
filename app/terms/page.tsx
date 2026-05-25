@@ -46,7 +46,7 @@ export default function TermsPage() {
                 Services & Scope
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                ARCH Revenues builds and operates specialized outbound acquisition systems for web design agencies. Our services include ICP definition, lead list construction, AI-driven personalization, infrastructure setup, and response management. The specific scope of work is outlined in your individual engagement agreement or program onboarding materials.
+                ARCH Revenues builds and operates specialized outbound acquisition systems for B2B SaaS and Healthcare web design agencies. Our services include ICP definition, lead list construction, AI-driven personalization, infrastructure setup, and response management. The specific scope of work is outlined in your individual engagement agreement or program onboarding materials.
               </p>
             </div>
 
@@ -56,13 +56,13 @@ export default function TermsPage() {
                 Section 03
               </div>
               <h2 className="text-xl font-bold text-zinc-900 mb-4">
-                Performance & Founding Client Program
+                Paid Performance Pilot & Deliverables
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm mb-4">
-                For participants in our Founding Client Program, we deliver the full AI + human outbound system at no upfront cost in exchange for active feedback and permission to use results as case studies.
+                For participants in our Paid Performance Pilot, we charge a setup fee to cover infrastructure costs. The remainder of the retainer is contingent upon generating qualified meetings.
               </p>
               <p className="text-zinc-600 leading-relaxed text-sm mb-4">
-                For paid engagements, we commit to building and running a system designed to generate 10-20 qualified meetings per month on average. We stand behind the system we build. While final results depend on your offer quality and specific market conditions, we guarantee professional execution and ongoing optimization of your campaigns.
+                For paid engagements, we commit to building and running a system designed to generate consistent qualified conversations. We stand behind the system we build. While final results depend on your offer quality and specific market conditions, we guarantee professional execution and ongoing optimization of your campaigns.
               </p>
               <p className="text-zinc-600 leading-relaxed text-sm">
                 If the system does not perform as expected, we will work closely with you to adjust strategy or pause billing until the issues are resolved, providing full month-to-month flexibility.

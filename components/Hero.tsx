@@ -31,7 +31,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-[11px] font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              Web Design Client Acquisition
+              SaaS & Healthcare Web Design Growth
             </span>
           </motion.div>
 
@@ -41,7 +41,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.05] mb-8"
           >
-            <span className="text-4xl md:text-6xl block mb-2">Web Design Agencies:</span> Stop Hunting for <span className="text-zinc-400 italic font-serif">Clients Every Month</span>
+            <span className="text-4xl md:text-6xl block mb-2 font-serif italic font-normal text-zinc-500">Web Design Agencies:</span> Stop Hunting for <span className="text-zinc-400 italic font-serif">Clients Every Month</span>
           </motion.h1>
 
           <div className="space-y-6 mb-12">
@@ -51,7 +51,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 leading-relaxed max-w-xl"
             >
-              We build an outbound system that reliably books you 3-5 qualified meetings a week so you can stop stressing about your pipeline and focus on delivering for your clients.
+              We build powerful, zero-fluff outbound systems exclusively for B2B SaaS and Healthcare web design agencies looking to build a predictable revenue engine.
+              <br className="mb-4" />
+              <span className="block mt-4 font-medium text-zinc-900">Goal: consistent qualified meetings without relying on referrals.</span>
             </motion.p>
           </div>
 
@@ -65,7 +67,7 @@ export function Hero() {
               href="/strategy-call"
               className="w-full sm:w-auto group flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
-              Apply for Founding Program
+              Apply for Paid Performance Pilot
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -83,12 +85,7 @@ export function Hero() {
             className="mt-8"
           >
             <p className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
-              <span>Founding Program: Free System Build for 5 Agencies</span>
-              
-              <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-tight lowercase border border-amber-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                Only 2 spots left
-              </span>
+              <span>Paid Performance Pilot: Setup Fee + Pay-On-Results</span>
             </p>
           </motion.div>
         </div>
@@ -147,16 +144,6 @@ export function Hero() {
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-[10px] font-bold text-zinc-900">System Active</span>
               </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2 }}
-              className="absolute bottom-1/4 left-4 z-20 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
-            >
-              <div className="text-[8px] font-mono uppercase tracking-widest text-zinc-400 mb-0.5">Performance</div>
-              <div className="text-[10px] font-bold text-zinc-900">10-20 Meetings / Month</div>
             </motion.div>
           </motion.div>
         </div>

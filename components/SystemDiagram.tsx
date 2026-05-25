@@ -4,9 +4,9 @@ import { ArrowRight, Database, Target, Calendar, BarChart3, TrendingUp } from 'l
 
 export function SystemDiagram() {
   const steps = [
-    { title: "AI Lead Enrichment", desc: "We find your ideal clients and verify their data with 99% accuracy.", icon: <Database className="w-5 h-5" /> },
+    { title: "AI Lead Enrichment", desc: "We find your ideal clients and rigorously verify their data.", icon: <Database className="w-5 h-5" /> },
     { title: "AI Personalization", desc: "Hyper-personalized outreach that sounds like it was written by you.", icon: <Target className="w-5 h-5" />, highlight: true },
-    { title: "Human Oversight", desc: "Our team handles the replies and qualifies every single lead.", icon: <Calendar className="w-5 h-5" /> },
+    { title: "Human Oversight", desc: "I help manage replies and qualification with you.", icon: <Calendar className="w-5 h-5" /> },
     { title: "Qualified Meetings", desc: "You wake up to a calendar full of high-intent sales calls.", icon: <TrendingUp className="w-5 h-5" /> },
   ];
 

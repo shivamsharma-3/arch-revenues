@@ -30,8 +30,8 @@ export function Problem() {
 
   return (
     <section id="problem" className="py-24 px-6 bg-white border-b border-zinc-200/50 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 items-start">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,9 +42,17 @@ export function Problem() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
               The <span className="text-zinc-400 italic font-serif">Feast-or-Famine</span> Cycle Ends Here.
             </h2>
-            <p className="text-lg text-zinc-600 mb-8 leading-relaxed">
-              Most agency founders are stuck in a cycle: they focus on delivery until the pipeline dries up, then scramble for leads, only to stop prospecting once they land a client. We build the system that keeps your calendar full while you focus on what you do best.
-            </p>
+            <div className="text-lg text-zinc-600 mb-8 leading-relaxed space-y-4 pr-0 lg:pr-8">
+              <p>
+                Most web agency founders are stuck in a cycle: you focus on client delivery until the pipeline dries up, then scramble for leads through networking and referrals, only to stop prospecting once you land a client.
+              </p>
+              <p>
+                This works until it doesn&apos;t. One slow month and panic sets in.
+              </p>
+              <p>
+                We build the outbound system that keeps qualified meetings coming in, so you never have to choose between delivering for clients and hunting for the next one.
+              </p>
+            </div>
             <Link 
               href="/strategy-call"
               className="inline-flex bg-zinc-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-zinc-800 transition-all text-sm"

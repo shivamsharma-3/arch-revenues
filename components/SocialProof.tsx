@@ -5,11 +5,11 @@ import { Monitor, Target, Code, Zap, Users } from 'lucide-react';
 
 export function SocialProof() {
   const items = [
-    { name: "UI/UX Design", icon: <Monitor className="w-5 h-5" /> },
-    { name: "Webflow & Framer", icon: <Target className="w-5 h-5" /> },
-    { name: "E-Commerce", icon: <Code className="w-5 h-5" /> },
-    { name: "SEO & Branding", icon: <Zap className="w-5 h-5" /> },
-    { name: "SaaS Design", icon: <Users className="w-5 h-5" /> },
+    { name: "AI Lead Validation", icon: <Monitor className="w-5 h-5" /> },
+    { name: "Hyper-Personalization", icon: <Target className="w-5 h-5" /> },
+    { name: "Human Inbox Management", icon: <Code className="w-5 h-5" /> },
+    { name: "Qualified Appointments", icon: <Zap className="w-5 h-5" /> },
+    { name: "B2B SaaS & HealthTech", icon: <Users className="w-5 h-5" /> },
   ];
 
   return (
@@ -18,7 +18,7 @@ export function SocialProof() {
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
           <div className="shrink-0 z-20">
             <p className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-[0.2em]">
-              Specialized For
+              Performance System
             </p>
           </div>
           

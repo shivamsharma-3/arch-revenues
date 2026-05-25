@@ -28,7 +28,7 @@ export function Header() {
 
   const navLinks = [
     { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Founding Client Program', href: '/pilot-program' },
+    { name: 'Paid Pilot', href: '/pilot-program' },
     { name: 'Pricing', href: '/pricing' },
     { name: 'Founder', href: '/founder' },
   ];

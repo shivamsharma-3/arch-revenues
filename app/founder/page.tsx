@@ -42,14 +42,14 @@ export default function FounderPage() {
                     We don&apos;t believe in sending 10,000 generic emails. We believe in reaching the right 500 people with a message that actually speaks to their specific pain points.
                   </p>
                   <p>
-                    As an early-stage service, I am personally involved in building and managing the systems for our Founding Clients. We are building this in public, with transparency and a genuine commitment to your results.
+                    As an early-stage service, I am personally involved in building and managing the systems for participants in our Paid Performance Pilot. We are building this with transparency and a genuine commitment to your results.
                   </p>
                 </div>
               </div>
 
               <h2 className="text-3xl font-semibold text-zinc-900 mb-6">The Long-Term Vision</h2>
               <p>
-                My mission is simple: help web design agencies build predictable outbound systems. I want to remove the anxiety of an empty calendar so that you can simply focus on what you do best, which is getting results for your clients.
+                My mission is simple: help B2B SaaS and Healthcare web design agencies build predictable outbound systems. I want to remove the anxiety of an empty calendar so that you can simply focus on what you do best, which is getting results for your clients.
               </p>
               
               <p>
@@ -57,7 +57,7 @@ export default function FounderPage() {
               </p>
 
               <p>
-                I&apos;m personally building and managing campaigns for our Founding Clients. If you want a transparent, no-fluff approach to getting more meetings, let&apos;s talk.
+                I&apos;m personally building and managing campaigns for our Pilot clients. If you want a transparent, no-fluff approach to getting more meetings, let&apos;s talk.
               </p>
             </div>
           </div>

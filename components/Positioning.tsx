@@ -7,15 +7,15 @@ export function Positioning() {
   const steps = [
     {
       title: "Meet the Founder",
-      description: "Shivam Sharma is a B.Tech graduate in AI & Data Science with a passion for building scalable outbound systems for web design agencies."
+      description: "Shivam Sharma is a B.Tech graduate in AI & Data Science with a passion for building scalable outbound systems for B2B SaaS and Healthcare web design agencies."
     },
     {
-      title: "Founding Client Program",
-      description: "We're currently looking for our first 5 partners to join our Founding Client Program for free. After those spots are filled, we'll move to a standard monthly retainer model."
+      title: "Paid Performance Pilot",
+      description: "We are currently offering a Paid Performance Pilot. We cover the setup, and you only pay the full retainer when we book qualified meetings."
     },
     {
       title: "Our Commitment",
-      description: "We don't just provide leads. We build a long-term, predictable revenue engine that scales with your agency."
+      description: "We don't just provide leads. We build a repeatable outbound system you can rely on."
     }
   ];
 

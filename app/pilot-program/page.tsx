@@ -10,12 +10,12 @@ export default function PilotProgramPage() {
           <h1 
             className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6"
           >
-            Founding Client Program
+            Paid Performance Pilot
           </h1>
           <p 
             className="text-xl text-zinc-600 leading-relaxed"
           >
-            How we prove our system works before you pay a dime.
+            A setup fee covers our infrastructure, and you only pay the full retainer when we deliver.
           </p>
         </section>
 
@@ -32,25 +32,25 @@ export default function PilotProgramPage() {
               </span>
             </div>
 
-            <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Founding Client Program?</h2>
+            <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Paid Performance Pilot?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <p>
-                We&apos;re a brand-new service. But we&apos;re serious about building predictable outbound pipelines for web design agencies.
+                We&apos;re serious about building predictable outbound pipelines for B2B SaaS and Healthcare web design agencies.
               </p>
               <p>
-                To prove the system works, the first 5 agencies get the full program completely free in exchange for feedback and permission to create case studies. No upfront cost. No long contracts. No fluff.
+                To prove the system works, our pilot program requires only a setup fee to cover infrastructure costs. You only pay the rest of the retainer once we start generating qualified meetings. No long contracts. No fluff.
               </p>
               <p>
                 We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact AI-personalized messages we send, the replies we get, and any meetings that come from it.
               </p>
               <p>
-                This program is a partnership. We provide the infrastructure, the data, and the execution. You provide the feedback and the case study if we hit our targets.
+                This program is a partnership. We provide the infrastructure, the data, and the execution. We align our success entirely with yours.
               </p>
               <p>
-                If it generates real qualified calls for your agency, that is great! We can then talk about a monthly engagement afterward. If not, there are no hard feelings.
+                If it generates real qualified calls for your agency, that is great! We transition to a standard monthly engagement afterward.
               </p>
               <p className="font-medium text-zinc-900 pt-4">
-                Sound fair? Grab one of the 5 founding spots.
+                Sound fair? Apply for the pilot today.
               </p>
             </div>
             <div className="mt-8">

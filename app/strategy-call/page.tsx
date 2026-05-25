@@ -45,7 +45,7 @@ export default function StrategyCallPage() {
                     <span className="text-xl shrink-0">3️⃣</span>
                     <div>
                       <h3 className="text-sm font-semibold text-zinc-900 mb-1">Determine Fit</h3>
-                      <p className="text-xs text-zinc-600">If we can help you scale, we&apos;ll outline what the Founding Client Program looks like.</p>
+                      <p className="text-xs text-zinc-600">If we can help you scale, we&apos;ll outline what the Paid Performance Pilot looks like.</p>
                     </div>
                   </li>
                 </ul>
