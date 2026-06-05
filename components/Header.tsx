@@ -18,8 +18,8 @@ export function Header() {
   }, []);
 
   const headerBgClass = isScrolled 
-    ? 'bg-white/90 backdrop-blur-xl border border-black shadow-[0_8px_32px_rgba(0,0,0,0.04)] text-zinc-900' 
-    : 'bg-white/50 backdrop-blur-md border border-black text-zinc-900';
+    ? 'bg-white/90 backdrop-blur-xl border border-black shadow-lg text-zinc-900' 
+    : 'bg-white/50 backdrop-blur-md border border-black shadow-md text-zinc-900';
 
   const navTextColorClass = 'text-zinc-500';
   const navHoverColorClass = 'hover:text-zinc-900';

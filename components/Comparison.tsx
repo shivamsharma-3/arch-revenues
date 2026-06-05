@@ -22,40 +22,40 @@ export function Comparison() {
         <div className="overflow-x-auto pb-8">
           <div className="min-w-[800px] grid grid-cols-4 gap-px bg-zinc-200 border border-zinc-200 rounded-2xl overflow-hidden">
             {/* Header Row */}
-            <div className="bg-zinc-100 p-6 font-semibold text-zinc-900"></div>
-            <div className="bg-zinc-100 p-6 font-semibold text-zinc-900">Hire Full-Time SDR</div>
-            <div className="bg-zinc-100 p-6 font-semibold text-zinc-900">Generic Agency</div>
-            <div className="bg-zinc-900 p-6 font-semibold text-white">ARCH Revenues</div>
+            <div className="bg-zinc-100 p-4 sm:p-5 font-semibold text-zinc-900"></div>
+            <div className="bg-zinc-100 p-4 sm:p-5 font-semibold text-zinc-900">Hire Full-Time SDR</div>
+            <div className="bg-zinc-100 p-4 sm:p-5 font-semibold text-zinc-900">Generic Agency</div>
+            <div className="bg-zinc-900 p-4 sm:p-5 font-semibold text-white">ARCH Revenues</div>
 
             {/* Upfront Cost */}
-            <div className="bg-white p-6 font-medium text-zinc-600">Upfront Cost</div>
-            <div className="bg-white p-6 text-zinc-600">$60-100k/year <br/>+ benefits</div>
-            <div className="bg-white p-6 text-zinc-600">$5-10k setup <br/>fee</div>
-            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">Setup fee <br/>only for Pilot</div>
+            <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Upfront Cost</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">$60-100k/year <br/>+ benefits</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">$5-10k setup <br/>fee</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">Setup fee <br/>only for Pilot</div>
 
             {/* Outreach Approach */}
-            <div className="bg-white p-6 font-medium text-zinc-600">Outreach Approach</div>
-            <div className="bg-white p-6 text-zinc-600">Manual <br/>prospecting</div>
-            <div className="bg-white p-6 text-zinc-600">Generic <br/>templates</div>
-            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">AI-driven <br/>personalization</div>
+            <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Outreach Approach</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">Manual <br/>prospecting</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">Generic <br/>templates</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">AI-driven <br/>personalization</div>
 
             {/* Time to First Meeting */}
-            <div className="bg-white p-6 font-medium text-zinc-600">Time to First Meeting</div>
-            <div className="bg-white p-6 text-zinc-600">90-120 days <br/>(hire + train)</div>
-            <div className="bg-white p-6 text-zinc-600">45-60 days</div>
-            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">21-30 days <br/>(setup & launch)</div>
+            <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Time to First Meeting</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">90-120 days <br/>(hire + train)</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">45-60 days</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">21-30 days <br/>(setup & launch)</div>
 
             {/* Lead Quality */}
-            <div className="bg-white p-6 font-medium text-zinc-600">Lead Quality</div>
-            <div className="bg-white p-6 text-zinc-600">Depends on SDR <br/>skill & effort</div>
-            <div className="bg-white p-6 text-zinc-600">High volume, <br/>low quality</div>
-            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">Every lead <br/>manually verified</div>
+            <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Lead Quality</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">Depends on SDR <br/>skill & effort</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">High volume, <br/>low quality</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">Every lead <br/>manually verified</div>
 
             {/* Risk/Contract */}
-            <div className="bg-white p-6 font-medium text-zinc-600">Risk/Contract</div>
-            <div className="bg-white p-6 text-zinc-600">12+ months <br/>commitment</div>
-            <div className="bg-white p-6 text-zinc-600">3-6 month <br/>contracts</div>
-            <div className="bg-zinc-50 p-6 text-zinc-900 font-medium">Month-to-month <br/>(cancel anytime)</div>
+            <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Risk/Contract</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">12+ months <br/>commitment</div>
+            <div className="bg-white p-4 sm:p-5 text-zinc-600">3-6 month <br/>contracts</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">Month-to-month <br/>(cancel anytime)</div>
           </div>
         </div>
 

@@ -21,7 +21,7 @@ export default function FounderPage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-12 text-lg text-zinc-600 leading-relaxed">
               <p className="text-2xl font-medium text-zinc-900 leading-snug">
-                Hi, I&apos;m Shivam Sharma, founder of ARCH Revenues. I&apos;m a B.Tech graduate in AI & Data Science based in Hyderabad, India.
+                Hi, I&apos;m Shivam Sharma, founder of ARCH Revenues. I specialize in building AI-driven outbound systems for forward-thinking design agencies.
               </p>
               
               <p>
