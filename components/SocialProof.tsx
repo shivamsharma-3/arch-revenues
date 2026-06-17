@@ -14,7 +14,7 @@ export function SocialProof() {
 
   return (
     <section className="py-16 border-b border-zinc-200/50 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[88rem] mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-6 md:gap-12">
           <div className="shrink-0 z-20">
             <p className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-[0.2em]">

@@ -2,10 +2,14 @@
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Chatbot } from "@/components/Chatbot";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
+
+const Chatbot = dynamic(() => import("@/components/Chatbot").then(mod => mod.Chatbot), {
+  ssr: false,
+});
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

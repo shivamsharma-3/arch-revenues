@@ -21,14 +21,14 @@ export function Positioning() {
 
   return (
     <section id="about" className="py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[88rem] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center justify-between mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="max-w-2xl w-full"
+            className="max-w-3xl w-full"
           >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-200 text-zinc-600 text-[10px] font-mono font-bold uppercase tracking-widest mb-6">
               About ARCH Revenues
@@ -41,7 +41,7 @@ export function Positioning() {
             </p>
           </motion.div>
           <div className="hidden lg:block w-px h-32 bg-zinc-200 shrink-0" />
-          <div className="lg:max-w-sm w-full">
+          <div className="lg:max-w-md w-full">
             <p className="text-lg text-zinc-500 font-medium leading-relaxed">
               We act as a specialized extension of your team, taking the heavy lifting out of finding new clients.
             </p>

@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 export function EngagementModel() {
   return (
     <section id="pricing" className="py-32 px-6 bg-white border-b border-zinc-200/50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[88rem] mx-auto">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -22,7 +22,7 @@ export function EngagementModel() {
               Predictable <span className="text-zinc-400 italic font-serif">Retainer</span> Model.<br />
               <span className="text-zinc-400">No Long-Term Contracts.</span>
             </h2>
-            <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-xl">
+            <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-2xl">
               This is a performance-driven program where we build and refine a powerful outbound system in real conditions. We are currently offering a Paid Performance Pilot. A setup fee covers infrastructure costs, and you only pay the full retainer when we deliver qualified meetings.
             </p>
 

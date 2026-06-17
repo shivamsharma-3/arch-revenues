@@ -8,7 +8,7 @@ export function FinalCTA() {
   return (
     <section id="strategy-call" className="py-16 px-6 bg-zinc-950 text-zinc-50 text-center relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.05),transparent)] pointer-events-none" />
-      <div className="max-w-3xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export function FinalCTA() {
             Ready to build your <br />
             <span className="text-zinc-500 italic font-serif">Revenue Engine?</span>
           </h2>
-          <p className="text-base text-zinc-400 leading-relaxed mb-8 max-w-lg mx-auto">
+          <p className="text-base text-zinc-400 leading-relaxed mb-8 max-w-xl mx-auto">
             We&apos;re currently onboarding new partners for our Paid Performance Pilot. Let&apos;s see if we&apos;re a fit.
           </p>
           <div className="flex flex-col items-center gap-4">

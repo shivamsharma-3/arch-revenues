@@ -6,7 +6,7 @@ export default function PilotProgramPage() {
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
       <main className="flex-grow pt-32">
-        <section className="py-20 px-6 max-w-4xl mx-auto text-center">
+        <section className="py-20 px-6 max-w-5xl mx-auto text-center">
           <h1 
             className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6"
           >
@@ -20,7 +20,7 @@ export default function PilotProgramPage() {
         </section>
 
         <section className="py-16 px-6 bg-zinc-50 border-y border-zinc-200/50">
-          <div className="max-w-3xl mx-auto bg-white border border-zinc-200 rounded-3xl p-8 md:p-12 shadow-sm">
+          <div className="max-w-4xl mx-auto bg-white border border-zinc-200 rounded-3xl p-8 md:p-12 shadow-sm">
             <div className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl mb-8">
               <div className="flex items-center justify-center w-6 h-6 rounded-full bg-zinc-900 text-white shrink-0">
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>

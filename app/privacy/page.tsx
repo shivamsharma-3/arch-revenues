@@ -7,7 +7,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <main className="flex-1 pt-32 pb-24 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-400 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest"

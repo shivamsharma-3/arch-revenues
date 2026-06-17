@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
       <main className="flex-grow pt-32">
-        <section className="py-20 px-6 max-w-4xl mx-auto text-center">
+        <section className="py-20 px-6 max-w-5xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6">
             How The Engine Works
           </h1>
@@ -37,7 +37,7 @@ export default function HowItWorksPage() {
         </section>
 
         <section className="py-24 px-6 bg-white border-y border-zinc-200/50">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-[1.2fr_1fr] gap-16">
               <div>
                 <h2 className="text-3xl font-semibold text-zinc-900 mb-10">The 4-Step System</h2>

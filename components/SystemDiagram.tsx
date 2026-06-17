@@ -13,9 +13,9 @@ export function SystemDiagram() {
   return (
     <section id="how-it-works" className="py-24 px-6 bg-zinc-950 text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent)] pointer-events-none" />
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4 max-w-4xl mx-auto">
             How You Go From Feast-or-Famine to Predictable Pipeline
           </h2>
           <p className="text-zinc-400 text-lg">

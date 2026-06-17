@@ -22,7 +22,7 @@ export function Hero() {
       id="hero"
       className="pt-32 pb-24 px-6 bg-white overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] items-center gap-16">
+      <div className="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] items-center gap-16">
         <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -49,7 +49,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-xl text-zinc-600 leading-relaxed max-w-xl"
+              className="text-xl text-zinc-600 leading-relaxed max-w-2xl"
             >
               We build powerful, zero-fluff outbound systems exclusively for B2B SaaS and Healthcare web design agencies looking to build a predictable revenue engine.
               <br className="mb-4" />

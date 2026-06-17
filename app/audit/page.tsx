@@ -176,7 +176,7 @@ export default function AuditPage() {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="max-w-md w-full bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 text-center shadow-sm"
+          className="max-w-lg w-full bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 text-center shadow-sm"
         >
           <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-8 h-8" />
@@ -205,7 +205,7 @@ export default function AuditPage() {
 
   return (
     <div className="min-h-screen bg-zinc-50 py-12 px-6">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors mb-12"

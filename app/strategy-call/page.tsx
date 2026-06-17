@@ -6,7 +6,7 @@ export default function StrategyCallPage() {
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
       <main className="flex-grow pt-24">
-        <section className="py-12 px-6 max-w-3xl mx-auto text-center">
+        <section className="py-12 px-6 max-w-4xl mx-auto text-center">
           <h1 
             className="text-3xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-4"
           >
@@ -20,7 +20,7 @@ export default function StrategyCallPage() {
         </section>
 
         <section className="py-12 px-6 bg-white border-y border-zinc-200/50">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-[1fr_1.2fr] gap-10 items-start">
               
               <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-6 md:p-8 md:sticky md:top-24">
@@ -77,7 +77,7 @@ export default function StrategyCallPage() {
                   href="https://calendly.com/archrevenues/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full max-w-xs inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] mb-3 text-sm"
+                  className="w-full max-w-sm inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] mb-3 text-sm"
                 >
                   Book Strategy Call
                 </a>

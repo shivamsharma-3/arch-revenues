@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppWrapper } from "@/components/AppWrapper";
@@ -14,9 +14,19 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ARCH Revenues | Outbound Acquisition Systems for SaaS & Healthcare Web Design",
-  description:
-    "We build and operate AI-driven outbound acquisition systems exclusively for B2B SaaS and Healthcare web design agencies. Get consistent, qualified sales calls without managing complex AI tools.",
+  title: "ARCH Revenues | Outbound Systems",
+  description: "AI-driven outbound acquisition systems for B2B SaaS and Healthcare design agencies. Get qualified sales calls consistently.",
+  alternates: {
+    canonical: 'https://www.archrevenues.com',
+    languages: {
+      'en-US': 'https://www.archrevenues.com',
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -28,8 +38,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ARCH Revenues",
-    "url": "https://archrevenues.com",
-    "description": "We build and operate AI-driven outbound acquisition systems exclusively for B2B SaaS and Healthcare web design agencies.",
+    "url": "https://www.archrevenues.com",
+    "description": "AI-driven outbound acquisition systems for B2B SaaS and Healthcare design agencies.",
   };
 
   return (

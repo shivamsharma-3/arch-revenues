@@ -6,7 +6,7 @@ import Link from 'next/link';
 export function Comparison() {
   return (
     <section id="comparison" className="py-24 px-6 bg-white border-b border-zinc-200/50">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[88rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export function Comparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 max-w-4xl"
+          className="mt-12 max-w-5xl"
         >
           <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 mb-6">
             The Bottom Line:

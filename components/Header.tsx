@@ -37,7 +37,7 @@ export function Header() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}
     >
-      <div className={`max-w-5xl mx-auto px-6 h-14 flex items-center justify-between rounded-full transition-all duration-300 ${headerBgClass}`}>
+      <div className={`max-w-6xl mx-auto px-6 h-14 flex items-center justify-between rounded-full transition-all duration-300 ${headerBgClass}`}>
         <Link href="/" className="flex items-center gap-2">
           <svg viewBox="0 0 100 100" fill="currentColor" className="w-6 h-6">
             <path d="M50 2 L56 12 L50 22 L44 12 Z" />
