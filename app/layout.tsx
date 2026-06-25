@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppWrapper } from "@/components/AppWrapper";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -58,6 +59,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppWrapper>{children}</AppWrapper>
+        <Analytics />
       </body>
     </html>
   );
