@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import { FAQ } from "@/components/FAQ";
 
-export function FAQ() {
+export default function FAQPage() {
   const faqs = [
     {
       q: "How many meetings will you book per month?",
@@ -28,41 +28,28 @@ export function FAQ() {
     }
   ];
 
-  return (
-    <section id="faq" className="py-24 px-6 bg-[#F8F0EB] border-b border-zinc-200/50">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-12 text-center">
-          Frequently Asked Questions
-        </h2>
-        
-        <div className="space-y-8 mb-12">
-          {faqs.map((faq, index) => (
-            <div key={index} className="bg-white border border-zinc-200 rounded-xl p-8">
-              <h3 className="text-[20px] font-bold text-[#1A2330] mb-4">
-                {faq.q}
-              </h3>
-              <p className="text-[16px] text-[#506070] leading-relaxed">
-                {faq.a}
-              </p>
-            </div>
-          ))}
-        </div>
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Link
-            href="/strategy-call"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
-          >
-            Book a 20-min fit call →
-          </Link>
-          <Link
-            href="/icp-worksheet"
-            className="text-[#1A2330] text-[16px] underline hover:text-[#D4875A] transition-colors"
-          >
-            Download the ICP worksheet
-          </Link>
-        </div>
-      </div>
-    </section>
+  return (
+    <div className="min-h-screen flex flex-col bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <main className="flex-grow pt-32 pb-24">
+        <FAQ />
+      </main>
+    </div>
   );
 }

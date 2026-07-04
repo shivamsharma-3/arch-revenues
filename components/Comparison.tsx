@@ -83,9 +83,9 @@ export function Comparison() {
           
           <Link 
             href="/strategy-call"
-            className="inline-flex bg-zinc-900 text-white px-6 py-3 rounded-xl font-bold hover:bg-zinc-800 transition-all text-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
           >
-            Apply for Paid Performance Pilot &rarr;
+            Book a 20-min fit call →
           </Link>
         </motion.div>
       </div>

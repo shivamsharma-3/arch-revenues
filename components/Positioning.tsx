@@ -7,7 +7,7 @@ export function Positioning() {
   const steps = [
     {
       title: "Meet the Founder",
-      description: "Shivam Sharma is the founder of ARCH Revenues, with a passion for building scalable outbound systems for B2B SaaS and Healthcare web design agencies."
+      description: "Shivam Sharma is the founder of ARCH Revenues, with a passion for building scalable outbound systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients)."
     },
     {
       title: "Paid Performance Pilot",

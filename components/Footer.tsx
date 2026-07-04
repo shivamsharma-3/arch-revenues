@@ -37,6 +37,7 @@ export function Footer() {
         </div>
 
         <div className="flex items-center justify-center md:justify-end gap-6 text-sm text-zinc-500">
+          <Link href="/icp-worksheet" className="hover:text-white transition-colors">ICP Worksheet</Link>
           <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
           <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
         </div>

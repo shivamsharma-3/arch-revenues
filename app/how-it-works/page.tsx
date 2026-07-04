@@ -1,126 +1,75 @@
 "use client";
 
-import { Check } from "lucide-react";
+import Link from "next/link";
 
 export default function HowItWorksPage() {
   const steps = [
-    { title: "Strategy & ICP", description: "Identify ideal customers and buying triggers." },
-    { title: "AI Lead Enrichment", description: "Deep data scraping to build highly targeted, verified lead lists." },
-    { title: "AI-Drafted Personalization", description: "Generate hyper-personalized first lines at scale for Email & LinkedIn." },
-    { title: "Human Closer Oversight", description: "Our team handles responses, overcomes objections, and books qualified meetings." },
-    { title: "Scale", description: "Optimize angles and scale volume." }
-  ];
-
-  const timeline = [
-    { time: "Week 1–2", title: "Setup", items: ["ICP Deep Dive", "AI Enrichment Setup"] },
-    { time: "Week 3–4", title: "Launch", items: ["AI Personalization", "Campaign Activation"] },
-    { time: "Month 2+", title: "Scale", items: ["Volume Scaling", "Predictable Flow"] }
-  ];
-
-  const tools = [
-    { name: "Apollo", use: "Finding verified B2B contact data" },
-    { name: "Brevo", use: "High-volume email sending & delivery" },
-    { name: "Make", use: "Automating workflows & CRM syncing" },
-    { name: "LinkedIn", use: "Targeted social selling & prospect research" }
+    { 
+      number: "1",
+      title: "We map your ICP", 
+      desc: "We build a 200-account list of SaaS companies matching your ICP — with named decision-makers verified on LinkedIn. We don't use generic lists or scraped databases that are years out of date. Instead, we manually verify each account fits your exact revenue range and headcount requirements, and we find the specific founder or sales leader who is doing the outreach themselves.", 
+      timing: "Week 1"
+    },
+    { 
+      number: "2",
+      title: "We build the infrastructure", 
+      desc: "3 sending domains, SPF/DKIM/DMARC configured, Brevo + Apollo wired up, inbox warmup started. We handle the entire technical setup so your main domain is never put at risk. We purchase lookalike domains, configure all necessary DNS records for deliverability, set up the Google Workspaces, and connect the sending infrastructure. Then we begin a rigorous warmup process to ensure high inbox placement.", 
+      timing: "Week 1"
+    },
+    { 
+      number: "3",
+      title: "We launch the sequence", 
+      desc: "7-touch email + LinkedIn sequence goes live. 30-50 emails/day per domain. Every reply logged. We write the copy based on your specific value proposition, focusing on the pain points of your SaaS buyers. The sequence uses a multi-channel approach to stay top-of-mind without being annoying. We monitor deliverability daily and adjust sending volumes to maintain perfect domain health.", 
+      timing: "Week 2"
+    },
+    { 
+      number: "4",
+      title: "We book and report", 
+      desc: "Replies converted to meetings on your calendar. Weekly report every Monday — opens, replies, meetings booked. When prospects reply, we handle the inbox management. We qualify the lead, handle common objections, and route them directly to your calendar. You receive a transparent, no-fluff report every Monday showing exactly what happened the previous week.", 
+      timing: "Week 3+"
+    },
   ];
 
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
-      <main className="flex-grow pt-32">
-        <section className="py-20 px-6 max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6">
-            How The Engine Works
-          </h1>
-          <p className="text-xl text-zinc-600">
-            A look under the hood of our AI-driven outbound system.
-          </p>
-        </section>
-
-        <section className="py-24 px-6 bg-white border-y border-zinc-200/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-[1.2fr_1fr] gap-16">
-              <div>
-                <h2 className="text-3xl font-semibold text-zinc-900 mb-10">The 4-Step System</h2>
-                <div className="space-y-8">
-                  {[
-                    { title: "Strategy & ICP", description: "Identify ideal customers and buying triggers." },
-                    { title: "AI Lead Enrichment", description: "Deep data scraping to build highly targeted, verified lead lists." },
-                    { title: "AI-Drafted Personalization", description: "Generate hyper-personalized first lines at scale for Email & LinkedIn." },
-                    { title: "Human Closer Oversight", description: "Our team handles responses, overcomes objections, and books qualified meetings." }
-                  ].map((step, index) => (
-                    <div key={index} className="relative pl-8 border-l border-zinc-200">
-                      <div className="absolute -left-3 top-0 w-6 h-6 rounded-full bg-zinc-900 text-white flex items-center justify-center text-xs font-mono">
-                        {index + 1}
-                      </div>
-                      <h3 className="text-lg font-semibold text-zinc-900 mb-1">{step.title}</h3>
-                      <p className="text-sm text-zinc-600">{step.description}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-16 pt-12 border-t border-zinc-200">
-                  <h2 className="text-2xl font-semibold text-zinc-900 mb-6">The AI + Human Hybrid</h2>
-                  <p className="text-zinc-600 mb-8 leading-relaxed">
-                    We don&apos;t just set up a tool and leave it. Our system combines the scale of AI with the nuance of human oversight. 
-                  </p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <h4 className="font-bold text-zinc-900">AI Component</h4>
-                      <ul className="space-y-2 text-sm text-zinc-500 list-disc pl-4">
-                        <li>Deep data scraping & enrichment</li>
-                        <li>Hyper-personalized first lines</li>
-                        <li>Automated follow-up sequences</li>
-                        <li>Infrastructure & deliverability monitoring</li>
-                      </ul>
-                    </div>
-                    <div className="space-y-4">
-                      <h4 className="font-bold text-zinc-900">Human Component</h4>
-                      <ul className="space-y-2 text-sm text-zinc-500 list-disc pl-4">
-                        <li>Strategic ICP & offer refinement</li>
-                        <li>Manual response handling & objection management</li>
-                        <li>Campaign optimization & A/B testing</li>
-                        <li>Direct calendar booking & coordination</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-16 pt-12 border-t border-zinc-200">
-                  <h2 className="text-2xl font-semibold text-zinc-900 mb-6">The Modern Outbound Stack</h2>
-                  <p className="text-zinc-600 mb-8">We use the best tools available to ensure your messages land in the primary inbox and actually get read.</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {tools.map((tool, index) => (
-                      <div key={index} className="bg-zinc-50 border border-zinc-200 p-5 rounded-xl hover:border-zinc-300 transition-colors">
-                        <h4 className="font-semibold text-zinc-900 text-sm mb-2">{tool.name}</h4>
-                        <p className="text-xs text-zinc-500 leading-relaxed">{tool.use}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+      <main className="flex-grow pt-32 pb-24 px-6 max-w-4xl mx-auto w-full">
+        <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-16 text-center">
+          How It Works
+        </h1>
+        
+        <div className="space-y-12 mb-16">
+          {steps.map((step, index) => (
+            <div key={index} className="bg-white border border-zinc-200 rounded-xl p-8 md:p-12">
+              <div className="text-[64px] font-bold text-[#D4875A] leading-none mb-6">
+                {step.number}
               </div>
-
-              <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 h-fit sticky top-32">
-                <h2 className="text-2xl font-semibold text-zinc-900 mb-8">Timeline</h2>
-                <div className="space-y-8">
-                  {timeline.map((phase, index) => (
-                    <div key={index}>
-                      <div className="text-xs font-mono font-semibold text-zinc-500 mb-1">{phase.time}</div>
-                      <h3 className="text-base font-semibold text-zinc-900 mb-3">{phase.title}</h3>
-                      <ul className="space-y-2">
-                        {phase.items.map((item, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm text-zinc-600">
-                            <Check className="w-4 h-4 text-zinc-400 shrink-0" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+              <h2 className="text-[24px] font-bold text-[#1A2330] mb-4">
+                {step.title}
+              </h2>
+              <p className="text-[18px] text-[#506070] font-normal leading-relaxed mb-6">
+                {step.desc}
+              </p>
+              <div className="text-[14px] text-zinc-500 italic">
+                {step.timing}
               </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <Link
+            href="/strategy-call"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
+          >
+            Book a 20-min fit call →
+          </Link>
+          <Link
+            href="/icp-worksheet"
+            className="text-[#1A2330] text-[16px] underline hover:text-[#D4875A] transition-colors"
+          >
+            Download the ICP worksheet
+          </Link>
+        </div>
       </main>
     </div>
   );

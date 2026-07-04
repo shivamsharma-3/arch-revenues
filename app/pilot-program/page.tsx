@@ -35,7 +35,7 @@ export default function PilotProgramPage() {
             <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Paid Performance Pilot?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <p>
-                We&apos;re serious about building predictable outbound pipelines for B2B SaaS and Healthcare web design agencies.
+                We&apos;re serious about building predictable outbound pipelines for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients).
               </p>
               <p>
                 To prove the system works, our pilot program requires only a setup fee to cover infrastructure costs. You only pay the rest of the retainer once we start generating qualified meetings. No long contracts. No fluff.

@@ -2,10 +2,11 @@
 import { Hero } from "@/components/Hero";
 import { SocialProof } from "@/components/SocialProof";
 import { Problem } from "@/components/Problem";
-import { SystemDiagram } from "@/components/SystemDiagram";
+import { HowItWorks } from "@/components/HowItWorks";
 import { Positioning } from "@/components/Positioning";
-import { EngagementModel } from "@/components/EngagementModel";
 import { Comparison } from "@/components/Comparison";
+import { Pricing } from "@/components/Pricing";
+import { CaseStudyPipeline } from "@/components/CaseStudyPipeline";
 import { FinalCTA } from "@/components/FinalCTA";
 import { FAQ } from "@/components/FAQ";
 
@@ -16,10 +17,11 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <Problem />
-        <SystemDiagram />
+        <HowItWorks />
         <Positioning />
         <Comparison />
-        <EngagementModel />
+        <Pricing />
+        <CaseStudyPipeline />
         <FAQ />
         <FinalCTA />
       </main>

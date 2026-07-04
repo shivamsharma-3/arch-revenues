@@ -1,29 +1,17 @@
 "use client";
 
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const phrases = ["Revenue by Design", "Acquisition, Systematized"];
-
 export function Hero() {
-  const [currentPhrase, setCurrentPhrase] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPhrase((prev) => (prev + 1) % phrases.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="hero"
       className="pt-32 pb-24 px-6 bg-white overflow-hidden"
     >
-      <div className="max-w-[88rem] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_0.8fr] items-center gap-16">
-        <div className="relative z-10">
+      <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+        <div className="relative z-10 flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,7 +19,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-[11px] font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              SaaS & Healthcare Web Design Growth
+              SaaS Web Design Growth
             </span>
           </motion.div>
 
@@ -39,21 +27,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-semibold tracking-tight text-zinc-900 leading-[1.05] mb-8"
+            className="text-[32px] md:text-[48px] font-bold text-[#1A2330] leading-[1.1] mb-6"
           >
-            <span className="text-4xl md:text-6xl block mb-2 font-serif italic font-normal text-zinc-500">Web Design Agencies:</span> Stop Hunting for <span className="text-zinc-400 italic font-serif">Clients Every Month</span>
+            We book 8-12 qualified demos per month for B2B SaaS founders — or you don't pay.
           </motion.h1>
 
-          <div className="space-y-6 mb-12">
+          <div className="mb-10">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-xl text-zinc-600 leading-relaxed max-w-2xl"
+              className="text-[20px] text-[#506070] font-normal leading-relaxed max-w-3xl"
             >
-              We build powerful, zero-fluff outbound systems exclusively for B2B SaaS and Healthcare web design agencies looking to build a predictable revenue engine.
-              <br className="mb-4" />
-              <span className="block mt-4 font-medium text-zinc-900">Goal: consistent qualified meetings without relying on referrals.</span>
+              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for SaaS companies between $20K and $200K MRR who can't afford a full-time SDR but need to stop relying on referrals.
             </motion.p>
           </div>
 
@@ -61,90 +47,20 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
           >
             <Link
               href="/strategy-call"
-              className="w-full sm:w-auto group flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
+              className="w-full sm:w-auto flex items-center justify-center bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
             >
-              Apply for Paid Performance Pilot
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              Book a 20-min fit call →
             </Link>
             <Link
               href="/how-it-works"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 text-zinc-600 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-50 transition-all border border-transparent hover:border-zinc-200"
+              className="text-[#1A2330] text-[16px] underline hover:text-[#D4875A] transition-colors"
             >
-              How it works
+              See how it works
             </Link>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="mt-8"
-          >
-            <p className="flex flex-col sm:flex-row items-start sm:items-center gap-3 text-xs font-mono text-zinc-500 uppercase tracking-widest">
-              <span>Paid Performance Pilot: Setup Fee + Pay-On-Results</span>
-            </p>
-          </motion.div>
-        </div>
-
-        <div className="relative hidden lg:flex items-center justify-center lg:pr-8 xl:pr-16">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[400px] aspect-square"
-          >
-            {/* Background Gradients */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-zinc-100 to-transparent rounded-full opacity-50 blur-3xl" />
-            
-            {/* Animated Rings */}
-            {[...Array(3)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute inset-0 border border-zinc-200 rounded-full"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1.2 + i * 0.2, opacity: [0, 0.5, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  delay: i * 1.2,
-                  ease: "linear"
-                }}
-              />
-            ))}
-
-            <div className="relative z-10 w-full h-full flex items-center justify-center">
-              <motion.div
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="w-3/5 h-3/5 flex items-center justify-center"
-              >
-                <svg viewBox="0 0 100 100" fill="currentColor" className="w-full h-full text-zinc-900 drop-shadow-xl">
-                  <path d="M50 2 L56 12 L50 22 L44 12 Z" />
-                  <path d="M43 28 L12 95 L38 95 L48 55 Z" />
-                  <path d="M57 28 L88 95 L62 95 L52 55 Z" />
-                  <path d="M49 28 L51 28 L51 65 L49 65 Z" />
-                  <path d="M50 75 L56 85 L50 95 L44 85 Z" />
-                </svg>
-              </motion.div>
-            </div>
-
-            {/* Floating Stats/Labels */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1 }}
-              className="absolute top-1/4 -right-2 bg-white p-3 rounded-xl border border-zinc-200 shadow-lg"
-            >
-              <div className="text-[8px] font-mono uppercase tracking-widest text-zinc-400 mb-0.5">Status</div>
-              <div className="flex items-center gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-bold text-zinc-900">System Active</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

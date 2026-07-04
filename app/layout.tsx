@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppWrapper } from "@/components/AppWrapper";
-import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "ARCH Revenues | Outbound Systems",
-  description: "AI-driven outbound acquisition systems for B2B SaaS and Healthcare design agencies. Get qualified sales calls consistently.",
+  description: "AI-driven outbound acquisition systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients). Get qualified sales calls consistently.",
   alternates: {
     canonical: 'https://www.archrevenues.com',
     languages: {
@@ -40,7 +39,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "ARCH Revenues",
     "url": "https://www.archrevenues.com",
-    "description": "AI-driven outbound acquisition systems for B2B SaaS and Healthcare design agencies.",
+    "description": "AI-driven outbound acquisition systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients).",
   };
 
   return (
@@ -59,7 +58,6 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppWrapper>{children}</AppWrapper>
-        <Analytics />
       </body>
     </html>
   );

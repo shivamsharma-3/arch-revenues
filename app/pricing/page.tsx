@@ -1,91 +1,20 @@
 "use client";
 
-import { Check, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Pricing } from "@/components/Pricing";
 
 export default function PricingPage() {
-  const included = [
-    "Positioning & ICP",
-    "Infrastructure Setup",
-    "Domain Warmup",
-    "Niche Data Sourcing",
-    "Copy & Sequences",
-    "A/B Testing",
-    "Inbox Management",
-    "Calendar Booking",
-    "Strategy Calls",
-    "Performance Dashboard"
-  ];
-
   return (
-    <div className="min-h-screen flex flex-col bg-zinc-50">
+    <div className="min-h-screen flex flex-col bg-white">
       <main className="flex-grow pt-32">
         <section className="py-20 px-6 max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6">
-            Structured for ROI.
+          <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-6">
+            Pricing
           </h1>
-          <p className="text-xl text-zinc-600">
-            Start with our Paid Performance Pilot. No 12-month commitments.
+          <p className="text-[18px] text-[#506070]">
+            One simple, transparent price.
           </p>
         </section>
-
-        <section className="py-24 px-6 bg-white border-y border-zinc-200/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-[1.2fr_1fr] gap-16 items-start">
-              <div className="space-y-10">
-                <div>
-                  <h2 className="text-3xl font-semibold text-zinc-900 mb-4">The ROI Focus</h2>
-                  <p className="text-zinc-600 leading-relaxed">
-                    We act as your dedicated growth team. Our goal is to ensure that every dollar spent on our system returns multiples in closed deals.
-                  </p>
-                </div>
-
-                <div className="space-y-6">
-                  <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
-                    <h3 className="text-lg font-semibold text-zinc-900 mb-2">01. Paid Performance Pilot</h3>
-                    <p className="text-sm text-zinc-600">
-                      Setup fee covers infrastructure costs. You only pay the full retainer when we book qualified meetings.
-                    </p>
-                  </div>
-
-                  <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6">
-                    <h3 className="text-lg font-semibold text-zinc-900 mb-2">02. Monthly Retainer</h3>
-                    <p className="text-sm text-zinc-600">
-                      Predictable flat monthly rate. No revenue share. No long-term contracts.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-zinc-900 text-white rounded-3xl p-8 shadow-xl sticky top-32">
-                <h3 className="text-xl font-semibold mb-6">The Revenue Engine</h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-2 mb-10">
-                  {included.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-zinc-400 shrink-0 mt-0.5" />
-                      <span className="text-sm text-zinc-300">{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-8 border-t border-zinc-800">
-                  <p className="text-sm text-zinc-400 mb-6">
-                    Best for: E-Commerce, SaaS Design, Webflow, UI/UX, & Branding Agencies.
-                  </p>
-                  
-                  <Link 
-                    href="/strategy-call" 
-                    className="group flex items-center justify-center gap-2 w-full bg-white text-zinc-950 px-6 py-4 rounded-xl font-semibold hover:bg-zinc-200 transition-all"
-                  >
-                    Apply Now
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Pricing />
       </main>
     </div>
   );
