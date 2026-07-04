@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function CaseStudyPipeline() {
   return (
-    <section id="case-studies" className="py-24 px-6 bg-[#F8F0EB] border-b border-zinc-200/50">
+    <section id="case-studies" className="py-12 md:py-24 px-6 bg-[#F8F0EB] border-b border-zinc-200/50">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-8">
           Case Study Pipeline

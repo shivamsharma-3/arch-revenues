@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export function FinalCTA() {
   return (
-    <section id="strategy-call" className="py-24 px-6 bg-zinc-950 text-white text-center relative overflow-hidden">
+    <section id="strategy-call" className="py-12 md:py-24 px-6 bg-zinc-950 text-white text-center relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         <h2 className="text-[32px] md:text-[48px] font-bold text-white tracking-tight mb-6">
           Ready to stop relying on referrals?

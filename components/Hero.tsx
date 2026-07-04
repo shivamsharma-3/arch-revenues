@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="pt-32 pb-24 px-6 bg-white overflow-hidden"
+      className="pt-20 pb-12 md:pt-32 md:pb-24 px-6 bg-white overflow-hidden"
     >
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
         <div className="relative z-10 flex flex-col items-center">
@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-[32px] md:text-[48px] font-bold text-[#1A2330] leading-[1.1] mb-6"
           >
-            We book 8-12 qualified demos per month for B2B SaaS founders — or you don't pay.
+            We book 8-12 qualified demos per month for B2B SaaS founders — or you don&apos;t pay.
           </motion.h1>
 
           <div className="mb-10">
@@ -39,7 +39,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-[20px] text-[#506070] font-normal leading-relaxed max-w-3xl"
             >
-              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for SaaS companies between $20K and $200K MRR who can't afford a full-time SDR but need to stop relying on referrals.
+              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for SaaS companies between $20K and $200K MRR who can&apos;t afford a full-time SDR but need to stop relying on referrals.
             </motion.p>
           </div>
 

@@ -29,7 +29,7 @@ export function Problem() {
   ];
 
   return (
-    <section id="problem" className="py-24 px-6 bg-white border-b border-zinc-200/50 overflow-hidden">
+    <section id="problem" className="py-12 md:py-24 px-6 bg-white border-b border-zinc-200/50 overflow-hidden">
       <div className="max-w-[88rem] mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-start">
           <motion.div

@@ -6,10 +6,10 @@ import { ArrowRight } from "lucide-react";
 export default function ICPThankYouPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <main className="flex-grow pt-32 pb-24">
+      <main className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24">
         <section className="px-6 max-w-2xl mx-auto text-center">
           <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-6">
-            You're all set!
+            You&apos;re all set!
           </h1>
           <p className="text-[18px] text-[#506070] leading-relaxed mb-8">
             Click the button below to download your ICP Teardown Worksheet. 

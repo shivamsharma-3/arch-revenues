@@ -20,7 +20,7 @@ export function Positioning() {
   ];
 
   return (
-    <section id="about" className="py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
+    <section id="about" className="py-16 md:py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
       <div className="max-w-[88rem] mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center justify-between mb-20">
           <motion.div

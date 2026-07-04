@@ -29,13 +29,13 @@ export function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 px-6 bg-[#F8F0EB] border-b border-zinc-200/50">
+    <section id="faq" className="py-12 md:py-24 px-6 bg-[#F8F0EB] border-b border-zinc-200/50">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-12 text-center">
           Frequently Asked Questions
         </h2>
         
-        <div className="space-y-8 mb-12">
+        <div className="space-y-4 md:space-y-6 mb-8 md:mb-10">
           {faqs.map((faq, index) => (
             <div key={index} className="bg-white border border-zinc-200 rounded-xl p-8">
               <h3 className="text-[20px] font-bold text-[#1A2330] mb-4">

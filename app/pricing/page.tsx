@@ -6,7 +6,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <main className="flex-grow pt-32">
-        <section className="py-20 px-6 max-w-5xl mx-auto text-center">
+        <section className="py-12 md:py-20 px-6 max-w-5xl mx-auto text-center">
           <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-6">
             Pricing
           </h1>

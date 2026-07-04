@@ -11,7 +11,7 @@ export function SystemDiagram() {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-zinc-950 text-white overflow-hidden relative">
+    <section id="how-it-works" className="py-12 md:py-24 px-6 bg-zinc-950 text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent)] pointer-events-none" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">

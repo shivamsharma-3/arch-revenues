@@ -32,7 +32,7 @@ export default function HowItWorksPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
-      <main className="flex-grow pt-32 pb-24 px-6 max-w-4xl mx-auto w-full">
+      <main className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24 px-6 max-w-4xl mx-auto w-full">
         <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-16 text-center">
           How It Works
         </h1>

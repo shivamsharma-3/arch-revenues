@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 export default function TermsPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <main className="flex-1 pt-32 pb-24 px-6">
+      <main className="flex-1 pt-20 pb-12 md:pt-32 md:pb-24 px-6">
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"

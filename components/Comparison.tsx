@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export function Comparison() {
   return (
-    <section id="comparison" className="py-24 px-6 bg-white border-b border-zinc-200/50">
+    <section id="comparison" className="py-12 md:py-24 px-6 bg-white border-b border-zinc-200/50">
       <div className="max-w-[88rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

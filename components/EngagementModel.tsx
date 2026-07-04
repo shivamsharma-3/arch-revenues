@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export function EngagementModel() {
   return (
-    <section id="pricing" className="py-32 px-6 bg-white border-b border-zinc-200/50">
+    <section id="pricing" className="py-16 md:py-32 px-6 bg-white border-b border-zinc-200/50">
       <div className="max-w-[88rem] mx-auto">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-20 items-center">
           <motion.div

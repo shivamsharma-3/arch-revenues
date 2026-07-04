@@ -13,7 +13,7 @@ export function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="py-24 px-6 bg-white border-b border-zinc-200/50">
+    <section id="pricing" className="py-12 md:py-20 px-6 bg-white border-b border-zinc-200/50">
       <div className="max-w-3xl mx-auto">
         <div className="bg-white border-2 border-[#D4875A] rounded-2xl p-8 md:p-12 shadow-xl shadow-[#D4875A]/5">
           <div className="text-center mb-8">

@@ -47,7 +47,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <main className="flex-grow pt-32 pb-24">
+      <main className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24">
         <FAQ />
       </main>
     </div>

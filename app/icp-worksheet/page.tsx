@@ -17,16 +17,16 @@ export default function ICPWorksheetPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <main className="flex-grow pt-32 pb-24">
+      <main className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24">
         <section className="px-6 max-w-2xl mx-auto text-center">
           <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-6">
             The 1-page worksheet SaaS founders use to define their ICP — before they spend $1 on outbound.
           </h1>
-          <p className="text-[18px] text-[#506070] leading-relaxed mb-12">
+          <p className="text-[18px] text-zinc-700 leading-relaxed mb-12">
             8 questions. 15 minutes. The exact worksheet we use with every ARCH Revenues client to decide who to target, who to ignore, and what triggers a meeting request.
           </p>
 
-          <div className="bg-[#F8F0EB] p-8 md:p-12 rounded-2xl border border-zinc-200 text-left shadow-sm">
+          <div className="bg-white p-8 md:p-12 rounded-2xl border-2 border-[#D4875A] max-w-xl w-full mx-auto shadow-lg text-left">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="firstName" className="block text-[#1A2330] font-bold mb-2">First Name</label>
