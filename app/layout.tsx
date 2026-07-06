@@ -3,6 +3,8 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { AppWrapper } from "@/components/AppWrapper";
 
+import { Analytics } from "@/components/Analytics";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -58,6 +60,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppWrapper>{children}</AppWrapper>
+        <Analytics />
       </body>
     </html>
   );

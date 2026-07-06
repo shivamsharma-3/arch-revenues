@@ -1,485 +1,900 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState, FormEvent } from "react";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, Loader2, ChevronDown } from "lucide-react";
 
-function CustomSelect({
-  label,
-  name,
-  value,
-  options,
-  onChange,
-  required = false,
-}: {
-  label: string;
-  name: string;
-  value: string;
-  options: { label: string; value: string }[];
-  onChange: (name: string, value: string) => void;
-  required?: boolean;
-}) {
-  const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+/* ------------------------------------------------------------------ */
+/*  Static option lists                                                */
+/* ------------------------------------------------------------------ */
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+const TRIGGER_OPTIONS = [
+  "Just raised a round",
+  "New CEO / Head of Marketing hired",
+  "Launched a new product line",
+  "Rebrand in progress",
+  "Site conversion rate dropped",
+  "Page-1 ranking lost",
+  "Competitor just relaunched site",
+  "Hired a CMO (first ever)",
+  "Series A/B in 90 days",
+  "Acquired another company",
+  "Public launch upcoming",
+  "Other",
+];
 
-  const selectedOption = options.find((opt) => opt.value === value);
+const DISQUALIFIER_OPTIONS = [
+  "Under 10 employees (no budget)",
+  "No product-market fit yet",
+  "In-house design team of 3+",
+  "Already working with another agency",
+  "Lifecycle < 6 months (likely to churn)",
+  "Revenue < $200K ARR (cannot pay $1K/mo)",
+  "Non-English speaking market only",
+  "Founder is the only decision-maker AND traveling",
+  "Pre-revenue (still raising seed)",
+  "Sub-industry we cannot serve well",
+];
 
-  return (
-    <div className="relative" ref={containerRef}>
-      <label className="block text-sm font-medium text-zinc-700 mb-2">
-        {label} {required && "*"}
-      </label>
-      <button
-        type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 flex items-center justify-between hover:bg-zinc-100 transition-colors focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none"
-      >
-        <span className={value ? "text-zinc-900" : "text-zinc-400"}>
-          {selectedOption ? selectedOption.label : "Select..."}
-        </span>
-        <ChevronDown
-          className={`w-4 h-4 text-zinc-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-        />
-      </button>
+const ONE_PAGER_ROWS = [
+  {
+    title: "THE ONE-LINER",
+    prompt: '"We help [firmographic] who [trigger event] do [the work] so they can [outcome]."',
+    name: "onePager_oneliner",
+  },
+  {
+    title: "THE TARGET ACCOUNT",
+    prompt: "Industry, size, stage, geography",
+    name: "onePager_target",
+  },
+  {
+    title: "THE BUYER",
+    prompt: "Title, seniority, what they care about",
+    name: "onePager_buyer",
+  },
+  {
+    title: "THE TRIGGER",
+    prompt: 'What event means "open the inbox now"',
+    name: "onePager_trigger",
+  },
+  {
+    title: "THE PAIN",
+    prompt: "The single most acute pain you solve",
+    name: "onePager_pain",
+  },
+  {
+    title: "THE DISQUALIFIER",
+    prompt: "One line — if true, walk away",
+    name: "onePager_disq",
+  },
+];
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
-            animate={{ opacity: 1, y: 4, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.2, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="absolute z-50 w-full bg-white border border-zinc-200 rounded-lg shadow-xl overflow-hidden"
-          >
-            <div className="max-h-60 overflow-y-auto py-1">
-              {options.map((option) => (
-                <button
-                  key={option.value}
-                  type="button"
-                  onClick={() => {
-                    onChange(name, option.value);
-                    setIsOpen(false);
-                  }}
-                  className={`w-full text-left px-4 py-2.5 text-sm transition-colors ${
-                    value === option.value
-                      ? "bg-zinc-900 text-white"
-                      : "text-zinc-700 hover:bg-zinc-100"
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
+const HOW_TO_STEPS = [
+  "Fill it in honestly — vague answers produce vague outbound. If you can't be specific, say so and come back later.",
+  "Don't optimize for completeness; optimize for specificity. One sharp pain beats three fuzzy ones.",
+  "If you can't answer a section, that's the section to revisit before you send a single cold email.",
+  "Submit when done — you'll get a 5-minute Loom review back from Shivam within 48 hours, no strings attached.",
+];
+
+/* ------------------------------------------------------------------ */
+/*  Shared class strings                                               */
+/* ------------------------------------------------------------------ */
+
+const INPUT_CLS =
+  "w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all";
+const TEXTAREA_CLS = INPUT_CLS + " resize-none";
+const LABEL_CLS = "block text-sm font-medium text-zinc-700 mb-2";
+const HINT_CLS = "text-xs text-zinc-400 mt-1.5";
+
+/* ------------------------------------------------------------------ */
+/*  Page component                                                     */
+/* ------------------------------------------------------------------ */
 
 export default function AuditPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [formData, setFormData] = useState({
-    agencyName: "",
-    yourName: "",
-    role: "",
-    website: "",
-    teamSize: "",
-    monthlyRevenue: "",
-    dealSize: "",
-    monthlyMeetings: "",
-    leadSources: [] as string[],
-    email: "",
-    phone: "",
-  });
+  const [selectedTriggers, setSelectedTriggers] = useState<string[]>([]);
+  const [selectedDisqualifiers, setSelectedDisqualifiers] = useState<string[]>(
+    []
+  );
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    let processedValue = value;
+  /* ---------- helpers ---------- */
 
-    if (name === "website") {
-      processedValue = value.replace(/^(https?:\/\/)/, "");
-    }
-
-    setFormData((prev) => ({ ...prev, [name]: processedValue }));
+  const toggleTrigger = (label: string) => {
+    setSelectedTriggers((prev) =>
+      prev.includes(label)
+        ? prev.filter((t) => t !== label)
+        : [...prev, label]
+    );
   };
 
-  const handleCustomSelectChange = (name: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const toggleDisqualifier = (label: string) => {
+    setSelectedDisqualifiers((prev) =>
+      prev.includes(label)
+        ? prev.filter((d) => d !== label)
+        : [...prev, label]
+    );
   };
 
-  const handleCheckboxChange = (source: string) => {
-    setFormData((prev) => {
-      const current = prev.leadSources;
-      if (current.includes(source)) {
-        return { ...prev, leadSources: current.filter((s) => s !== source) };
-      } else {
-        return { ...prev, leadSources: [...current, source] };
-      }
-    });
-  };
+  /* ---------- submit ---------- */
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (isSubmitting) return;
-
-    setIsSubmitting(true);
+    setSubmitting(true);
     setError(null);
 
     try {
-      const response = await fetch("/api/audit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      const formData = new FormData(e.currentTarget);
+      const payload: Record<string, string> = {};
+
+      formData.forEach((value, key) => {
+        payload[key] = value.toString();
       });
 
-      const data = await response.json();
+      // Comma-joined checkbox selections
+      payload.triggers = selectedTriggers.join(", ");
+      payload.disqualifiers = selectedDisqualifiers.join(", ");
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to submit form");
+      // Only include triggerOther when "Other" was checked
+      if (!selectedTriggers.includes("Other")) {
+        delete payload.triggerOther;
+      }
+
+      payload.submittedAt = new Date().toISOString();
+      payload.source = "icp-teardown-worksheet";
+
+      const res = await fetch("/api/icp-worksheet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        let msg = `Submission failed (${res.status}).`;
+        try {
+          const j = await res.json();
+          if (j?.error) msg = j.error;
+        } catch {
+          /* ignore */
+        }
+        throw new Error(
+          `${msg} Please try again or email shivam@archrevenues.com directly.`
+        );
       }
 
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
-      console.error("Form submission error:", err);
       setError(
-        "Something went wrong submitting your request. Please try again or email us directly at hello@archrevenues.com",
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again or email shivam@archrevenues.com."
       );
     } finally {
-      setIsSubmitting(false);
+      setSubmitting(false);
     }
   };
 
+  /* ---------- success screen ---------- */
+
   if (submitted) {
     return (
-      <div className="min-h-screen bg-zinc-50 flex flex-col items-center justify-center p-6">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="max-w-lg w-full bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 text-center shadow-sm"
-        >
-          <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-8 h-8" />
+      <div className="min-h-screen bg-zinc-50 py-12 px-6 flex items-center justify-center">
+        <div className="max-w-2xl mx-auto w-full bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 shadow-sm text-center">
+          {/* checkmark */}
+          <div className="w-14 h-14 rounded-full bg-zinc-900 flex items-center justify-center mx-auto mb-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-7 h-7 text-white"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
           </div>
-          <h1 className="text-2xl font-semibold text-zinc-900 mb-4">
-            Application Received.
+
+          <h1 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-900 mb-3">
+            Your ICP worksheet is on its way to us.
           </h1>
-          <p className="text-zinc-600 leading-relaxed mb-4">
-            We will review your revenue architecture details and deliver your
-            audit within 1 business day to {formData.email}.
+
+          <p className="text-zinc-600 leading-relaxed mb-8">
+            We&apos;ve received your ICP Teardown Worksheet. Within 48 hours
+            you&apos;ll get a 5-minute Loom back from Shivam with feedback on
+            your one-liner, triggers, and disqualifiers — no strings attached.
           </p>
-          <p className="text-zinc-500 text-sm mb-8">
-            If your profile is a strong fit, your audit will include an
-            invitation to schedule a strategy call. There is no obligation.
-          </p>
-          <Link
-            href="/"
-            className="inline-flex items-center justify-center w-full bg-zinc-900 text-white px-6 py-3 rounded-md font-medium hover:bg-zinc-800 transition-colors"
-          >
-            Return to Homepage
-          </Link>
-        </motion.div>
+
+          <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 text-left text-sm text-zinc-600 leading-relaxed mb-8">
+            <strong className="text-zinc-900">Want to skip the queue?</strong>{" "}
+            Book a 20-minute fit call and we&apos;ll walk through your worksheet
+            together — live. Founding client rate ($1,000/mo) is open for the
+            next 3 agencies.
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-6 py-3 rounded-md font-medium hover:bg-zinc-800 transition-all"
+            >
+              Book a 20-min fit call →
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center gap-2 border border-zinc-300 text-zinc-700 px-6 py-3 rounded-md font-medium hover:bg-zinc-50 transition-all"
+            >
+              Back to Home
+            </Link>
+          </div>
+        </div>
       </div>
     );
   }
 
+  /* ---------- form ---------- */
+
   return (
     <div className="min-h-screen bg-zinc-50 py-12 px-6">
       <div className="max-w-4xl mx-auto">
+        {/* back link */}
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors mb-12"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-4 h-4"
+            aria-hidden="true"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
           Back to Home
         </Link>
 
-        <div>
-          <div className="mb-6">
-            <span className="inline-block py-1 px-3 rounded-full bg-zinc-200/50 text-zinc-600 text-xs font-mono font-medium tracking-wide uppercase border border-zinc-300/50">
-              Selective Intake. Limited Capacity.
-            </span>
-          </div>
-          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4">
-            Apply for a Revenue Infrastructure Audit
+        {/* hero */}
+        <div className="mb-12">
+          <span className="inline-block py-1 px-3 rounded-full bg-zinc-200/50 text-zinc-600 text-xs font-mono font-medium tracking-wide uppercase border border-zinc-300/50">
+            45-minute working session
+          </span>
+          <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4 mt-4">
+            The ICP Teardown Worksheet
           </h1>
           <p className="text-lg text-zinc-600 mb-2">
-            This assessment evaluates your outbound architecture, pipeline
-            structure, and revenue predictability. We work exclusively with web design
-            agencies selling high-ticket services.
+            Who is your agency actually built to serve? Compress your ideal
+            client profile into a single page you can hand to anyone on your
+            team — and to us, when you&apos;re ready to outsource the top of
+            your pipeline.
           </p>
           <p className="text-sm text-zinc-500 mb-12">
-            Takes 3 minutes. Audit delivered within 1 business day.
+            Takes ~45 minutes. Submit and get a 5-min Loom review back within 48
+            hours.
           </p>
+        </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-12 bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 shadow-sm"
-          >
-            {/* Section 1: Contact Details */}
-            <section>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">
-                1. Contact Details
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">
-                    Your Name *
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    name="yourName"
-                    value={formData.yourName}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">
-                    Contact Email *
-                  </label>
-                  <input
-                    required
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <CustomSelect
-                  label="Role / Title"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleCustomSelectChange}
+        {/* how-to callout */}
+        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 mb-12 text-sm text-zinc-600 leading-relaxed">
+          <h2 className="text-base font-semibold text-zinc-900 mb-3">
+            How to use this worksheet
+          </h2>
+          <ol className="list-decimal list-inside space-y-1.5">
+            {HOW_TO_STEPS.map((step, i) => (
+              <li key={i}>{step}</li>
+            ))}
+          </ol>
+        </div>
+
+        {/* form card */}
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-12 bg-white border border-zinc-200 rounded-2xl p-8 md:p-12 shadow-sm"
+        >
+          {/* ====================================================== */}
+          {/* SECTION 0 — Your details                               */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              0. Your details
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              So we know who to send the Loom review back to.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className={LABEL_CLS}>Your Name *</label>
+                <input
                   required
-                  options={[
-                    { label: "Founder", value: "Founder" },
-                    { label: "CEO", value: "CEO" },
-                    { label: "Head of Sales", value: "Head of Sales" },
-                    { label: "Operations", value: "Operations" },
-                    { label: "Marketing Lead", value: "Marketing Lead" },
-                    { label: "Other", value: "Other" },
-                  ]}
+                  type="text"
+                  name="yourName"
+                  className={INPUT_CLS}
                 />
-                <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
-                  />
-                </div>
               </div>
-            </section>
-
-            {/* Section 2: Agency Profile */}
-            <section>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">
-                2. Agency Profile
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">
-                    Agency Name *
-                  </label>
-                  <input
-                    required
-                    type="text"
-                    name="agencyName"
-                    value={formData.agencyName}
-                    onChange={handleInputChange}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <label className="block text-sm font-medium text-zinc-700 mb-2">
-                    Website URL
-                  </label>
-                  <input
-                    type="text"
-                    name="website"
-                    value={formData.website}
-                    onChange={handleInputChange}
-                    placeholder="archrevenues.com"
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
-                  />
-                </div>
-                <CustomSelect
-                  label="Team Size"
-                  name="teamSize"
-                  value={formData.teamSize}
-                  onChange={handleCustomSelectChange}
+              <div>
+                <label className={LABEL_CLS}>Contact Email *</label>
+                <input
                   required
-                  options={[
-                    { label: "1 (Solo)", value: "1 (Solo)" },
-                    { label: "2-5", value: "2-5" },
-                    { label: "6-15", value: "6-15" },
-                    { label: "16-50", value: "16-50" },
-                    { label: "51+", value: "51+" },
-                  ]}
+                  type="email"
+                  name="email"
+                  className={INPUT_CLS}
                 />
-                <CustomSelect
-                  label="Monthly Revenue"
-                  name="monthlyRevenue"
-                  value={formData.monthlyRevenue}
-                  onChange={handleCustomSelectChange}
-                  required
-                  options={[
-                    { label: "Under 5k", value: "Under 5k" },
-                    { label: "5k - 15k", value: "5k - 15k" },
-                    { label: "15k - 40k", value: "15k - 40k" },
-                    { label: "40k+", value: "40k+" },
-                  ]}
-                />
-                <div className="md:col-span-2">
-                  <CustomSelect
-                    label="What is your average deal size?"
-                    name="dealSize"
-                    value={formData.dealSize}
-                    onChange={handleCustomSelectChange}
-                    required
-                    options={[
-                      { label: "Under 1k", value: "Under 1k" },
-                      { label: "1k–5k", value: "1k–5k" },
-                      { label: "5k–15k", value: "5k–15k" },
-                      { label: "15k+", value: "15k+" },
-                    ]}
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <CustomSelect
-                    label="How many qualified sales meetings do you generate per month on average?"
-                    name="monthlyMeetings"
-                    value={formData.monthlyMeetings}
-                    onChange={handleCustomSelectChange}
-                    required
-                    options={[
-                      {
-                        label: "0 / We don't track this",
-                        value: "0 / We don't track this",
-                      },
-                      {
-                        label: "1 to 3 meetings/month",
-                        value: "1 to 3 meetings/month",
-                      },
-                      {
-                        label: "4 to 6 meetings/month",
-                        value: "4 to 6 meetings/month",
-                      },
-                      {
-                        label: "7 to 10 meetings/month",
-                        value: "7 to 10 meetings/month",
-                      },
-                      {
-                        label: "10+ meetings/month",
-                        value: "10+ meetings/month",
-                      },
-                    ]}
-                  />
-                </div>
               </div>
-            </section>
+              <div>
+                <label className={LABEL_CLS}>Agency Name *</label>
+                <input
+                  required
+                  type="text"
+                  name="agencyName"
+                  className={INPUT_CLS}
+                />
+              </div>
+              <div>
+                <label className={LABEL_CLS}>Website</label>
+                <input
+                  type="text"
+                  name="website"
+                  placeholder="archrevenues.com"
+                  className={INPUT_CLS}
+                />
+              </div>
+            </div>
+          </section>
 
-            {/* Section 3: Pipeline & Lead Sources */}
-            <section>
-              <h2 className="text-xl font-semibold text-zinc-900 mb-6 border-b border-zinc-100 pb-4">
-                3. Pipeline & Lead Sources
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-zinc-700 mb-3">
-                    Where do your current leads come from? (Select all that
-                    apply) *
-                  </label>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {[
-                      "Referrals / Word of Mouth",
-                      "Inbound / SEO",
-                      "Paid Ads",
-                      "Cold Email",
-                      "LinkedIn Outreach",
-                      "Partnerships",
-                      "Other",
-                    ].map((source) => (
-                      <label
-                        key={source}
-                        className="flex items-center gap-3 p-3 border border-zinc-200 rounded-md cursor-pointer hover:bg-zinc-50 transition-colors"
+          {/* ====================================================== */}
+          {/* SECTION 1 — Firmographics                              */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              1. Firmographics
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              The shape of the company you want to close. Start with the company
+              itself, not the person. Pick a tight firmographic box — you can
+              widen it later; you cannot tighten it once you&apos;re 90 days into
+              a doomed outbound campaign.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Industry — full width */}
+              <div className="md:col-span-2">
+                <label className={LABEL_CLS}>Industry vertical *</label>
+                <input
+                  required
+                  type="text"
+                  name="industry"
+                  placeholder='e.g. B2B SaaS — HR / payroll'
+                  className={INPUT_CLS}
+                />
+                <p className={HINT_CLS}>
+                  Be specific: &quot;B2B SaaS — HR / payroll&quot; beats
+                  &quot;SaaS&quot;
+                </p>
+              </div>
+
+              {/* Company size */}
+              <div>
+                <label className={LABEL_CLS}>
+                  Company size (employees) *
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="size"
+                  placeholder="e.g. 11–50"
+                  className={INPUT_CLS}
+                />
+              </div>
+
+              {/* Revenue stage */}
+              <div>
+                <label className={LABEL_CLS}>Revenue stage *</label>
+                <input
+                  required
+                  type="text"
+                  name="revenue"
+                  placeholder="e.g. $500K–$5M ARR"
+                  className={INPUT_CLS}
+                />
+              </div>
+
+              {/* Funding stage */}
+              <div>
+                <label className={LABEL_CLS}>Funding stage *</label>
+                <input
+                  required
+                  type="text"
+                  name="funding"
+                  placeholder="Bootstrapped / Seed / Series A / Series B+"
+                  className={INPUT_CLS}
+                />
+              </div>
+
+              {/* Geography — full width */}
+              <div className="md:col-span-2">
+                <label className={LABEL_CLS}>Geography *</label>
+                <input
+                  required
+                  type="text"
+                  name="geo"
+                  placeholder="NA only / EU only / English-speaking / global"
+                  className={INPUT_CLS}
+                />
+              </div>
+
+              {/* Buyer's title — full width */}
+              <div className="md:col-span-2">
+                <label className={LABEL_CLS}>
+                  Buyer&apos;s title (who signs the cheque) *
+                </label>
+                <input
+                  required
+                  type="text"
+                  name="buyer"
+                  placeholder="CEO / Founder / Head of Growth / CMO"
+                  className={INPUT_CLS}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* ====================================================== */}
+          {/* SECTION 2 — Pain & Trigger Events                      */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              2. Pain &amp; Trigger Events
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              Pain is a feeling. Triggers are events. You need both: pain tells
+              you why they&apos;ll buy, triggers tell you when. Target
+              &quot;companies that need a new website&quot; and you&apos;ll wait
+              forever — be in the inbox the week the trigger fires.
+            </p>
+
+            {/* Top 3 pains */}
+            <div className="space-y-4 mb-8">
+              <label className="block text-sm font-medium text-zinc-700">
+                Top 3 pains your ICP feels right now (rank them)
+              </label>
+              <textarea
+                rows={2}
+                name="pain1"
+                placeholder="Pain #1"
+                className={TEXTAREA_CLS}
+              />
+              <textarea
+                rows={2}
+                name="pain2"
+                placeholder="Pain #2"
+                className={TEXTAREA_CLS}
+              />
+              <textarea
+                rows={2}
+                name="pain3"
+                placeholder="Pain #3"
+                className={TEXTAREA_CLS}
+              />
+            </div>
+
+            {/* Trigger events */}
+            <div className="mb-8">
+              <label className="block text-sm font-medium text-zinc-700 mb-3">
+                Trigger events that mean &quot;open the inbox now&quot; — check
+                all that apply
+              </label>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {TRIGGER_OPTIONS.map((label) => {
+                  const checked = selectedTriggers.includes(label);
+                  return (
+                    <label
+                      key={label}
+                      className={`flex items-center gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
+                        checked
+                          ? "bg-zinc-900 text-white border-zinc-900"
+                          : "border-zinc-200 hover:bg-zinc-50"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => toggleTrigger(label)}
+                        className={`w-4 h-4 rounded focus:ring-zinc-900 ${
+                          checked
+                            ? "accent-white"
+                            : "text-zinc-900 border-zinc-300"
+                        }`}
+                      />
+                      <span
+                        className={`text-sm ${
+                          checked ? "text-white" : "text-zinc-700"
+                        }`}
                       >
-                        <input
-                          type="checkbox"
-                          checked={formData.leadSources.includes(source)}
-                          onChange={() => handleCheckboxChange(source)}
-                          className="w-4 h-4 text-zinc-900 border-zinc-300 rounded focus:ring-zinc-900"
-                        />
-                        <span className="text-sm text-zinc-700">{source}</span>
-                      </label>
-                    ))}
+                        {label}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+
+              {/* Conditional "Other" input */}
+              {selectedTriggers.includes("Other") && (
+                <div className="mt-3">
+                  <input
+                    type="text"
+                    name="triggerOther"
+                    placeholder="Describe the other trigger"
+                    className={INPUT_CLS}
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Where spotted first */}
+            <div>
+              <label className={LABEL_CLS}>
+                Where do you spot these triggers first?
+              </label>
+              <textarea
+                rows={3}
+                name="triggerSources"
+                className={TEXTAREA_CLS}
+              />
+              <p className={HINT_CLS}>
+                LinkedIn Sales Nav, Crunchbase, RSS, press releases, a specific
+                Slack community, your own network?
+              </p>
+            </div>
+          </section>
+
+          {/* ====================================================== */}
+          {/* SECTION 3 — Behavioral Signals                         */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              3. Behavioral Signals
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              Where they hang out, what they read. If you can&apos;t name the
+              podcast your ICP listens to on the way to work, you don&apos;t
+              know your ICP. Behavioral signals tell you where to show up before
+              you ever send cold outbound — and they sharpen the language you
+              use when you do.
+            </p>
+
+            <div className="space-y-6">
+              {/* Podcasts */}
+              <div>
+                <label className={LABEL_CLS}>
+                  Top 3 podcasts your ICP actually listens to
+                </label>
+                <input
+                  type="text"
+                  name="podcasts"
+                  placeholder="e.g. Lenny's Podcast, The SaaS Podcast, Founder's Journal"
+                  className={INPUT_CLS}
+                />
+              </div>
+
+              {/* Newsletters */}
+              <div>
+                <label className={LABEL_CLS}>
+                  Top 3 newsletters in their inbox
+                </label>
+                <input
+                  type="text"
+                  name="newsletters"
+                  placeholder="e.g. Growth Unhinged, Stacked Marketer, Refactoring"
+                  className={INPUT_CLS}
+                />
+                <p className={HINT_CLS}>
+                  Be honest — which ones get opened?
+                </p>
+              </div>
+
+              {/* Slack / Discord */}
+              <div>
+                <label className={LABEL_CLS}>
+                  Slack / Discord communities they are in
+                </label>
+                <input
+                  type="text"
+                  name="slack"
+                  placeholder="e.g. Mind the Product, Superpath, Design Leadership"
+                  className={INPUT_CLS}
+                />
+              </div>
+
+              {/* LinkedIn */}
+              <div>
+                <label className={LABEL_CLS}>
+                  LinkedIn voices they engage with
+                </label>
+                <input
+                  type="text"
+                  name="linkedin"
+                  placeholder="e.g. Wes Bush, Elena Verna, Hila Qu"
+                  className={INPUT_CLS}
+                />
+                <p className={HINT_CLS}>Likes, comments, shares</p>
+              </div>
+
+              {/* Events */}
+              <div>
+                <label className={LABEL_CLS}>
+                  Conferences / events they attend
+                </label>
+                <input
+                  type="text"
+                  name="events"
+                  placeholder="e.g. SaaStr Annual, BOSS, Config"
+                  className={INPUT_CLS}
+                />
+                <p className={HINT_CLS}>Last 12 months</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ====================================================== */}
+          {/* SECTION 4 — Disqualifiers                              */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              4. Disqualifiers
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              Who is NOT your ICP — and why it matters. Disqualifiers are the
+              most undervalued section of any ICP document. Every prospect who
+              matches a disqualifier is a meeting you don&apos;t have to take, a
+              proposal you don&apos;t have to write, and a 60-day ghosting you
+              don&apos;t have to suffer through. Write them down. Enforce them.
+              Update them every quarter.
+            </p>
+
+            <div>
+              <label className="block text-sm font-medium text-zinc-700 mb-3">
+                Hard disqualifiers — if any of these are true, walk away
+              </label>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {DISQUALIFIER_OPTIONS.map((label) => {
+                  const checked = selectedDisqualifiers.includes(label);
+                  return (
+                    <label
+                      key={label}
+                      className={`flex items-center gap-3 p-3 border rounded-md cursor-pointer transition-colors ${
+                        checked
+                          ? "bg-zinc-900 text-white border-zinc-900"
+                          : "border-zinc-200 hover:bg-zinc-50"
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={checked}
+                        onChange={() => toggleDisqualifier(label)}
+                        className={`w-4 h-4 rounded focus:ring-zinc-900 ${
+                          checked
+                            ? "accent-white"
+                            : "text-zinc-900 border-zinc-300"
+                        }`}
+                      />
+                      <span
+                        className={`text-sm ${
+                          checked ? "text-white" : "text-zinc-700"
+                        }`}
+                      >
+                        {label}
+                      </span>
+                    </label>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* ====================================================== */}
+          {/* SECTION 5 — ICP One-Pager                              */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              5. ICP One-Pager
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              Distill everything above into one page. This is the page you hand
+              to your account manager, your copywriter, your SDR, or to ARCH
+              Revenues when you outsource the top of your pipeline. If it
+              doesn&apos;t fit on this page, it&apos;s not your ICP — it&apos;s
+              a wish list.
+            </p>
+
+            {/* 6-row table */}
+            <div className="overflow-hidden rounded-lg border border-zinc-200 mb-8">
+              {ONE_PAGER_ROWS.map((row, i) => (
+                <div
+                  key={row.name}
+                  className={`grid md:grid-cols-5 gap-4 md:gap-6 p-5 ${
+                    i !== ONE_PAGER_ROWS.length - 1
+                      ? "border-b border-zinc-100"
+                      : ""
+                  }`}
+                >
+                  <div className="md:col-span-2">
+                    <p className="text-xs font-mono font-bold tracking-wide text-zinc-900">
+                      {row.title}
+                    </p>
+                    <p className="text-xs text-zinc-400 italic mt-1">
+                      {row.prompt}
+                    </p>
+                  </div>
+                  <div className="md:col-span-3">
+                    <textarea
+                      rows={2}
+                      name={row.name}
+                      className={TEXTAREA_CLS}
+                    />
                   </div>
                 </div>
-              </div>
-            </section>
+              ))}
+            </div>
 
+            {/* Top 5 dream accounts */}
+            <div>
+              <p className="text-xs font-mono font-bold tracking-wide text-zinc-900 mb-1">
+                TOP 5 DREAM ACCOUNTS
+              </p>
+              <p className="text-xs text-zinc-400 mb-4">
+                Name five real companies that match this ICP right now. If you
+                can&apos;t name five, your ICP is still too abstract — go back
+                to Section 1.
+              </p>
+              <div className="space-y-3">
+                {[1, 2, 3, 4, 5].map((n) => (
+                  <div key={n} className="flex items-center gap-3">
+                    <span className="text-sm font-mono text-zinc-400 w-6">
+                      {n}.
+                    </span>
+                    <input
+                      type="text"
+                      name={`account${n}`}
+                      placeholder="Company name (and why they fit)"
+                      className="flex-1 bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ====================================================== */}
+          {/* CLOSING — What happens next                            */}
+          {/* ====================================================== */}
+          <section>
+            <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
+              What happens next
+            </h2>
+            <p className="text-sm text-zinc-500 mb-6">
+              Three paths. Pick one after you submit.
+            </p>
+
+            <div className="space-y-4">
+              {/* Path 1 */}
+              <div className="bg-zinc-50 border-l-2 border-zinc-900 rounded-r-md p-5">
+                <p className="font-semibold text-zinc-900 text-sm mb-1">
+                  Path 1 — Run it yourself.
+                </p>
+                <p className="text-sm text-zinc-600 leading-relaxed">
+                  You now have a one-page ICP. Hand it to your SDR, point them
+                  at LinkedIn Sales Navigator, and start a 30-day outbound
+                  sprint. Expect 20–40 hours of weekly effort to book 4–8 demos.
+                  Right path if you have a junior SDR on payroll and 4–6 weeks
+                  of runway.
+                </p>
+              </div>
+
+              {/* Path 2 */}
+              <div className="bg-zinc-50 border-l-2 border-zinc-900 rounded-r-md p-5">
+                <p className="font-semibold text-zinc-900 text-sm mb-1">
+                  Path 2 — Hand the profile to ARCH Revenues.
+                </p>
+                <p className="text-sm text-zinc-600 leading-relaxed">
+                  Send us the completed one-pager (just hit submit below). We
+                  turn it into a 200-account prospect list, write the sequence,
+                  run outbound on your behalf, and book 8–12 qualified demos per
+                  month into your calendar. You only pay if demos show up.
+                  Founding Client rate is $1,000/mo for the first 3 agencies —
+                  after that it moves to $1,750/mo.
+                </p>
+              </div>
+
+              {/* Path 3 */}
+              <div className="bg-zinc-50 border-l-2 border-zinc-900 rounded-r-md p-5">
+                <p className="font-semibold text-zinc-900 text-sm mb-1">
+                  Path 3 — Park it.
+                </p>
+                <p className="text-sm text-zinc-600 leading-relaxed">
+                  Not ready to do either? Save this worksheet. Revisit it in 90
+                  days. The ICP almost always looks different once you&apos;ve
+                  run a few campaigns and learned what actually closes. No
+                  penalty for waiting — the Founding Client rate will still be
+                  on the table when you come back.
+                </p>
+              </div>
+            </div>
+
+            <blockquote className="mt-8 pl-4 border-l-2 border-zinc-300 italic text-zinc-600 text-base leading-relaxed">
+              The agency that wins the SaaS category is not the one with the
+              best portfolio. It is the one with the tightest ICP and the most
+              disciplined outbound.
+            </blockquote>
+          </section>
+
+          {/* ====================================================== */}
+          {/* SUBMIT AREA                                            */}
+          {/* ====================================================== */}
+          <section>
+            {/* error box */}
             {error && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-md text-sm text-red-600 font-medium text-center">
+              <div className="mb-4 bg-red-50 border border-red-200 rounded-xl p-4 text-sm text-red-700 leading-relaxed">
                 {error}
               </div>
             )}
 
-            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5 text-sm text-zinc-500 leading-relaxed text-center">
-              This is not a marketing consultation.
-              <br />
-              This is a structured revenue system assessment.
-              <br />
-              <span className="text-zinc-900 font-medium">
-                We onboard a limited number of companies per quarter.
-              </span>
+            {/* submit note */}
+            <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5 text-sm text-zinc-500 leading-relaxed text-center mb-6">
+              Submitting this form emails your worksheet to
+              shivam@archrevenues.com. You&apos;ll get a 5-minute Loom back
+              within 48 hours — no strings attached.
             </div>
 
+            {/* submit button */}
             <button
               type="submit"
-              disabled={isSubmitting || formData.leadSources.length === 0}
-              className="w-full flex items-center justify-center gap-2 bg-zinc-900 text-white px-6 py-4 rounded-md font-medium hover:bg-zinc-800 transition-all disabled:opacity-70 disabled:cursor-not-allowed text-lg mt-8"
+              disabled={submitting}
+              className="w-full flex items-center justify-center gap-2 bg-zinc-900 text-white px-6 py-4 rounded-md font-medium hover:bg-zinc-800 transition-all disabled:opacity-70 disabled:cursor-not-allowed text-lg"
             >
-              {isSubmitting ? (
+              {submitting ? (
                 <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  Submitting Application...
+                  <svg
+                    className="animate-spin w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    />
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    />
+                  </svg>
+                  Sending worksheet…
                 </>
               ) : (
-                "Submit Application"
+                <>Submit worksheet →</>
               )}
             </button>
-            <p className="text-center text-sm text-zinc-500 mt-4">
+
+            <p className="text-center text-xs text-zinc-400 mt-3">
               Your information is secure and will never be shared.
             </p>
-          </form>
-        </div>
+          </section>
+        </form>
       </div>
     </div>
   );

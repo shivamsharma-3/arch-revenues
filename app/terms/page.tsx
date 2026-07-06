@@ -10,7 +10,7 @@ export default function TermsPage() {
         <div className="max-w-4xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-400 hover:text-zinc-900 transition-colors mb-12 uppercase tracking-widest"
+            className="inline-flex items-center gap-2 text-xs font-mono font-bold text-zinc-400 hover:text-zinc-600 transition-colors mb-12 uppercase tracking-widest"
           >
             <ArrowLeft className="w-3 h-3" />
             Back to Home
@@ -29,7 +29,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 01
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Agreement to Terms
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
@@ -42,7 +42,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 02
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Services & Scope
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
@@ -55,7 +55,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 03
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Paid Performance Pilot & Deliverables
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm mb-4">
@@ -74,7 +74,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 04
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Payment & Retainer Model
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
@@ -87,7 +87,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 05
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Cancellation & Flexibility
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
@@ -100,7 +100,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 06
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Intellectual Property
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
@@ -113,7 +113,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 07
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Limitation of Liability
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
@@ -126,7 +126,7 @@ export default function TermsPage() {
               <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
                 Section 08
               </div>
-              <h2 className="text-xl font-bold text-zinc-900 mb-4">
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Contact Information
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">

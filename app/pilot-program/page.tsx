@@ -58,7 +58,7 @@ export default function PilotProgramPage() {
                 href="/strategy-call"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
               >
-                Book Strategy Call
+                Book a 20-min fit call →
               </Link>
             </div>
           </div>

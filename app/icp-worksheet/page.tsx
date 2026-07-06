@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -6,62 +7,75 @@ import { useRouter } from "next/navigation";
 export default function ICPWorksheetPage() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (firstName && email) {
-      router.push("/icp-worksheet/thank-you");
+      setIsSubmitting(true);
+      try {
+        await fetch('/api/icp-worksheet', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ firstName, email }),
+        });
+        router.push("/icp-worksheet/thank-you");
+      } catch (error) {
+        console.error("Error submitting form", error);
+        setIsSubmitting(false);
+      }
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <main className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24">
+      <motion.main initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24">
         <section className="px-6 max-w-2xl mx-auto text-center">
-          <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-6">
             The 1-page worksheet SaaS founders use to define their ICP — before they spend $1 on outbound.
           </h1>
-          <p className="text-[18px] text-zinc-700 leading-relaxed mb-12">
+          <p className="text-lg text-zinc-700 leading-relaxed mb-12">
             8 questions. 15 minutes. The exact worksheet we use with every ARCH Revenues client to decide who to target, who to ignore, and what triggers a meeting request.
           </p>
 
-          <div className="bg-white p-8 md:p-12 rounded-2xl border-2 border-[#D4875A] max-w-xl w-full mx-auto shadow-lg text-left">
+          <div className="bg-white p-8 md:p-12 rounded-2xl border-2 border-zinc-900 max-w-xl w-full mx-auto shadow-lg text-left">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="firstName" className="block text-[#1A2330] font-bold mb-2">First Name</label>
+                <label htmlFor="firstName" className="block text-zinc-900 font-bold mb-2">First Name</label>
                 <input
                   type="text"
                   id="firstName"
                   required
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#D4875A]"
+                  className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-900"
                   placeholder="Jane"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-[#1A2330] font-bold mb-2">Work Email</label>
+                <label htmlFor="email" className="block text-zinc-900 font-bold mb-2">Work Email</label>
                 <input
                   type="email"
                   id="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#D4875A]"
+                  className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-900"
                   placeholder="jane@saascompany.com"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#D4875A] text-white font-bold text-[18px] py-4 rounded-xl hover:bg-[#c2794e] transition-colors shadow-lg hover:shadow-[#D4875A]/20"
+                disabled={isSubmitting}
+                className="w-full bg-zinc-900 text-white font-bold text-lg py-4 rounded-xl hover:bg-zinc-800 transition-colors shadow-lg hover:shadow-zinc-900/20 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Download the worksheet
+                {isSubmitting ? "Sending..." : "Download the worksheet"}
               </button>
             </form>
           </div>
         </section>
-      </main>
+      </motion.main>
     </div>
   );
 }

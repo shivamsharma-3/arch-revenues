@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
 
 export function Comparison() {
   return (
-    <section id="comparison" className="py-12 md:py-24 px-6 bg-white border-b border-zinc-200/50">
+    <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.5 }} id="comparison" className="py-8 md:py-24 px-6 bg-white border-b border-zinc-200/50">
       <div className="max-w-[88rem] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16"
+          className="mb-10"
         >
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900">
+          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
             Why Agencies Choose Us Over Hiring or Going DIY
           </h2>
         </motion.div>
@@ -64,7 +64,7 @@ export function Comparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-12 max-w-5xl"
+          className="mt-10 max-w-5xl"
         >
           <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 mb-6">
             The Bottom Line:
@@ -83,12 +83,12 @@ export function Comparison() {
           
           <Link 
             href="/strategy-call"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
           >
             Book a 20-min fit call →
           </Link>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

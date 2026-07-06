@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'motion/react';
@@ -22,7 +22,7 @@ export function Header() {
     : 'bg-white/50 backdrop-blur-md border border-black shadow-md text-zinc-900';
 
   const navTextColorClass = 'text-zinc-500';
-  const navHoverColorClass = 'hover:text-zinc-900';
+  const navHoverColorClass = 'hover:text-zinc-600';
   const activeNavColorClass = 'text-zinc-900 font-semibold';
   const buttonClass = 'bg-zinc-900 text-white hover:bg-zinc-800 shadow-sm active:scale-95';
 
@@ -37,8 +37,8 @@ export function Header() {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}
     >
-      <div className={`max-w-6xl mx-auto px-6 h-14 flex items-center justify-between rounded-full transition-all duration-300 ${headerBgClass}`}>
-        <Link href="/" className="flex items-center gap-2">
+      <div className={`relative max-w-6xl mx-auto px-6 h-14 flex items-center justify-between rounded-full transition-all duration-300 ${headerBgClass}`}>
+        <Link href="/" className="flex items-center gap-2 z-10">
           <svg viewBox="0 0 100 100" fill="currentColor" className="w-6 h-6">
             <path d="M50 2 L56 12 L50 22 L44 12 Z" />
             <path d="M43 28 L12 95 L38 95 L48 55 Z" />
@@ -51,7 +51,7 @@ export function Header() {
           </span>
         </Link>
         
-        <nav className={`hidden lg:flex items-center gap-6 text-sm font-medium ${navTextColorClass}`}>
+        <nav className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm font-medium ${navTextColorClass}`}>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -73,10 +73,17 @@ export function Header() {
           })}
         </nav>
 
-
-        <button className="lg:hidden p-2" onClick={() => setIsMobileMenuOpen(true)}>
-          <Menu className="w-6 h-6" />
-        </button>
+        <div className="flex items-center gap-4 z-10">
+          <Link
+            href="/strategy-call"
+            className="hidden lg:flex items-center justify-center bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-800 transition-all shadow-sm"
+          >
+            Book a fit call
+          </Link>
+          <button className="lg:hidden p-2" onClick={() => setIsMobileMenuOpen(true)}>
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -95,6 +102,13 @@ export function Header() {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                href="/strategy-call"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="mt-4 flex items-center justify-center bg-white text-zinc-900 px-8 py-4 rounded-xl text-xl font-bold hover:bg-zinc-100 transition-colors w-full max-w-xs"
+              >
+                Book a fit call
+              </Link>
             </nav>
           </motion.div>
         )}

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from 'motion/react';
 import { XCircle } from 'lucide-react';
@@ -29,7 +29,7 @@ export function Problem() {
   ];
 
   return (
-    <section id="problem" className="py-12 md:py-24 px-6 bg-white border-b border-zinc-200/50 overflow-hidden">
+    <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.5 }} id="problem" className="py-12 md:py-24 px-6 bg-white border-b border-zinc-200/50 overflow-hidden">
       <div className="max-w-[88rem] mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-16 items-start">
           <motion.div
@@ -39,7 +39,7 @@ export function Problem() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:sticky lg:top-24"
           >
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
               The <span className="text-zinc-400 italic font-serif">Feast-or-Famine</span> Cycle Ends Here.
             </h2>
             <div className="text-lg text-zinc-600 mb-8 leading-relaxed space-y-4 pr-0 lg:pr-8">
@@ -55,7 +55,7 @@ export function Problem() {
             </div>
             <Link 
               href="/strategy-call"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
               Book a 20-min fit call →
             </Link>
@@ -74,7 +74,7 @@ export function Problem() {
                 <div className="w-10 h-10 rounded-xl bg-white border border-red-100 text-red-500 flex items-center justify-center mb-4 shadow-sm">
                   <problem.icon className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-zinc-900 mb-1">{problem.title}</h3>
+                <h3 className="text-base font-semibold text-zinc-900 mb-1">{problem.title}</h3>
                 <p className="text-sm text-zinc-500 leading-relaxed">
                   {problem.description}
                 </p>
@@ -83,6 +83,6 @@ export function Problem() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

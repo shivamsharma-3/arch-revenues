@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from 'motion/react';
 import { X, Check } from 'lucide-react';
@@ -22,7 +22,7 @@ export function Positioning() {
   return (
     <section id="about" className="py-16 md:py-32 px-6 bg-zinc-50 border-b border-zinc-200/50">
       <div className="max-w-[88rem] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center justify-between mb-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center justify-between mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -56,13 +56,13 @@ export function Positioning() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white border border-zinc-200 p-8 relative overflow-hidden first:rounded-t-3xl md:first:rounded-tr-none md:first:rounded-l-3xl last:rounded-b-3xl md:last:rounded-bl-none md:last:rounded-r-3xl"
+              className="bg-white border border-zinc-200 p-6 relative overflow-hidden first:rounded-t-3xl md:first:rounded-tr-none md:first:rounded-l-3xl last:rounded-b-3xl md:last:rounded-bl-none md:last:rounded-r-3xl"
             >
               <div className="relative z-10">
                 <div className="text-4xl font-mono font-bold text-zinc-100 mb-6">
                   0{index + 1}
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900 mb-3">
+                <h3 className="text-xl font-semibold text-zinc-900 mb-3">
                   {step.title}
                 </h3>
                 <p className="text-zinc-600 leading-relaxed text-sm md:text-base">

@@ -1,4 +1,5 @@
-'use client';
+"use client";
+import { motion } from "motion/react";
 
 import Link from 'next/link';
 import { ArrowRight, Check } from 'lucide-react';
@@ -12,19 +13,35 @@ export function Pricing() {
     "Cancel anytime after first 30 days — no annual contract"
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "B2B Outbound Acquisition",
+    "provider": {
+      "@type": "Organization",
+      "name": "ARCH Revenues"
+    },
+    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS-focused web design agencies.",
+    "serviceType": "B2B Lead Generation"
+  };
+
   return (
-    <section id="pricing" className="py-12 md:py-20 px-6 bg-white border-b border-zinc-200/50">
+    <motion.section initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.5 }} id="pricing" className="py-12 md:py-20 px-6 bg-white border-b border-zinc-200/50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-3xl mx-auto">
-        <div className="bg-white border-2 border-[#D4875A] rounded-2xl p-8 md:p-12 shadow-xl shadow-[#D4875A]/5">
+        <div className="bg-white border-2 border-zinc-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-zinc-900/5">
           <div className="text-center mb-8">
-            <div className="inline-block bg-[#F8F0EB] text-[#D4875A] text-[12px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            <div className="inline-block bg-zinc-50 text-zinc-900 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
               FOUNDING CLIENT RATE — 3 SPOTS ONLY
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-[56px] font-bold text-[#1A2330] leading-none">$1,000</span>
-              <span className="text-[20px] text-zinc-500 font-medium">/ month</span>
+              <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,000</span>
+              <span className="text-xl text-zinc-500 font-medium">/ month</span>
             </div>
-            <p className="text-[16px] text-[#506070]">
+            <p className="text-base text-zinc-600">
               Locked for 90 days. Increases to $1,750/mo for client #4.
             </p>
           </div>
@@ -32,8 +49,8 @@ export function Pricing() {
           <div className="space-y-4 mb-10">
             {features.map((feature, i) => (
               <div key={i} className="flex gap-3 items-start">
-                <Check className="w-5 h-5 text-[#D4875A] shrink-0 mt-0.5" />
-                <span className="text-[#1A2330] font-medium">{feature}</span>
+                <Check className="w-5 h-5 text-zinc-900 shrink-0 mt-0.5" />
+                <span className="text-zinc-900 font-medium">{feature}</span>
               </div>
             ))}
           </div>
@@ -41,16 +58,16 @@ export function Pricing() {
           <div className="text-center">
             <Link
               href="/strategy-call"
-              className="group inline-flex items-center justify-center gap-2 w-full bg-[#D4875A] text-white px-8 py-5 rounded-xl text-[18px] font-semibold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20 mb-4"
+              className="group inline-flex items-center justify-center gap-2 w-full bg-zinc-900 text-white px-8 py-5 rounded-xl text-lg font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20 mb-4"
             >
               Book a 20-min fit call →
             </Link>
-            <p className="text-[12px] text-zinc-500 max-w-lg mx-auto leading-relaxed">
+            <p className="text-xs text-zinc-500 max-w-lg mx-auto leading-relaxed">
               In exchange for the founding rate, you agree to be featured as a public case study once we hit your first 8 booked meetings.
             </p>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

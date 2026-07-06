@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from 'motion/react';
 import Link from 'next/link';
@@ -52,7 +52,7 @@ export function EngagementModel() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="bg-zinc-50 border border-zinc-200 rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden"
+            className="bg-zinc-50 border border-zinc-200 rounded-[2.5rem] p-6 md:p-8 relative overflow-hidden"
           >
             <div className="relative z-10 space-y-8">
               {[
@@ -66,7 +66,7 @@ export function EngagementModel() {
                     0{i + 1}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-zinc-900 mb-1">{item.title}</h3>
+                    <h3 className="text-base font-semibold text-zinc-900 mb-1">{item.title}</h3>
                     <p className="text-xs text-zinc-500 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { ArrowRight, Database, Target, Calendar, BarChart3, TrendingUp } from 'lucide-react';
 

@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "motion/react";
 
 import Link from "next/link";
 
@@ -30,26 +31,42 @@ export default function HowItWorksPage() {
     },
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "B2B Outbound Acquisition",
+    "provider": {
+      "@type": "Organization",
+      "name": "ARCH Revenues"
+    },
+    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS-focused web design agencies.",
+    "serviceType": "B2B Lead Generation"
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-zinc-50">
-      <main className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24 px-6 max-w-4xl mx-auto w-full">
-        <h1 className="text-[32px] md:text-[48px] font-bold text-[#1A2330] tracking-tight mb-16 text-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <motion.main initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24 px-6 max-w-4xl mx-auto w-full">
+        <h1 className="text-4xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-16 text-center">
           How It Works
         </h1>
         
         <div className="space-y-12 mb-16">
           {steps.map((step, index) => (
             <div key={index} className="bg-white border border-zinc-200 rounded-xl p-8 md:p-12">
-              <div className="text-[64px] font-bold text-[#D4875A] leading-none mb-6">
+              <div className="text-5xl font-semibold text-zinc-900 leading-none mb-6">
                 {step.number}
               </div>
-              <h2 className="text-[24px] font-bold text-[#1A2330] mb-4">
+              <h2 className="text-2xl font-semibold text-zinc-900 mb-4">
                 {step.title}
               </h2>
-              <p className="text-[18px] text-[#506070] font-normal leading-relaxed mb-6">
+              <p className="text-lg text-zinc-600 font-normal leading-relaxed mb-6">
                 {step.desc}
               </p>
-              <div className="text-[14px] text-zinc-500 italic">
+              <div className="text-sm text-zinc-500 italic">
                 {step.timing}
               </div>
             </div>
@@ -59,18 +76,18 @@ export default function HowItWorksPage() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             href="/strategy-call"
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-[#D4875A] text-white px-8 py-4 rounded-xl text-[18px] font-bold hover:bg-[#c2794e] transition-all shadow-lg hover:shadow-[#D4875A]/20"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
           >
             Book a 20-min fit call →
           </Link>
           <Link
             href="/icp-worksheet"
-            className="text-[#1A2330] text-[16px] underline hover:text-[#D4875A] transition-colors"
+            className="text-zinc-900 text-base underline hover:text-zinc-600 transition-colors"
           >
             Download the ICP worksheet
           </Link>
         </div>
-      </main>
+      </motion.main>
     </div>
   );
 }
