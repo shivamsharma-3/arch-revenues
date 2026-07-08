@@ -43,7 +43,7 @@ export function Comparison() {
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Time to First Meeting</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">90-120 days <br/>(hire + train)</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">45-60 days</div>
-            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">21-30 days <br/>(setup & launch)</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">Week 3 (21 days) <br/>(setup & launch)</div>
 
             {/* Lead Quality */}
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Lead Quality</div>
@@ -85,7 +85,7 @@ export function Comparison() {
             href="/strategy-call"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
           >
-            Book a 20-min fit call →
+            Book a 20-min strategy call →
           </Link>
         </motion.div>
       </div>

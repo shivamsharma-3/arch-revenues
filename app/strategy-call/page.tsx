@@ -80,7 +80,7 @@ export default function StrategyCallPage() {
                   rel="noopener noreferrer"
                   className="w-full max-w-sm inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] mb-3 text-sm"
                 >
-                  Book a 20-min fit call →
+                  Book a 20-min strategy call →
                 </a>
                 <p className="text-[10px] text-zinc-400">20-minute call • No obligation</p>
 

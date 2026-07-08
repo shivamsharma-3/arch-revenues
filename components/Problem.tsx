@@ -57,7 +57,7 @@ export function Problem() {
               href="/strategy-call"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
-              Book a 20-min fit call →
+              Book a 20-min strategy call →
             </Link>
           </motion.div>
 

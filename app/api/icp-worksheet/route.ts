@@ -5,9 +5,10 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const { firstName, email } = await req.json();
+    const payload = await req.json();
+    const { yourName, email } = payload;
 
-    if (!firstName || !email) {
+    if (!yourName || !email) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -16,16 +17,37 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, simulated: true });
     }
 
+    // Format all payload fields into a nice HTML table
+    const htmlPayload = Object.entries(payload)
+      .filter(([key]) => key !== 'yourName' && key !== 'email')
+      .map(([key, value]) => `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">${key}</td><td style="padding: 8px; border: 1px solid #ddd;">${value}</td></tr>`)
+      .join('');
+
+    // 1. Send confirmation to user
+    await resend.emails.send({
+      from: 'ARCH Revenues <hello@archrevenues.com>',
+      to: email,
+      subject: 'Your ICP Worksheet Received',
+      html: `
+        <p>Hi ${yourName},</p>
+        <p>Thanks for submitting your ICP worksheet.</p>
+        <p>I'll be reviewing your details and will send over a 5-minute Loom teardown within 48 hours.</p>
+        <p>Best,<br>Shivam Sharma</p>
+      `,
+    });
+
+    // 2. Send the actual form data to the founder
     const { data, error } = await resend.emails.send({
       from: 'ARCH Revenues <hello@archrevenues.com>',
-      to: email, // Sending to the user
-      bcc: 'shivam@archrevenues.com', // Sending a copy to the founder
-      subject: 'Your ICP Worksheet',
+      to: 'shivam@archrevenues.com',
+      subject: `New ICP Worksheet: ${yourName}`,
       html: `
-        <p>Hi ${firstName},</p>
-        <p>Here is the 1-page ICP worksheet we use with every ARCH Revenues client.</p>
-        <p><a href="https://archrevenues.com/ICP-Teardown-Worksheet.pdf">Download ICP Worksheet (PDF)</a></p>
-        <p>Best,<br>Shivam Sharma</p>
+        <h2>New ICP Worksheet Submission</h2>
+        <p><strong>Name:</strong> ${yourName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <table style="border-collapse: collapse; width: 100%;">
+          ${htmlPayload}
+        </table>
       `,
     });
 

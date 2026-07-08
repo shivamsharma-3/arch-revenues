@@ -27,7 +27,7 @@ export function HowItWorks() {
       number: "4",
       title: "We book and report", 
       desc: "Replies converted to meetings on your calendar. Weekly report every Monday — opens, replies, meetings booked.", 
-      timing: "Week 3+"
+      timing: "Week 3 (21 days)"
     },
   ];
 
@@ -80,7 +80,7 @@ export function HowItWorks() {
             href="/strategy-call"
             className="inline-flex w-full sm:w-auto items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
           >
-            Book a 20-min fit call →
+            Book a 20-min strategy call →
           </Link>
         </div>
       </div>

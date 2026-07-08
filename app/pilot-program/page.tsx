@@ -38,7 +38,7 @@ export default function PilotProgramPage() {
                 We&apos;re serious about building predictable outbound pipelines for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients).
               </p>
               <p>
-                To prove the system works, our pilot program requires only a setup fee to cover infrastructure costs. You only pay the rest of the retainer once we start generating qualified meetings. No long contracts. No fluff.
+                The Paid Performance Pilot is offered at a flat $1,000/mo retainer (our Founding Client Rate). A small one-time setup fee covers your sending domains and infrastructure, and the full retainer is only earned when we deliver qualified meetings. See <Link href="/pricing" className="underline hover:text-zinc-900 transition-colors">Pricing</Link> for the full breakdown.
               </p>
               <p>
                 We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact AI-personalized messages we send, the replies we get, and any meetings that come from it.
@@ -58,7 +58,7 @@ export default function PilotProgramPage() {
                 href="/strategy-call"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
               >
-                Book a 20-min fit call →
+                Book a 20-min strategy call →
               </Link>
             </div>
           </div>

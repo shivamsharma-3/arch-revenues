@@ -211,7 +211,7 @@ export default function AuditPage() {
 
           <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 text-left text-sm text-zinc-600 leading-relaxed mb-8">
             <strong className="text-zinc-900">Want to skip the queue?</strong>{" "}
-            Book a 20-minute fit call and we&apos;ll walk through your worksheet
+            Book a 20-minute strategy call and we&apos;ll walk through your worksheet
             together — live. Founding client rate ($1,000/mo) is open for the
             next 3 agencies.
           </div>
@@ -221,7 +221,7 @@ export default function AuditPage() {
               href="/book"
               className="inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-6 py-3 rounded-md font-medium hover:bg-zinc-800 transition-all"
             >
-              Book a 20-min fit call →
+              Book a 20-min strategy call →
             </Link>
             <Link
               href="/"

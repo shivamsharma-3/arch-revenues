@@ -42,7 +42,7 @@ export function EngagementModel() {
                 href="/strategy-call" 
                 className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-zinc-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all shadow-xl shadow-zinc-900/10"
               >
-                Book a 20-min fit call →
+                Book a 20-min strategy call →
               </Link>
             </div>
           </motion.div>

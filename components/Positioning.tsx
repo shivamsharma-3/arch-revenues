@@ -59,8 +59,8 @@ export function Positioning() {
               className="bg-white border border-zinc-200 p-6 relative overflow-hidden first:rounded-t-3xl md:first:rounded-tr-none md:first:rounded-l-3xl last:rounded-b-3xl md:last:rounded-bl-none md:last:rounded-r-3xl"
             >
               <div className="relative z-10">
-                <div className="text-4xl font-mono font-bold text-zinc-100 mb-6">
-                  0{index + 1}
+                <div className="text-4xl font-mono font-bold text-zinc-100 mb-6 tracking-tighter">
+                  {String(index + 1).padStart(2, '0')}
                 </div>
                 <h3 className="text-xl font-semibold text-zinc-900 mb-3">
                   {step.title}

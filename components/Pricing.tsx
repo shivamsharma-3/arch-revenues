@@ -35,7 +35,7 @@ export function Pricing() {
         <div className="bg-white border-2 border-zinc-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-zinc-900/5">
           <div className="text-center mb-8">
             <div className="inline-block bg-zinc-50 text-zinc-900 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-              FOUNDING CLIENT RATE — 3 SPOTS ONLY
+              FOUNDING CLIENT RATE (PAID PERFORMANCE PILOT) — 3 SPOTS ONLY
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,000</span>
@@ -60,7 +60,7 @@ export function Pricing() {
               href="/strategy-call"
               className="group inline-flex items-center justify-center gap-2 w-full bg-zinc-900 text-white px-8 py-5 rounded-xl text-lg font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20 mb-4"
             >
-              Book a 20-min fit call →
+              Book a 20-min strategy call →
             </Link>
             <p className="text-xs text-zinc-500 max-w-lg mx-auto leading-relaxed">
               In exchange for the founding rate, you agree to be featured as a public case study once we hit your first 8 booked meetings.

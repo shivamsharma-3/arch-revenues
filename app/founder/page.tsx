@@ -24,7 +24,7 @@ export default function FounderPage() {
               I work from Hyderabad, India. My clients are in the US, UK, and Australia. The geography is not a handicap — it is the reason I can charge $1,000/mo for a service that US-based agencies charge $3,500/mo to deliver, and still book calls with the same caliber of SaaS founder.
             </p>
             <p>
-              If you&apos;re a SaaS founder between $20K and $200K MRR and you&apos;re tired of relying on referrals, book a fit call. If I can&apos;t help, I&apos;ll tell you in the first 10 minutes.
+              If you&apos;re a SaaS founder between $20K and $200K MRR and you&apos;re tired of relying on referrals, book a strategy call. If I can&apos;t help, I&apos;ll tell you in the first 10 minutes.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ export default function FounderPage() {
               href="/strategy-call"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
             >
-              Book a 20-min fit call →
+              Book a 20-min strategy call →
             </Link>
             <a
               href="https://www.linkedin.com/in/shivam-sharma1203/"

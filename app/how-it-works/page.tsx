@@ -27,7 +27,7 @@ export default function HowItWorksPage() {
       number: "4",
       title: "We book and report", 
       desc: "Replies converted to meetings on your calendar. Weekly report every Monday — opens, replies, meetings booked. When prospects reply, we handle the inbox management. We qualify the lead, handle common objections, and route them directly to your calendar. You receive a transparent, no-fluff report every Monday showing exactly what happened the previous week.", 
-      timing: "Week 3+"
+      timing: "Week 3 (21 days)"
     },
   ];
 
@@ -78,13 +78,13 @@ export default function HowItWorksPage() {
             href="/strategy-call"
             className="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
           >
-            Book a 20-min fit call →
+            Book a 20-min strategy call →
           </Link>
           <Link
-            href="/icp-worksheet"
+            href="/audit"
             className="text-zinc-900 text-base underline hover:text-zinc-600 transition-colors"
           >
-            Download the ICP worksheet
+            Fill out the ICP worksheet →
           </Link>
         </div>
       </motion.main>
