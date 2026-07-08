@@ -31,7 +31,7 @@ export function Comparison() {
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Upfront Cost</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">$60-100k/year <br/>+ benefits</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">$5-10k setup <br/>fee</div>
-            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">Setup fee <br/>only for Pilot</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">$1,000/mo (Founding rate) <br/>+ setup fee <br/>first month billed only after we book 8+ demos</div>
 
             {/* Outreach Approach */}
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Outreach Approach</div>
@@ -69,7 +69,7 @@ export function Comparison() {
           <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 mb-6">
             The Bottom Line:
           </h3>
-          <div className="space-y-6 text-lg text-zinc-600 mb-10">
+          <div className="space-y-6 text-lg text-zinc-600">
             <p>
               <strong className="text-zinc-900 font-semibold">Hiring an SDR:</strong> Great if you have $100k+ budget and 6 months to wait. Not viable for most agencies under $50k/month revenue.
             </p>
@@ -80,13 +80,6 @@ export function Comparison() {
               <strong className="text-zinc-900 font-semibold">ARCH Revenues:</strong> We build the system with a setup fee, prove it works, and transition to a performance-based model. You only pay the full retainer if it&apos;s actually generating qualified meetings.
             </p>
           </div>
-          
-          <Link 
-            href="/strategy-call"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
-          >
-            Book a 20-min strategy call →
-          </Link>
         </motion.div>
       </div>
     </motion.section>

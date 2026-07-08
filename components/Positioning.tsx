@@ -10,8 +10,8 @@ export function Positioning() {
       description: "Shivam Sharma is the founder of ARCH Revenues, with a passion for building scalable outbound systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients)."
     },
     {
-      title: "Paid Performance Pilot",
-      description: "We are currently offering a Paid Performance Pilot. We cover the setup, and you only pay the full retainer when we book qualified meetings."
+      title: "Performance Pilot",
+      description: "We are currently offering a Performance Pilot. We cover the setup, and you only pay the full retainer when we book qualified meetings."
     },
     {
       title: "Our Commitment",

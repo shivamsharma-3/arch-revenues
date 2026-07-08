@@ -3,9 +3,9 @@ import { motion } from "motion/react";
 
 export function SocialProof() {
   const items = [
-    { value: "10+ yrs", label: "B2B outbound experience (founder)" },
     { value: "200", label: "Account ICP list per client" },
-    { value: "Apollo + Brevo", label: "Verified tech stack (not homegrown)" },
+    { value: "Apollo + Brevo + Make", label: "Verified tech stack (not homegrown)" },
+    { value: "8/mo minimum", label: "Or you don't pay that month" },
     { value: "Weekly", label: "Monday report — every reply, every metric" },
   ];
 

@@ -35,7 +35,7 @@ export function Pricing() {
         <div className="bg-white border-2 border-zinc-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-zinc-900/5">
           <div className="text-center mb-8">
             <div className="inline-block bg-zinc-50 text-zinc-900 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-              FOUNDING CLIENT RATE (PAID PERFORMANCE PILOT) — 3 SPOTS ONLY
+              FOUNDING CLIENT RATE (PERFORMANCE PILOT) — 3 SPOTS ONLY
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,000</span>

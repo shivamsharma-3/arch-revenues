@@ -282,12 +282,16 @@ export default function AuditPage() {
           </p>
         </div>
 
+        <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-amber-800 font-medium text-center shadow-sm">
+          Fields marked * are required. Everything else is optional — fill in what you know, skip what you don't.
+        </div>
+
         {/* how-to callout */}
-        <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 mb-12 text-sm text-zinc-600 leading-relaxed">
-          <h2 className="text-base font-semibold text-zinc-900 mb-3">
+        <div className="bg-zinc-900 border border-zinc-900 rounded-xl p-6 mb-12 text-sm text-zinc-300 leading-relaxed shadow-lg">
+          <h2 className="text-base font-semibold text-white mb-3">
             How to use this worksheet
           </h2>
-          <ol className="list-decimal list-inside space-y-1.5">
+          <ol className="list-decimal list-inside space-y-2">
             {HOW_TO_STEPS.map((step, i) => (
               <li key={i}>{step}</li>
             ))}
@@ -384,10 +388,9 @@ export default function AuditPage() {
               {/* Company size */}
               <div>
                 <label className={LABEL_CLS}>
-                  Company size (employees) *
+                  Company size (employees)
                 </label>
                 <input
-                  required
                   type="text"
                   name="size"
                   placeholder="e.g. 11–50"
@@ -397,9 +400,8 @@ export default function AuditPage() {
 
               {/* Revenue stage */}
               <div>
-                <label className={LABEL_CLS}>Revenue stage *</label>
+                <label className={LABEL_CLS}>Revenue stage</label>
                 <input
-                  required
                   type="text"
                   name="revenue"
                   placeholder="e.g. $500K–$5M ARR"
@@ -409,9 +411,8 @@ export default function AuditPage() {
 
               {/* Funding stage */}
               <div>
-                <label className={LABEL_CLS}>Funding stage *</label>
+                <label className={LABEL_CLS}>Funding stage</label>
                 <input
-                  required
                   type="text"
                   name="funding"
                   placeholder="Bootstrapped / Seed / Series A / Series B+"
@@ -421,9 +422,8 @@ export default function AuditPage() {
 
               {/* Geography — full width */}
               <div className="md:col-span-2">
-                <label className={LABEL_CLS}>Geography *</label>
+                <label className={LABEL_CLS}>Geography</label>
                 <input
-                  required
                   type="text"
                   name="geo"
                   placeholder="NA only / EU only / English-speaking / global"
@@ -464,12 +464,13 @@ export default function AuditPage() {
             {/* Top 3 pains */}
             <div className="space-y-4 mb-8">
               <label className="block text-sm font-medium text-zinc-700">
-                Top 3 pains your ICP feels right now (rank them)
+                Top 3 pains your ICP feels right now (rank them). Pain #1 is required *
               </label>
               <textarea
+                required
                 rows={2}
                 name="pain1"
-                placeholder="Pain #1"
+                placeholder="Pain #1 *"
                 className={TEXTAREA_CLS}
               />
               <textarea
@@ -701,75 +702,33 @@ export default function AuditPage() {
           </section>
 
           {/* ====================================================== */}
-          {/* SECTION 5 — ICP One-Pager                              */}
+          {/* SECTION 5 — Top 5 dream accounts                       */}
           {/* ====================================================== */}
           <section>
             <h2 className="text-xl font-semibold text-zinc-900 mb-2 border-b border-zinc-100 pb-4">
-              5. ICP One-Pager
+              5. Top 5 dream accounts
             </h2>
             <p className="text-sm text-zinc-500 mb-6">
-              Distill everything above into one page. This is the page you hand
-              to your account manager, your copywriter, your SDR, or to ARCH
-              Revenues when you outsource the top of your pipeline. If it
-              doesn&apos;t fit on this page, it&apos;s not your ICP — it&apos;s
-              a wish list.
+              Name five real companies that match this ICP right now. If you
+              can&apos;t name five, your ICP is still too abstract — go back
+              to Section 1. The first one is required.
             </p>
 
-            {/* 6-row table */}
-            <div className="overflow-hidden rounded-lg border border-zinc-200 mb-8">
-              {ONE_PAGER_ROWS.map((row, i) => (
-                <div
-                  key={row.name}
-                  className={`grid md:grid-cols-5 gap-4 md:gap-6 p-5 ${
-                    i !== ONE_PAGER_ROWS.length - 1
-                      ? "border-b border-zinc-100"
-                      : ""
-                  }`}
-                >
-                  <div className="md:col-span-2">
-                    <p className="text-xs font-mono font-bold tracking-wide text-zinc-900">
-                      {row.title}
-                    </p>
-                    <p className="text-xs text-zinc-400 italic mt-1">
-                      {row.prompt}
-                    </p>
-                  </div>
-                  <div className="md:col-span-3">
-                    <textarea
-                      rows={2}
-                      name={row.name}
-                      className={TEXTAREA_CLS}
-                    />
-                  </div>
+            <div className="space-y-3">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <div key={n} className="flex items-center gap-3">
+                  <span className="text-sm font-mono text-zinc-400 w-6">
+                    {n}.
+                  </span>
+                  <input
+                    required={n === 1}
+                    type="text"
+                    name={`account${n}`}
+                    placeholder={n === 1 ? "Company name (and why they fit) *" : "Company name (and why they fit)"}
+                    className="flex-1 bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
+                  />
                 </div>
               ))}
-            </div>
-
-            {/* Top 5 dream accounts */}
-            <div>
-              <p className="text-xs font-mono font-bold tracking-wide text-zinc-900 mb-1">
-                TOP 5 DREAM ACCOUNTS
-              </p>
-              <p className="text-xs text-zinc-400 mb-4">
-                Name five real companies that match this ICP right now. If you
-                can&apos;t name five, your ICP is still too abstract — go back
-                to Section 1.
-              </p>
-              <div className="space-y-3">
-                {[1, 2, 3, 4, 5].map((n) => (
-                  <div key={n} className="flex items-center gap-3">
-                    <span className="text-sm font-mono text-zinc-400 w-6">
-                      {n}.
-                    </span>
-                    <input
-                      type="text"
-                      name={`account${n}`}
-                      placeholder="Company name (and why they fit)"
-                      className="flex-1 bg-zinc-50 border border-zinc-200 rounded-md px-4 py-2.5 text-zinc-900 focus:ring-2 focus:ring-zinc-900 focus:border-transparent outline-none transition-all"
-                    />
-                  </div>
-                ))}
-              </div>
             </div>
           </section>
 

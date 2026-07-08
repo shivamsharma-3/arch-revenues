@@ -56,10 +56,10 @@ export default function TermsPage() {
                 Section 03
               </div>
               <h2 className="text-xl font-semibold text-zinc-900 mb-4">
-                Paid Performance Pilot & Deliverables
+                Performance Pilot & Deliverables
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm mb-4">
-                For participants in our Paid Performance Pilot, we charge a setup fee to cover infrastructure costs. The remainder of the retainer is contingent upon generating qualified meetings.
+                For participants in our Performance Pilot, we charge a setup fee to cover infrastructure costs. The remainder of the retainer is contingent upon generating qualified meetings.
               </p>
               <p className="text-zinc-600 leading-relaxed text-sm mb-4">
                 For paid engagements, we commit to building and running a system designed to generate consistent qualified conversations. We stand behind the system we build. While final results depend on your offer quality and specific market conditions, we guarantee professional execution and ongoing optimization of your campaigns.

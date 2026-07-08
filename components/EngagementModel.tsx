@@ -23,7 +23,7 @@ export function EngagementModel() {
               <span className="text-zinc-400">No Long-Term Contracts.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-2xl">
-              This is a performance-driven program where we build and refine a powerful outbound system in real conditions. We are currently offering a Paid Performance Pilot. A setup fee covers infrastructure costs, and you only pay the full retainer when we deliver qualified meetings.
+              This is a performance-driven program where we build and refine a powerful outbound system in real conditions. We are currently offering a Performance Pilot. A setup fee covers infrastructure costs, and you only pay the full retainer when we deliver qualified meetings.
             </p>
 
             <div className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl mb-12">
@@ -56,7 +56,7 @@ export function EngagementModel() {
           >
             <div className="relative z-10 space-y-8">
               {[
-                { title: "Paid Performance Pilot", desc: "A setup fee covers our tools. You only pay the rest when we book qualified meetings." },
+                { title: "Performance Pilot", desc: "A setup fee covers our tools. You only pay the rest when we book qualified meetings." },
                 { title: "Monthly Retainer", desc: "Transition to a flat monthly rate once we hit your targets." },
                 { title: "Transparent Pricing", desc: "A flat monthly rate with no hidden costs or percentages." },
                 { title: "Month-to-Month", desc: "No long-term lock-in. We earn your business every 30 days." }
@@ -73,7 +73,7 @@ export function EngagementModel() {
               ))}
               <div className="pt-6 border-t border-zinc-200">
                 <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">
-                  Paid Performance Pilot: Setup fee + Pay-on-results.
+                  Performance Pilot: Setup fee + Pay-on-results.
                 </p>
               </div>
             </div>

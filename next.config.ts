@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/icp-worksheet", destination: "/audit", permanent: true },
+      { source: "/pricing", destination: "/", permanent: true },
     ];
   },
   // Allow access to remote image placeholder.

@@ -8,25 +8,41 @@ export default function HowItWorksPage() {
     { 
       number: "1",
       title: "We map your ICP", 
-      desc: "We build a 200-account list of SaaS companies matching your ICP — with named decision-makers verified on LinkedIn. We don't use generic lists or scraped databases that are years out of date. Instead, we manually verify each account fits your exact revenue range and headcount requirements, and we find the specific founder or sales leader who is doing the outreach themselves.", 
+      bullets: [
+        "200-account list of SaaS companies matching your ICP",
+        "Named decision-makers verified on LinkedIn (not scraped databases)",
+        "Each account manually checked against your revenue + headcount criteria"
+      ],
       timing: "Week 1"
     },
     { 
       number: "2",
       title: "We build the infrastructure", 
-      desc: "3 sending domains, SPF/DKIM/DMARC configured, Brevo + Apollo wired up, inbox warmup started. We handle the entire technical setup so your main domain is never put at risk. We purchase lookalike domains, configure all necessary DNS records for deliverability, set up the Google Workspaces, and connect the sending infrastructure. Then we begin a rigorous warmup process to ensure high inbox placement.", 
+      bullets: [
+        "3 lookalike sending domains purchased and configured",
+        "SPF, DKIM, and DMARC set up to protect your main domain",
+        "Rigorous inbox warmup process started for high deliverability"
+      ],
       timing: "Week 1"
     },
     { 
       number: "3",
       title: "We launch the sequence", 
-      desc: "7-touch email + LinkedIn sequence goes live. 30-50 emails/day per domain. Every reply logged. We write the copy based on your specific value proposition, focusing on the pain points of your SaaS buyers. The sequence uses a multi-channel approach to stay top-of-mind without being annoying. We monitor deliverability daily and adjust sending volumes to maintain perfect domain health.", 
+      bullets: [
+        "7-touch email + LinkedIn sequence tailored to SaaS buyer pain points",
+        "30-50 emails/day sent per domain to maintain perfect health",
+        "Every reply logged and monitored daily"
+      ],
       timing: "Week 2"
     },
     { 
       number: "4",
       title: "We book and report", 
-      desc: "Replies converted to meetings on your calendar. Weekly report every Monday — opens, replies, meetings booked. When prospects reply, we handle the inbox management. We qualify the lead, handle common objections, and route them directly to your calendar. You receive a transparent, no-fluff report every Monday showing exactly what happened the previous week.", 
+      bullets: [
+        "Replies qualified, objections handled, and routed to your calendar",
+        "Weekly no-fluff report every Monday showing exact metrics",
+        "You focus on closing, we handle the inbox management"
+      ],
       timing: "Week 3 (21 days)"
     },
   ];
@@ -63,9 +79,14 @@ export default function HowItWorksPage() {
               <h2 className="text-2xl font-semibold text-zinc-900 mb-4">
                 {step.title}
               </h2>
-              <p className="text-lg text-zinc-600 font-normal leading-relaxed mb-6">
-                {step.desc}
-              </p>
+              <ul className="space-y-4 mb-8">
+                {step.bullets.map((bullet, i) => (
+                  <li key={i} className="flex gap-3 text-zinc-600 text-lg">
+                    <span className="text-zinc-400 mt-2 w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="text-sm text-zinc-500 italic">
                 {step.timing}
               </div>

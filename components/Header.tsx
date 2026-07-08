@@ -29,10 +29,10 @@ export function Header() {
 
   const navLinks = [
     { name: "How It Works", href: "/how-it-works" },
-    { name: "Paid Performance Pilot", href: "/pilot-program" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "Performance Pilot", href: "/performance-pilot" },
+    { name: "Pricing", href: "/#pricing" },
     { name: "ICP Worksheet", href: "/audit" },
-    { name: "Founder", href: "/founder" },
+    { name: "About", href: "/about" },
   ];
 
   return (

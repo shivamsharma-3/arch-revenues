@@ -18,7 +18,7 @@ export function CaseStudyPipeline() {
           Founding Client Program
         </h2>
 
-        <div className="bg-white border border-zinc-200 rounded-2xl p-6 shadow-sm text-left mb-10">
+        <div className="bg-white border border-zinc-200 rounded-2xl p-6 shadow-sm text-left">
           <div className="inline-block bg-zinc-100 text-zinc-600 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
             STATUS
           </div>
@@ -27,13 +27,6 @@ export function CaseStudyPipeline() {
             We&apos;re onboarding our first 3 founding clients now. Spots open: 3/3.
           </p>
         </div>
-
-        <Link
-          href="/strategy-call"
-          className="inline-flex w-full sm:w-auto items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
-        >
-          Book a 20-min strategy call →
-        </Link>
       </div>
     </motion.section>
   );

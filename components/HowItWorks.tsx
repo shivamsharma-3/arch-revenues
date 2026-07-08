@@ -5,30 +5,33 @@ import Link from 'next/link';
 
 export function HowItWorks() {
   const steps = [
-    { 
-      number: "1",
-      title: "We map your ICP", 
-      desc: "We build a 200-account list of SaaS companies matching your ICP — with named decision-makers verified on LinkedIn.", 
-      timing: "Week 1"
+    {
+      timing: "Week 1",
+      title: "Map your ICP + build infrastructure",
+      bullets: [
+        "200-account prospect list, named decision-makers verified on LinkedIn",
+        "3 sending domains, SPF/DKIM/DMARC, Apollo + Brevo wired up",
+        "Inbox warmup started"
+      ]
     },
-    { 
-      number: "2",
-      title: "We build the infrastructure", 
-      desc: "3 sending domains, SPF/DKIM/DMARC configured, Brevo + Apollo wired up, inbox warmup started.", 
-      timing: "Week 1"
+    {
+      timing: "Week 2",
+      title: "Sequence live",
+      bullets: [
+        "7-touch email + LinkedIn sequence",
+        "30–50 emails/day per domain",
+        "Every reply logged in shared inbox"
+      ]
     },
-    { 
-      number: "3",
-      title: "We launch the sequence", 
-      desc: "7-touch email + LinkedIn sequence goes live. 30-50 emails/day per domain. Every reply logged.", 
-      timing: "Week 2"
-    },
-    { 
-      number: "4",
-      title: "We book and report", 
-      desc: "Replies converted to meetings on your calendar. Weekly report every Monday — opens, replies, meetings booked.", 
-      timing: "Week 3 (21 days)"
-    },
+    {
+      timing: "Week 3",
+      title: "Meetings on your calendar",
+      bullets: [
+        "Replies qualified, objections handled, routed to your calendar",
+        "First Monday report: opens, replies, meetings booked",
+        "Then weekly cadence every Monday"
+      ]
+    }
   ];
 
   const serviceSchema = {
@@ -49,38 +52,38 @@ export function HowItWorks() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-4">
-            How It Works
-          </h2>
+          <div className="inline-block bg-zinc-50 text-zinc-900 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
+            HOW IT WORKS — 3 WEEKS TO YOUR FIRST MEETING
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div className="space-y-6 mb-12">
           {steps.map((step, index) => (
-            <div key={index} className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 flex flex-col h-full">
-              <div className="text-4xl font-semibold text-zinc-900 leading-none mb-6">
-                {step.number}
-              </div>
+            <div key={index} className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 md:p-8">
               <h3 className="text-xl font-semibold text-zinc-900 mb-4">
+                <span className="text-zinc-500 mr-2">{step.timing} —</span>
                 {step.title}
               </h3>
-              <p className="text-zinc-600 font-normal leading-relaxed mb-8 flex-grow">
-                {step.desc}
-              </p>
-              <div className="text-sm text-zinc-500 italic">
-                {step.timing}
-              </div>
+              <ul className="space-y-3">
+                {step.bullets.map((bullet, i) => (
+                  <li key={i} className="flex gap-3 text-zinc-600">
+                    <span className="text-zinc-400 mt-1.5 w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
         <div className="text-center">
           <Link
-            href="/strategy-call"
-            className="inline-flex w-full sm:w-auto items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
+            href="/how-it-works"
+            className="inline-flex w-full sm:w-auto items-center justify-center text-zinc-900 font-semibold hover:text-zinc-600 transition-colors"
           >
-            Book a 20-min strategy call →
+            See the full breakdown →
           </Link>
         </div>
       </div>

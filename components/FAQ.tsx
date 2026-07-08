@@ -107,14 +107,8 @@ export function FAQ() {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
-            href="/strategy-call"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
-          >
-            Book a 20-min strategy call →
-          </Link>
-          <Link
             href="/audit"
-            className="text-zinc-900 text-base underline hover:text-zinc-600 transition-colors"
+            className="text-zinc-900 text-lg underline hover:text-zinc-600 transition-colors"
           >
             Fill out the ICP worksheet →
           </Link>
