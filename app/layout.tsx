@@ -4,6 +4,7 @@ import "./globals.css";
 import { AppWrapper } from "@/components/AppWrapper";
 
 import { Analytics } from "@/components/Analytics";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,6 +62,7 @@ export default function RootLayout({
       >
         <AppWrapper>{children}</AppWrapper>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
