@@ -15,7 +15,7 @@ export function Comparison() {
           className="mb-10"
         >
           <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900">
-            Why Agencies Choose Us Over Hiring or Going DIY
+            Why SaaS Founders Choose Us Over Hiring or Going DIY
           </h2>
         </motion.div>
 
@@ -31,7 +31,7 @@ export function Comparison() {
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Upfront Cost</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">$60-100k/year <br/>+ benefits</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">$5-10k setup <br/>fee</div>
-            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">$1,000/mo (Founding rate) <br/>+ setup fee <br/>first month billed only after we book 5+ demos</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">$1,500/mo (Founding rate) <br/>+ setup fee <br/>first month billed only after we book 5+ demos</div>
 
             {/* Outreach Approach */}
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Outreach Approach</div>

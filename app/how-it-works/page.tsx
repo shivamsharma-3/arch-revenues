@@ -43,7 +43,7 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Purchase 3 lookalike sending domains (e.g. youragency-mail.com, try-youragency.com, get-youragency.com) — never send from your main domain",
+            "Purchase 3 lookalike sending domains (e.g. yoursaas-mail.com, try-yoursaas.com, get-yoursaas.com) — never send from your main domain",
             "Set up Google Workspace inboxes for each sending domain (3 inboxes total)",
             "Configure SPF, DKIM, and DMARC DNS records on each sending domain — the technical layer that prevents emails from landing in spam",
             "Connect Brevo (SMTP relay) for high-volume sending + Apollo for sequence orchestration",
@@ -154,7 +154,7 @@ export default function HowItWorksPage() {
       "@type": "Organization",
       "name": "ARCH Revenues"
     },
-    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS-focused web design agencies.",
+    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
     "serviceType": "B2B Lead Generation"
   };
 

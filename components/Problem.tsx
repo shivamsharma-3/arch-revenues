@@ -44,7 +44,7 @@ export function Problem() {
             </h2>
             <div className="text-lg text-zinc-600 leading-relaxed pr-0 lg:pr-8">
               <p>
-                Most agency founders stop prospecting the moment they land a client — then panic when the pipeline dries up. We build the outbound system that keeps qualified meetings coming in, so you never have to choose between delivery and hunting.
+                Most SaaS founders stop prospecting the moment they land a big customer — then panic when the pipeline dries up. We build the outbound system that keeps qualified meetings coming in, so you never have to choose between delivery and hunting.
               </p>
             </div>
           </motion.div>

@@ -64,8 +64,12 @@ export function FAQ() {
       a: "Yes, anytime after the first 30 days. No annual contract. The 30-day minimum covers real infrastructure setup costs.",
     },
     {
-      q: "Why are you $1,000/mo when most US agencies charge $3,500+?",
-      a: "Fewer case studies than established agencies. The $1,000 founding rate is the trade-off for being a public case study. Moves to $1,750/mo for client #4.",
+      q: "Why are you $1,500/mo when most US agencies charge $3,500+?",
+      a: "Fewer case studies than established agencies. The $1,500 founding rate is the trade-off for being a public case study. Moves to $4,000/mo for client #4.",
+    },
+    {
+      q: "Do you work with funded SaaS?",
+      a: "We work with any B2B SaaS company in the $20K-$100K MRR range, whether bootstrapped or funded. If you've grown past $100K MRR, you likely need an in-house SDR team rather than an external partner.",
     },
   ];
 

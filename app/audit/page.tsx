@@ -212,8 +212,8 @@ export default function AuditPage() {
           <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 text-left text-sm text-zinc-600 leading-relaxed mb-8">
             <strong className="text-zinc-900">Want to skip the queue?</strong>{" "}
             Book a 20-minute strategy call and we&apos;ll walk through your worksheet
-            together — live. Founding client rate ($1,000/mo) is open for the
-            next 3 agencies.
+            together — live. Founding client rate ($1,500/mo) is open for the
+            next 3 companies.
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -271,7 +271,7 @@ export default function AuditPage() {
             The ICP Teardown Worksheet
           </h1>
           <p className="text-lg text-zinc-600 mb-2">
-            Who is your agency actually built to serve? Compress your ideal
+            Who is your SaaS actually built to serve? Compress your ideal
             client profile into a single page you can hand to anyone on your
             team — and to us, when you&apos;re ready to outsource the top of
             your pipeline.
@@ -322,7 +322,7 @@ export default function AuditPage() {
                 />
               </div>
               <div>
-                <label className={LABEL_CLS}>Agency Name *</label>
+                <label className={LABEL_CLS}>Company Name *</label>
                 <input
                   required
                   type="text"
@@ -739,8 +739,8 @@ export default function AuditPage() {
                   turn it into a 200-account prospect list, write the sequence,
                   run outbound on your behalf, and book 5–12 qualified demos per
                   month into your calendar. You only pay if demos show up.
-                  Founding Client rate is $1,000/mo for the first 3 agencies —
-                  after that it moves to $1,750/mo.
+                  Founding Client rate is $1,500/mo for the first 3 companies —
+                  after that it moves to $4,000/mo.
                 </p>
               </div>
 
@@ -760,8 +760,8 @@ export default function AuditPage() {
             </div>
 
             <blockquote className="mt-8 pl-4 border-l-2 border-zinc-300 italic text-zinc-600 text-base leading-relaxed">
-              The agency that wins the SaaS category is not the one with the
-              best portfolio. It is the one with the tightest ICP and the most
+              The SaaS company that wins their category is not the one with the
+              best software. It is the one with the tightest ICP and the most
               disciplined outbound.
             </blockquote>
           </section>

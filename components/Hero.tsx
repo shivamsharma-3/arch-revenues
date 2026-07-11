@@ -19,7 +19,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-xs font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              SaaS Web Design Growth
+              B2B SaaS Outbound Growth
             </span>
           </motion.div>
 

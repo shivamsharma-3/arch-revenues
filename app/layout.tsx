@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "ARCH Revenues | Outbound Systems",
-  description: "AI-driven outbound acquisition systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients). Get qualified sales calls consistently.",
+  description: "AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR. Get qualified sales calls consistently.",
   alternates: {
     canonical: 'https://www.archrevenues.com',
     languages: {
@@ -41,7 +41,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "ARCH Revenues",
     "url": "https://www.archrevenues.com",
-    "description": "AI-driven outbound acquisition systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients).",
+    "description": "AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR.",
   };
 
   return (

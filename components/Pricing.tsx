@@ -21,7 +21,7 @@ export function Pricing() {
       "@type": "Organization",
       "name": "ARCH Revenues"
     },
-    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS-focused web design agencies.",
+    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
     "serviceType": "B2B Lead Generation"
   };
 
@@ -38,11 +38,11 @@ export function Pricing() {
               FOUNDING CLIENT RATE (PERFORMANCE PILOT) — 3 SPOTS ONLY
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,000</span>
+              <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,500</span>
               <span className="text-xl text-zinc-500 font-medium">/ month</span>
             </div>
             <p className="text-base text-zinc-600">
-              Locked for 90 days. Increases to $1,750/mo for client #4.
+              Locked for 90 days. Increases to $4,000/mo for client #4.
             </p>
           </div>
 
