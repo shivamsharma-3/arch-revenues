@@ -31,7 +31,7 @@ export function Comparison() {
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Upfront Cost</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">$60-100k/year <br/>+ benefits</div>
             <div className="bg-white p-4 sm:p-5 text-zinc-600">$5-10k setup <br/>fee</div>
-            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">$1,000/mo (Founding rate) <br/>+ setup fee <br/>first month billed only after we book 8+ demos</div>
+            <div className="bg-zinc-50 p-4 sm:p-5 text-zinc-900 font-medium">$1,000/mo (Founding rate) <br/>+ setup fee <br/>first month billed only after we book 5+ demos</div>
 
             {/* Outreach Approach */}
             <div className="bg-white p-4 sm:p-5 font-medium text-zinc-600">Outreach Approach</div>
@@ -69,16 +69,10 @@ export function Comparison() {
           <h3 className="text-2xl font-semibold tracking-tight text-zinc-900 mb-6">
             The Bottom Line:
           </h3>
-          <div className="space-y-6 text-lg text-zinc-600">
-            <p>
-              <strong className="text-zinc-900 font-semibold">Hiring an SDR:</strong> Great if you have $100k+ budget and 6 months to wait. Not viable for most agencies under $50k/month revenue.
-            </p>
-            <p>
-              <strong className="text-zinc-900 font-semibold">Generic Lead Gen Agency:</strong> They&apos;ll send you 100 &quot;leads&quot; that are mostly junk. You waste time sorting through garbage. They get paid either way.
-            </p>
-            <p>
-              <strong className="text-zinc-900 font-semibold">ARCH Revenues:</strong> We build the system with a setup fee, prove it works, and transition to a performance-based model. You only pay the full retainer if it&apos;s actually generating qualified meetings.
-            </p>
+          <div className="space-y-2 text-lg text-zinc-600">
+            <p><strong className="text-zinc-900 font-semibold">Hire an SDR:</strong> Viable only if you have $100k+ and 6 months to wait.</p>
+            <p><strong className="text-zinc-900 font-semibold">Generic agency:</strong> You get 100 junk leads. They get paid either way.</p>
+            <p><strong className="text-zinc-900 font-semibold">ARCH Revenues:</strong> Setup fee + performance retainer. Don&apos;t pay if we miss.</p>
           </div>
         </motion.div>
       </div>

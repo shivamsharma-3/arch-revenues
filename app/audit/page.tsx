@@ -283,19 +283,7 @@ export default function AuditPage() {
         </div>
 
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8 text-sm text-amber-800 font-medium text-center shadow-sm">
-          Fields marked * are required. Everything else is optional — fill in what you know, skip what you don't.
-        </div>
-
-        {/* how-to callout */}
-        <div className="bg-zinc-900 border border-zinc-900 rounded-xl p-6 mb-12 text-sm text-zinc-300 leading-relaxed shadow-lg">
-          <h2 className="text-base font-semibold text-white mb-3">
-            How to use this worksheet
-          </h2>
-          <ol className="list-decimal list-inside space-y-2">
-            {HOW_TO_STEPS.map((step, i) => (
-              <li key={i}>{step}</li>
-            ))}
-          </ol>
+          Fields marked * are required. Everything else is optional — fill in what you know, skip what you don&apos;t.
         </div>
 
         {/* form card */}
@@ -362,10 +350,7 @@ export default function AuditPage() {
               1. Firmographics
             </h2>
             <p className="text-sm text-zinc-500 mb-6">
-              The shape of the company you want to close. Start with the company
-              itself, not the person. Pick a tight firmographic box — you can
-              widen it later; you cannot tighten it once you&apos;re 90 days into
-              a doomed outbound campaign.
+              Start with the company — not the person. Pick a tight box; you can widen later.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -455,10 +440,7 @@ export default function AuditPage() {
               2. Pain &amp; Trigger Events
             </h2>
             <p className="text-sm text-zinc-500 mb-6">
-              Pain is a feeling. Triggers are events. You need both: pain tells
-              you why they&apos;ll buy, triggers tell you when. Target
-              &quot;companies that need a new website&quot; and you&apos;ll wait
-              forever — be in the inbox the week the trigger fires.
+              Pain tells you why they&apos;ll buy. Triggers tell you when. You need both.
             </p>
 
             {/* Top 3 pains */}
@@ -565,11 +547,7 @@ export default function AuditPage() {
               3. Behavioral Signals
             </h2>
             <p className="text-sm text-zinc-500 mb-6">
-              Where they hang out, what they read. If you can&apos;t name the
-              podcast your ICP listens to on the way to work, you don&apos;t
-              know your ICP. Behavioral signals tell you where to show up before
-              you ever send cold outbound — and they sharpen the language you
-              use when you do.
+              Where they hang out, what they read. If you can&apos;t name their favorite podcast, you don&apos;t know your ICP.
             </p>
 
             <div className="space-y-6">
@@ -653,12 +631,7 @@ export default function AuditPage() {
               4. Disqualifiers
             </h2>
             <p className="text-sm text-zinc-500 mb-6">
-              Who is NOT your ICP — and why it matters. Disqualifiers are the
-              most undervalued section of any ICP document. Every prospect who
-              matches a disqualifier is a meeting you don&apos;t have to take, a
-              proposal you don&apos;t have to write, and a 60-day ghosting you
-              don&apos;t have to suffer through. Write them down. Enforce them.
-              Update them every quarter.
+              Every disqualifier is a meeting you don&apos;t have to take. Write them down. Enforce them.
             </p>
 
             <div>
@@ -709,9 +682,7 @@ export default function AuditPage() {
               5. Top 5 dream accounts
             </h2>
             <p className="text-sm text-zinc-500 mb-6">
-              Name five real companies that match this ICP right now. If you
-              can&apos;t name five, your ICP is still too abstract — go back
-              to Section 1. The first one is required.
+              Name five real companies that match this ICP right now. If you can&apos;t, your ICP is too abstract.
             </p>
 
             <div className="space-y-3">
@@ -766,7 +737,7 @@ export default function AuditPage() {
                 <p className="text-sm text-zinc-600 leading-relaxed">
                   Send us the completed one-pager (just hit submit below). We
                   turn it into a 200-account prospect list, write the sequence,
-                  run outbound on your behalf, and book 8–12 qualified demos per
+                  run outbound on your behalf, and book 5–12 qualified demos per
                   month into your calendar. You only pay if demos show up.
                   Founding Client rate is $1,000/mo for the first 3 agencies —
                   after that it moves to $1,750/mo.

@@ -45,27 +45,27 @@ export function FAQ() {
   const faqs = [
     {
       q: "How many meetings will you book per month?",
-      a: "8-12 qualified demos for SaaS founders in our ICP. We commit to this in writing. If we book fewer than 8 in any month, you don't pay for that month.",
+      a: "5-12 qualified demos. If we book fewer than 5 in any month, you don't pay for that month.",
     },
     {
       q: "How fast will I see results?",
-      a: "First meetings typically land in week 3 of the engagement. Weeks 1-2 are infrastructure setup (domains, SPF/DKIM/DMARC, warmup, sequence build). We do not promise results faster than this — anyone who does is lying.",
+      a: "First meetings land in week 3. Weeks 1-2 are infrastructure setup. Anyone promising faster is lying.",
     },
     {
       q: "Do I need to provide the contact list?",
-      a: "No. We use Apollo to build the list based on your ICP. You approve the list before the sequence goes live — we will not email anyone you do not approve.",
+      a: "No. We build the list from your ICP using Apollo. You approve it before any email goes out.",
     },
     {
       q: "What happens if a prospect replies negatively?",
-      a: "We handle all replies — positive, negative, and unsubscribe requests — within 4 business hours. You see every reply in real-time in a shared inbox. You can step in at any time.",
+      a: "We handle all replies — positive, negative, unsubscribe — within 4 business hours. You see everything in a shared inbox.",
     },
     {
       q: "Can I cancel?",
-      a: "Yes. Cancel anytime after the first 30 days. No annual contract. The 30-day minimum covers infrastructure setup costs, which are real (domains, warmup tool, Apollo seats).",
+      a: "Yes, anytime after the first 30 days. No annual contract. The 30-day minimum covers real infrastructure setup costs.",
     },
     {
       q: "Why are you $1,000/mo when most US agencies charge $3,500+?",
-      a: "Because we have fewer case studies than established US agencies. The $1,000 rate is the founding client rate — 3 spots only. It increases to $1,750/mo for client #4. You're getting the same work at a discount in exchange for being a public case study.",
+      a: "Fewer case studies than established agencies. The $1,000 founding rate is the trade-off for being a public case study. Moves to $1,750/mo for client #4.",
     },
   ];
 

@@ -34,23 +34,13 @@ export default function PilotProgramPage() {
 
             <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Performance Pilot?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
-              <p>
-                We&apos;re serious about building predictable outbound pipelines for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients).
-              </p>
-              <p>
-                The Performance Pilot is offered at a flat $1,000/mo retainer (our Founding Client Rate). A small one-time setup fee covers your sending domains and infrastructure, and the full retainer is only earned when we deliver qualified meetings. See <Link href="/pricing" className="underline hover:text-zinc-900 transition-colors">Pricing</Link> for the full breakdown.
-              </p>
-              <p>
-                We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact AI-personalized messages we send, the replies we get, and any meetings that come from it.
-              </p>
-              <p>
-                This program is a partnership. We provide the infrastructure, the data, and the execution. We align our success entirely with yours.
-              </p>
-              <p>
-                If it generates real qualified calls for your agency, that is great! We transition to a standard monthly engagement afterward.
-              </p>
+              <ul className="list-disc list-inside space-y-4 marker:text-zinc-400">
+                <li><strong className="text-zinc-900 font-semibold">$1,000/mo flat retainer</strong> — our Founding Client Rate. Small one-time setup fee covers domains + infrastructure.</li>
+                <li><strong className="text-zinc-900 font-semibold">Pay only when we deliver</strong> — the retainer is earned only when qualified meetings land on your calendar.</li>
+                <li><strong className="text-zinc-900 font-semibold">Full transparency</strong> — see every lead list, every message, every reply, every meeting. Nothing hidden.</li>
+              </ul>
               <p className="font-medium text-zinc-900 pt-4">
-                Sound fair? Apply for the pilot today.
+                If it works, we transition to a standard monthly engagement. Sound fair? Apply for the pilot today.
               </p>
             </div>
             <div className="mt-8">

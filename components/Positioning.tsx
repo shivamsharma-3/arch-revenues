@@ -7,15 +7,15 @@ export function Positioning() {
   const steps = [
     {
       title: "Meet the Founder",
-      description: "Shivam Sharma is the founder of ARCH Revenues, with a passion for building scalable outbound systems for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients)."
+      description: "Founder of ARCH Revenues. Builds scalable outbound systems for B2B SaaS-focused web design agencies."
     },
     {
       title: "Performance Pilot",
-      description: "We are currently offering a Performance Pilot. We cover the setup, and you only pay the full retainer when we book qualified meetings."
+      description: "Setup fee covers infrastructure. You pay the retainer only when we book qualified meetings."
     },
     {
       title: "Our Commitment",
-      description: "We don't just provide leads. We build a repeatable outbound system you can rely on."
+      description: "Not just leads — a repeatable outbound system you can rely on."
     }
   ];
 
@@ -37,15 +37,9 @@ export function Positioning() {
               Built by a <span className="text-zinc-400 italic font-serif">Founder</span> for <span className="text-zinc-400 italic font-serif">Founders.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed">
-              ARCH Revenues was born out of a simple observation: most agencies have a great offer but lack a predictable way to get it in front of the right people.
-            </p>
-          </motion.div>
-          <div className="hidden lg:block w-px h-32 bg-zinc-200 shrink-0" />
-          <div className="lg:max-w-md w-full">
-            <p className="text-lg text-zinc-500 font-medium leading-relaxed">
               We act as a specialized extension of your team, taking the heavy lifting out of finding new clients.
             </p>
-          </div>
+          </motion.div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-1">

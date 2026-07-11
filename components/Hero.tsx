@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="pt-20 pb-12 md:pt-32 md:pb-24 px-6 bg-white overflow-hidden"
+      className="pt-24 pb-12 md:pt-28 md:pb-24 px-6 bg-white overflow-hidden"
     >
       <div className="max-w-4xl mx-auto flex flex-col items-center text-center">
         <div className="relative z-10 flex flex-col items-center">
@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl md:text-5xl font-semibold text-zinc-900 leading-[1.1] mb-6"
           >
-            We book 8-12 qualified demos per month for B2B SaaS founders — or you don&apos;t pay.
+            We book 5-12 qualified demos per month for B2B SaaS founders — or you don&apos;t pay.
           </motion.h1>
 
           <div className="mb-10">

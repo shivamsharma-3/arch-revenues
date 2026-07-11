@@ -6,7 +6,7 @@ import { ArrowRight, Check } from 'lucide-react';
 
 export function Pricing() {
   const features = [
-    "8-12 qualified demos booked per month (or you don't pay)",
+    "5-12 qualified demos booked per month (or you don't pay)",
     "Cold email + LinkedIn multi-channel sequence",
     "3 warmed sending domains + full infra setup",
     "Weekly Monday report — opens, replies, meetings",
@@ -63,7 +63,7 @@ export function Pricing() {
               Book a 20-min strategy call →
             </Link>
             <p className="text-xs text-zinc-500 max-w-lg mx-auto leading-relaxed">
-              In exchange for the founding rate, you agree to be featured as a public case study once we hit your first 8 booked meetings.
+              In exchange for the founding rate, you agree to be featured as a public case study once we hit your first 5 booked meetings.
             </p>
           </div>
         </div>

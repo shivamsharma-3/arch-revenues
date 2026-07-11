@@ -42,15 +42,9 @@ export function Problem() {
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-6 leading-[1.1]">
               The <span className="text-zinc-400 italic font-serif">Feast-or-Famine</span> Cycle Ends Here.
             </h2>
-            <div className="text-lg text-zinc-600 leading-relaxed space-y-4 pr-0 lg:pr-8">
+            <div className="text-lg text-zinc-600 leading-relaxed pr-0 lg:pr-8">
               <p>
-                Most web agency founders are stuck in a cycle: you focus on client delivery until the pipeline dries up, then scramble for leads through networking and referrals, only to stop prospecting once you land a client.
-              </p>
-              <p>
-                This works until it doesn&apos;t. One slow month and panic sets in.
-              </p>
-              <p>
-                We build the outbound system that keeps qualified meetings coming in, so you never have to choose between delivering for clients and hunting for the next one.
+                Most agency founders stop prospecting the moment they land a client — then panic when the pipeline dries up. We build the outbound system that keeps qualified meetings coming in, so you never have to choose between delivery and hunting.
               </p>
             </div>
           </motion.div>
