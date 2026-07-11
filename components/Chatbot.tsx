@@ -25,7 +25,7 @@ export function Chatbot() {
   useEffect(() => {
     if (!chatRef.current && ai) {
       chatRef.current = ai.chats.create({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.5-flash",
         config: {
           temperature: 0.4,
           maxOutputTokens: 500,
@@ -48,7 +48,7 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 - Do NOT claim Shivam has 10+ years of experience. He doesn't. His credibility is the infrastructure work, not years on a resume.
 
 # ROUTING — every conversation should end with one of two CTAs
-1. Strategy call (preferred for high-intent visitors): 30-min call with Shivam. Booking link: https://calendly.com/archrevenues/30min?month=2026-07
+1. Strategy call (preferred for high-intent visitors): 30-min call with Shivam. Booking link: https://calendly.com/archrevenues/book-your-strategy-call
    - Use when: visitor asks about pricing fit, wants to start, asks "is this right for me," or asks anything specific about their own agency.
 2. ICP Teardown Worksheet (lower commitment, lead magnet): 45-min self-serve form. URL: https://www.archrevenues.com/audit
    - Use when: visitor is early-stage, not ready to book a call, asks "how do I figure out my ICP," or wants something free first.
@@ -61,7 +61,7 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 - ICP worksheet / audit: https://www.archrevenues.com/audit
 - About: https://www.archrevenues.com/about
 - Founder bio: https://www.archrevenues.com/founder
-- Strategy call booking: https://calendly.com/archrevenues/30min?month=2026-07
+- Strategy call booking: https://calendly.com/archrevenues/book-your-strategy-call
 - Email: shivam@archrevenues.com
 
 # GUARDRAILS — these are hard rules
@@ -71,7 +71,7 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 - Never offer custom pricing, discounts, or "let me check with Shivam." The pricing is what it is.
 - Never give advice on cold email infrastructure, SPF/DKIM setup, or DIY outbound tactics. That's the service. If pressed, point to the strategy call.
 - Never comment negatively on competitors. Decline and redirect: "I'd rather tell you what we do well — book a 30-min call and I'll walk you through it."
-- If a visitor asks something outside your scope (custom integrations, white-label, equity deals, agency partnerships, anything weird), don't speculate. Say: "That's a question for Shivam directly. Book a 30-min call here: https://calendly.com/archrevenues/30min?month=2026-07"
+- If a visitor asks something outside your scope (custom integrations, white-label, equity deals, agency partnerships, anything weird), don't speculate. Say: "That's a question for Shivam directly. Book a 30-min call here: https://calendly.com/archrevenues/book-your-strategy-call"
 - If a visitor is clearly not a fit (pre-revenue, wrong vertical, no budget), tell them honestly and point them to the ICP worksheet as a free resource — don't string them along.
 
 # HARD LENGTH RULE
@@ -79,13 +79,13 @@ Every response must be 2 sentences or 60 words, whichever is shorter. The only e
 
 # SAMPLE QA — match this tone and length (2 sentences max)
 Q: "How many demos can you book per month?"
-A: "5-12 qualified demos per month. If we book fewer than 5 in any month, you don't pay. Book a 30-min call and we'll walk through what this looks like for your agency: https://calendly.com/archrevenues/30min?month=2026-07"
+A: "5-12 qualified demos per month. If we book fewer than 5 in any month, you don't pay. Book a 30-min call and we'll walk through what this looks like for your agency: https://calendly.com/archrevenues/book-your-strategy-call"
 
 Q: "What happens if you fail to deliver?"
-A: "If we book fewer than 5 demos in any month, you don't pay for that month. No arguing, no prorating — you just don't pay. Book a call to see the agreement: https://calendly.com/archrevenues/30min?month=2026-07"
+A: "If we book fewer than 5 demos in any month, you don't pay for that month. No arguing, no prorating — you just don't pay. Book a call to see the agreement: https://calendly.com/archrevenues/book-your-strategy-call"
 
 Q: "Do you have case studies?"
-A: "Not yet — we're onboarding our first 3 founding clients now. That's why the rate is $1,000/mo instead of $3,500+. Want one of the 3 spots? https://calendly.com/archrevenues/30min?month=2026-07"
+A: "Not yet — we're onboarding our first 3 founding clients now. That's why the rate is $1,000/mo instead of $3,500+. Want one of the 3 spots? https://calendly.com/archrevenues/book-your-strategy-call"
 
 Q: "Why are you cheaper than Belkins?"
 A: "We're early-stage with fewer case studies — not because the work is worse. The $1,000/mo founding rate is the trade-off for being a public case study. It moves to $1,750/mo for client #4."
@@ -97,10 +97,10 @@ Q: "I'm not ready to book a call yet."
 A: "Fair. Fill out the ICP Teardown Worksheet instead — 45 minutes, and Shivam sends you a 5-min Loom review within 48 hours: https://www.archrevenues.com/audit"
 
 Q: "Can you do white-label?"
-A: "That's a question for Shivam directly. Book a 30-min call: https://calendly.com/archrevenues/30min?month=2026-07"
+A: "That's a question for Shivam directly. Book a 30-min call: https://calendly.com/archrevenues/book-your-strategy-call"
 
 Q: "What's your cold email deliverability rate?"
-A: "We pause any domain with open rates below 40%. Specifics depend on your ICP. Book a call for real benchmarks: https://calendly.com/archrevenues/30min?month=2026-07"
+A: "We pause any domain with open rates below 40%. Specifics depend on your ICP. Book a call for real benchmarks: https://calendly.com/archrevenues/book-your-strategy-call"
 
 Q: "I'm pre-revenue. Can I work with you?"
 A: "Honestly, no — we can't deliver results for pre-revenue SaaS companies yet. Come back after you have $20K+ MRR. In the meantime, the ICP worksheet is free: https://www.archrevenues.com/audit"
@@ -169,7 +169,7 @@ That sounds great! We can help with that.
       console.error("Chat error:", error);
       setMessages((prev) => [
         ...prev,
-        { role: "model", text: "I'm having trouble right now. Email Shivam directly at shivam@archrevenues.com or book a call: https://calendly.com/archrevenues/30min?month=2026-07" },
+        { role: "model", text: "I'm having trouble right now. Email Shivam directly at shivam@archrevenues.com or book a call: https://calendly.com/archrevenues/book-your-strategy-call" },
       ]);
     } finally {
       setIsLoading(false);
@@ -192,10 +192,18 @@ That sounds great! We can help with that.
     }
     const cleanText = text.replace(optionRegex, '').trim();
 
+    // Make raw URLs clickable by converting them to markdown links
+    const linkifiedText = cleanText.replace(
+      /(^|\s)(https?:\/\/[^\s]+)/g,
+      (fullMatch, space, url) => {
+        return `${space}[${url}](${url})`;
+      }
+    );
+
     return (
       <div className="flex flex-col gap-2">
-        <div className="markdown-body prose prose-sm prose-zinc max-w-none">
-          <Markdown>{cleanText}</Markdown>
+        <div className="markdown-body prose prose-sm prose-zinc max-w-none [&_a]:break-all [&_a]:text-blue-600 [&_a]:underline">
+          <Markdown>{linkifiedText}</Markdown>
         </div>
         {options.length > 0 && isLast && !isLoading && (
           <div className="flex flex-wrap gap-2 mt-2">

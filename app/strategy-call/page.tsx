@@ -127,7 +127,7 @@ export default function StrategyCallPage() {
                 <p className="text-sm text-zinc-600 mb-6">Click below to pick a time on Calendly.</p>
                 
                 <a 
-                  href="https://calendly.com/archrevenues/30min?month=2026-07"
+                  href="https://calendly.com/archrevenues/book-your-strategy-call"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full max-w-sm inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold bg-zinc-900 text-white hover:bg-zinc-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98] mb-3 text-sm"
