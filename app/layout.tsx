@@ -16,12 +16,38 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ARCH Revenues | Outbound Systems",
+  title: {
+    template: '%s | ARCH Revenues',
+    default: 'ARCH Revenues | Outbound Systems for B2B SaaS',
+  },
   description: "AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR. Get qualified sales calls consistently.",
   alternates: {
     canonical: 'https://www.archrevenues.com',
     languages: {
       'en-US': 'https://www.archrevenues.com',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.archrevenues.com',
+    title: 'ARCH Revenues | Outbound Systems for B2B SaaS',
+    description: 'AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR.',
+    siteName: 'ARCH Revenues',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@archrevenues',
+    creator: '@shivamsharma',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
 };
@@ -42,6 +68,19 @@ export default function RootLayout({
     "name": "ARCH Revenues",
     "url": "https://www.archrevenues.com",
     "description": "AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR.",
+    "founder": {
+      "@type": "Person",
+      "name": "Shivam Sharma",
+      "jobTitle": "Founder"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "shivam@archrevenues.com",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/arch-revenues"
+    ]
   };
 
   return (

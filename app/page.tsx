@@ -2,9 +2,11 @@
 import { Hero } from "@/components/Hero";
 import { SocialProof } from "@/components/SocialProof";
 import { Problem } from "@/components/Problem";
+import { Teardown } from "@/components/Teardown";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Positioning } from "@/components/Positioning";
 import { Comparison } from "@/components/Comparison";
+import { Calculator } from "@/components/Calculator";
 import { Pricing } from "@/components/Pricing";
 import { CaseStudyPipeline } from "@/components/CaseStudyPipeline";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -17,9 +19,11 @@ export default function Home() {
         <Hero />
         <SocialProof />
         <Problem />
+        <Teardown />
         <HowItWorks />
         <Positioning />
         <Comparison />
+        <Calculator />
         <Pricing />
         <CaseStudyPipeline />
         <FAQ />

@@ -1,0 +1,24 @@
+# ARCH Revenues - B2B SaaS Outbound Growth
+
+ARCH Revenues is a specialized outbound lead generation service for B2B SaaS companies in the $20K-$100K MRR range. Founded by Shivam Sharma, based in Hyderabad, India.
+
+## Core Offerings
+- Done-for-you cold email and LinkedIn outbound systems.
+- ICP definition, lead list building using Apollo, and AI-driven personalization.
+- Infrastructure setup (SPF, DKIM, DMARC, domain rotation, inbox warmup) to ensure deliverability.
+- Response handling (positive, negative, unsubscribe) within 4 business hours.
+
+## Pricing
+- $1,500/month flat retainer (Founding Client Rate).
+- Performance guarantee: If we book fewer than 5 qualified demos in a month, the client does not pay for that month.
+- No annual contracts. Month-to-month after the initial 30 days.
+
+## Target Audience
+- B2B SaaS companies with $20K to $100K MRR.
+- Companies that cannot afford a full-time SDR but need to stop relying on referrals.
+- Serving clients primarily in the US, UK, Australia, and Canada.
+
+## Contact Information
+- Founder: Shivam Sharma
+- Email: shivam@archrevenues.com
+- Website: https://www.archrevenues.com

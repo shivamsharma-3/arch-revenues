@@ -7,7 +7,7 @@ export function Positioning() {
   const steps = [
     {
       title: "Meet the Founder",
-      description: "Founder of ARCH Revenues. Builds scalable outbound systems for B2B SaaS companies in the $20K-$100K MRR range."
+      description: "Hi, I'm Shivam Sharma, founder of ARCH Revenues. I build scalable outbound systems for B2B SaaS companies in the $20K-$100K MRR range."
     },
     {
       title: "Performance Pilot",
