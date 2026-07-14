@@ -50,18 +50,23 @@ export function Teardown() {
               The ARCH Framework
             </div>
             
-            <div className="bg-white rounded-xl p-5 shadow-sm border border-teal-100 mb-6 font-sans text-sm text-zinc-800 space-y-4">
-              <p>{'{first_name}'} — saw your recent post about hitting $50K MRR, congrats.</p>
-              <p>Most SaaS founders at this stage struggle to keep the pipeline full once they step away from founder-led sales.</p>
-              <p>We built a system that books 5-12 qualified demos a month on autopilot. If we don't hit 5, you don't pay for the month.</p>
-              <p>Worth a quick chat to see the math?</p>
-              <p>Shivam</p>
+            <div className="bg-teal-900 rounded-xl p-8 shadow-sm border border-teal-800 mb-6 flex flex-col items-center justify-center text-center space-y-5">
+              <p className="text-teal-50 font-medium text-lg leading-relaxed">
+                We don't use static templates. We write hyper-personalized emails based on deep research of every single prospect.
+              </p>
+              <a 
+                href="/tools/email-generator"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-teal-400 text-teal-950 font-semibold hover:bg-teal-300 transition-colors"
+              >
+                See what we'd write for you
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+              </a>
             </div>
 
             <ul className="space-y-3 text-sm text-teal-800/80 font-medium">
-              <li className="flex gap-2"><span className="text-teal-600">✓</span> Highly personalized intro based on specific triggers</li>
-              <li className="flex gap-2"><span className="text-teal-600">✓</span> Calls out the exact pain point for their specific stage</li>
-              <li className="flex gap-2"><span className="text-teal-600">✓</span> Hard risk-reversal offer + soft, low-friction call to action</li>
+              <li className="flex gap-2"><span className="text-teal-600">✓</span> We analyze their website to find actual buying signals</li>
+              <li className="flex gap-2"><span className="text-teal-600">✓</span> We call out the exact pain point for their specific stage</li>
+              <li className="flex gap-2"><span className="text-teal-600">✓</span> We craft a hard risk-reversal offer with a low-friction CTA</li>
             </ul>
           </div>
         </div>

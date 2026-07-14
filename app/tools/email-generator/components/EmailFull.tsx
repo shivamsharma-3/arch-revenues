@@ -29,11 +29,23 @@ export function EmailFull({ emailData, usageCount, targetUrl, onReset }: { email
         </button>
       </div>
       
-      <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 md:p-8 font-serif text-lg leading-relaxed text-zinc-800 whitespace-pre-wrap mb-8">
+      <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 md:p-8 font-serif text-lg leading-relaxed text-zinc-800 whitespace-pre-wrap mb-6">
         <div className="mb-6 pb-4 border-b border-zinc-200 font-sans text-sm text-zinc-500">
           <strong>Subject:</strong> {subject}
         </div>
         {body}
+      </div>
+
+      <div className="bg-amber-50/80 border border-amber-200/60 rounded-xl p-5 mb-8 flex gap-4 text-sm text-amber-900 leading-relaxed">
+        <div className="shrink-0 mt-0.5">
+          <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div>
+          <strong className="font-semibold text-amber-950 block mb-1">This is an AI-generated baseline, not a final send.</strong>
+          In our actual campaigns, we never rely on raw AI output. A human outbound expert physically reviews, fact-checks, and hyper-personalizes every single email before it goes out. This guarantees maximum deliverability, protects your domain reputation, and ensures perfect relevance.
+        </div>
       </div>
       
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-zinc-100">
