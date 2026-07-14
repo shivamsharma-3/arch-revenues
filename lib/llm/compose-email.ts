@@ -8,21 +8,25 @@ export interface ComposedEmail {
 
 function parseEmailResponse(rawText: string): ComposedEmail {
   let subject = '';
-  let body = rawText;
-
-  // The model occasionally generates multiple variations in the same output.
-  // We only want the first one, so we cut off anything after a second "SUBJECT:"
-  const firstBlock = rawText.split(/\nsubject:/i)[0];
+  // Cut off everything after the second "SUBJECT:" (case-insensitive) to prevent duplicates
+  const firstBlock = rawText.split(/\nsubject:/i)[0].trim();
+  
+  let body = firstBlock;
 
   const subjectMatch = firstBlock.match(/SUBJECT:\s*(.*?)\nBODY:\s*([\s\S]*)/i);
   if (subjectMatch) {
     subject = subjectMatch[1].trim();
     body = subjectMatch[2].trim();
   } else if (firstBlock.toLowerCase().startsWith('subject:')) {
+    // If "BODY:" is missing, try splitting by "Body:", else split by newline
     const parts = firstBlock.split(/body:/i);
-    subject = parts[0].replace(/subject:/i, '').trim();
     if (parts.length > 1) {
+      subject = parts[0].replace(/subject:/i, '').trim();
       body = parts[1].trim();
+    } else {
+      const lines = firstBlock.split('\n');
+      subject = lines[0].replace(/subject:/i, '').trim();
+      body = lines.slice(1).join('\n').trim();
     }
   }
 
