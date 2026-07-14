@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@vercel/kv';
+import { sendLeadEmail, sendLeadNotification } from '@/lib/email/resend';
 
 function getKv() {
   const url = process.env.KV_REST_API_URL?.replace(/^"|"$/g, '');
@@ -11,12 +12,13 @@ function getKv() {
 
 export async function POST(req: Request) {
   try {
-    const { email, url } = await req.json();
+    const { email, url, generatedEmail } = await req.json();
     
     if (!email) {
       return NextResponse.json({ error: 'Email required' }, { status: 400 });
     }
     
+    // Save lead to KV
     const kv = getKv();
     if (kv) {
       await kv.set(`lead:${email}`, { 
@@ -27,6 +29,14 @@ export async function POST(req: Request) {
     } else {
       console.warn('KV store not configured, lead not saved:', email);
     }
+
+    // Send the generated email to the user who just unlocked
+    if (generatedEmail) {
+      await sendLeadEmail(email, url, generatedEmail);
+    }
+
+    // Notify Shivam that a new lead came in
+    await sendLeadNotification(email, url);
     
     return NextResponse.json({ success: true });
   } catch (e) {

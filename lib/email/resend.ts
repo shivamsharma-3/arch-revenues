@@ -1,12 +1,19 @@
 import { Resend } from 'resend';
 
+const OWNER_EMAIL = 'shivam@archrevenues.com'; // Update to your real email if different
+
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return null;
+  return new Resend(key);
+}
+
 export async function sendLeadEmail(to: string, companyUrl: string, generatedEmail: any) {
-  if (!process.env.RESEND_API_KEY) {
+  const resend = getResend();
+  if (!resend) {
     console.warn("RESEND_API_KEY is not set, skipping email send");
     return;
   }
-  
-  const resend = new Resend(process.env.RESEND_API_KEY);
   
   const body = generatedEmail?.body || '';
   const subject = generatedEmail?.subject || '';
@@ -32,11 +39,30 @@ ${body}
   `;
 
   // TODO: verify archrevenues.com in Resend before going live.
-  // Using onboarding@resend.dev for testing for now.
+  // Using onboarding@resend.dev for testing — only delivers to your Resend account's verified email.
   await resend.emails.send({
     from: 'ARCH Revenues <onboarding@resend.dev>',
     to: [to],
     subject: `Your personalized cold email for ${companyUrl}`,
     html,
+  });
+}
+
+export async function sendLeadNotification(leadEmail: string, companyUrl: string) {
+  const resend = getResend();
+  if (!resend) return;
+
+  await resend.emails.send({
+    from: 'ARCH Revenues <onboarding@resend.dev>',
+    to: [OWNER_EMAIL],
+    subject: `New lead: ${leadEmail}`,
+    html: `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2>New lead unlocked an email</h2>
+        <p><strong>Email:</strong> ${leadEmail}</p>
+        <p><strong>Prospect URL:</strong> ${companyUrl}</p>
+        <p><strong>Time:</strong> ${new Date().toUTCString()}</p>
+      </div>
+    `,
   });
 }

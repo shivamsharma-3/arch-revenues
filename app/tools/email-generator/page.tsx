@@ -87,7 +87,7 @@ export default function EmailGeneratorPage() {
       const res = await fetch('/api/capture-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, url: targetUrl })
+        body: JSON.stringify({ email, url: targetUrl, generatedEmail })
       });
       if (res.ok) {
         setStatus('full');
