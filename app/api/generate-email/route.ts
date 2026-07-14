@@ -62,7 +62,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: error.message }, { status: 422 });
     }
     console.error('Email generation failed:', error);
-    const message = `Failed to generate email: ${error?.message || String(error)}`;
+    
+    let message = error?.message || String(error);
+    
+    // Handle Gemini API Quota errors gracefully
+    if (message.includes('429') && message.includes('quota')) {
+      message = "Google AI API quota exceeded. Please wait a minute and try again, or upgrade your Gemini API tier.";
+    } else {
+      message = `Failed to generate email: ${message}`;
+    }
+
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
