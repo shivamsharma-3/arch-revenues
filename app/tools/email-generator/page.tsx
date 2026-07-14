@@ -26,6 +26,11 @@ export default function EmailGeneratorPage() {
       const result = await fp.get();
       setFingerprint(result.visitorId);
       
+      const storedEmail = localStorage.getItem('arch_lead_email');
+      if (storedEmail) {
+        setUserEmail(storedEmail);
+      }
+      
       try {
         const res = await fetch('/api/rate-limit', {
           method: 'POST',
@@ -100,6 +105,7 @@ export default function EmailGeneratorPage() {
       });
       if (res.ok) {
         setUserEmail(email); // persist so future generations skip the gate
+        localStorage.setItem('arch_lead_email', email);
         setStatus('full');
       } else {
         throw new Error("Failed to capture lead");
