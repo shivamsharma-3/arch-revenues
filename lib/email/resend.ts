@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const OWNER_EMAIL = 'shivam@archrevenues.com'; // Update to your real email if different
+const OWNER_EMAIL = 'shivam@archrevenues.com'; // Your notification inbox
 
 function getResend() {
   const key = process.env.RESEND_API_KEY;
@@ -38,10 +38,8 @@ ${body}
     </div>
   `;
 
-  // TODO: verify archrevenues.com in Resend before going live.
-  // Using onboarding@resend.dev for testing — only delivers to your Resend account's verified email.
   await resend.emails.send({
-    from: 'ARCH Revenues <onboarding@resend.dev>',
+    from: 'ARCH Revenues <noreply@archrevenues.com>',
     to: [to],
     subject: `Your personalized cold email for ${companyUrl}`,
     html,
@@ -53,7 +51,7 @@ export async function sendLeadNotification(leadEmail: string, companyUrl: string
   if (!resend) return;
 
   await resend.emails.send({
-    from: 'ARCH Revenues <onboarding@resend.dev>',
+    from: 'ARCH Revenues <noreply@archrevenues.com>',
     to: [OWNER_EMAIL],
     subject: `New lead: ${leadEmail}`,
     html: `
