@@ -1,20 +1,32 @@
 import { useState } from 'react';
-import { Lock, Mail, Loader2 } from 'lucide-react';
+import { Lock, Mail, Loader2, AlertCircle } from 'lucide-react';
 
-export function EmailPreview({ emailData, onUnlock }: { emailData: any, onUnlock: (email: string) => Promise<void> }) {
+interface EmailPreviewProps {
+  emailData: any;
+  onUnlock: (email: string) => Promise<void>;
+  captureError?: string | null;
+  onClearError?: () => void;
+}
+
+export function EmailPreview({ emailData, onUnlock, captureError, onClearError }: EmailPreviewProps) {
   const [userEmail, setUserEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const body = emailData?.body || '';
   const subject = emailData?.subject || '';
 
   const lines = body.split('\n').filter((l: string) => l.trim().length > 0);
   const visiblePart = lines.slice(0, 2).join('\n\n');
+  // Use the actual email body as blurred content — visitor sees their own personalised text under the blur,
+  // which is far more compelling than placeholder copy.
+  const blurredPart = lines.slice(2).join('\n\n') ||
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.';
 
   const handleUnlock = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!userEmail) return;
     setIsSubmitting(true);
+    if (onClearError) onClearError();
     await onUnlock(userEmail);
     setIsSubmitting(false);
   };
@@ -25,14 +37,14 @@ export function EmailPreview({ emailData, onUnlock }: { emailData: any, onUnlock
         <div className="mb-6 pb-4 border-b border-zinc-200 font-sans text-sm text-zinc-500">
           <strong>Subject:</strong> {subject}
         </div>
-        
+
         <div className="whitespace-pre-wrap">{visiblePart}</div>
-        
+
         <div className="relative mt-4">
           <div className="whitespace-pre-wrap blur-sm select-none overflow-hidden h-40">
-            {"[Company Name], noticed your team has been facing issues with [Specific Pain Point]. Most SaaS founders struggle with this right around $50K MRR. \n\nWe built a system that solves [Pain Point] completely by implementing [Solution]. Would you be open to seeing how it works?"}
+            {blurredPart}
           </div>
-          
+
           <div className="absolute inset-0 flex flex-col items-center justify-center -mt-8 z-10">
             <div className="bg-white/95 backdrop-blur-md p-8 rounded-2xl border border-zinc-200 shadow-xl max-w-sm w-full text-center">
               <div className="w-12 h-12 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -40,7 +52,14 @@ export function EmailPreview({ emailData, onUnlock }: { emailData: any, onUnlock
               </div>
               <h3 className="text-xl font-bold text-zinc-900 mb-2">Unlock the full email</h3>
               <p className="text-sm text-zinc-600 mb-6">Enter your email to reveal the rest of this personalized draft.</p>
-              
+
+              {captureError && (
+                <div className="flex items-start gap-2 text-left bg-red-50 border border-red-200 rounded-lg p-3 mb-4 text-sm text-red-700 font-sans">
+                  <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                  <span>{captureError}</span>
+                </div>
+              )}
+
               <form onSubmit={handleUnlock} className="space-y-4">
                 <div className="relative">
                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

@@ -96,8 +96,9 @@ export default function EmailGeneratorPage() {
       }
     } catch (e) {
       console.error(e);
-      // Even if it fails we show it to the user so they are not stuck, but we log the error.
-      setStatus('full');
+      // Do NOT unlock on failure. The gate must hold: no lead captured = no email revealed.
+      // Surface the error so the user can retry.
+      setError("Something went wrong. Please try again or refresh the page.");
     }
   };
 
@@ -144,7 +145,9 @@ export default function EmailGeneratorPage() {
           {status === 'preview' && (
             <EmailPreview 
               emailData={generatedEmail} 
-              onUnlock={handleUnlock} 
+              onUnlock={handleUnlock}
+              captureError={error}
+              onClearError={() => setError(null)}
             />
           )}
 
