@@ -68,12 +68,12 @@ WHAT TO WRITE
 Write one cold email. The shape is fixed. The language is not.
 
 SHAPE (in order):
-1. HOOK — One observation from their site. What you noticed that signals a pipeline problem. No greeting cliché. Start with what you saw, not pleasantries.
-2. COST — One line on what this costs them. Not abstract. Specific to their situation.
-3. OFFER — One line connecting outbound to their exact gap. Name the mechanism, not the category.
-4. PROOF — One concrete number. E.g. "Last month: 4 clients, 38 demos booked." If unsure, skip this line.
-5. CLOSE — One question. Easy to answer in one line. Not "book a call." A low-commitment question about their situation.
-6. SIGN-OFF — Shivam / ARCH Revenues
+1. HOOK -- One observation from their site. What you noticed that signals a pipeline problem. No greeting cliche. Start with what you saw, not pleasantries.
+2. COST -- One line on what this costs them. Not abstract. Specific to their situation.
+3. OFFER -- One line connecting outbound to their exact gap. Name the mechanism, not the category.
+4. PROOF -- One concrete number. E.g. "Last month: 4 clients, 38 demos booked." If unsure, skip this line.
+5. CLOSE -- One question. Easy to answer in one line. Not "book a call." A low-commitment question about their situation.
+6. SIGN-OFF -- Shivam / ARCH Revenues
 
 ────────────────────────────────
 FORMAT RULES (mandatory)

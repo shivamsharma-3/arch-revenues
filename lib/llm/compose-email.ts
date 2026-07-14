@@ -44,7 +44,6 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
   const response = await ai.models.generateContent({
     model: 'gemini-2.5-flash',
     contents: prompt,
-    config: { thinkingConfig: { thinkingBudget: 1024 } },
   });
 
   let rawText = "";
@@ -70,13 +69,12 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
       prompt +
       `\n\nYOUR PREVIOUS RESPONSE WAS INCOMPLETE OR MISSING THE SUBJECT LINE. ` +
       `You produced ${contentLines.length} content lines. ` +
-      `Rewrite following the SHAPE exactly: HOOK → COST → OFFER → PROOF (optional) → CLOSE → SIGN-OFF. ` +
+      `Rewrite following the SHAPE exactly: HOOK -> COST -> OFFER -> PROOF (optional) -> CLOSE -> SIGN-OFF. ` +
       `One idea per line, blank line between each. Include the SUBJECT: line.`;
 
     const retryResponse = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: retryPrompt,
-      config: { thinkingConfig: { thinkingBudget: 1024 } },
     });
 
     let retryRaw = "";
