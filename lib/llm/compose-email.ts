@@ -42,8 +42,9 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
     .replace('{pain_points}', painPoints);
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-pro",
+    model: 'gemini-2.5-flash',
     contents: prompt,
+    config: { thinkingConfig: { thinkingBudget: 1024 } },
   });
 
   let rawText = "";
@@ -72,8 +73,9 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
       `Rewrite following the structure EXACTLY. Every line listed (GREETING, PAIN OPENING, EVIDENCE, BRIDGE, SOLUTION, CTA, SIGNATURE) is mandatory. Do not collapse them.`;
 
     const retryResponse = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: 'gemini-2.5-flash',
       contents: retryPrompt,
+      config: { thinkingConfig: { thinkingBudget: 1024 } },
     });
 
     let retryRaw = "";
