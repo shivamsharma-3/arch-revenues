@@ -1,5 +1,5 @@
-import { GoogleGenAI } from '@google/genai';
 import { PAIN_EXTRACTION_PROMPT } from './prompts';
+import { generateContentWithFallback } from './generate-content';
 
 export class InsufficientDataError extends Error {
   constructor(url: string) {
@@ -8,18 +8,7 @@ export class InsufficientDataError extends Error {
   }
 }
 
-let aiInstance: GoogleGenAI | null = null;
-function getAI() {
-  if (!aiInstance) {
-    const apiKey = process.env.GEMINI_API_KEY?.replace(/^"|"$/g, '') || '';
-    aiInstance = new GoogleGenAI({ apiKey });
-  }
-  return aiInstance;
-}
-
-export async function extractPains(url: string, pages: {url: string, text: string}[]) {
-  const ai = getAI();
-  
+export async function extractPains(url: string, pages: {url: string, text: string}[]) {  
   let pagesContent = '';
   for (const page of pages) {
     pagesContent += `\n\n[PAGE]\nURL: ${page.url}\nContent: ${page.text}\n`;
@@ -36,21 +25,16 @@ export async function extractPains(url: string, pages: {url: string, text: strin
     .replace('{company_url}', url)
     .replace('{pages_content}', pagesContent);
 
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: prompt,
-  });
-
   let text = '';
   try {
-    text = response.text || '';
+    text = await generateContentWithFallback(prompt);
     if (!text.trim()) {
-      console.error('Gemini extractPains returned empty text. Full response:', JSON.stringify(response, null, 2));
+      console.error('LLM returned empty text for extractPains');
       throw new InsufficientDataError(url);
     }
   } catch (e) {
     if (e instanceof InsufficientDataError) throw e;
-    console.error('Gemini extractPains response.text threw. Response object:', JSON.stringify(response, null, 2), 'Error:', e);
+    console.error('LLM extractPains threw. Error:', e);
     throw new InsufficientDataError(url);
   }
 

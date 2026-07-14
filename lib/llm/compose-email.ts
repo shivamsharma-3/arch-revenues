@@ -1,14 +1,5 @@
-import { GoogleGenAI } from '@google/genai';
 import { EMAIL_COMPOSITION_PROMPT } from './prompts';
-
-let aiInstance: GoogleGenAI | null = null;
-function getAI() {
-  if (!aiInstance) {
-    const apiKey = process.env.GEMINI_API_KEY?.replace(/^"|"$/g, '') || '';
-    aiInstance = new GoogleGenAI({ apiKey });
-  }
-  return aiInstance;
-}
+import { generateContentWithFallback } from './generate-content';
 
 export interface ComposedEmail {
   subject: string;
@@ -39,25 +30,15 @@ function parseEmailResponse(rawText: string): ComposedEmail {
 }
 
 export async function composeEmail(url: string, painPoints: string): Promise<ComposedEmail> {
-  const ai = getAI();
-
   const prompt = EMAIL_COMPOSITION_PROMPT
     .replace(/{company_url}/g, url)
     .replace('{pain_points}', painPoints);
 
-  const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
-    contents: prompt,
-  });
-
   let rawText = "";
   try {
-    rawText = response.text || "";
-    if (!rawText.trim()) {
-      console.error("Gemini composeEmail returned empty text. Full response:", JSON.stringify(response, null, 2));
-    }
+    rawText = await generateContentWithFallback(prompt);
   } catch (e) {
-    console.error("Gemini composeEmail response.text threw. Response:", JSON.stringify(response, null, 2), "Error:", e);
+    console.error("LLM composeEmail threw. Error:", e);
     rawText = "";
   }
 
@@ -76,19 +57,11 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
       `Rewrite following the SHAPE exactly: HOOK -> COST -> OFFER -> PROOF (optional) -> CLOSE -> SIGN-OFF. ` +
       `One idea per line, blank line between each. Include the SUBJECT: line.`;
 
-    const retryResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents: retryPrompt,
-    });
-
     let retryRaw = "";
     try {
-      retryRaw = retryResponse.text || "";
-      if (!retryRaw.trim()) {
-        console.error("Gemini composeEmail retry returned empty text. Response:", JSON.stringify(retryResponse, null, 2));
-      }
+      retryRaw = await generateContentWithFallback(retryPrompt);
     } catch (e) {
-      console.error("Gemini composeEmail retry threw. Response:", JSON.stringify(retryResponse, null, 2), "Error:", e);
+      console.error("LLM composeEmail retry threw. Error:", e);
     }
 
     if (retryRaw.trim()) {
