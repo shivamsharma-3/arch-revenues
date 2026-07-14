@@ -42,7 +42,7 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
     .replace('{pain_points}', painPoints);
 
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.0-flash',
     contents: prompt,
   });
 
@@ -73,7 +73,7 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
       `One idea per line, blank line between each. Include the SUBJECT: line.`;
 
     const retryResponse = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.0-flash',
       contents: retryPrompt,
     });
 

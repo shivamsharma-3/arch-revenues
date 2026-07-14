@@ -37,7 +37,7 @@ export async function extractPains(url: string, pages: {url: string, text: strin
     .replace('{pages_content}', pagesContent);
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.0-flash",
     contents: prompt,
   });
 
