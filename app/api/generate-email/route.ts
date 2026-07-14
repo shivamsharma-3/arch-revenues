@@ -20,9 +20,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid URL provided' }, { status: 400 });
     }
 
-    // Check rate limit upfront
+    // Check rate limit upfront (max 5 free generations per fingerprint)
     const rateLimit = await getRateLimit(fingerprint);
-    if (rateLimit.count >= 2) {
+    if (rateLimit.count >= 5) {
       return NextResponse.json({ error: 'Rate limit exceeded' }, { status: 429 });
     }
 

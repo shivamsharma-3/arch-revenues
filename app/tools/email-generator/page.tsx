@@ -13,6 +13,7 @@ import { ArrowLeft } from "lucide-react";
 export default function EmailGeneratorPage() {
   const [fingerprint, setFingerprint] = useState<string | null>(null);
   const [usageCount, setUsageCount] = useState<number>(0);
+  const [userEmail, setUserEmail] = useState<string | null>(null); // persisted after first unlock
   
   const [status, setStatus] = useState<'idle' | 'crawling' | 'preview' | 'full' | 'limit-reached'>('idle');
   const [generatedEmail, setGeneratedEmail] = useState<any>(null);
@@ -34,7 +35,7 @@ export default function EmailGeneratorPage() {
         if (res.ok) {
           const data = await res.json();
           setUsageCount(data.count);
-          if (data.count >= 2) {
+          if (data.count >= 5) {
             setStatus('limit-reached');
           }
         }
@@ -70,7 +71,8 @@ export default function EmailGeneratorPage() {
       setGeneratedEmail(data.email);
       setUsageCount(data.usageCount);
       
-      if (email) {
+      // If user's email is known (already unlocked before), go straight to full view
+      if (email || userEmail) {
          setStatus('full'); 
       } else {
          setStatus('preview');
@@ -90,6 +92,7 @@ export default function EmailGeneratorPage() {
         body: JSON.stringify({ email, url: targetUrl, generatedEmail })
       });
       if (res.ok) {
+        setUserEmail(email); // persist so future generations skip the gate
         setStatus('full');
       } else {
         throw new Error("Failed to capture lead");
@@ -135,7 +138,12 @@ export default function EmailGeneratorPage() {
           )}
 
           {status === 'idle' && (
-            <UrlInput onSubmit={handleGenerate} usageCount={usageCount} error={error} />
+            <UrlInput 
+              onSubmit={(url) => handleGenerate(url, userEmail || undefined)} 
+              usageCount={usageCount} 
+              error={error}
+              hasEmail={!!userEmail}
+            />
           )}
 
           {status === 'crawling' && (
@@ -157,7 +165,7 @@ export default function EmailGeneratorPage() {
               usageCount={usageCount}
               targetUrl={targetUrl}
               onReset={() => {
-                if (usageCount >= 2) setStatus('limit-reached');
+                if (usageCount >= 5) setStatus('limit-reached');
                 else setStatus('idle');
               }} 
             />

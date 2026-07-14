@@ -1,9 +1,17 @@
 import { useState } from 'react';
-import { ArrowRight, Mail } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-export function UrlInput({ onSubmit, usageCount, error }: { onSubmit: (url: string, email?: string) => void, usageCount: number, error: string | null }) {
+const MAX_FREE = 5;
+
+interface UrlInputProps {
+  onSubmit: (url: string) => void;
+  usageCount: number;
+  error: string | null;
+  hasEmail: boolean; // true once the user has unlocked and email is captured
+}
+
+export function UrlInput({ onSubmit, usageCount, error, hasEmail }: UrlInputProps) {
   const [url, setUrl] = useState('');
-  const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -11,13 +19,10 @@ export function UrlInput({ onSubmit, usageCount, error }: { onSubmit: (url: stri
     if (!cleanUrl.startsWith('http')) {
       cleanUrl = 'https://' + cleanUrl;
     }
-    
-    if (usageCount === 1 && !email) {
-      return; 
-    }
-    
-    onSubmit(cleanUrl, usageCount === 1 ? email : undefined);
+    onSubmit(cleanUrl);
   };
+
+  const remaining = MAX_FREE - usageCount;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -26,7 +31,15 @@ export function UrlInput({ onSubmit, usageCount, error }: { onSubmit: (url: stri
           {error}
         </div>
       )}
-      
+
+      {/* Usage counter — only shown after first use */}
+      {usageCount > 0 && (
+        <div className="flex items-center justify-between text-sm text-zinc-500 bg-zinc-50 border border-zinc-200 rounded-xl px-4 py-3">
+          <span>Free emails used</span>
+          <span className="font-semibold text-zinc-800">{usageCount} / {MAX_FREE}</span>
+        </div>
+      )}
+
       <div>
         <label className="block text-sm font-medium text-zinc-700 mb-2">Prospect's Website URL</label>
         <div className="relative">
@@ -41,32 +54,12 @@ export function UrlInput({ onSubmit, usageCount, error }: { onSubmit: (url: stri
         </div>
       </div>
 
-      {usageCount === 1 && (
-        <div>
-          <label className="block text-sm font-medium text-zinc-700 mb-2">Where should we send the email?</label>
-          <div className="relative">
-             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-               <Mail className="h-5 w-5 text-zinc-400" />
-             </div>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@company.com"
-              className="w-full pl-11 pr-4 py-4 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
-            />
-          </div>
-          <p className="text-xs text-zinc-500 mt-2">Since this is your second request, we'll email the result directly to your inbox.</p>
-        </div>
-      )}
-
       <button
         type="submit"
         disabled={!url}
         className="w-full flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg"
       >
-        {usageCount === 0 ? "Generate Cold Email" : "Generate & Send to Inbox"} 
+        {usageCount === 0 ? 'Generate Cold Email' : `Generate Email (${remaining} left)`}
         <ArrowRight className="w-5 h-5" />
       </button>
     </form>
