@@ -1,45 +1,43 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// SIGNAL EXTRACTION
+// Looks ONLY for signals that outbound/cold email can actually fix.
+// Drops SEO, design, product, pricing signals — they're real problems but
+// outbound doesn't solve them, so pitching them is a bait-and-switch.
+// ─────────────────────────────────────────────────────────────────────────────
 export const PAIN_EXTRACTION_PROMPT = `
-You are researching {company_url} to write a personalized cold email.
+You are analysing {company_url} to find signals that cold email + LinkedIn outbound can directly fix.
 
-I crawled their website and read multiple pages. The content is below.
+ONLY look for these pipeline/lead-gen signals. Ignore everything else.
 
-Your job: Identify the 3 most specific, painful friction points this company is currently experiencing, based ONLY on the content below.
+SIGNALS TO FIND (ranked):
+1. New company (< 2 years) with no visible repeatable acquisition channel — referrals + SEO only
+2. Broad service list / no clear ICP — signals they're taking whatever comes in
+3. No outbound presence — no case studies from cold-sourced clients, no SDR job postings, no "we reached out to..." language
+4. Thin or no content marketing — blog hasn't posted in months, or no blog at all = not generating inbound
+5. Implicit referral dependency — all testimonials are warm intros, no cold-sourced wins mentioned
+6. Agency or dev shop with no stated niche — serving anyone = competing on price
+7. Single-channel dependency — "we get most clients from [one place]" = vulnerable
+8. No pricing / sales-led motion — no pricing page, vague "contact us", long deal cycle signals
 
-What counts as a pain signal — ranked best to worst:
-1. STRONGEST: Help docs about a workaround, FAQ entries, changelog fixing a bug = specific product gap
-2. STRONG: Job posting for a specific role = gap in their org right now
-3. STRONG: Blog post explaining how to do X = users struggle with X
-4. MEDIUM: Case study "before" state = real pain their customer (often they themselves) had
-5. MEDIUM: Pricing page missing a feature = they're avoiding it or can't build it
-6. MEDIUM: Hero text / tagline / positioning = reveals what problem they THINK is their customers' pain (often the founder's real frustration)
-7. USABLE: "We help [persona] who struggle with [X]" on homepage = named pain even if general
-8. USABLE: Page title / meta description / OG title = signals what they lead with
+DO NOT extract:
+- SEO problems (outbound doesn't fix organic search)
+- Design or UX issues (not your problem to solve)
+- Product bugs or missing features (not your problem to solve)
+- Generic "competition is fierce" or "hiring is hard"
+- Any problem where the fix is NOT "get in front of more of the right people proactively"
 
-Use signal types 1-5 if available. If the site is JS-rendered and only meta/heading content is available, use types 6-8.
+For each signal found, output:
 
-For EACH pain, extract:
-- A specific sentence (not a generic industry problem)
-- The actual evidence (direct quote from their content, or specific page element)
-- Why it hurts for THIS company specifically
+SIGNAL 1:
+Finding: [one sentence — what you observed in their content]
+Evidence: [exact quote or specific page element — e.g. "5 service lines listed on homepage: web, mobile, SaaS, enterprise, AI"]
+Lead-gen gap: [one sentence — why this means their pipeline is unpredictable or fragile]
+Outbound fix: [one sentence — how cold email / LinkedIn outbound directly addresses this gap]
 
-HARD RULES:
-- Do NOT output "scaling challenges", "competition is fierce", "hiring is hard" — these are forbidden
-- Do NOT invent pains not visible in the content
-- Do NOT describe what their product does — describe what THEY are struggling with
-- If the content is too thin to find even 1 specific pain, output exactly: INSUFFICIENT_DATA
+SIGNAL 2: [same format]
+SIGNAL 3: [same format — only if clearly supported]
 
-Output format (when content is usable):
-
-PAIN 1:
-Description: [one specific sentence about THEIR pain]
-Evidence: [direct quote or specific element from their content]
-Source: [URL of the page]
-Why it hurts: [one sentence — consequence for them specifically]
-
-PAIN 2: [same format]
-PAIN 3: [same format]
-
-Rank by specificity (most specific first). Fewer than 3 is OK if the content only supports 1 or 2 clear signals.
+If you cannot find even 1 pipeline-relevant signal, output exactly: INSUFFICIENT_DATA
 
 ---
 
@@ -47,60 +45,92 @@ PAGE CONTENTS:
 {pages_content}
 `;
 
+// ─────────────────────────────────────────────────────────────────────────────
+// EMAIL COMPOSITION
+// Shape: observation → cost → offer → proof → close
+// Language: fresh each time, never reuse fixed phrases
+// Format: one idea per line, blank line between, no paragraph > 2 sentences
+// Spam rules: no trigger words, no HTML, plain text only
+// ─────────────────────────────────────────────────────────────────────────────
 export const EMAIL_COMPOSITION_PROMPT = `
-You are writing a personalized cold email to a founder at {company_url}.
+You are writing a cold email for Shivam at ARCH Revenues — an outbound systems agency for B2B SaaS and dev shops.
 
-You've researched their website and identified 3 specific pain points:
+ARCH Revenues delivers: personalised cold email campaigns, LinkedIn outbound sequences, ICP targeting, and booked demos/calls. That is the only service being pitched. Do not imply any other service.
+
+You have researched {company_url} and found these signals:
 
 {pain_points}
 
-You MUST follow this exact structure. Do not skip any line. Do not add any line not listed here.
+────────────────────────────────
+WHAT TO WRITE
+────────────────────────────────
 
-LINE 1 (GREETING):
-Hi [first name or "there" if no name found],
+Write one cold email. The shape is fixed. The language is not.
 
-LINE 2 (PAIN OPENING — one sentence):
-[Open by naming ONE specific pain from the pain points above. Use the exact phrasing from the Description field. Do not paraphrase into generic language. Do not say "for many" or "most companies" — name THEIR specific pain.]
+SHAPE (in order):
+1. HOOK — One observation from their site. What you noticed that signals a pipeline problem. No greeting cliché. Start with what you saw, not pleasantries.
+2. COST — One line on what this costs them. Not abstract. Specific to their situation.
+3. OFFER — One line connecting outbound to their exact gap. Name the mechanism, not the category.
+4. PROOF — One concrete number. E.g. "Last month: 4 clients, 38 demos booked." If unsure, skip this line.
+5. CLOSE — One question. Easy to answer in one line. Not "book a call." A low-commitment question about their situation.
+6. SIGN-OFF — Shivam / ARCH Revenues
 
-LINE 3 (EVIDENCE — one sentence):
-[Reference the specific evidence from the pain point. Format: "I saw [specific thing on their site/page]." Quote their actual content where possible. This line must prove you read their stuff — generic descriptions of their homepage are forbidden.]
+────────────────────────────────
+FORMAT RULES (mandatory)
+────────────────────────────────
+- One idea per line. Blank line between each line. No paragraph > 2 sentences.
+- Subject: 5-8 words, lowercase, reference the specific finding (not "outbound for your business")
+- Open with a brief informal greeting ("Hi," or company name directly) — not "Hi there," not "Dear [name],"
+- Total email body: 6-9 lines including sign-off. Not longer.
+- Plain text only. No bullet points, no bold, no links in the body.
 
-LINE 4 (BRIDGE — one sentence):
-[Explain in plain English why this pain costs them — what they're losing every week it goes unfixed. No mention of your solution yet. No "we" or "our".]
+────────────────────────────────
+SPAM RULES (mandatory)
+────────────────────────────────
+Never use these words: free, guarantee, act now, limited time, opportunity, exclusive, click here, unsubscribe, earn money, increase revenue, boost, leverage, revolutionary, synergy, streamline, cutting-edge, game-changer
+Never: ALL CAPS, multiple exclamation marks, "I came across your website," "I love what you're building," "Hope this finds you well"
 
-LINE 5 (SOLUTION — one sentence):
-[Explain how cold email + LinkedIn outbound directly solves THIS pain. Plain English. No buzzwords. No feature list. Reference the pain explicitly.]
+────────────────────────────────
+FEW-SHOT EXAMPLES (learn the shape, not the words)
+────────────────────────────────
 
-LINE 6 (PROOF — one sentence, optional):
-[One concrete number or fact. E.g., "Last month we booked 38 demos for 4 SaaS clients." If no proof available, skip this line entirely.]
-
-LINE 7 (SOFT CTA — one short sentence):
-[End with a question that's easy to answer in one line. Not "book a call." Not "15 min demo." Something like "Worth a quick chat?" or "Open to seeing what this looks like for {company_url}?"]
-
-LINE 8 (SIGNATURE):
+EXAMPLE A — Dev agency, 8 months old, 6 service lines, no blog:
+Subject: eight months in, five service lines
+Hi,
+NovaBuild launched eight months ago and already lists six types of projects on the homepage — web apps, mobile, APIs, AI, DevOps, and enterprise. That range usually means the pipeline is whatever the network sends over.
+Works until it doesn't. When referrals quiet down there's no channel to pull on.
+Cold email fills that gap: instead of waiting, you choose the exact founders who need a build partner right now and land in their inbox before they post on Upwork.
+Last month we ran this for three dev shops — 31 intro calls booked.
+Worth knowing what a targeted list of 15 NovaBuild-fit prospects would look like?
 Shivam
-ARCH Revenues — outbound systems for B2B SaaS
-archrevenues.com
+ARCH Revenues — outbound for dev shops and B2B SaaS
 
-HARD RULES:
-- 8 lines maximum, including greeting and signature. No exceptions.
-- No buzzwords: revolutionary, leverage, synergy, streamline, cutting-edge
-- No flattery: "love what you're building", "great company", "impressive"
-- No "we are a leading..." or "we help companies..."
-- No "AI-driven" or "AI-powered" anywhere in the email
-- Plain words. Short sentences. Founder to founder tone.
-- If a pain point has no usable evidence, pick a different pain point.
-- Do NOT mention your company name (ARCH Revenues) before line 8.
+EXAMPLE B — SaaS tool, 18 months old, blog dead for 6 months, pricing page says "contact us":
+Subject: the blog went quiet six months ago
+Hi,
+Corepath's blog last posted in January. Six months of silence usually means the content engine stopped, which means inbound is slowing with it.
+If the pipeline is leaning on word-of-mouth while inbound dries up, that's a fragile spot to be in heading into Q3.
+Outbound picks up where inbound drops off — targeted sequences to the exact persona who'd get value from Corepath, before they find a competitor.
+We did this for a SaaS tool in the project-management space last quarter. 22 demos in six weeks.
+Open to seeing the sequence we'd run for Corepath's ICP?
+Shivam
+ARCH Revenues — outbound for B2B SaaS
 
-SUBJECT LINE RULES:
-- 4-7 words
-- All lowercase, no caps
-- Reference the specific pain (not "ai revenue customers" — that's generic)
-- No spam words: free, opportunity, exclusive, limited
-- Examples of good subjects: "your help docs page", "the integration gap", "scaling outbound past $50k mrr"
+EXAMPLE C — Consulting firm, clear niche, referral-only signals, no case studies from outbound:
+Subject: every Hendrix case study starts the same way
+Hi,
+Every case study on the Hendrix site opens with "a client referred us to..." — which is a great signal for quality but a fragile one for growth.
+Referrals compound slowly. They also stop when the source goes quiet.
+Outbound lets you replicate the best client you've ever had by going directly to the next twenty versions of them, on a schedule you control.
+Last month: 4 consulting clients, 41 booked discovery calls from cold sequences.
+Is the referral channel growing the way you'd want it to right now?
+Shivam
+ARCH Revenues — outbound for B2B services
 
-OUTPUT FORMAT (exactly):
+────────────────────────────────
+OUTPUT FORMAT (exactly)
+────────────────────────────────
 SUBJECT: [subject line]
 BODY:
-[the 8 lines, separated by single newlines]
+[the email — one idea per line, blank line between each]
 `;

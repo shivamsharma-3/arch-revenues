@@ -16,7 +16,7 @@ export interface ComposedEmail {
 }
 
 function parseEmailResponse(rawText: string): ComposedEmail {
-  let subject = "quick question";
+  let subject = '';
   let body = rawText;
 
   const subjectMatch = rawText.match(/SUBJECT:\s*(.*?)\nBODY:\s*([\s\S]*)/i);
@@ -58,19 +58,20 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
     rawText = "";
   }
 
+  // Validate: count content lines (ignore blank separator lines used in the new format)
   const parsed = parseEmailResponse(rawText);
-
-  // Validate structure: need at least 6 non-empty lines (greeting + 4 body + signature)
-  const bodyLines = parsed.body.split('\n').filter(l => l.trim().length > 0);
-  if (bodyLines.length < 6) {
+  const contentLines = parsed.body.split('\n').filter(l => l.trim().length > 0);
+  if (contentLines.length < 5 || !parsed.subject) {
     console.warn(
-      `composeEmail: LLM only produced ${bodyLines.length} lines. Retrying with stricter prompt.`
+      `composeEmail: LLM produced ${contentLines.length} content lines, subject="${parsed.subject}". Retrying.`
     );
 
     const retryPrompt =
       prompt +
-      `\n\nYOUR PREVIOUS RESPONSE DID NOT FOLLOW THE 8-LINE STRUCTURE. You output ${bodyLines.length} non-empty lines. ` +
-      `Rewrite following the structure EXACTLY. Every line listed (GREETING, PAIN OPENING, EVIDENCE, BRIDGE, SOLUTION, CTA, SIGNATURE) is mandatory. Do not collapse them.`;
+      `\n\nYOUR PREVIOUS RESPONSE WAS INCOMPLETE OR MISSING THE SUBJECT LINE. ` +
+      `You produced ${contentLines.length} content lines. ` +
+      `Rewrite following the SHAPE exactly: HOOK → COST → OFFER → PROOF (optional) → CLOSE → SIGN-OFF. ` +
+      `One idea per line, blank line between each. Include the SUBJECT: line.`;
 
     const retryResponse = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
