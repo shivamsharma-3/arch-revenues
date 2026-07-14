@@ -221,6 +221,11 @@ export default function EmailGeneratorPage() {
             />
           )}
         </motion.div>
+
+        <div className="mt-8 bg-amber-50/50 border border-amber-200/50 rounded-xl p-5 text-sm text-amber-900/90 leading-relaxed max-w-2xl mx-auto text-center">
+          <strong className="font-semibold text-amber-950 block mb-1">AI Baseline Disclaimer</strong>
+          The emails generated here are AI baselines, not final sends. In our actual campaigns, human outbound experts verify, fact-check, and hyper-personalize every single email before it goes out to ensure maximum deliverability and protect your domain reputation.
+        </div>
       </div>
     </div>
   );
