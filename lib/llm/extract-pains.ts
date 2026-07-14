@@ -28,9 +28,14 @@ export async function extractPains(url: string, pages: {url: string, text: strin
   });
 
   try {
-    return response.text || "";
+    const text = response.text;
+    if (!text || text.trim().length === 0) {
+      console.error("Gemini extractPains returned empty text. Full response:", JSON.stringify(response, null, 2));
+      return "";
+    }
+    return text;
   } catch (e) {
-    console.error("Gemini returned no text", e);
+    console.error("Gemini extractPains response.text threw. Response object:", JSON.stringify(response, null, 2), "Error:", e);
     return "";
   }
 }

@@ -52,8 +52,12 @@ export async function POST(req: Request) {
       usageCount: rateData.count
     });
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Email generation failed:', error);
-    return NextResponse.json({ error: 'Failed to generate email' }, { status: 500 });
+    const isDev = process.env.NODE_ENV === 'development';
+    const message = isDev
+      ? `Failed to generate email: ${error?.message || String(error)}`
+      : 'Failed to generate email';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
