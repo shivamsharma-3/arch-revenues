@@ -15,7 +15,7 @@ export default function EmailGeneratorPage() {
   const [usageCount, setUsageCount] = useState<number>(0);
   const [userEmail, setUserEmail] = useState<string | null>(null); // persisted after first unlock
   
-  const [status, setStatus] = useState<'idle' | 'crawling' | 'preview' | 'full' | 'limit-reached'>('idle');
+  const [status, setStatus] = useState<'idle' | 'crawling' | 'preview' | 'full' | 'sent-to-inbox' | 'limit-reached'>('idle');
   const [generatedEmail, setGeneratedEmail] = useState<any>(null);
   const [targetUrl, setTargetUrl] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
@@ -53,10 +53,13 @@ export default function EmailGeneratorPage() {
     setError(null);
 
     try {
+      // For 3rd+ emails, pass the stored email so server sends to inbox instead of showing on site
+      const emailToSend = usageCount >= 2 ? userEmail : (email || null);
+
       const res = await fetch('/api/generate-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url, fingerprint, email })
+        body: JSON.stringify({ url, fingerprint, email: emailToSend })
       });
 
       if (!res.ok) {
@@ -71,12 +74,15 @@ export default function EmailGeneratorPage() {
       setGeneratedEmail(data.email);
       setUsageCount(data.usageCount);
 
-      // First email is always free — no gate.
-      // From the 2nd email onwards, require email capture unless already provided.
-      if (data.usageCount === 1 || userEmail) {
+      if (data.sentToInbox) {
+        // 3rd+ email: sent directly to inbox, don't show on site
+        setStatus('sent-to-inbox');
+      } else if (data.usageCount === 1 || userEmail) {
+        // 1st email (free) or email already captured: show on site
         setStatus('full');
       } else {
-        setStatus('preview'); // shows the unlock gate
+        // 2nd email: show gate to capture email
+        setStatus('preview');
       }
 
     } catch (err: any) {
@@ -123,6 +129,36 @@ export default function EmailGeneratorPage() {
           animate={{ opacity: 1, y: 0 }}
           className="bg-white rounded-3xl shadow-sm border border-zinc-200 p-6 md:p-10"
         >
+          {status === 'sent-to-inbox' && (
+            <div className="text-center py-12">
+              <div className="w-16 h-16 bg-teal-50 text-teal-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold text-zinc-900 mb-3">Check your inbox</h2>
+              <p className="text-zinc-500 mb-2">We sent the personalized email for</p>
+              <p className="text-zinc-800 font-medium mb-2">{targetUrl}</p>
+              <p className="text-zinc-500 mb-8">to <span className="font-medium text-zinc-800">{userEmail}</span></p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                {usageCount < 5 && (
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="text-sm font-semibold text-zinc-600 hover:text-zinc-900 border border-zinc-200 px-5 py-2.5 rounded-lg hover:bg-zinc-50 transition-colors"
+                  >
+                    Generate another ({5 - usageCount} left)
+                  </button>
+                )}
+                <a
+                  href="/strategy-call"
+                  className="bg-zinc-900 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-zinc-800 transition-colors"
+                >
+                  Book strategy call
+                </a>
+              </div>
+            </div>
+          )}
+
           {status === 'limit-reached' && (
             <div className="text-center py-12">
               <h2 className="text-2xl font-semibold mb-4">You've reached your free limit</h2>

@@ -40,10 +40,14 @@ export async function POST(req: Request) {
     
     // Increment rate limit usage ONLY after successful generation
     const rateData = await incrementRateLimit(fingerprint);
-    
-    // If email is provided (2nd generation+), send it via Resend
+
+    // 3rd+ email (email provided by frontend): send to inbox, don't return content to client
     if (email) {
       await sendLeadEmail(email, url, generatedContent);
+      return NextResponse.json({
+        sentToInbox: true,
+        usageCount: rateData.count
+      });
     }
 
     return NextResponse.json({ 
