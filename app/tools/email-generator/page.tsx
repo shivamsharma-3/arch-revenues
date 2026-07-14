@@ -72,7 +72,14 @@ export default function EmailGeneratorPage() {
           setStatus('limit-reached');
           return;
         }
-        throw new Error('Failed to generate email');
+        
+        let errorMsg = 'Failed to generate email';
+        try {
+          const errData = await res.json();
+          if (errData.error) errorMsg = errData.error;
+        } catch(e) {}
+        
+        throw new Error(errorMsg);
       }
 
       const data = await res.json();

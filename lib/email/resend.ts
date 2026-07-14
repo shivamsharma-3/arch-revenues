@@ -38,12 +38,16 @@ ${body}
     </div>
   `;
 
-  await resend.emails.send({
+  const result = await resend.emails.send({
     from: 'ARCH Revenues <noreply@archrevenues.com>',
     to: [to],
     subject: `Your personalized cold email for ${companyUrl}`,
     html,
   });
+  console.log("RESEND RESULT:", result);
+  if (result.error) {
+    throw new Error(result.error.message);
+  }
 }
 
 export async function sendLeadNotification(leadEmail: string, companyUrl: string) {

@@ -62,10 +62,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: error.message }, { status: 422 });
     }
     console.error('Email generation failed:', error);
-    const isDev = process.env.NODE_ENV === 'development';
-    const message = isDev
-      ? `Failed to generate email: ${error?.message || String(error)}`
-      : 'Failed to generate email';
+    const message = `Failed to generate email: ${error?.message || String(error)}`;
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
