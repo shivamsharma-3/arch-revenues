@@ -24,7 +24,7 @@ export function CaseStudyPipeline() {
           </div>
 
           <p className="text-lg text-zinc-900 leading-relaxed font-medium">
-            We&apos;re onboarding our first 3 founding clients now. Spots open: 3/3.
+            We&apos;re onboarding our first founding clients now. The $1,500 rate is locked for the first 3 — after that it moves to $4,000/mo.
           </p>
         </div>
       </div>

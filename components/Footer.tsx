@@ -14,7 +14,7 @@ export function Footer() {
             </div>
             <div className="w-px h-4 bg-zinc-800 hidden md:block"></div>
             <a
-              href="https://www.linkedin.com/company/arch-revenues"
+              href="https://www.linkedin.com/company/arch-revenue"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-500 hover:text-white transition-colors"

@@ -39,7 +39,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 font-normal leading-relaxed max-w-3xl"
             >
-              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for SaaS companies between $20K and $200K MRR who can&apos;t afford a full-time SDR but need to stop relying on referrals.
+              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for SaaS companies between $20K and $100K MRR who can&apos;t afford a full-time SDR but need to stop relying on referrals.
             </motion.p>
           </div>
 
@@ -51,15 +51,15 @@ export function Hero() {
           >
             <Link
               href="/strategy-call"
-              className="w-full sm:w-auto flex items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
+              className="w-full sm:w-auto flex items-center justify-center bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-teal-400 hover:to-teal-500 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(20,184,166,0.3)]"
             >
               Book a 20-min strategy call →
             </Link>
             <Link
-              href="/how-it-works"
+              href="/tools/email-generator"
               className="text-zinc-900 text-base underline hover:text-zinc-600 transition-colors"
             >
-              See how it works
+              Try our free cold email generator →
             </Link>
           </motion.div>
         </div>

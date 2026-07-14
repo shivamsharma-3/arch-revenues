@@ -79,7 +79,7 @@ export default function RootLayout({
       "contactType": "customer service"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/arch-revenues"
+      "https://www.linkedin.com/company/arch-revenue"
     ]
   };
 

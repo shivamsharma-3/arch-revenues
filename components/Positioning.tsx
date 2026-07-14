@@ -7,7 +7,7 @@ export function Positioning() {
   const steps = [
     {
       title: "Meet the Founder",
-      description: "Hi, I'm Shivam Sharma, founder of ARCH Revenues. I build scalable outbound systems for B2B SaaS companies in the $20K-$100K MRR range."
+      description: "I'm Shivam. I spent 7 months studying outbound from scratch — reading every playbook, testing every tool, building sequences for hypothetical SaaS companies to learn what works. ARCH Revenues is the result: a system I'd wanted to hire someone to build for me, but couldn't find at a price a $30K-MRR founder could afford. So I built it myself."
     },
     {
       title: "Performance Pilot",

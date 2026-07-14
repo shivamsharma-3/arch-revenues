@@ -15,7 +15,7 @@ export function FinalCTA() {
         <div className="flex flex-col items-center gap-6">
           <Link
             href="/strategy-call"
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 border border-zinc-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 hover:border-zinc-400 transition-all shadow-lg"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-gradient-to-r from-teal-500 to-teal-600 text-white border-0 px-8 py-4 rounded-xl text-lg font-bold hover:from-teal-400 hover:to-teal-500 hover:shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all shadow-lg"
           >
             Book a 20-min strategy call →
           </Link>

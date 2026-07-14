@@ -28,6 +28,7 @@ export function Header() {
     "bg-zinc-900 text-white hover:bg-zinc-800 shadow-sm active:scale-95";
 
   const navLinks = [
+    { name: "Free Tools", href: "/tools/email-generator" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Performance Pilot", href: "/performance-pilot" },
     { name: "Pricing", href: "/#pricing" },
@@ -75,7 +76,7 @@ export function Header() {
         <div className="flex items-center gap-4 z-10">
           <Link
             href="/strategy-call"
-            className="hidden lg:flex items-center justify-center bg-zinc-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-zinc-800 transition-all shadow-sm"
+            className="hidden lg:flex items-center justify-center bg-gradient-to-r from-teal-500 to-teal-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:from-teal-400 hover:to-teal-500 transition-all shadow-sm hover:shadow-[0_0_15px_rgba(20,184,166,0.3)]"
           >
             Book a strategy call
           </Link>
@@ -118,7 +119,7 @@ export function Header() {
               <Link
                 href="/strategy-call"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="mt-4 flex items-center justify-center bg-white text-zinc-900 px-8 py-4 rounded-xl text-xl font-bold hover:bg-zinc-100 transition-colors w-full max-w-xs"
+                className="mt-4 flex items-center justify-center bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl text-xl font-bold hover:from-teal-400 hover:to-teal-500 transition-all w-full max-w-xs"
               >
                 Book a strategy call
               </Link>

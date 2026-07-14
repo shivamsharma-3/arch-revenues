@@ -5,14 +5,14 @@ import { motion } from "motion/react";
 import { TrendingUp, DollarSign, Target } from "lucide-react";
 
 export function Calculator() {
-  const [acv, setAcv] = useState<number>(10000);
-  const [closeRate, setCloseRate] = useState<number>(20);
-  const [demos, setDemos] = useState<number>(8);
+  const [acv, setAcv] = useState<number>(5000);
+  const [closeRate, setCloseRate] = useState<number>(10);
+  const [demos, setDemos] = useState<number>(5);
 
   const retainer = 1500;
   const newDealsPerMonth = demos * (closeRate / 100);
   const newRevenuePerMonth = newDealsPerMonth * acv;
-  const roi = ((newRevenuePerMonth - retainer) / retainer) * 100;
+  const roi = newRevenuePerMonth / retainer;
 
   const formatCurrency = (val: number) => {
     return new Intl.NumberFormat("en-US", {
@@ -27,7 +27,7 @@ export function Calculator() {
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mb-4">
-            The ROI of 5+ Qualified Demos
+            The Math of 5+ Qualified Demos
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
             Dial in your metrics below to see exactly what a predictable outbound pipeline does for your MRR/ARR.
@@ -127,14 +127,14 @@ export function Calculator() {
                 <div>
                   <div className="flex items-center gap-3 mb-2 text-zinc-400">
                     <TrendingUp className="w-5 h-5 text-purple-400" />
-                    <h3 className="text-sm font-medium">Estimated Monthly ROI</h3>
+                    <h3 className="text-sm font-medium">Return on Retainer</h3>
                   </div>
                   <div className="text-5xl font-semibold text-white">
-                    {roi.toFixed(0)}%
+                    {roi.toFixed(1)}x
                   </div>
                 </div>
                 <div className="text-left sm:text-right text-sm text-zinc-400 max-w-[200px]">
-                  Return on the $1,500/mo founding retainer investment.
+                  New revenue per $1 of your $1,500/mo retainer.
                 </div>
               </div>
             </div>
