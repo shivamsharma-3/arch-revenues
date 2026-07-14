@@ -70,12 +70,13 @@ export default function EmailGeneratorPage() {
       const data = await res.json();
       setGeneratedEmail(data.email);
       setUsageCount(data.usageCount);
-      
-      // If user's email is known (already unlocked before), go straight to full view
-      if (email || userEmail) {
-         setStatus('full'); 
+
+      // First email is always free — no gate.
+      // From the 2nd email onwards, require email capture unless already provided.
+      if (data.usageCount === 1 || userEmail) {
+        setStatus('full');
       } else {
-         setStatus('preview');
+        setStatus('preview'); // shows the unlock gate
       }
 
     } catch (err: any) {
