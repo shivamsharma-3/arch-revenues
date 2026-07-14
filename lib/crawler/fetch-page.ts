@@ -23,6 +23,68 @@ export function validateUrl(urlStr: string): boolean {
   }
 }
 
+/**
+ * Extract rich metadata from HTML even when the body is JS-rendered and mostly empty.
+ * Pulls: title, meta description, og:* tags, twitter:* tags, JSON-LD, h1/h2 headings.
+ */
+function extractMetaContent(html: string, pageUrl: string): string {
+  const $ = cheerio.load(html);
+  const parts: string[] = [];
+
+  const title = $('title').text().trim();
+  if (title) parts.push(`Page title: ${title}`);
+
+  const desc = $('meta[name="description"]').attr('content') ||
+               $('meta[property="og:description"]').attr('content') ||
+               $('meta[name="twitter:description"]').attr('content');
+  if (desc) parts.push(`Meta description: ${desc}`);
+
+  const ogTitle = $('meta[property="og:title"]').attr('content');
+  if (ogTitle && ogTitle !== title) parts.push(`OG title: ${ogTitle}`);
+
+  const ogSiteName = $('meta[property="og:site_name"]').attr('content');
+  if (ogSiteName) parts.push(`Site name: ${ogSiteName}`);
+
+  // h1/h2 headings — strong signal of what the page is about
+  const headings: string[] = [];
+  $('h1, h2').each((_, el) => {
+    const t = $(el).text().trim();
+    if (t && t.length > 3) headings.push(t);
+  });
+  if (headings.length > 0) parts.push(`Headings: ${headings.slice(0, 10).join(' | ')}`);
+
+  // JSON-LD structured data — very information-dense
+  $('script[type="application/ld+json"]').each((_, el) => {
+    try {
+      const json = JSON.parse($(el).html() || '');
+      const str = JSON.stringify(json);
+      if (str.length > 20) parts.push(`Structured data: ${str.substring(0, 500)}`);
+    } catch {}
+  });
+
+  // Visible body text (skip boilerplate elements)
+  const bodyText = convert(html, {
+    wordwrap: 130,
+    selectors: [
+      { selector: 'a', options: { ignoreHref: true } },
+      { selector: 'img', format: 'skip' },
+      { selector: 'nav', format: 'skip' },
+      { selector: 'footer', format: 'skip' },
+      { selector: 'header', format: 'skip' },
+      { selector: 'script', format: 'skip' },
+      { selector: 'style', format: 'skip' },
+      { selector: 'noscript', format: 'skip' },
+    ]
+  }).trim();
+
+  if (bodyText.length > 100) {
+    parts.push(`Page content:\n${bodyText.substring(0, 6000)}`);
+  }
+
+  const combined = parts.join('\n\n');
+  return combined.length > 50 ? combined : '';
+}
+
 export async function fetchPage(url: string, isHomepage = false): Promise<FetchedPage | null> {
   if (!validateUrl(url)) {
     console.error(`Invalid URL (SSRF prevention): ${url}`);
@@ -36,6 +98,8 @@ export async function fetchPage(url: string, isHomepage = false): Promise<Fetche
     const response = await fetch(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
       },
       signal: controller.signal
     });
@@ -50,22 +114,13 @@ export async function fetchPage(url: string, isHomepage = false): Promise<Fetche
 
     const html = await response.text();
     
-    // Extract readable text from HTML
-    const text = convert(html, {
-      wordwrap: 130,
-      selectors: [
-        { selector: 'a', options: { ignoreHref: true } },
-        { selector: 'img', format: 'skip' },
-        { selector: 'nav', format: 'skip' },
-        { selector: 'footer', format: 'skip' }
-      ]
-    });
-
-    const cappedText = text.length > 8000 ? text.substring(0, 8000) + "... [truncated]" : text;
+    // Extract rich text including meta tags, headings, JSON-LD — handles JS-heavy sites better
+    const text = extractMetaContent(html, response.url);
+    const cappedText = text.length > 8000 ? text.substring(0, 8000) + '... [truncated]' : text;
 
     return {
       url: response.url, // Following redirects
-      html, 
+      html,
       text: cappedText
     };
   } catch (error) {

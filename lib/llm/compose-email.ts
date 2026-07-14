@@ -42,7 +42,7 @@ export async function composeEmail(url: string, painPoints: string): Promise<Com
     .replace('{pain_points}', painPoints);
 
   const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.5-pro",
     contents: prompt,
   });
 

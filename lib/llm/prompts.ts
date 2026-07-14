@@ -3,35 +3,43 @@ You are researching {company_url} to write a personalized cold email.
 
 I crawled their website and read multiple pages. The content is below.
 
-Your job: Identify the 3 most specific, painful friction points this company is currently experiencing, based ONLY on the content below. Not generic industry pains — pains visible in their actual content.
+Your job: Identify the 3 most specific, painful friction points this company is currently experiencing, based ONLY on the content below.
 
-What counts as a pain signal:
-- A help article about a workaround = the product doesn't solve it natively
-- A job posting for a specific role = a gap in their org
-- A blog post explaining how to do something = users struggle with it
-- A changelog entry fixing X = X was broken
-- A pricing page missing a feature competitors have = they're avoiding it
-- A case study "before" = pain their customer had (often their own pain too)
-- An FAQ entry = confusion users have
+What counts as a pain signal — ranked best to worst:
+1. STRONGEST: Help docs about a workaround, FAQ entries, changelog fixing a bug = specific product gap
+2. STRONG: Job posting for a specific role = gap in their org right now
+3. STRONG: Blog post explaining how to do X = users struggle with X
+4. MEDIUM: Case study "before" state = real pain their customer (often they themselves) had
+5. MEDIUM: Pricing page missing a feature = they're avoiding it or can't build it
+6. MEDIUM: Hero text / tagline / positioning = reveals what problem they THINK is their customers' pain (often the founder's real frustration)
+7. USABLE: "We help [persona] who struggle with [X]" on homepage = named pain even if general
+8. USABLE: Page title / meta description / OG title = signals what they lead with
 
-What does NOT count as a pain:
-- "Scaling challenges" (generic)
-- "Competition is fierce" (generic)
-- "Hiring is hard" (generic)
-- Anything that could apply to any SaaS company
+Use signal types 1-5 if available. If the site is JS-rendered and only meta/heading content is available, use types 6-8.
 
-For each pain, output exactly in this format (do not add extra text):
+For EACH pain, extract:
+- A specific sentence (not a generic industry problem)
+- The actual evidence (direct quote from their content, or specific page element)
+- Why it hurts for THIS company specifically
+
+HARD RULES:
+- Do NOT output "scaling challenges", "competition is fierce", "hiring is hard" — these are forbidden
+- Do NOT invent pains not visible in the content
+- Do NOT describe what their product does — describe what THEY are struggling with
+- If the content is too thin to find even 1 specific pain, output exactly: INSUFFICIENT_DATA
+
+Output format (when content is usable):
 
 PAIN 1:
-Description: [one specific sentence]
-Evidence: [direct quote from their content]
+Description: [one specific sentence about THEIR pain]
+Evidence: [direct quote or specific element from their content]
 Source: [URL of the page]
-Why it hurts: [one sentence — why this matters for them specifically]
+Why it hurts: [one sentence — consequence for them specifically]
 
-PAIN 2: ...
-PAIN 3: ...
+PAIN 2: [same format]
+PAIN 3: [same format]
 
-Rank by specificity (most specific first).
+Rank by specificity (most specific first). Fewer than 3 is OK if the content only supports 1 or 2 clear signals.
 
 ---
 
@@ -95,16 +103,4 @@ OUTPUT FORMAT (exactly):
 SUBJECT: [subject line]
 BODY:
 [the 8 lines, separated by single newlines]
-
-If the pain_points field above is empty or contains no specific pain, output:
-SUBJECT: quick question
-BODY:
-Hi there,
-
-I was reading through {company_url} and noticed a few things worth flagging. Worth a quick chat?
-
-Shivam
-ARCH Revenues — outbound systems for B2B SaaS
-archrevenues.com
 `;
-

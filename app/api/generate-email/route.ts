@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { crawlSite } from '@/lib/crawler/crawl-site';
-import { extractPains } from '@/lib/llm/extract-pains';
+import { extractPains, InsufficientDataError } from '@/lib/llm/extract-pains';
 import { composeEmail } from '@/lib/llm/compose-email';
 import { getRateLimit, incrementRateLimit } from '@/lib/rate-limit/kv-store';
 import { sendLeadEmail } from '@/lib/email/resend';
@@ -57,6 +57,10 @@ export async function POST(req: Request) {
     });
 
   } catch (error: any) {
+    // User-facing error: site content was too thin to personalise
+    if (error instanceof InsufficientDataError) {
+      return NextResponse.json({ error: error.message }, { status: 422 });
+    }
     console.error('Email generation failed:', error);
     const isDev = process.env.NODE_ENV === 'development';
     const message = isDev
