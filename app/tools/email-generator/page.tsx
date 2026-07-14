@@ -103,7 +103,7 @@ export default function EmailGeneratorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 pt-24 pb-12 px-6">
+    <div className="min-h-screen bg-zinc-50 pt-32 pb-12 px-6">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-semibold text-zinc-900 tracking-tight mb-4">
