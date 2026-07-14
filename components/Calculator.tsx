@@ -79,7 +79,7 @@ export function Calculator() {
 
             <div>
               <div className="flex justify-between mb-4">
-                <label className="font-medium text-zinc-300">Demos We Book For You</label>
+                <label className="font-medium text-zinc-300">Demos I Book For You</label>
                 <span className="text-teal-400 font-mono font-semibold">{demos} / mo</span>
               </div>
               <input
@@ -92,7 +92,7 @@ export function Calculator() {
                 className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-teal-500"
               />
               <div className="flex justify-between text-xs text-zinc-500 mt-2 font-mono">
-                <span>5 (Our Guarantee)</span>
+                <span>5 (My Guarantee)</span>
                 <span>15 (Aggressive)</span>
               </div>
             </div>

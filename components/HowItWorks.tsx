@@ -42,7 +42,7 @@ export function HowItWorks() {
       "@type": "Organization",
       "name": "ARCH Revenues"
     },
-    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
+    "description": "Done-for-you outbound systems. I build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
     "serviceType": "B2B Lead Generation"
   };
 

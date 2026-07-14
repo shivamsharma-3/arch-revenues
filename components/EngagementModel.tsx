@@ -23,7 +23,7 @@ export function EngagementModel() {
               <span className="text-zinc-400">No Long-Term Contracts.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed mb-8 max-w-2xl">
-              This is a performance-driven program where we build and refine a powerful outbound system in real conditions. We are currently offering a Performance Pilot. A setup fee covers infrastructure costs, and you only pay the full retainer when we deliver qualified meetings.
+              This is a performance-driven program where I build and refine a powerful outbound system in real conditions. I am currently offering a Performance Pilot. A setup fee covers infrastructure costs, and you only pay the full retainer when I deliver qualified meetings.
             </p>
 
             <div className="inline-flex items-center gap-3 bg-zinc-100/80 border border-zinc-200 px-4 py-2.5 rounded-xl mb-12">
@@ -57,9 +57,9 @@ export function EngagementModel() {
             <div className="relative z-10 space-y-8">
               {[
                 { title: "Performance Pilot", desc: "A setup fee covers our tools. You only pay the rest when we book qualified meetings." },
-                { title: "Monthly Retainer", desc: "Transition to a flat monthly rate once we hit your targets." },
+                { title: "Monthly Retainer", desc: "Transition to a flat monthly rate once I hit your targets." },
                 { title: "Transparent Pricing", desc: "A flat monthly rate with no hidden costs or percentages." },
-                { title: "Month-to-Month", desc: "No long-term lock-in. We earn your business every 30 days." }
+                { title: "Month-to-Month", desc: "No long-term lock-in. I earn your business every 30 days." }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-zinc-200 flex items-center justify-center shrink-0 font-mono text-xs font-bold text-zinc-400">

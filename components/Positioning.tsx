@@ -11,10 +11,10 @@ export function Positioning() {
     },
     {
       title: "Performance Pilot",
-      description: "Setup fee covers infrastructure. You pay the retainer only when we book qualified meetings."
+      description: "Setup fee covers infrastructure. You pay the retainer only when I book qualified meetings."
     },
     {
-      title: "Our Commitment",
+      title: "My Commitment",
       description: "Not just leads — a repeatable outbound system you can rely on."
     }
   ];
@@ -37,7 +37,7 @@ export function Positioning() {
               Built by a <span className="text-zinc-400 italic font-serif">Founder</span> for <span className="text-zinc-400 italic font-serif">Founders.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed">
-              We act as a specialized extension of your team, taking the heavy lifting out of finding new clients.
+              I act as a specialized extension of your team, taking the heavy lifting out of finding new clients.
             </p>
           </motion.div>
         </div>

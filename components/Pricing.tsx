@@ -21,7 +21,7 @@ export function Pricing() {
       "@type": "Organization",
       "name": "ARCH Revenues"
     },
-    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
+    "description": "Done-for-you outbound systems. I build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
     "serviceType": "B2B Lead Generation"
   };
 
@@ -63,7 +63,7 @@ export function Pricing() {
               Book a 20-min strategy call →
             </Link>
             <p className="text-xs text-zinc-500 max-w-lg mx-auto leading-relaxed">
-              In exchange for the founding rate, you agree to be featured as a public case study once we hit your first 5 booked meetings.
+              In exchange for the founding rate, you agree to be featured as a public case study once I hit your first 5 booked meetings.
             </p>
           </div>
         </div>

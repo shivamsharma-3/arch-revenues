@@ -12,7 +12,7 @@ export function Teardown() {
             Why your current outbound is being ignored
           </h2>
           <p className="text-zinc-600 text-lg max-w-2xl mx-auto">
-            If you're blasting generic features to scraped lists, you're burning your domain reputation. We rewrite the rules.
+            If you're blasting generic features to scraped lists, you're burning your domain reputation. I rewrite the rules.
           </p>
         </div>
 
@@ -52,21 +52,21 @@ export function Teardown() {
             
             <div className="bg-teal-900 rounded-xl p-8 shadow-sm border border-teal-800 mb-6 flex flex-col items-center justify-center text-center space-y-5">
               <p className="text-teal-50 font-medium text-lg leading-relaxed">
-                We don't use static templates. We write hyper-personalized emails based on deep research of every single prospect.
+                I don't use static templates. I write hyper-personalized emails based on deep research of every single prospect.
               </p>
               <a 
                 href="/tools/email-generator"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-teal-400 text-teal-950 font-semibold hover:bg-teal-300 transition-colors"
               >
-                See what we'd write for you
+                See what I'd write for you
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
               </a>
             </div>
 
             <ul className="space-y-3 text-sm text-teal-800/80 font-medium">
-              <li className="flex gap-2"><span className="text-teal-600">✓</span> We analyze their website to find actual buying signals</li>
-              <li className="flex gap-2"><span className="text-teal-600">✓</span> We call out the exact pain point for their specific stage</li>
-              <li className="flex gap-2"><span className="text-teal-600">✓</span> We craft a hard risk-reversal offer with a low-friction CTA</li>
+              <li className="flex gap-2"><span className="text-teal-600">✓</span> I analyze their website to find actual buying signals</li>
+              <li className="flex gap-2"><span className="text-teal-600">✓</span> I call out the exact pain point for their specific stage</li>
+              <li className="flex gap-2"><span className="text-teal-600">✓</span> I craft a hard risk-reversal offer with a low-friction CTA</li>
             </ul>
           </div>
         </div>

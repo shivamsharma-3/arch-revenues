@@ -45,7 +45,7 @@ export function FAQ() {
   const faqs = [
     {
       q: "How many meetings will you book per month?",
-      a: "5-12 qualified demos. If we book fewer than 5 in any month, you don't pay for that month.",
+      a: "5-12 qualified demos. If I book fewer than 5 in any month, you don't pay for that month.",
     },
     {
       q: "How fast will I see results?",
@@ -53,23 +53,23 @@ export function FAQ() {
     },
     {
       q: "Do I need to provide the contact list?",
-      a: "No. We build the list from your ICP using Apollo. You approve it before any email goes out.",
+      a: "No. I build the list from your ICP using Apollo. You approve it before any email goes out.",
     },
     {
       q: "What happens if a prospect replies negatively?",
-      a: "We handle all replies — positive, negative, unsubscribe — within 4 business hours. You see everything in a shared inbox.",
+      a: "I handle all replies — positive, negative, unsubscribe — within 4 business hours. You see everything in a shared inbox.",
     },
     {
       q: "Can I cancel?",
       a: "Yes, anytime after the first 30 days. No annual contract. The 30-day minimum covers real infrastructure setup costs.",
     },
     {
-      q: "Why are you $1,500/mo when most US agencies charge $3,500+?",
+      q: "Why do you charge $1,500/mo when most US agencies charge $3,500+?",
       a: "Fewer case studies than established agencies. The $1,500 founding rate is the trade-off for being a public case study. Moves to $4,000/mo for client #4.",
     },
     {
       q: "Do you work with funded SaaS?",
-      a: "We work with any B2B SaaS company in the $20K-$100K MRR range, whether bootstrapped or funded. If you've grown past $100K MRR, you likely need an in-house SDR team rather than an external partner.",
+      a: "I work with any B2B SaaS company in the $20K-$100K MRR range, whether bootstrapped or funded. If you've grown past $100K MRR, you likely need an in-house SDR team rather than an external partner.",
     },
   ];
 
