@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 
-const OWNER_EMAIL = 'shivam@archrevenues.com'; // Your notification inbox
+const OWNER_EMAIL = 'archrevenues@gmail.com'; // Your notification inbox
 
 function getResend() {
   const key = process.env.RESEND_API_KEY;
