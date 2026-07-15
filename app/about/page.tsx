@@ -54,7 +54,7 @@ export default function AboutPage() {
                    <h3 className="text-2xl font-semibold text-zinc-900">The Unseen Infrastructure</h3>
                 </div>
                 <p className="text-lg text-zinc-600 leading-relaxed">
-                   My background is in building the unglamorous infrastructure that makes cold email actually work — SPF, DKIM, DMARC, inbox warmup, domain rotation. The stuff no Apollo tutorial talks about, and the stuff most agencies skip, which is why their outbound fails.
+                   My background is in building the unglamorous infrastructure that makes cold email work: SPF, DKIM, DMARC, inbox warmup, and domain rotation. It's the technical foundation most agencies skip, which is exactly why their campaigns fail.
                 </p>
              </section>
              
@@ -78,7 +78,7 @@ export default function AboutPage() {
                    <h3 className="text-2xl font-semibold text-zinc-900">The Geographic Advantage</h3>
                 </div>
                 <p className="text-lg text-zinc-600 leading-relaxed">
-                   My clients are in the US, UK, and Australia. The geography is not a handicap — it is the reason I can charge <span className="font-semibold text-zinc-900">$1,499/mo</span> for a service that US-based agencies charge <span className="line-through text-zinc-400">$3,500/mo</span> to deliver, and still book calls with the same caliber of SaaS founder.
+                   My clients are in the US, UK, and Australia. The geography is not a handicap. It is the reason I can charge <span className="font-semibold text-zinc-900">$1,499/mo</span> for a service that US-based agencies charge <span className="line-through text-zinc-400">$3,500/mo</span> to deliver, and still book calls with the same caliber of SaaS founder.
                 </p>
              </section>
           </div>

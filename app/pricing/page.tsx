@@ -5,14 +5,14 @@ import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pricing | ARCH Revenues",
-  description: "$499 setup + $1,499/mo. 5-12 qualified demos/mo guaranteed — or that month's retainer is refunded. 1-month commit. Founding rate for first 3 clients.",
+  description: "$499 setup + $1,499/mo. 5-12 qualified demos/mo guaranteed, or that month's retainer is refunded. 1-month commit. Founding rate for first 3 clients.",
 };
 
 export default function PricingPage() {
   const timeline = [
     { days: "Day 1-2", task: "Domain + DNS + inboxes" },
     { days: "Day 1-14", task: "Inbox warmup (parallel)" },
-    { days: "Day 3-7", task: "ICP build — 200 accounts" },
+    { days: "Day 3-7", task: "ICP build: 200 accounts" },
     { days: "Day 8-10", task: "Sequence writing + your approval" },
     { days: "Day 14-21", task: "First emails go out" },
   ];
@@ -24,7 +24,7 @@ export default function PricingPage() {
     "90-150 emails/day across 3 domains",
     "Reply handling within 4 business hours (positive, negative, unsubscribe)",
     "Qualified demos routed to your Calendly with pre-meeting brief",
-    "Monday report — opens, replies, meetings, domain health",
+    "Monday report: opens, replies, meetings, domain health",
     "Monthly 30-min strategy call",
   ];
 
@@ -48,7 +48,7 @@ export default function PricingPage() {
               $499 setup &middot; $1,499/mo &middot; 1-month commit
             </h2>
             <p className="text-zinc-600">
-              Founding rate locked for first 3 clients — moves to $4,000/mo for client #4.
+              Founding rate locked for first 3 clients (moves to $4,000/mo for client #4).
             </p>
           </div>
           
@@ -99,7 +99,7 @@ export default function PricingPage() {
             </div>
           </div>
           <p className="text-center text-zinc-500 text-sm font-medium">
-            Month 1 retainer starts when sending begins — not when you sign.
+            Month 1 retainer starts when sending begins, not when you sign.
           </p>
         </div>
       </section>
@@ -131,7 +131,7 @@ export default function PricingPage() {
             If I book fewer than 5 qualified demos in any month, that month's retainer is refunded in full.
           </p>
           <div className="bg-zinc-800/50 p-6 rounded-xl border border-zinc-700/50 text-left text-zinc-400 leading-relaxed text-sm">
-            A "qualified demo" = a prospect matching the ICP we agreed on at kickoff, who shows up to a scheduled call. No-shows don't count. ICP matches are defined together before any work starts — no ambiguity later.
+            A "qualified demo" = a prospect matching the ICP we agreed on at kickoff, who shows up to a scheduled call. No-shows don't count. ICP matches are defined together before any work starts to prevent any ambiguity later.
           </div>
         </div>
       </section>

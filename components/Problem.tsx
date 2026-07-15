@@ -18,10 +18,10 @@ export function Problem() {
           </h2>
           <div className="text-lg md:text-xl text-zinc-600 leading-relaxed text-left md:text-center space-y-6">
             <p>
-              Most SaaS founders stop prospecting the moment they land a big customer — then panic when the pipeline dries up. You've tried cold email, spent 10 hours building lists, got 2% reply rates, and gave up after 3 weeks.
+              Founders stop prospecting after landing a big deal and panic when the pipeline dries up. You tried cold email but got poor reply rates and gave up.
             </p>
             <p>
-              Hiring an SDR costs $100K/year plus 6 months to train. So you keep relying on referrals, and referrals are a coin flip.
+              Hiring an SDR costs $100K/year and takes months to train. Relying only on referrals is a coin flip.
             </p>
           </div>
         </motion.div>

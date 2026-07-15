@@ -63,7 +63,7 @@ const ONE_PAGER_ROWS = [
   },
   {
     title: "THE DISQUALIFIER",
-    prompt: "One line — if true, walk away",
+    prompt: "One line: if true, walk away",
     name: "onePager_disq",
   },
 ];
@@ -206,13 +206,13 @@ export default function AuditPage() {
           <p className="text-zinc-600 leading-relaxed mb-8">
             We&apos;ve received your ICP Teardown Worksheet. Within 48 hours
             you&apos;ll get a 5-minute Loom back from Shivam with feedback on
-            your one-liner, triggers, and disqualifiers — no strings attached.
+            your one-liner, triggers, and disqualifiers. No strings attached.
           </p>
 
           <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 text-left text-sm text-zinc-600 leading-relaxed mb-8">
             <strong className="text-zinc-900">Want to skip the queue?</strong>{" "}
             Book a 20-minute strategy call and we&apos;ll walk through your worksheet
-            together — live. Founding client rate ($1,499/mo) is open for the
+            together live. Founding client rate ($1,499/mo) is open for the
             next 3 companies.
           </div>
 
@@ -265,7 +265,7 @@ export default function AuditPage() {
         {/* hero */}
         <div className="mb-12">
           <span className="inline-block py-1 px-3 rounded-full bg-zinc-200/50 text-zinc-600 text-xs font-mono font-medium tracking-wide uppercase border border-zinc-300/50">
-            45-minute working session
+            45 minute working session
           </span>
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 mb-4 mt-4">
             The ICP Teardown Worksheet
@@ -361,7 +361,7 @@ export default function AuditPage() {
                   required
                   type="text"
                   name="industry"
-                  placeholder='e.g. B2B SaaS — HR / payroll'
+                  placeholder='e.g. B2B SaaS: HR / payroll'
                   className={INPUT_CLS}
                 />
                 <p className={HINT_CLS}>
@@ -472,8 +472,8 @@ export default function AuditPage() {
             {/* Trigger events */}
             <div className="mb-8">
               <label className="block text-sm font-medium text-zinc-700 mb-3">
-                Trigger events that mean &quot;open the inbox now&quot; — check
-                all that apply
+                Trigger events that mean &quot;open the inbox now&quot; (check
+                all that apply)
               </label>
               <div className="grid sm:grid-cols-2 gap-3">
                 {TRIGGER_OPTIONS.map((label) => {
@@ -718,7 +718,7 @@ export default function AuditPage() {
               {/* Path 1 */}
               <div className="bg-zinc-50 border-l-2 border-zinc-900 rounded-r-md p-5">
                 <p className="font-semibold text-zinc-900 text-sm mb-1">
-                  Path 1 — Run it yourself.
+                  Path 1: Run it yourself.
                 </p>
                 <p className="text-sm text-zinc-600 leading-relaxed">
                   You now have a one-page ICP. Hand it to your SDR, point them
@@ -732,27 +732,27 @@ export default function AuditPage() {
               {/* Path 2 */}
               <div className="bg-zinc-50 border-l-2 border-zinc-900 rounded-r-md p-5">
                 <p className="font-semibold text-zinc-900 text-sm mb-1">
-                  Path 2 — Hand the profile to ARCH Revenues.
+                  Path 2: Hand the profile to ARCH Revenues.
                 </p>
                 <p className="text-sm text-zinc-600 leading-relaxed">
                   Send us the completed one-pager (just hit submit below). We
                   turn it into a 200-account prospect list, write the sequence,
                   run outbound on your behalf, and book 5-12 qualified demos per
                   month into your calendar. $499 setup + $1,499/mo retainer (refunded if I book fewer than 5 demos/mo).
-                  Founding rate locked for first 3 clients — moves to $4,000/mo for client #4.
+                  Founding rate locked for first 3 clients (moves to $4,000/mo for client #4).
                 </p>
               </div>
 
               {/* Path 3 */}
               <div className="bg-zinc-50 border-l-2 border-zinc-900 rounded-r-md p-5">
                 <p className="font-semibold text-zinc-900 text-sm mb-1">
-                  Path 3 — Park it.
+                  Path 3: Park it.
                 </p>
                 <p className="text-sm text-zinc-600 leading-relaxed">
                   Not ready to do either? Save this worksheet. Revisit it in 90
                   days. The ICP almost always looks different once you&apos;ve
                   run a few campaigns and learned what actually closes. No
-                  penalty for waiting — the Founding Client rate will still be
+                  penalty for waiting. The Founding Client rate will still be
                   on the table when you come back.
                 </p>
               </div>
@@ -780,7 +780,7 @@ export default function AuditPage() {
             <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-5 text-sm text-zinc-500 leading-relaxed text-center mb-6">
               Submitting this form emails your worksheet to
               shivam@archrevenues.com. You&apos;ll get a 5-minute Loom back
-              within 48 hours — no strings attached.
+              within 48 hours. No strings attached.
             </div>
 
             {/* submit button */}

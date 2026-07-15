@@ -7,15 +7,15 @@ export function Positioning() {
   const steps = [
     {
       title: "Meet the Founder",
-      description: "I'm Shivam. I spent 7 months studying outbound from scratch — reading every playbook, testing every tool, building sequences for hypothetical SaaS companies to learn what works. ARCH Revenues is the result: a system I'd wanted to hire someone to build for me, but couldn't find at a price a $30K-MRR founder could afford. So I built it myself."
+      description: "I'm Shivam. I spent months studying outbound from scratch, reading playbooks and building sequences to learn what works. ARCH Revenues is the system I wanted to hire someone to build but couldn't find at a fair price. So I built it myself."
     },
     {
       title: "Performance Pilot",
-      description: "$499 setup covers infrastructure (14-21 days). $1,499/mo retainer starts when sending begins — refunded if I book fewer than 5 demos in any month."
+      description: "$499 setup covers infrastructure for 14 to 21 days. $1,499/mo retainer starts when sending begins and is refunded if I book fewer than 5 demos."
     },
     {
       title: "My Commitment",
-      description: "Not just leads — a repeatable outbound system you can rely on."
+      description: "Not just leads. A repeatable outbound system you can rely on."
     }
   ];
 

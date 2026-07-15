@@ -55,7 +55,7 @@ export function HowItWorks() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <div className="inline-block bg-zinc-50 text-zinc-900 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6">
-            HOW IT WORKS — 3 WEEKS TO YOUR FIRST MEETING
+            HOW IT WORKS: 3 WEEKS TO YOUR FIRST MEETING
           </div>
         </div>
 
@@ -63,7 +63,7 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <div key={index} className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 md:p-8">
               <h3 className="text-xl font-semibold text-zinc-900 mb-4">
-                <span className="text-zinc-500 mr-2">{step.timing} —</span>
+                <span className="text-zinc-500 mr-2">{step.timing}:</span>
                 {step.title}
               </h3>
               <ul className="space-y-3">
