@@ -5,7 +5,7 @@ export function SocialProof() {
   const items = [
     { value: "200", label: "Account ICP list per client" },
     { value: "Apollo + Brevo + Make", label: "Verified tech stack (not homegrown)" },
-    { value: "5/mo minimum", label: "Or you don't pay that month" },
+    { value: "5/mo minimum", label: "Or that month's retainer is refunded" },
     { value: "Weekly", label: "Monday report — every reply, every metric" },
   ];
 

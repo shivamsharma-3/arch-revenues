@@ -7,10 +7,8 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Positioning } from "@/components/Positioning";
 import { Comparison } from "@/components/Comparison";
 import { Calculator } from "@/components/Calculator";
-import { Pricing } from "@/components/Pricing";
-import { CaseStudyPipeline } from "@/components/CaseStudyPipeline";
+import { PricingCTAStrip } from "@/components/PricingCTAStrip";
 import { FinalCTA } from "@/components/FinalCTA";
-import { FAQ } from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -24,9 +22,7 @@ export default function Home() {
         <Positioning />
         <Comparison />
         <Calculator />
-        <Pricing />
-        <CaseStudyPipeline />
-        <FAQ />
+        <PricingCTAStrip />
         <FinalCTA />
       </main>
     </div>

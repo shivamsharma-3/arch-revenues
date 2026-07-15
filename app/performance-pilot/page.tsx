@@ -35,7 +35,7 @@ export default function PilotProgramPage() {
             <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Performance Pilot?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <ul className="list-disc list-inside space-y-4 marker:text-zinc-400">
-                <li><strong className="text-zinc-900 font-semibold">$1,500/mo flat retainer</strong> — our Founding Client Rate. Small one-time setup fee covers domains + infrastructure.</li>
+                <li><strong className="text-zinc-900 font-semibold">$1,499/mo flat retainer</strong> — our Founding Client Rate. Small one-time setup fee covers domains + infrastructure.</li>
                 <li><strong className="text-zinc-900 font-semibold">Pay only when we deliver</strong> — the retainer is earned only when qualified meetings land on your calendar.</li>
                 <li><strong className="text-zinc-900 font-semibold">Full transparency</strong> — see every lead list, every message, every reply, every meeting. Nothing hidden.</li>
               </ul>

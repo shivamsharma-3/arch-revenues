@@ -31,7 +31,7 @@ export function Header() {
     { name: "Free Tools", href: "/tools/email-generator" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "Performance Pilot", href: "/performance-pilot" },
-    { name: "Pricing", href: "/#pricing" },
+    { name: "Pricing", href: "/pricing" },
     { name: "ICP Worksheet", href: "/audit" },
     { name: "About", href: "/about" },
   ];

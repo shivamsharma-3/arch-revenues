@@ -9,7 +9,7 @@ ARCH Revenues is a specialized outbound lead generation service for B2B SaaS com
 - Response handling (positive, negative, unsubscribe) within 4 business hours.
 
 ## Pricing
-- $1,500/month flat retainer (Founding Client Rate).
+- $1,499/month flat retainer (Founding Client Rate).
 - Performance guarantee: If we book fewer than 5 qualified demos in a month, the client does not pay for that month.
 - No annual contracts. Month-to-month after the initial 30 days.
 

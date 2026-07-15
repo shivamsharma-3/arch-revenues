@@ -134,7 +134,7 @@ export function Calculator() {
                   </div>
                 </div>
                 <div className="text-left sm:text-right text-sm text-zinc-400 max-w-[200px]">
-                  New revenue per $1 of your $1,500/mo retainer.
+                  New revenue per $1 of your $1,499/mo retainer.
                 </div>
               </div>
             </div>

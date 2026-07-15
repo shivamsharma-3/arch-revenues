@@ -38,7 +38,7 @@ export function Pricing() {
               FOUNDING CLIENT RATE (PERFORMANCE PILOT) — 3 SPOTS ONLY
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,500</span>
+              <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,499</span>
               <span className="text-xl text-zinc-500 font-medium">/ month</span>
             </div>
             <p className="text-base text-zinc-600">

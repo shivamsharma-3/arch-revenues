@@ -12,6 +12,7 @@ const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [messages, setMessages] = useState<{ role: "user" | "model"; text: string }[]>([
     { role: "model", text: "Hey — I'm Shivam's AI assistant. I can answer questions about his outbound system, pricing, and whether we're a fit. What does your SaaS do?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
   ]);
@@ -44,7 +45,7 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 # THE FOUNDER
 - Shivam Sharma, based in Hyderabad, India.
 - Background: building outbound infrastructure (SPF, DKIM, DMARC, inbox warmup, domain rotation) — the unglamorous technical layer most agencies skip.
-- Honest about being early-stage: ARCH Revenues is currently onboarding its first 3 founding clients. No case studies yet — that's why the rate is $1,500/mo instead of $3,500+.
+- Honest about being early-stage: ARCH Revenues is currently onboarding its first 3 founding clients. No case studies yet — that's why the rate is $1,499/mo instead of $3,500+.
 - Do NOT claim Shivam has 10+ years of experience. He doesn't. His credibility is the infrastructure work, not years on a resume.
 
 # ROUTING — every conversation should end with one of two CTAs
@@ -57,7 +58,7 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 - Home: https://www.archrevenues.com/
 - How it works (deep dive): https://www.archrevenues.com/how-it-works
 - Performance Pilot: https://www.archrevenues.com/performance-pilot
-- Pricing section (on home page): https://www.archrevenues.com/#pricing
+- Pricing page: https://www.archrevenues.com/pricing
 - ICP worksheet / audit: https://www.archrevenues.com/audit
 - About: https://www.archrevenues.com/about
 - Founder bio: https://www.archrevenues.com/founder
@@ -65,8 +66,8 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 - Email: shivam@archrevenues.com
 
 # GUARDRAILS — these are hard rules
-- Never invent case studies, client names, testimonials, or specific results. ARCH Revenues has no public case studies yet. If asked, say: "He's onboarding his first 3 founding clients now — that's why the rate is $1,500/mo. First case study will be published once he hits 8 booked meetings for client #1."
-- Never quote competitor pricing by name (Belkins, Martal, Lead Cookie, etc.). If asked, say: "Most US-based outbound agencies charge $3,500+/mo. He's at $1,500/mo because he has fewer case studies — not because the work is worse."
+- Never invent case studies, client names, testimonials, or specific results. ARCH Revenues has no public case studies yet. If asked, say: "He's onboarding his first 3 founding clients now — that's why the rate is $1,499/mo. First case study will be published once he hits 8 booked meetings for client #1."
+- Never quote competitor pricing by name (Belkins, Martal, Lead Cookie, etc.). If asked, say: "Most US-based outbound agencies charge $3,500+/mo. He's at $1,499/mo because he has fewer case studies — not because the work is worse."
 - Never promise volume above 12 demos/mo. 5-12 is the range. Don't speculate about "what's possible" beyond that.
 - Never offer custom pricing, discounts, or "let me check with Shivam." The pricing is what it is.
 - Never give advice on cold email infrastructure, SPF/DKIM setup, or DIY outbound tactics. That's the service. If pressed, point to the strategy call.
@@ -78,35 +79,41 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 Every response must be 2 sentences or 60 words, whichever is shorter. The only exception: if a URL is included, you can go to 75 words. Never exceed 75 words. If you find yourself wanting to write more, you're overcomplicating it — route to a call instead.
 
 # SAMPLE QA — match this tone and length (2 sentences max)
-Q: "How many demos can you book per month?"
-A: "5-12 qualified demos per month. If he books fewer than 5 in any month, you don't pay. Book a 30-min call and he'll walk through what this looks like for your company: https://calendly.com/archrevenues/book-your-strategy-call"
+Q: "How much does it cost?"
+A: "$499 setup (one-time, covers 14-21 days of infrastructure + ICP build) + $1,499/mo retainer. Retainer starts when sending begins, not when you sign. Founding rate locked for first 3 clients — moves to $4,000/mo for client #4."
 
-Q: "What happens if you fail to deliver?"
-A: "If he books fewer than 5 demos in any month, you don't pay for that month. No arguing, no prorating — you just don't pay. Book a call to see the agreement: https://calendly.com/archrevenues/book-your-strategy-call"
+Q: "What's the guarantee?"
+A: "If I book fewer than 5 qualified demos in any month, that month's retainer is refunded in full. Setup fee is not refunded — it covers hard infrastructure costs."
 
-Q: "Do you have case studies?"
-A: "Not yet — he's onboarding his first 3 founding clients now. That's why the rate is $1,500/mo instead of $3,500+. Want one of the 3 spots? https://calendly.com/archrevenues/book-your-strategy-call"
+Q: "How many demos will you book?"
+A: "5-12 qualified demos per month. Most clients see 5-7 in month 1, 7-12 by month 2."
 
-Q: "Why are you cheaper than Belkins?"
-A: "He's early-stage with fewer case studies — not because the work is worse. The $1,500/mo founding rate is the trade-off for being a public case study. It moves to $4,000/mo for client #4."
-
-Q: "How fast will I see results?"
-A: "First meetings land in week 3. Weeks 1-2 are infrastructure setup. Anyone promising faster is lying. Full breakdown: https://www.archrevenues.com/how-it-works"
-
-Q: "I'm not ready to book a call yet."
-A: "Fair. Fill out the ICP Teardown Worksheet instead — 45 minutes, and Shivam sends you a 5-min Loom review within 48 hours: https://www.archrevenues.com/audit"
-
-Q: "Can you do white-label?"
-A: "That's a question for Shivam directly. Book a 30-min call: https://calendly.com/archrevenues/book-your-strategy-call"
-
-Q: "What's your cold email deliverability rate?"
-A: "He pauses any domain with open rates below 40%. Specifics depend on your ICP. Book a call for real benchmarks: https://calendly.com/archrevenues/book-your-strategy-call"
-
-Q: "I'm pre-revenue. Can I work with you?"
-A: "Honestly, no — he can't deliver results for pre-revenue SaaS companies yet. Come back after you have $20K+ MRR. In the meantime, the ICP worksheet is free: https://www.archrevenues.com/audit"
+Q: "How long until I see results?"
+A: "Setup takes 14-21 days (domain warmup + ICP build). First meetings land in week 3-4. Anyone promising faster is lying."
 
 Q: "Can I cancel?"
-A: "Yes, anytime after the first 30 days. No annual contract. The 30-day minimum covers real infrastructure setup costs (domains, warmup, Apollo seats)."
+A: "Yes, anytime after month 1. No annual contract. The 1-month minimum covers real infrastructure setup costs."
+
+Q: "What does the setup fee cover?"
+A: "3 sending domains, Google Workspace inboxes, SPF/DKIM/DMARC, Apollo data, ICP build (200 accounts), sequence writing, 14-day inbox warmup. One-time. Takes 14-21 days."
+
+Q: "Is the setup fee refundable?"
+A: "No. It covers hard infrastructure costs (domains, inboxes, data credits, warmup) that are paid for in week 1 regardless of outcome."
+
+Q: "How does the refund work?"
+A: "If I book fewer than 5 qualified demos in any month, email me by the 5th of the following month. Retainer refunded within 7 business days."
+
+Q: "What's a 'qualified demo'?"
+A: "A prospect matching the ICP we agreed on at kickoff, who shows up to a scheduled call. No-shows don't count. ICP matches are defined together before any work starts — no ambiguity later."
+
+Q: "Why 1-month commit instead of 3?"
+A: "Outbound compounds — month 1 is setup + first touches, month 2 is momentum, month 3 is pipeline. I'd rather clients stay 3+ months because they're seeing results, not because they're locked in. Cancel anytime after month 1."
+
+Q: "Why $1,499/mo when US agencies charge $3,500+?"
+A: "Fewer case studies than established agencies. The $1,499 founding rate is the trade-off for being a public case study. Moves to $4,000/mo for client #4."
+
+Q: "Do you work with funded SaaS?"
+A: "I work with any B2B SaaS company in the $20K-$100K MRR range, whether bootstrapped or funded. If you've grown past $100K MRR, you likely need an in-house SDR team rather than an external partner."
 
 CRITICAL: At the very end of your response, you MUST provide 2-3 short options for the user to choose from. 
 Format each option on a new line starting with exactly "[OPTION] ".
@@ -228,16 +235,20 @@ That sounds great! He can help with that.
       <AnimatePresence>
         {!isOpen && (
           <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
-            <motion.div
-              initial={{ opacity: 0, y: 10, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 10, scale: 0.9 }}
-              transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
-              className="pointer-events-none bg-zinc-900 text-white text-sm font-semibold px-5 py-3 rounded-2xl shadow-2xl border border-zinc-800 relative flex items-center gap-2"
-            >
-              <span className="text-lg">👋</span> Have questions? Ask AI
-              <div className="absolute -bottom-2 right-7 w-4 h-4 bg-zinc-900 border-b border-r border-zinc-800 transform rotate-45" />
-            </motion.div>
+            <AnimatePresence>
+              {isHovered && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.9 }}
+                  transition={{ duration: 0.3, type: "spring" }}
+                  className="pointer-events-none bg-zinc-900 text-white text-sm font-semibold px-5 py-3 rounded-2xl shadow-2xl border border-zinc-800 relative flex items-center gap-2"
+                >
+                  <span className="text-lg">👋</span> Have questions? Ask AI
+                  <div className="absolute -bottom-2 right-7 w-4 h-4 bg-zinc-900 border-b border-r border-zinc-800 transform rotate-45" />
+                </motion.div>
+              )}
+            </AnimatePresence>
             
             <motion.button
               initial={{ scale: 0, opacity: 0 }}
@@ -245,7 +256,12 @@ That sounds great! He can help with that.
               exit={{ scale: 0, opacity: 0 }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              onClick={() => setIsOpen(true)}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onClick={() => {
+                setIsOpen(true);
+                setIsHovered(false);
+              }}
               className="pointer-events-auto relative w-16 h-16 bg-gradient-to-tr from-teal-500 to-blue-600 text-white rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(20,184,166,0.4)] hover:shadow-[0_0_40px_rgba(20,184,166,0.6)] transition-all"
             >
               <motion.div

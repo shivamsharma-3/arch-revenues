@@ -212,7 +212,7 @@ export default function AuditPage() {
           <div className="bg-zinc-50 border border-zinc-200 rounded-xl p-6 text-left text-sm text-zinc-600 leading-relaxed mb-8">
             <strong className="text-zinc-900">Want to skip the queue?</strong>{" "}
             Book a 20-minute strategy call and we&apos;ll walk through your worksheet
-            together — live. Founding client rate ($1,500/mo) is open for the
+            together — live. Founding client rate ($1,499/mo) is open for the
             next 3 companies.
           </div>
 
@@ -737,10 +737,9 @@ export default function AuditPage() {
                 <p className="text-sm text-zinc-600 leading-relaxed">
                   Send us the completed one-pager (just hit submit below). We
                   turn it into a 200-account prospect list, write the sequence,
-                  run outbound on your behalf, and book 5–12 qualified demos per
-                  month into your calendar. You only pay if demos show up.
-                  Founding Client rate is $1,500/mo for the first 3 companies —
-                  after that it moves to $4,000/mo.
+                  run outbound on your behalf, and book 5-12 qualified demos per
+                  month into your calendar. $499 setup + $1,499/mo retainer (refunded if I book fewer than 5 demos/mo).
+                  Founding rate locked for first 3 clients — moves to $4,000/mo for client #4.
                 </p>
               </div>
 

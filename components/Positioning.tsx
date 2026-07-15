@@ -11,7 +11,7 @@ export function Positioning() {
     },
     {
       title: "Performance Pilot",
-      description: "Setup fee covers infrastructure. You pay the retainer only when I book qualified meetings."
+      description: "$499 setup covers infrastructure (14-21 days). $1,499/mo retainer starts when sending begins — refunded if I book fewer than 5 demos in any month."
     },
     {
       title: "My Commitment",
