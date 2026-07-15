@@ -13,9 +13,9 @@ export default function PilotProgramPage() {
             Performance Pilot
           </h1>
           <p 
-            className="text-xl text-zinc-600 leading-relaxed"
+            className="text-xl text-zinc-600 leading-relaxed max-w-3xl mx-auto"
           >
-            A setup fee covers our infrastructure, and you only pay the full retainer when we deliver.
+            A minimal setup fee covers the hard costs of your infrastructure. After that, you only pay the full retainer when we actually deliver qualified demos. We take on the risk because we know our system works.
           </p>
         </section>
 
@@ -39,8 +39,8 @@ export default function PilotProgramPage() {
                 <li><strong className="text-zinc-900 font-semibold">Pay only when we deliver.</strong> The retainer is earned only when qualified meetings land on your calendar.</li>
                 <li><strong className="text-zinc-900 font-semibold">Full transparency.</strong> See every lead list, every message, every reply, every meeting. Nothing hidden.</li>
               </ul>
-              <p className="font-medium text-zinc-900 pt-4">
-                If it works, we transition to a standard monthly engagement. Sound fair? Apply for the pilot today.
+              <p className="font-medium text-zinc-900 pt-4 text-xl">
+                If the pilot is successful and we prove we can consistently generate pipeline for you, we transition to a standard monthly engagement. Sound fair? Apply for the pilot today before the founding spots fill up.
               </p>
             </div>
             <div className="mt-8">

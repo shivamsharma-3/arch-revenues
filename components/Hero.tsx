@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl md:text-5xl font-semibold text-zinc-900 leading-[1.1] mb-6"
           >
-            I book 5-12 qualified demos per month for B2B SaaS founders — or that month&apos;s retainer is refunded.
+            5-12 qualified demos per month for B2B SaaS. Guaranteed.
           </motion.h1>
 
           <div className="mb-10">

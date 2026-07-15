@@ -9,8 +9,13 @@ export function Comparison() {
         <h2 className="text-3xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-8">
           The Alternative
         </h2>
-        <p className="text-lg md:text-xl text-zinc-600 leading-relaxed">
-          If you have $100K to spend on a full-time SDR plus 6 months to train them, do that. If you don't, that's where I come in.
+        <p className="text-lg md:text-xl text-zinc-600 leading-relaxed space-y-4 text-left sm:text-center">
+          <span className="block mb-4">
+            If you have $100K to spend on a full-time SDR, plus the 6 months it takes to train them, you should absolutely do that. Having an in-house team is great when you have the capital and the time.
+          </span>
+          <span className="block">
+            But if you don't have that kind of runway, and you need qualified meetings on your calendar next month, that's where I come in. I build the infrastructure, write the sequences, and manage the inbox. You just show up to the meetings.
+          </span>
         </p>
       </div>
     </section>

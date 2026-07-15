@@ -81,6 +81,18 @@ export default function AboutPage() {
                    My clients are in the US, UK, and Australia. The geography is not a handicap. It is the reason I can charge <span className="font-semibold text-zinc-900">$1,499/mo</span> for a service that US-based agencies charge <span className="line-through text-zinc-400">$3,500/mo</span> to deliver, and still book calls with the same caliber of SaaS founder.
                 </p>
              </section>
+             
+             <section className="bg-white border border-zinc-100 shadow-sm p-6 md:p-8 rounded-3xl relative overflow-hidden group hover:border-zinc-200 transition-colors">
+                <div className="flex items-center gap-4 mb-5">
+                   <div className="p-3 bg-zinc-900 text-white rounded-xl">
+                     <ArrowRight size={24} />
+                   </div>
+                   <h3 className="text-2xl font-semibold text-zinc-900">My Promise to You</h3>
+                </div>
+                <p className="text-lg text-zinc-600 leading-relaxed">
+                   I am not building a massive agency with hundreds of clients and junior account managers. I take on a select few clients at a time, build their systems from the ground up, and manage the execution myself. When you work with ARCH Revenues, you work directly with me, and I treat your pipeline like it is my own company's.
+                </p>
+             </section>
           </div>
         </div>
 
