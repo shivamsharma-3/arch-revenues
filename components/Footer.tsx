@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="pt-12 pb-20 md:pb-12 px-6 bg-zinc-950 border-t border-zinc-900">
+    <footer className="pt-12 pb-20 md:pb-12 px-6 bg-zinc-800 border-t border-zinc-700">
       <div className="max-w-6xl mx-auto">
         {/* Top row: logo + socials */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
@@ -12,7 +12,7 @@ export function Footer() {
             <div className="font-mono font-bold tracking-tighter text-lg text-white">
               ARCH<span className="text-zinc-500">Revenues</span>
             </div>
-            <div className="w-px h-4 bg-zinc-800 hidden md:block"></div>
+            <div className="w-px h-4 bg-zinc-600 hidden md:block"></div>
             <a
               href="https://www.linkedin.com/company/arch-revenue"
               target="_blank"
@@ -32,7 +32,7 @@ export function Footer() {
         </div>
 
         {/* Bottom row: copyright + links */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-zinc-800">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-zinc-700">
           <p className="text-center md:text-left text-sm text-zinc-500">
             © {new Date().getFullYear()} ARCH Revenues. Serving SaaS founders in US, UK, AU, CA • Hyderabad, India • shivam@archrevenues.com
           </p>
