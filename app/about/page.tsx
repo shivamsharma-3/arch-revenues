@@ -107,6 +107,12 @@ export default function AboutPage() {
             >
               Book a 20-min strategy call <ArrowRight className="w-5 h-5" />
             </Link>
+            <Link
+              href="/pricing"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-zinc-700 border border-zinc-200 bg-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-zinc-50 hover:border-zinc-300 transition-all"
+            >
+              See the Performance Pilot <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </motion.main>

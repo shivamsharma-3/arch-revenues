@@ -7,6 +7,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Positioning } from "@/components/Positioning";
 import { Comparison } from "@/components/Comparison";
 import { Calculator } from "@/components/Calculator";
+import { PricingSummaryStrip } from "@/components/PricingSummaryStrip";
 import { FinalCTA } from "@/components/FinalCTA";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Positioning />
         <Comparison />
         <Calculator />
+        <PricingSummaryStrip />
         <FinalCTA />
       </main>
     </div>

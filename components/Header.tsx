@@ -2,19 +2,46 @@
 
 import Link from "next/link";
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
+
+const resources = [
+  {
+    name: "Free Cold Email Generator",
+    href: "/tools/email-generator",
+    description: "AI-writes a personalised outbound email from your prospect's site",
+  },
+  {
+    name: "ICP Worksheet",
+    href: "/audit",
+    description: "Define your ideal customer profile before you start sending",
+  },
+];
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
+  const resourcesRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
+        setIsResourcesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
   }, []);
 
   const headerBgClass = isScrolled
@@ -24,15 +51,10 @@ export function Header() {
   const navTextColorClass = "text-zinc-500";
   const navHoverColorClass = "hover:text-zinc-600";
   const activeNavColorClass = "text-zinc-900 font-semibold";
-  const buttonClass =
-    "bg-zinc-900 text-white hover:bg-zinc-800 shadow-sm active:scale-95";
 
-  const navLinks = [
-    { name: "Free Tools", href: "/tools/email-generator" },
+  const topNavLinks = [
     { name: "How It Works", href: "/how-it-works" },
-    { name: "Performance Pilot", href: "/performance-pilot" },
     { name: "Pricing", href: "/pricing" },
-    { name: "ICP Worksheet", href: "/audit" },
     { name: "About", href: "/about" },
   ];
 
@@ -56,10 +78,11 @@ export function Header() {
           </span>
         </Link>
 
+        {/* Desktop Nav */}
         <nav
           className={`hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm font-medium ${navTextColorClass}`}
         >
-          {navLinks.map((link) => {
+          {topNavLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
@@ -71,6 +94,59 @@ export function Header() {
               </Link>
             );
           })}
+
+          {/* Resources Dropdown */}
+          <div
+            ref={resourcesRef}
+            className="relative"
+            onMouseEnter={() => setIsResourcesOpen(true)}
+            onMouseLeave={() => setIsResourcesOpen(false)}
+          >
+            <button
+              onClick={() => setIsResourcesOpen((v) => !v)}
+              className={`flex items-center gap-1 py-1 transition-colors duration-200 whitespace-nowrap ${navHoverColorClass} focus:outline-none`}
+              aria-haspopup="true"
+              aria-expanded={isResourcesOpen}
+            >
+              Resources
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${isResourcesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            <AnimatePresence>
+              {isResourcesOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 8, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 8, scale: 0.97 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 bg-white border border-zinc-200 rounded-2xl shadow-xl overflow-hidden"
+                >
+                  <div className="px-2 py-2">
+                    {resources.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="flex flex-col gap-0.5 px-4 py-3 rounded-xl hover:bg-zinc-50 transition-colors group"
+                        onClick={() => setIsResourcesOpen(false)}
+                      >
+                        <span className="text-sm font-semibold text-zinc-900 group-hover:text-teal-600 transition-colors">
+                          {item.name}
+                        </span>
+                        <span className="text-xs text-zinc-500 leading-relaxed">
+                          {item.description}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="border-t border-zinc-100 px-4 py-3 bg-zinc-50/50">
+                    <p className="text-xs text-zinc-400 font-medium">Free — no signup required</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </nav>
 
         <div className="flex items-center gap-4 z-10">
@@ -89,6 +165,7 @@ export function Header() {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -96,7 +173,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-zinc-950 flex flex-col px-6 py-8"
+            className="fixed inset-0 z-[60] bg-zinc-950 flex flex-col px-6 py-8 overflow-y-auto"
           >
             <div className="flex justify-end mb-12">
               <button
@@ -107,7 +184,7 @@ export function Header() {
               </button>
             </div>
             <nav className="flex flex-col items-center gap-8 text-2xl font-medium text-white mb-auto">
-              {navLinks.map((link) => (
+              {topNavLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
@@ -116,6 +193,42 @@ export function Header() {
                   {link.name}
                 </Link>
               ))}
+
+              {/* Mobile Resources accordion */}
+              <div className="w-full max-w-xs">
+                <button
+                  className="w-full flex items-center justify-center gap-2 text-white"
+                  onClick={() => setIsMobileResourcesOpen((v) => !v)}
+                >
+                  Resources
+                  <ChevronDown
+                    className={`w-5 h-5 transition-transform duration-200 ${isMobileResourcesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {isMobileResourcesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden mt-4 flex flex-col gap-3"
+                    >
+                      {resources.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                          className="text-lg text-zinc-400 hover:text-white transition-colors text-center"
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               <Link
                 href="/strategy-call"
                 onClick={() => setIsMobileMenuOpen(false)}

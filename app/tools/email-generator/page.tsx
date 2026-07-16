@@ -18,6 +18,7 @@ export default function EmailGeneratorPage() {
   const [status, setStatus] = useState<'idle' | 'crawling' | 'preview' | 'full' | 'sent-to-inbox' | 'limit-reached'>('idle');
   const [generatedEmail, setGeneratedEmail] = useState<any>(null);
   const [targetUrl, setTargetUrl] = useState<string>('');
+  const [senderBusiness, setSenderBusiness] = useState<string>('');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -51,9 +52,10 @@ export default function EmailGeneratorPage() {
     initFp();
   }, []);
 
-  const handleGenerate = async (url: string, email?: string) => {
+  const handleGenerate = async (url: string, business: string, email?: string) => {
     if (!fingerprint) return;
     setTargetUrl(url);
+    setSenderBusiness(business);
     setStatus('crawling');
     setError(null);
 
@@ -64,7 +66,7 @@ export default function EmailGeneratorPage() {
       const res = await fetch('/api/generate-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url, fingerprint, email: emailToSend })
+        body: JSON.stringify({ url, fingerprint, email: emailToSend, senderBusiness: business })
       });
 
       if (!res.ok) {
@@ -133,12 +135,12 @@ export default function EmailGeneratorPage() {
             AI Cold Email Generator
           </h1>
           <p className="text-lg text-zinc-600 mb-6">
-            I crawl your prospect's website, find their specific pain points, and write a personalized outbound email.
+            Tell us who you are, drop a prospect URL — we crawl their site, spot the gaps, and write a cold email you can actually send.
           </p>
           
           <div className="bg-amber-50/50 border border-amber-200/50 rounded-xl p-5 text-sm text-amber-900/90 leading-relaxed max-w-2xl mx-auto text-center">
             <strong className="font-semibold text-amber-950 block mb-1">AI Baseline Disclaimer</strong>
-            The emails generated here are AI baselines, not final sends. In my actual campaigns, I personally verify, fact-check, and hyper-personalize every single email before it goes out to ensure maximum deliverability and protect your domain reputation.
+            The emails generated here are AI baselines, not final sends. Always verify the facts, personalise the hook, and review before you hit send.
           </div>
         </div>
 
@@ -194,7 +196,7 @@ export default function EmailGeneratorPage() {
 
           {status === 'idle' && (
             <UrlInput 
-              onSubmit={(url) => handleGenerate(url, userEmail || undefined)} 
+              onSubmit={(url, business) => handleGenerate(url, business, userEmail || undefined)} 
               usageCount={usageCount} 
               error={error}
               hasEmail={!!userEmail}

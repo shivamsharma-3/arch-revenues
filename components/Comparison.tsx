@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Check, X } from "lucide-react";
 
@@ -24,7 +25,7 @@ export function Comparison() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-2xl mx-auto"
           >
-            If you have the capital and time to build an in-house team, you should do that. If you need qualified meetings next month, that's where I come in.
+            If you have the capital and time to build an in-house team, you should do that. If you need qualified meetings next month, that&apos;s where I come in.
           </motion.p>
         </div>
 
@@ -90,6 +91,22 @@ export function Comparison() {
             </ul>
           </motion.div>
         </div>
+
+        {/* Pricing link — close the loop while cost comparison is fresh */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="text-center mt-10"
+        >
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-2 text-zinc-700 font-semibold hover:text-zinc-900 transition-colors border-b border-zinc-300 hover:border-zinc-900 pb-0.5"
+          >
+            See Performance Pilot pricing →
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

@@ -33,10 +33,11 @@ function parseEmailResponse(rawText: string): ComposedEmail {
   return { subject, body };
 }
 
-export async function composeEmail(url: string, painPoints: string): Promise<ComposedEmail> {
+export async function composeEmail(url: string, painPoints: string, senderBusiness: string): Promise<ComposedEmail> {
   const prompt = EMAIL_COMPOSITION_PROMPT
     .replace(/{company_url}/g, url)
-    .replace('{pain_points}', painPoints);
+    .replace('{pain_points}', painPoints)
+    .replace('{sender_business}', senderBusiness);
 
   let rawText = "";
   try {

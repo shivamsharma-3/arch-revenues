@@ -10,10 +10,10 @@ export const maxDuration = 60; // Max allowed duration on Hobby
 
 export async function POST(req: Request) {
   try {
-    const { url, fingerprint, email } = await req.json();
+    const { url, fingerprint, email, senderBusiness } = await req.json();
 
-    if (!url || !fingerprint) {
-      return NextResponse.json({ error: 'URL and fingerprint required' }, { status: 400 });
+    if (!url || !fingerprint || !senderBusiness) {
+      return NextResponse.json({ error: 'URL, fingerprint, and sender business are required' }, { status: 400 });
     }
 
     if (!validateUrl(url)) {
@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     const painPoints = await extractPains(url, pages);
     
     // Compose email
-    const generatedContent = await composeEmail(url, painPoints);
+    const generatedContent = await composeEmail(url, painPoints, senderBusiness);
     
     // Increment rate limit usage ONLY after successful generation
     const rateData = await incrementRateLimit(fingerprint);

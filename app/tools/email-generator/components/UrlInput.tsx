@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 const MAX_FREE = 5;
 
 interface UrlInputProps {
-  onSubmit: (url: string) => void;
+  onSubmit: (url: string, senderBusiness: string) => void;
   usageCount: number;
   error: string | null;
   hasEmail: boolean; // true once the user has unlocked and email is captured
@@ -12,6 +12,7 @@ interface UrlInputProps {
 
 export function UrlInput({ onSubmit, usageCount, error, hasEmail }: UrlInputProps) {
   const [url, setUrl] = useState('');
+  const [senderBusiness, setSenderBusiness] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ export function UrlInput({ onSubmit, usageCount, error, hasEmail }: UrlInputProp
     if (!cleanUrl.startsWith('http')) {
       cleanUrl = 'https://' + cleanUrl;
     }
-    onSubmit(cleanUrl);
+    onSubmit(cleanUrl, senderBusiness.trim());
   };
 
   const remaining = MAX_FREE - usageCount;
@@ -41,9 +42,25 @@ export function UrlInput({ onSubmit, usageCount, error, hasEmail }: UrlInputProp
       )}
 
       <div>
-        <label className="block text-sm font-medium text-zinc-700 mb-2">Prospect's Website URL</label>
+        <label htmlFor="sender-business" className="block text-sm font-medium text-zinc-700 mb-2">
+          Your business <span className="text-zinc-400 font-normal">(1 line — what you sell, to whom)</span>
+        </label>
+        <input
+          id="sender-business"
+          type="text"
+          required
+          value={senderBusiness}
+          onChange={(e) => setSenderBusiness(e.target.value)}
+          placeholder="e.g. Web dev agency for DTC brands"
+          className="w-full pl-4 pr-4 py-4 bg-zinc-50 border border-zinc-200 rounded-xl text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="prospect-url" className="block text-sm font-medium text-zinc-700 mb-2">Target prospect URL</label>
         <div className="relative">
           <input
+            id="prospect-url"
             type="url"
             required
             value={url}
@@ -56,7 +73,7 @@ export function UrlInput({ onSubmit, usageCount, error, hasEmail }: UrlInputProp
 
       <button
         type="submit"
-        disabled={!url}
+        disabled={!url || !senderBusiness.trim()}
         className="w-full flex items-center justify-center gap-2 bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-lg"
       >
         {usageCount === 0 ? 'Generate Cold Email' : `Generate Email (${remaining} left)`}

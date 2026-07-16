@@ -44,6 +44,18 @@ export function FAQ() {
 
   const faqs = [
     {
+      q: "Why work with a solo operator instead of an agency?",
+      a: "When you hire an agency, your campaign is built by a senior salesperson and executed by a junior account manager you've never met. With me, the person who scoped your ICP, wrote your sequences, and set up your infrastructure is also the person monitoring replies and routing demos to your calendar. There are no handoffs. I take on a small number of clients at a time specifically so I can give each one the attention an agency reserves for its largest accounts. The geographic cost difference is real — I charge $1,499/mo for work US agencies bill at $3,500–$5,000/mo — but the reason to choose ARCH isn't the price. It's that you're working directly with the operator, not a team structure built around billing hours.",
+    },
+    {
+      q: "What exactly happens if I get fewer than 5 demos — walk me through the refund.",
+      a: "If I book fewer than 5 qualified demos in a calendar month, email me at shivam@archrevenues.com by the 5th of the following month. I'll confirm receipt within 24 hours and issue the retainer refund within 7 business days — no questions, no negotiation, no \"let me look into it.\" The setup fee ($499) is not refunded because it covers hard costs I've already paid: domains, Google Workspace seats, Apollo data credits, 14-day warmup. A \"qualified demo\" means a prospect matching the ICP we defined together at kickoff, who showed up to the scheduled call. No-shows don't count. The ICP definition happens before any work starts, so there's no ambiguity later about what qualifies.",
+    },
+    {
+      q: "How is this different from a cold email template I could run myself?",
+      a: "The template is the easy part. The part that kills DIY cold email is infrastructure: SPF, DKIM, and DMARC records configured correctly across multiple domains, 14-day inbox warmup before the first send, domain rotation so no single domain takes the full sending volume, and reply handling that keeps positive conversations from going cold. Most founders who've tried cold email themselves sent from their primary domain, hit spam within 3-4 weeks, and burned the domain in the process. What I deliver is a system — 3 warmed sending domains, a verified 200-account prospect list built from your ICP, 7-touch sequences with LinkedIn steps, 90-150 emails/day sent at human cadence, and reply management within 4 business hours. The template is maybe 10% of the equation.",
+    },
+    {
       q: "Is the setup fee refundable?",
       a: "No. It covers hard infrastructure costs — domains, Google Workspace seats, Apollo data credits, warmup — that I pay for in week 1 regardless of outcome.",
     },
@@ -84,9 +96,10 @@ export function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-12 text-center">
-          Frequently Asked Questions
+        <h2 className="text-4xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-4 text-center">
+          Questions founders ask before signing
         </h2>
+        <p className="text-center text-zinc-500 mb-12">The ones that actually matter. Answered plainly.</p>
         <div className="mb-12">
           {faqs.map((faq, index) => (
             <FaqItem
