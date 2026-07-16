@@ -55,7 +55,7 @@ export function Calculator() {
             <div className="relative h-full space-y-7 bg-zinc-900/90 p-6 rounded-2xl border border-zinc-800 backdrop-blur-xl">
               {[
                 {
-                  label: "Average Deal Size (ACV)",
+                  label: "Average Project/Retainer Value",
                   value: formatCurrency(acv),
                   min: 1000, max: 50000, step: 1000,
                   state: acv, setter: setAcv,

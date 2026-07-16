@@ -18,9 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: {
     template: '%s | ARCH Revenues',
-    default: 'ARCH Revenues | Outbound Systems for B2B SaaS',
+    default: 'ARCH Revenues | Outbound Systems for Agencies',
   },
-  description: "AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR. Get qualified sales calls consistently.",
+  description: "AI-driven outbound acquisition systems for founder-led marketing and dev agencies. Get qualified sales calls consistently.",
   alternates: {
     canonical: 'https://www.archrevenues.com',
     languages: {
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.archrevenues.com',
-    title: 'ARCH Revenues | Outbound Systems for B2B SaaS',
-    description: 'AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR.',
+    title: 'ARCH Revenues | Outbound Systems for Agencies',
+    description: 'AI-driven outbound acquisition systems for founder-led marketing and dev agencies.',
     siteName: 'ARCH Revenues',
   },
   twitter: {
@@ -67,7 +67,7 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "ARCH Revenues",
     "url": "https://www.archrevenues.com",
-    "description": "AI-driven outbound acquisition systems for B2B SaaS companies between $20K and $100K MRR.",
+    "description": "AI-driven outbound acquisition systems for founder-led marketing and dev agencies.",
     "founder": {
       "@type": "Person",
       "name": "Shivam Sharma",

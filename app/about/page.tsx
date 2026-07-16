@@ -32,7 +32,7 @@ export default function AboutPage() {
              <h2 className="text-xl font-bold text-zinc-900 mb-1">Shivam Sharma</h2>
              <p className="text-zinc-500 font-mono text-xs mb-6 uppercase tracking-widest">Founder</p>
              <p className="text-sm text-zinc-600 mb-8 leading-relaxed">
-               Based in Hyderabad, India. Building scalable outbound systems for B2B SaaS companies.
+               Based in Hyderabad, India. Building scalable outbound systems for founder-led agencies.
              </p>
              <a 
                href="https://www.linkedin.com/in/shivam-sharma1203/" 
@@ -66,7 +66,7 @@ export default function AboutPage() {
                    <h3 className="text-2xl font-semibold text-zinc-900">Why Outbound Fails for Founders</h3>
                 </div>
                 <p className="text-lg text-zinc-600 leading-relaxed">
-                   I started ARCH Revenues because I watched too many SaaS founders try cold email themselves, fail, and conclude that cold email doesn&apos;t work. It does work. They were just missing the infrastructure layer.
+                   I started ARCH Revenues because I watched too many agency founders try cold email themselves, fail, and conclude that cold email doesn&apos;t work. It does work. They were just missing the infrastructure layer.
                 </p>
              </section>
 
@@ -78,7 +78,7 @@ export default function AboutPage() {
                    <h3 className="text-2xl font-semibold text-zinc-900">The Geographic Advantage</h3>
                 </div>
                 <p className="text-lg text-zinc-600 leading-relaxed">
-                   My clients are in the US, UK, and Australia. The geography is not a handicap. It is the reason I can charge <span className="font-semibold text-zinc-900">$1,499/mo</span> for a service that US-based agencies charge <span className="line-through text-zinc-400">$3,500/mo</span> to deliver, and still book calls with the same caliber of SaaS founder.
+                   My clients are in the US, UK, and Australia. The geography is not a handicap. It is the reason I can charge <span className="font-semibold text-zinc-900">$1,499/mo</span> for a service that US-based agencies charge <span className="line-through text-zinc-400">$3,500/mo</span> to deliver, and still book calls with the same caliber of agency founder.
                 </p>
              </section>
              
@@ -98,7 +98,7 @@ export default function AboutPage() {
 
         <div className="mt-24 pt-16 border-t border-zinc-100 text-center max-w-2xl mx-auto px-6">
           <p className="text-xl text-zinc-900 font-medium mb-10 leading-relaxed">
-             If you&apos;re a SaaS founder between $20K and $100K MRR and you&apos;re tired of relying on referrals, book a strategy call. <span className="text-zinc-500">If I can&apos;t help, I&apos;ll tell you in the first 10 minutes.</span>
+             If you run a marketing or dev agency and you&apos;re tired of relying on referrals, book a strategy call. <span className="text-zinc-500">If I can&apos;t help, I&apos;ll tell you in the first 10 minutes.</span>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

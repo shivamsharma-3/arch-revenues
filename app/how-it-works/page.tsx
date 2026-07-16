@@ -11,7 +11,7 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Build a 200-account list of SaaS companies matching your ICP — pulled from Apollo, cross-referenced with LinkedIn",
+            "Build a 200-account list of target clients matching your ICP — pulled from Apollo, cross-referenced with LinkedIn",
             "Each account manually verified against your revenue range, headcount, and industry criteria",
             "Identify the named decision-maker for each account (CEO, Founder, Head of Growth, CMO — whoever owns the problem you solve)",
             "Verify each contact's email deliverability with a 4-step verification process (syntax → domain → mailbox → catch-all)",
@@ -43,7 +43,7 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Purchase 3 lookalike sending domains (e.g. yoursaas-mail.com, try-yoursaas.com, get-yoursaas.com) — never send from your main domain",
+            "Purchase 3 lookalike sending domains (e.g. youragency-mail.com, try-youragency.com, get-youragency.com) — never send from your main domain",
             "Set up Google Workspace inboxes for each sending domain (3 inboxes total)",
             "Configure SPF, DKIM, and DMARC DNS records on each sending domain — the technical layer that prevents emails from landing in spam",
             "Connect Brevo (SMTP relay) for high-volume sending + Apollo for sequence orchestration",
@@ -154,7 +154,7 @@ export default function HowItWorksPage() {
       "@type": "Organization",
       "name": "ARCH Revenues"
     },
-    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
+    "description": "Done-for-you outbound systems. We build and refine a powerful outbound system in real conditions for founder-led marketing and dev agencies.",
     "serviceType": "B2B Lead Generation"
   };
 

@@ -107,18 +107,18 @@ Is NovaBuild deliberately staying broad, or is that more of a "take what comes" 
 Alex
 DTC Dev Co — web builds for consumer brands
 
-EXAMPLE B — Sender: "B2B SaaS tool for construction PMs". Prospect: SaaS, blog dead 6 months, pricing says "contact us".
+EXAMPLE B — Sender: "B2B SEO Agency for SaaS". Prospect: SaaS, blog dead 6 months, pricing says "contact us".
 Subject: the blog went quiet six months ago
 Hi,
 Corepath's blog last posted in January. Six months of silence usually means inbound has slowed with it.
 If the pipeline is leaning on word-of-mouth while inbound dries up, that's a fragile spot heading into Q3.
-Our tool steps in exactly there — construction PMs moving off spreadsheets are actively searching right now, and you're not showing up.
+Our SEO sprint steps in exactly there — construction PMs moving off spreadsheets are actively searching right now, and you're not showing up.
 We onboarded 4 similar SaaS tools this quarter. Average time-to-first-trial: 18 days from signup.
 Open to a quick look at where Corepath's ICP is actually searching?
 Jordan
-BuildTrack — project management for construction teams
+BuildRank — B2B SEO for construction software
 
-EXAMPLE C — Sender: "Fractional CFO for Series A startups". Prospect: consulting firm, all testimonials from warm intros.
+EXAMPLE C — Sender: "B2B Marketing Agency for Fintech". Prospect: consulting firm, all testimonials from warm intros.
 Subject: every case study starts the same way
 Hi,
 Every testimonial on the Hendrix site opens with "a client referred us to..." — a great quality signal but a fragile growth one.
@@ -127,7 +127,7 @@ Series A founders in your ICP are raising right now and need exactly what you do
 I've helped 3 firms like Hendrix get in front of 20 warm-fit founders in under 60 days without cold outreach that feels cold.
 Is the referral pipeline growing the way you'd want it to right now?
 Maya
-Series A CFO Partners — fractional finance for early-stage founders
+Fintech Growth Partners — B2B marketing for early-stage fintech
 
 ────────────────────────────────
 OUTPUT FORMAT (exactly)

@@ -24,7 +24,7 @@ export function Problem() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-2xl mx-auto"
           >
-            Growing a B2B SaaS is hard. Unpredictable pipeline makes it impossible.
+            Growing an agency is hard. Feast-or-famine project cycles make it impossible.
           </motion.p>
         </div>
 
@@ -42,7 +42,7 @@ export function Problem() {
             </div>
             <h3 className="text-2xl font-semibold text-zinc-900 mb-4">The Dangerous Cycle</h3>
             <p className="text-zinc-600 leading-relaxed mb-6">
-              Most SaaS founders fall into a trap. You stop prospecting the moment you land a big customer. When that project wraps up, you panic because your pipeline has completely dried up.
+              Most agency founders fall into a trap. You stop prospecting the moment you land a big client. When that project wraps up, you panic because your pipeline has completely dried up.
             </p>
             <div className="flex items-start gap-3 bg-zinc-50 p-4 rounded-xl border border-zinc-100">
               <AlertCircle size={20} className="text-zinc-400 shrink-0 mt-0.5" />
@@ -70,7 +70,7 @@ export function Problem() {
             <div className="flex items-start gap-3 bg-zinc-50 p-4 rounded-xl border border-zinc-100">
               <Users size={20} className="text-zinc-400 shrink-0 mt-0.5" />
               <p className="text-sm text-zinc-600">
-                Word-of-mouth is great, but it's a coin flip for your revenue. You need a predictable acquisition channel.
+                Word-of-mouth is great, but it leaves you competing with similarly-named firms for the same inbound searches. You need to control your pipeline.
               </p>
             </div>
           </motion.div>

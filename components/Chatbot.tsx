@@ -14,7 +14,7 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [messages, setMessages] = useState<{ role: "user" | "model"; text: string }[]>([
-    { role: "model", text: "Hey — I'm Shivam's AI assistant. I can answer questions about his outbound system, pricing, and whether we're a fit. What does your SaaS do?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
+    { role: "model", text: "Hey — I'm Shivam's AI assistant. I can answer questions about his outbound system, pricing, and whether we're a fit. What does your agency do?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -30,12 +30,12 @@ export function Chatbot() {
         config: {
           temperature: 0.4,
           maxOutputTokens: 500,
-          systemInstruction: `You are the website chatbot for ARCH Revenues (archrevenues.com), a B2B outbound lead generation service run by Shivam Sharma. You speak directly to B2B SaaS founders between $20K and $100K MRR. Your job is to qualify, answer honestly, and route to one of two actions.
+          systemInstruction: `You are the website chatbot for ARCH Revenues (archrevenues.com), a B2B outbound lead generation service run by Shivam Sharma. You speak directly to founder-led marketing and dev agencies. Your job is to qualify, answer honestly, and route to one of two actions.
 
 CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or headings (#). Keep it as plain text.
 
 # WHO IT'S NOT FOR (disqualify politely)
-- Pre-revenue SaaS or no budget.
+- Pre-revenue agencies or no budget.
 - Non-English speaking markets only.
 - Founders who want results in under 3 weeks (first meetings land in week 3-4, no exceptions).
 - Companies already working with another outbound partner.

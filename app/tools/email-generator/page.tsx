@@ -183,7 +183,7 @@ export default function EmailGeneratorPage() {
             <div className="text-center py-12">
               <h2 className="text-2xl font-semibold mb-4">You've reached your free limit</h2>
               <p className="text-zinc-600 mb-8">
-                Want to see this work for 5+ prospects at once? Let's talk about building this into a scalable outbound engine for your SaaS.
+                Want to see this work for 5+ prospects at once? Let's talk about building this into a scalable outbound engine for your agency.
               </p>
               <Link
                 href="/strategy-call"

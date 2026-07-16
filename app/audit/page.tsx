@@ -271,7 +271,7 @@ export default function AuditPage() {
             The ICP Teardown Worksheet
           </h1>
           <p className="text-lg text-zinc-600 mb-2">
-            Who is your SaaS actually built to serve? Compress your ideal
+            Who is your agency actually built to serve? Compress your ideal
             client profile into a single page you can hand to anyone on your
             team — and to us, when you&apos;re ready to outsource the top of
             your pipeline.
@@ -361,12 +361,12 @@ export default function AuditPage() {
                   required
                   type="text"
                   name="industry"
-                  placeholder='e.g. B2B SaaS: HR / payroll'
+                  placeholder='e.g. B2B Webflow Agency'
                   className={INPUT_CLS}
                 />
                 <p className={HINT_CLS}>
-                  Be specific: &quot;B2B SaaS — HR / payroll&quot; beats
-                  &quot;SaaS&quot;
+                  Be specific: &quot;Webflow Agency for B2B SaaS&quot; beats
+                  &quot;Web Design Agency&quot;
                 </p>
               </div>
 
@@ -559,7 +559,7 @@ export default function AuditPage() {
                 <input
                   type="text"
                   name="podcasts"
-                  placeholder="e.g. Lenny's Podcast, The SaaS Podcast, Founder's Journal"
+                  placeholder="e.g. The Futur, Agency Playbook, 2Bobs"
                   className={INPUT_CLS}
                 />
               </div>
@@ -615,7 +615,7 @@ export default function AuditPage() {
                 <input
                   type="text"
                   name="events"
-                  placeholder="e.g. SaaStr Annual, BOSS, Config"
+                  placeholder="e.g. Inbound, Content Marketing World, Adobe MAX"
                   className={INPUT_CLS}
                 />
                 <p className={HINT_CLS}>Last 12 months</p>
@@ -759,8 +759,8 @@ export default function AuditPage() {
             </div>
 
             <blockquote className="mt-8 pl-4 border-l-2 border-zinc-300 italic text-zinc-600 text-base leading-relaxed">
-              The SaaS company that wins their category is not the one with the
-              best software. It is the one with the tightest ICP and the most
+              The agency that wins their category is not the one with the
+              best portfolio. It is the one with the tightest ICP and the most
               disciplined outbound.
             </blockquote>
           </section>

@@ -34,7 +34,7 @@ export function Footer() {
         {/* Bottom row: copyright + links */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-zinc-700">
           <p className="text-center md:text-left text-sm text-zinc-500">
-            © {new Date().getFullYear()} ARCH Revenues. Serving SaaS founders in US, UK, AU, CA • Hyderabad, India • shivam@archrevenues.com
+            © {new Date().getFullYear()} ARCH Revenues. Serving founder-led agencies in US, UK, AU, CA • Hyderabad, India • shivam@archrevenues.com
           </p>
           <div className="flex items-center justify-center gap-6 text-sm text-zinc-500">
             <Link href="/audit" className="hover:text-white transition-colors">

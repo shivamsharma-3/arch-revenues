@@ -19,7 +19,7 @@ export function Hero() {
           >
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full bg-zinc-100 text-zinc-600 text-xs font-mono font-bold tracking-wider uppercase mb-8 border border-zinc-200">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-900 animate-pulse" />
-              B2B SaaS Outbound Growth
+              B2B Agency Outbound Growth
             </span>
           </motion.div>
 
@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-4xl md:text-5xl font-semibold text-zinc-900 leading-[1.1] mb-6"
           >
-            5-12 qualified demos per month for B2B SaaS. Guaranteed.
+            5-12 qualified leads per month for founder-led agencies. Guaranteed.
           </motion.h1>
 
           <div className="mb-10">
@@ -39,7 +39,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 font-normal leading-relaxed max-w-3xl"
             >
-              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for SaaS companies between $20K and $100K MRR who can&apos;t afford a full-time SDR but need to stop relying on referrals.
+              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for founder-led marketing and dev agencies who can&apos;t afford a full-time SDR but need to stop relying on referrals.
             </motion.p>
           </div>
 
