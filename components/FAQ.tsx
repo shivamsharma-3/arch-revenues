@@ -57,7 +57,7 @@ export function FAQ() {
     },
     {
       q: "Can I cancel?",
-      a: "Yes, anytime after month 1. No annual contract.",
+      a: "Yes, anytime after month 1. (Month 1 begins after the 14-21 day setup period). No annual contract.",
     },
     {
       q: "Why $1,499/mo when US agencies charge $3,500+?",

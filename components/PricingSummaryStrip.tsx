@@ -31,8 +31,8 @@ export function PricingSummaryStrip() {
         {/* Three pillars */}
         <div className="grid sm:grid-cols-3 gap-6 mb-10">
           <div className="bg-white border border-zinc-200 rounded-2xl p-6 text-center shadow-sm">
-            <div className="text-2xl font-bold text-zinc-900 mb-1">1-month</div>
-            <div className="text-sm text-zinc-500">commit — cancel anytime after</div>
+            <div className="text-2xl font-bold text-zinc-900 mb-1">1-month commit</div>
+            <div className="text-sm text-zinc-500 mt-2 leading-relaxed">Month 1 starts after the 14-21 day setup period.</div>
           </div>
           <div className="bg-white border border-teal-200 rounded-2xl p-6 text-center shadow-sm">
             <Shield className="w-5 h-5 text-teal-600 mx-auto mb-2" />

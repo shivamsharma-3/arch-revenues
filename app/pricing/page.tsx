@@ -44,7 +44,7 @@ export default function PricingPage() {
           Outbound that books demos. Not promises.
         </p>
         <p className="text-base text-zinc-500 max-w-xl mx-auto">
-          $499 setup · $1,499/mo · 5+ qualified demos/mo guaranteed · 1-month commit
+          $499 setup · $1,499/mo · 5+ qualified demos/mo guaranteed · 1-month commit (starts after setup)
         </p>
       </section>
 
@@ -71,7 +71,7 @@ export default function PricingPage() {
               $499 setup &middot; $1,499/mo &middot; 1-month commit
             </h2>
             <p className="text-zinc-500 text-sm">
-              Month 1 retainer starts when sending begins, not when you sign.
+              Month 1 retainer starts after the 14-21 day setup period is complete, not when you sign.
             </p>
           </div>
           
@@ -126,7 +126,7 @@ export default function PricingPage() {
             </div>
           </div>
           <p className="text-center text-zinc-500 text-sm font-medium">
-            Month 1 retainer starts when sending begins, not when you sign.
+            Month 1 retainer starts after the 14-21 day setup period is complete, not when you sign.
           </p>
         </div>
       </section>
