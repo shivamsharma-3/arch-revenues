@@ -10,7 +10,7 @@ export function FinalCTA() {
           Ready to stop relying on referrals?
         </h2>
         <p className="text-lg text-zinc-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Book a strategy call to audit your current motion, map your addressable market, and see if our performance-based outbound engine is a fit for your SaaS.
+          Book a 20-min call. If we&apos;re not a fit, I&apos;ll tell you in 10 minutes.
         </p>
         <div className="flex flex-col items-center gap-6">
           <Link
