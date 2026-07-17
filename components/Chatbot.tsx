@@ -26,7 +26,7 @@ export function Chatbot() {
   useEffect(() => {
     if (!chatRef.current && ai) {
       chatRef.current = ai.chats.create({
-        model: "gemini-1.5-flash",
+        model: "gemini-3.5-flash",
         config: {
           temperature: 0.4,
           maxOutputTokens: 500,
@@ -151,9 +151,7 @@ That sounds great! He can help with that.
         return;
       }
       
-      const response = await chatRef.current.sendMessageStream({
-        message: text,
-      });
+      const response = await chatRef.current.sendMessageStream(text);
 
       setMessages((prev) => [...prev, { role: "model", text: "" }]);
 
