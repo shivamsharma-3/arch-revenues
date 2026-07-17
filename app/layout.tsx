@@ -21,6 +21,14 @@ export const metadata: Metadata = {
     default: 'ARCH Revenues | Outbound Systems for Agencies',
   },
   description: "AI-driven outbound acquisition systems for founder-led marketing and dev agencies. Get qualified sales calls consistently.",
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: [
+      { url: '/icon.svg' }
+    ]
+  },
   alternates: {
     canonical: 'https://www.archrevenues.com',
     languages: {
