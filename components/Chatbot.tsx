@@ -175,7 +175,7 @@ That sounds great! He can help with that.
       console.error("Chat error:", error);
       setMessages((prev) => [
         ...prev,
-        { role: "model", text: `I'm having trouble right now: ${error instanceof Error ? error.message : String(error)}. Email Shivam directly at shivam@archrevenues.com or book a call: https://calendly.com/archrevenues/book-your-strategy-call` },
+        { role: "model", text: "I'm having trouble right now. Email Shivam directly at shivam@archrevenues.com or book a call: https://calendly.com/archrevenues/book-your-strategy-call" },
       ]);
     } finally {
       setIsLoading(false);
