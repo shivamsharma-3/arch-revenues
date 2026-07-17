@@ -737,8 +737,8 @@ export default function AuditPage() {
                 <p className="text-sm text-zinc-600 leading-relaxed">
                   Send us the completed one-pager (just hit submit below). We
                   turn it into a 200-account prospect list, write the sequence,
-                  run outbound on your behalf, and book 5-12 qualified demos per
-                  month into your calendar. $499 setup + $1,499/mo retainer (refunded if I book fewer than 5 demos/mo).
+                  run outbound on your behalf, and book 5-12 qualified leads per
+                  month into your calendar. $499 setup + $1,499/mo retainer (refunded if I book fewer than 5 leads/mo).
                   Founding rate locked for first 3 clients (moves to $4,000/mo for client #4).
                 </p>
               </div>

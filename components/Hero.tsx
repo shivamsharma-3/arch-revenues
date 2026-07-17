@@ -39,7 +39,7 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-xl text-zinc-600 font-normal leading-relaxed max-w-3xl"
             >
-              Cold email + LinkedIn outbound, run by a specialist (not an account manager). Built for founder-led marketing and dev agencies who can&apos;t afford a full-time SDR but need to stop relying on referrals.
+              Stuck between big referral months and dead pipeline months? I build a cold email + LinkedIn system that keeps new clients coming in, personally, every step.
             </motion.p>
           </div>
 

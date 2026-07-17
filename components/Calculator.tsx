@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { TrendingUp, DollarSign, Target } from "lucide-react";
 
 export function Calculator() {
-  const [acv, setAcv] = useState<number>(5000);
+  const [acv, setAcv] = useState<number>(8000);
   const [closeRate, setCloseRate] = useState<number>(10);
   const [demos, setDemos] = useState<number>(5);
 
@@ -34,7 +34,7 @@ export function Calculator() {
               ROI Calculator
             </div>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-3">
-              The Math of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">5+ Qualified Demos</span>
+              The Math of <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">5+ Qualified Leads</span>
             </h2>
             <p className="text-zinc-400 text-base max-w-xl mx-auto leading-relaxed">
               Dial in your numbers. See the return.
@@ -57,9 +57,9 @@ export function Calculator() {
                 {
                   label: "Average Project/Retainer Value",
                   value: formatCurrency(acv),
-                  min: 1000, max: 50000, step: 1000,
+                  min: 2000, max: 100000, step: 1000,
                   state: acv, setter: setAcv,
-                  range: ["$1k", "$50k"],
+                  range: ["$2k", "$100k"],
                 },
                 {
                   label: "Demo Close Rate",
@@ -69,7 +69,7 @@ export function Calculator() {
                   range: ["5%", "50%"],
                 },
                 {
-                  label: "Demos I Book For You",
+                  label: "Leads I Book For You",
                   value: `${demos} / mo`,
                   min: 5, max: 15, step: 1,
                   state: demos, setter: setDemos,
@@ -102,7 +102,7 @@ export function Calculator() {
                 <div className="p-1.5 bg-blue-500/10 rounded-lg">
                   <Target className="w-4 h-4 text-blue-400" />
                 </div>
-                <h3 className="text-sm font-medium">New Deals / mo</h3>
+                <h3 className="text-sm font-medium">New Projects / mo</h3>
               </div>
               <div className="text-4xl font-semibold text-white mb-1 tracking-tight">
                 {newDealsPerMonth.toFixed(1)}

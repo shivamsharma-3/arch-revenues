@@ -22,10 +22,10 @@ export default function Home() {
         <Problem />
         <Teardown />
         <HowItWorks />
-        <Positioning />
         <Comparison />
         <Calculator />
         <PricingSummaryStrip />
+        <Positioning />
         <FAQ />
         <FinalCTA />
       </main>

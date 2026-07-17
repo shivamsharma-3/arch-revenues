@@ -67,9 +67,7 @@ export default function PricingPage() {
       <section className="px-6 mb-24">
         <div className="max-w-4xl mx-auto bg-zinc-50 border-2 border-zinc-900 rounded-3xl p-8 md:p-12 shadow-xl shadow-zinc-900/5">
           <div className="text-center mb-10 border-b border-zinc-200 pb-10">
-            <h2 className="text-3xl md:text-4xl font-semibold text-zinc-900 mb-3">
-              $499 setup &middot; $1,499/mo &middot; 1-month commit
-            </h2>
+
             <p className="text-zinc-500 text-sm">
               Month 1 retainer starts after the 14-21 day setup period is complete, not when you sign.
             </p>
