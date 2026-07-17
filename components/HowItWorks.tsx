@@ -9,7 +9,7 @@ export function HowItWorks() {
       timing: "Week 1",
       title: "Map your ICP + build infrastructure",
       bullets: [
-        "200-account prospect list, named decision-makers verified on LinkedIn",
+        "Up to 300-account prospect list, named decision-makers verified on LinkedIn",
         "3 sending domains, SPF/DKIM/DMARC, Apollo + Brevo wired up",
         "Inbox warmup started"
       ]

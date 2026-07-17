@@ -65,7 +65,7 @@ export function FAQ() {
     },
     {
       q: "Do I provide the contact list?",
-      a: "No. I build a 200-account list from your ICP using Apollo. You approve it before any email goes out.",
+      a: "No. I build a list of up to 300 accounts from your ICP using Apollo. You approve it before any email goes out.",
     },
   ];
 

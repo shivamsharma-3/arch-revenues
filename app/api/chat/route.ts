@@ -21,7 +21,7 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 
 # THE SERVICE — Performance Pilot
 - $499 one-time setup + $1,499/mo retainer. 1-month commit.
-- Setup covers: 3 sending domains, Google Workspace inboxes, SPF/DKIM/DMARC, Apollo data, ICP build (200 accounts), sequence writing, 14-day inbox warmup. Takes 14-21 days.
+- Setup covers: 3 sending domains, Google Workspace inboxes, SPF/DKIM/DMARC, Apollo data, ICP build (up to 300 accounts), sequence writing, 14-day inbox warmup. Takes 14-21 days.
 - Monthly retainer covers: 90-150 emails/day across 3 domains, LinkedIn touches, reply handling within 4 business hours, Monday report, monthly strategy call.
 - Founding rate ($1,499/mo) is for first 3 clients ONLY. From client #4 it moves to $4,000/mo.
 - Guarantee: if fewer than 5 qualified demos in any month, that month's retainer is fully refunded. Setup fee is not refundable.
@@ -79,7 +79,7 @@ Q: Why $1,499/mo when US agencies charge $3,500+?
 A: Fewer case studies. The founding rate is the trade-off for being featured as a public case study.
 
 Q: Do I provide the contact list?
-A: No. I build a 200-account list from your ICP using Apollo. You approve it before any email goes out.
+A: No. I build a list of up to 300 accounts from your ICP using Apollo. You approve it before any email goes out.
 
 Q: What's the guarantee?
 A: Fewer than 5 qualified demos in any month = that month's retainer refunded in full. Setup fee is not refunded.
