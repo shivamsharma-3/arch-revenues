@@ -37,7 +37,7 @@ export function Positioning() {
               Built by a <span className="text-zinc-400 italic font-serif">Founder</span> for <span className="text-zinc-400 italic font-serif">Founders.</span>
             </h2>
             <p className="text-xl text-zinc-600 leading-relaxed">
-              I act as a specialized extension of your team, taking the heavy lifting out of finding new clients.
+              I act as an extension of your team, taking the heavy lifting out of finding new clients.
             </p>
           </motion.div>
         </div>
