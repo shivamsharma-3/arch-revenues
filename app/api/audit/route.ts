@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => new Resend(process.env.RESEND_API_KEY || "dummy_key_for_build");
 
 interface AuditRequestPayload {
   agencyName: string;
@@ -100,6 +100,7 @@ export async function POST(req: NextRequest) {
     `;
 
     // Execute both emails in parallel
+    const resend = getResend();
     const [ownerEmailRes, submitterEmailRes] = await Promise.all([
       resend.emails.send({
         from: 'onboarding@archrevenues.com',

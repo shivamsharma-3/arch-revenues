@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const getResend = () => new Resend(process.env.RESEND_API_KEY || "dummy_key_for_build");
 
 export async function POST(req: Request) {
   try {
@@ -17,46 +17,48 @@ export async function POST(req: Request) {
       return NextResponse.json({ success: true, simulated: true });
     }
 
+    const resend = getResend();
+
     // Format all payload fields into a nice HTML table
     const htmlPayload = Object.entries(payload)
       .filter(([key]) => key !== 'yourName' && key !== 'email')
       .map(([key, value]) => `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">${key}</td><td style="padding: 8px; border: 1px solid #ddd;">${value}</td></tr>`)
       .join('');
 
-    // 1. Send confirmation to user
-    await resend.emails.send({
-      from: 'ARCH Revenues <hello@archrevenues.com>',
-      to: email,
-      subject: 'Your ICP Worksheet Received',
-      html: `
-        <p>Hi ${yourName},</p>
-        <p>Thanks for submitting your ICP worksheet.</p>
-        <p>I'll be reviewing your details and will send over a 5-minute Loom teardown within 48 hours.</p>
-        <p>Best,<br>Shivam Sharma</p>
-      `,
-    });
+    // Send emails in parallel
+    const [userEmail, founderEmail] = await Promise.all([
+      resend.emails.send({
+        from: 'ARCH Revenues <hello@archrevenues.com>',
+        to: email,
+        subject: 'Your ICP Worksheet Received',
+        html: `
+          <p>Hi ${yourName},</p>
+          <p>Thanks for submitting your ICP worksheet.</p>
+          <p>I'll be reviewing your details and will send over a 5-minute Loom teardown within 48 hours.</p>
+          <p>Best,<br>Shivam Sharma</p>
+        `,
+      }),
+      resend.emails.send({
+        from: 'ARCH Revenues <hello@archrevenues.com>',
+        to: 'shivam@archrevenues.com',
+        subject: `New ICP Worksheet: ${yourName}`,
+        html: `
+          <h2>New ICP Worksheet Submission</h2>
+          <p><strong>Name:</strong> ${yourName}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <table style="border-collapse: collapse; width: 100%;">
+            ${htmlPayload}
+          </table>
+        `,
+      })
+    ]);
 
-    // 2. Send the actual form data to the founder
-    const { data, error } = await resend.emails.send({
-      from: 'ARCH Revenues <hello@archrevenues.com>',
-      to: 'shivam@archrevenues.com',
-      subject: `New ICP Worksheet: ${yourName}`,
-      html: `
-        <h2>New ICP Worksheet Submission</h2>
-        <p><strong>Name:</strong> ${yourName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <table style="border-collapse: collapse; width: 100%;">
-          ${htmlPayload}
-        </table>
-      `,
-    });
-
-    if (error) {
-      console.error('Resend error:', error);
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (userEmail.error || founderEmail.error) {
+      console.error('Resend error:', userEmail.error || founderEmail.error);
+      return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
