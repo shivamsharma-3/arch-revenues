@@ -151,7 +151,9 @@ That sounds great! He can help with that.
         return;
       }
       
-      const response = await chatRef.current.sendMessageStream(text);
+      const response = await chatRef.current.sendMessageStream({
+        message: text,
+      });
 
       setMessages((prev) => [...prev, { role: "model", text: "" }]);
 
