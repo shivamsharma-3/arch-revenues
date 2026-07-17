@@ -26,7 +26,7 @@ export function Chatbot() {
   useEffect(() => {
     if (!chatRef.current && ai) {
       chatRef.current = ai.chats.create({
-        model: "gemini-3.5-flash",
+        model: "gemini-1.5-flash",
         config: {
           temperature: 0.4,
           maxOutputTokens: 500,
@@ -196,7 +196,7 @@ That sounds great! He can help with that.
         options.push(match[1].trim());
       }
     }
-    const cleanText = text.replace(optionRegex, '').trim();
+    const cleanText = text.replace(optionRegex, '').replace(/\[OPTION[^\]]*$/, '').trim();
 
     // Make raw URLs clickable by converting them to markdown links
     const linkifiedText = cleanText.replace(
