@@ -93,33 +93,73 @@ export async function fetchPage(url: string, isHomepage = false): Promise<Fetche
   
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout per page
+    const timeoutId = setTimeout(() => controller.abort(), 20000); // 20s timeout per page (JS rendering can take a bit longer)
     
-    const response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.9',
-      },
-      signal: controller.signal
-    });
+    let html = '';
+    let text = '';
+    let finalUrl = url;
+
+    try {
+      // Primary Method: Jina Reader API (Executes JS, returns Markdown + HTML)
+      const jinaResponse = await fetch(`https://r.jina.ai/${url}`, {
+        headers: {
+          'Accept': 'application/json',
+          'X-Return-Format': 'markdown,html',
+        },
+        signal: controller.signal
+      });
+
+      if (!jinaResponse.ok) {
+        throw new Error(`Jina Reader returned status ${jinaResponse.status}`);
+      }
+
+      const jinaData = await jinaResponse.json();
+      const result = jinaData.data;
+
+      if (!result || !result.html) {
+        throw new Error('Invalid Jina Reader response format');
+      }
+
+      html = result.html;
+      finalUrl = result.url || url;
+      // Jina's content is high quality markdown tailored for LLMs
+      text = result.content || extractMetaContent(html, finalUrl);
+      
+    } catch (jinaError) {
+      console.warn(`Jina API failed for ${url}, falling back to standard fetch:`, (jinaError as Error).message);
+      
+      // Fallback Method: Standard Fetch (for static HTML sites if Jina fails)
+      const fallbackResponse = await fetch(url, {
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+          'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+          'Accept-Language': 'en-US,en;q=0.9',
+        },
+        signal: controller.signal
+      });
+
+      if (!fallbackResponse.ok) {
+        clearTimeout(timeoutId);
+        return null;
+      }
+
+      const contentType = fallbackResponse.headers.get('content-type');
+      if (contentType && !contentType.includes('text/html')) {
+        clearTimeout(timeoutId);
+        return null;
+      }
+
+      html = await fallbackResponse.text();
+      finalUrl = fallbackResponse.url;
+      text = extractMetaContent(html, finalUrl);
+    }
     
     clearTimeout(timeoutId);
     
-    if (!response.ok) return null;
-    
-    // Check content type
-    const contentType = response.headers.get('content-type');
-    if (contentType && !contentType.includes('text/html')) return null;
-
-    const html = await response.text();
-    
-    // Extract rich text including meta tags, headings, JSON-LD — handles JS-heavy sites better
-    const text = extractMetaContent(html, response.url);
     const cappedText = text.length > 8000 ? text.substring(0, 8000) + '... [truncated]' : text;
 
     return {
-      url: response.url, // Following redirects
+      url: finalUrl,
       html,
       text: cappedText
     };

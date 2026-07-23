@@ -35,19 +35,19 @@ export default function PilotProgramPage() {
             <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Paid Performance Pilot?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <p>
-                We&apos;re serious about building predictable outbound pipelines for B2B SaaS-focused web design agencies (Webflow, UI/UX, branding, and product design studios serving SaaS clients).
+                We&apos;re serious about building predictable outbound pipelines for founder-led agencies — whether you run a Webflow, branding, UI/UX, dev, or marketing studio. If you&apos;re tired of feast-or-famine project cycles and referrals you can&apos;t control, this is built for you.
               </p>
               <p>
-                The Paid Performance Pilot is offered at a flat $1,000/mo retainer (our Founding Client Rate). A small one-time setup fee covers your sending domains and infrastructure, and the full retainer is only earned when we deliver qualified meetings. See <Link href="/pricing" className="underline hover:text-zinc-900 transition-colors">Pricing</Link> for the full breakdown.
+                The Performance Pilot starts with a one-time $499 setup fee that covers your sending infrastructure (domains, DNS, Apollo, warmup). The $1,499/mo retainer only starts when the system is live and sending. See <Link href="/pricing" className="underline hover:text-zinc-900 transition-colors">Pricing</Link> for the full breakdown.
               </p>
               <p>
-                We&apos;ll show you everything live: the lead lists we build using tools like Apollo and Crunchbase, the exact AI-personalized messages we send, the replies we get, and any meetings that come from it.
+                We&apos;ll show you everything live: the lead lists we build using tools like Apollo and LinkedIn Sales Navigator, the exact personalized messages we send, the replies we get, and any meetings that come from it.
               </p>
               <p>
                 This program is a partnership. We provide the infrastructure, the data, and the execution. We align our success entirely with yours.
               </p>
               <p>
-                If it generates real qualified calls for your agency, that is great! We transition to a standard monthly engagement afterward.
+                If it generates real qualified calls for your agency, great — we transition to a standard monthly engagement afterward.
               </p>
               <p className="font-medium text-zinc-900 pt-4">
                 Sound fair? Apply for the pilot today.

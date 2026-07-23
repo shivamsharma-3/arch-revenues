@@ -33,7 +33,7 @@ export default function ICPWorksheetPage() {
       <motion.main initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex-grow pt-20 pb-12 md:pt-32 md:pb-24">
         <section className="px-6 max-w-2xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-6">
-            The 1-page worksheet SaaS founders use to define their ICP — before they spend $1 on outbound.
+            The 1-page worksheet agency founders use to define their ICP — before they spend $1 on outbound.
           </h1>
           <p className="text-lg text-zinc-700 leading-relaxed mb-12">
             8 questions. 15 minutes. The exact worksheet we use with every ARCH Revenues client to decide who to target, who to ignore, and what triggers a meeting request.
@@ -62,7 +62,7 @@ export default function ICPWorksheetPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-3 border border-zinc-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-zinc-900"
-                  placeholder="jane@saascompany.com"
+                  placeholder="jane@agencyhq.com"
                 />
               </div>
               <button

@@ -21,7 +21,7 @@ export function Pricing() {
       "@type": "Organization",
       "name": "ARCH Revenues"
     },
-    "description": "Done-for-you outbound systems. I build and refine a powerful outbound system in real conditions for B2B SaaS companies in the $20K-$100K MRR range.",
+    "description": "Done-for-you outbound systems. I build and run cold email and LinkedIn sequences for founder-led agencies, booking 5-12 qualified demos per month.",
     "serviceType": "B2B Lead Generation"
   };
 
