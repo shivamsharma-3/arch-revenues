@@ -13,13 +13,6 @@ export function Proof() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-mono font-bold tracking-wider uppercase mb-6 border border-zinc-200">
               Building In Public
             </div>
