@@ -35,11 +35,14 @@ export default function PricingPage() {
       <section className="text-center px-6 py-12 md:py-20">
         <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse inline-block" />
-          Founding rate — 2 of 3 spots remaining
+          Founding Rate — Early Cohort Edition (July 2026)
         </div>
-        <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-6">
+        <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-4">
           The Performance Pilot
         </h1>
+        <p className="text-sm font-mono font-semibold uppercase tracking-wider text-teal-600 mb-4">
+          Done-For-You Outbound Acquisition System
+        </p>
         <p className="text-xl text-zinc-600 max-w-2xl mx-auto mb-4">
           Outbound that books demos. Not promises.
         </p>
@@ -55,9 +58,9 @@ export default function PricingPage() {
             <Clock className="w-6 h-6" />
           </div>
           <div>
-            <p className="font-semibold text-amber-900 text-sm">Founding rate — first 3 clients only</p>
+            <p className="font-semibold text-amber-900 text-sm">Founding rate — early cohort clients</p>
             <p className="text-amber-800 text-sm mt-0.5 leading-relaxed">
-              The $1,499/mo retainer is a founding rate locked for the first 3 clients. From client #4, the rate moves to $4,000/mo as capacity fills and setup overhead increases. If you're reading this, the founding rate is still available — but it won't be once the first 3 spots are taken.
+              The $1,499/mo retainer is a founding rate locked for the initial cohort. From client #4 onwards, the retainer moves to $4,000/mo as capacity fills. Secure your founding spot for July 2026.
             </p>
           </div>
         </div>
@@ -83,7 +86,7 @@ export default function PricingPage() {
             <div className="bg-white border border-zinc-200 p-5 rounded-xl text-zinc-900 flex gap-4 items-start">
               <Shield className="w-5 h-5 text-teal-600 shrink-0 mt-0.5" />
               <div>
-                <strong>The guarantee:</strong> If I book fewer than 5 qualified demos in any month, that month&apos;s retainer is refunded. No argument, no fine print.
+                <strong>The guarantee:</strong> If I book fewer than 5 qualified demos in any month, that month&apos;s retainer is refunded in full. See Section 04 of our <Link href="/terms" className="underline font-semibold text-teal-700 hover:text-teal-900">Terms of Service</Link> for complete details.
               </div>
             </div>
             <div>

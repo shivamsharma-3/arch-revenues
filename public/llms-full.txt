@@ -1,0 +1,53 @@
+# ARCH Revenues — Comprehensive Guide for AI & Search Agents
+
+## Project Overview
+ARCH Revenues (https://www.archrevenues.com) builds and runs done-for-you outbound acquisition systems designed specifically for founder-led marketing, design, and software development agencies targeting clients in the US, UK, Australia, and Canada.
+
+- Founder: Shivam Sharma
+- Primary Email: shivam@archrevenues.com
+- Location: Hyderabad, Telangana, India
+- Positioning: Done-for-you cold email + LinkedIn multi-channel outreach for founder-led agencies booking 5-12 qualified sales demos per month.
+
+---
+
+## Deliverables & Service Scope
+1. **ICP & Data Sourcing:** Definition of target account filters and creation of verified lead lists (up to 300 accounts per month) using Apollo and custom enrichment.
+2. **Infrastructure Buildout:** 3 dedicated sending domains, Google Workspace inboxes, full DNS authentication (SPF, DKIM, DMARC), domain rotation, and 14-day inbox warmup.
+3. **Multi-Channel Sequence Creation:** AI-assisted personalized cold email copy and LinkedIn outreach sequences tailored to agency offers.
+4. **Campaign Execution & Inbox Management:** Daily automated outreach (90-150 emails/day), reply triage, and positive response handling within 4 business hours.
+5. **Weekly Reporting:** Every Monday, detailed report on email delivery rates, open rates, reply rates, and booked meetings.
+
+---
+
+## Pricing & Performance Pilot
+- **Founding Client Rate:** $499 one-time setup fee + $1,499/month retainer (locked for 90 days, capped at 3 spots).
+- **Standard Retainer:** $4,000/month after founding spots are claimed.
+- **Guarantee:** If fewer than 5 qualified demos are booked in any billing month, the monthly retainer for that month is refunded in full. Setup fee is non-refundable.
+- **Definition of Qualified Demo:** Prospect matching agreed ICP parameters who attends the scheduled video call. No-shows do not count.
+- **Contract Terms:** No annual contract lock-in. Cancel anytime after the initial 30 days.
+
+---
+
+## Free Online Tools & Resources
+- **AI Cold Email Generator:** https://www.archrevenues.com/tools/email-generator
+  - Allows visitors to enter their offer description and a prospect URL. Uses AI scraping & analysis to draft customized outreach messages.
+- **ICP Audit Worksheet:** https://www.archrevenues.com/audit
+  - Interactive self-serve audit for agency founders to refine target audience positioning.
+
+---
+
+## Frequently Asked Questions (FAQs)
+- **Q: How many demos are guaranteed?**
+  A: Target is 5 to 12 qualified demos per month. Fewer than 5 in any month triggers a full monthly retainer refund.
+- **Q: How fast do initial results start?**
+  A: Infrastructure setup and inbox warmup take 14-21 days. First meetings land in weeks 3 to 4.
+- **Q: Who provides the lead lists?**
+  A: ARCH Revenues builds and verifies target lead lists directly; client approval is obtained before launching campaigns.
+- **Q: What is the cancellation policy?**
+  A: Month-to-month commitment after the first 30 days. Cancel with written notice before the next billing date.
+
+---
+
+## Legal & Compliance
+- **Privacy Policy:** https://www.archrevenues.com/privacy (Updated July 2026. Data strictly processed for outreach & audits; tool inputs never used to train public AI models).
+- **Terms of Service:** https://www.archrevenues.com/terms (Updated July 2026. Month-to-month flexibility, performance guarantee details, client ownership of generated leads/copy upon payment).

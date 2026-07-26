@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://archrevenues.com/</loc>
+    <loc>https://www.archrevenues.com/</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/how-it-works</loc>
+    <loc>https://www.archrevenues.com/how-it-works</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/pricing</loc>
+    <loc>https://www.archrevenues.com/pricing</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/founder</loc>
+    <loc>https://www.archrevenues.com/about</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/pilot-program</loc>
+    <loc>https://www.archrevenues.com/audit</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/strategy-call</loc>
+    <loc>https://www.archrevenues.com/tools/email-generator</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/audit</loc>
+    <loc>https://www.archrevenues.com/strategy-call</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/privacy</loc>
+    <loc>https://www.archrevenues.com/faq</loc>
   </url>
   <url>
-    <loc>https://archrevenues.com/terms</loc>
+    <loc>https://www.archrevenues.com/founder</loc>
+  </url>
+  <url>
+    <loc>https://www.archrevenues.com/pilot-program</loc>
+  </url>
+  <url>
+    <loc>https://www.archrevenues.com/privacy</loc>
+  </url>
+  <url>
+    <loc>https://www.archrevenues.com/terms</loc>
   </url>
 </urlset>

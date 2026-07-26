@@ -262,6 +262,14 @@ export default function AuditPage() {
           Back to Home
         </Link>
 
+        {/* quick lead magnet banner */}
+        <div className="mb-6 bg-teal-50 border border-teal-200 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+          <span className="text-teal-900 font-medium">Looking for the quick 1-page PDF lead magnet instead?</span>
+          <Link href="/icp-worksheet" className="shrink-0 font-bold text-teal-700 hover:text-teal-900 underline">
+            Download 5-Min ICP Worksheet →
+          </Link>
+        </div>
+
         {/* hero */}
         <div className="mb-12">
           <span className="inline-block py-1 px-3 rounded-full bg-zinc-200/50 text-zinc-600 text-xs font-mono font-medium tracking-wide uppercase border border-zinc-300/50">

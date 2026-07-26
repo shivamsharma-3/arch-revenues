@@ -70,9 +70,17 @@ export default function ICPWorksheetPage() {
                 disabled={isSubmitting}
                 className="w-full bg-zinc-900 text-white font-bold text-lg py-4 rounded-xl hover:bg-zinc-800 transition-colors shadow-lg hover:shadow-zinc-900/20 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? "Sending..." : "Download the worksheet"}
+                {isSubmitting ? "Sending..." : "Download the 5-Min Worksheet"}
               </button>
             </form>
+            <div className="mt-6 pt-6 border-t border-zinc-100 text-center">
+              <a
+                href="/audit"
+                className="text-xs text-teal-600 hover:text-teal-800 font-semibold underline transition-colors"
+              >
+                Prefer an interactive online teardown? Launch our 45-Minute ICP Deep Dive →
+              </a>
+            </div>
           </div>
         </section>
       </motion.main>

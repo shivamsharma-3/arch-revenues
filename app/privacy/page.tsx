@@ -1,7 +1,15 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read the Privacy Policy for ARCH Revenues. Learn how we collect, process, and protect your personal data, business details, and AI tool inputs.",
+  alternates: {
+    canonical: "https://www.archrevenues.com/privacy",
+  },
+};
 
 export default function PrivacyPage() {
   return (
@@ -20,7 +28,9 @@ export default function PrivacyPage() {
             <h1 className="text-4xl font-bold tracking-tight text-zinc-900 mb-4">
               Privacy Policy
             </h1>
-            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">Last updated March 2026</p>
+            <p className="text-sm font-mono text-zinc-400 uppercase tracking-widest">
+              Last updated July 2026
+            </p>
           </header>
 
           <div className="space-y-12">
@@ -33,7 +43,7 @@ export default function PrivacyPage() {
                 Overview & Commitment
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                ARCH Revenues is committed to protecting the privacy and security of your personal and business information. This policy describes how we collect, use, and safeguard the data you provide to us. We process information solely to deliver our outbound acquisition services and associated audits. We do not sell, trade, or share your data with third parties for their own commercial purposes.
+                ARCH Revenues (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), founded and operated by Shivam Sharma, is committed to protecting the privacy and security of your personal and business information. This Privacy Policy outlines how we collect, use, process, and safeguard data across our website, outbound acquisition services, interactive audits, strategy booking channels, and AI-powered tools (such as our Cold Email Generator and ICP Worksheet). We process data solely to deliver our services and optimize acquisition systems. We never sell, rent, or trade your data to third parties.
               </p>
             </div>
 
@@ -45,9 +55,23 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Information We Collect
               </h2>
-              <p className="text-zinc-600 leading-relaxed text-sm">
-                When you interact with our website or submit an intake form, we collect: your full name, professional email address, company name, website URL, and business-related data such as approximate revenue, team size, and current lead generation challenges. We also collect standard technical data including IP addresses and browser information to ensure the security and performance of our platform.
+              <p className="text-zinc-600 leading-relaxed text-sm mb-4">
+                We collect information directly from you when you visit our website, complete intake or audit forms, request strategy calls, or utilize our interactive tools:
               </p>
+              <ul className="list-disc list-inside text-zinc-600 leading-relaxed text-sm space-y-2 pl-2">
+                <li>
+                  <strong className="text-zinc-800">Contact & Profile Data:</strong> Full name, professional email address, company name, website URL, and LinkedIn profile links.
+                </li>
+                <li>
+                  <strong className="text-zinc-800">Business & Campaign Context:</strong> Target audience definitions (ICP), service offerings, pricing structures, monthly revenue benchmarks, and current lead generation bottlenecks.
+                </li>
+                <li>
+                  <strong className="text-zinc-800">Tool & Chat Inputs:</strong> Prompts, website links, or text snippets submitted to our AI Cold Email Generator, ICP Worksheet, or website assistant.
+                </li>
+                <li>
+                  <strong className="text-zinc-800">Technical & Usage Analytics:</strong> IP address, device specifications, browser type, referral sources, and page interaction metrics to maintain security and optimize user experience.
+                </li>
+              </ul>
             </div>
 
             {/* Section 03 */}
@@ -56,10 +80,10 @@ export default function PrivacyPage() {
                 Section 03
               </div>
               <h2 className="text-xl font-semibold text-zinc-900 mb-4">
-                AI Tools & Data Processing
+                AI Tools & Data Confidentiality
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                As part of our specialized outbound systems, we utilize advanced AI tools for lead enrichment and message personalization. We only process lead data strictly for the purpose of executing your specific campaign. This data is never sold, shared with other clients, or used to train public AI models. All AI-driven processing is conducted within secure, private environments to maintain the highest standards of confidentiality.
+                As part of our outbound acquisition systems and interactive web tools, we utilize advanced AI frameworks (including Google Gemini APIs) for lead enrichment, offer messaging analysis, and cold email draft generation. Data submitted to our AI tools or processed for outreach campaigns is handled in strict confidentiality within private API environments. Your custom inputs and proprietary campaign data are <strong className="text-zinc-800 font-semibold">never used to train public AI models</strong>, nor shared with other clients or external marketing networks.
               </p>
             </div>
 
@@ -72,7 +96,7 @@ export default function PrivacyPage() {
                 How We Use Your Information
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                We use your information to: prepare and deliver tailored system audits, contact you regarding our services, fulfill our contractual obligations, and optimize our outreach strategies. We maintain a strict policy against using your information for third-party advertising or sharing it with external marketing platforms.
+                We use collected information strictly to: prepare and deliver customized ICP audits and strategy recommendations, execute agreed outbound campaigns, process outputs for web tools, send transactional updates regarding booked calls or audit results, fulfill contractual obligations, and refine performance metrics.
               </p>
             </div>
 
@@ -82,10 +106,10 @@ export default function PrivacyPage() {
                 Section 05
               </div>
               <h2 className="text-xl font-semibold text-zinc-900 mb-4">
-                Data Retention & Deletion
+                Data Retention & Security
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                For prospective clients who do not engage our services, we retain data for 12 months from the last point of contact before permanent deletion. For active clients, data is retained for the duration of the engagement and for a reasonable period thereafter to comply with legal, accounting, and reporting obligations.
+                We implement industry-standard encryption protocols (HTTPS/TLS) and secure database storage to safeguard all information. For prospective inquiries or free tool interactions, data is retained for up to 12 months before automatic archival or permanent deletion upon request. For active client engagements, operational campaign data is stored for the duration of the contract and retained thereafter only as required for legal, accounting, and reporting compliance.
               </p>
             </div>
 
@@ -95,17 +119,10 @@ export default function PrivacyPage() {
                 Section 06
               </div>
               <h2 className="text-xl font-semibold text-zinc-900 mb-4">
-                Your Privacy Rights
+                Sub-processors & Third-Party Services
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                You have the right to access, correct, or request the deletion of your personal data at any time. You may also object to the processing of your data or request a portable copy of your information. To exercise these rights, please contact us at{" "}
-                <a
-                  href="mailto:legal@archrevenues.com"
-                  className="text-zinc-900 underline hover:text-zinc-600 transition-colors"
-                >
-                  legal@archrevenues.com
-                </a>
-                .
+                To deliver our services seamlessly, we partner with trusted infrastructure providers (such as Resend for transactional email delivery, Google Cloud / Gemini API for AI processing, Vercel/Next.js hosting infrastructure, and web analytics). All third-party sub-processors are required to comply with strict data privacy standards and security controls.
               </p>
             </div>
 
@@ -115,19 +132,41 @@ export default function PrivacyPage() {
                 Section 07
               </div>
               <h2 className="text-xl font-semibold text-zinc-900 mb-4">
+                Your Data Rights
+              </h2>
+              <p className="text-zinc-600 leading-relaxed text-sm">
+                Depending on your location, you hold rights to access, inspect, rectify, export, or request the permanent deletion of your personal information stored with us. You may also opt out of promotional email communications at any time by clicking the unsubscribe link or contacting us directly at{" "}
+                <a
+                  href="mailto:shivam@archrevenues.com"
+                  className="text-zinc-900 font-medium underline hover:text-zinc-600 transition-colors"
+                >
+                  shivam@archrevenues.com
+                </a>
+                .
+              </p>
+            </div>
+
+            {/* Section 08 */}
+            <div>
+              <div className="text-[10px] font-mono font-bold text-zinc-300 uppercase tracking-[0.2em] mb-4">
+                Section 08
+              </div>
+              <h2 className="text-xl font-semibold text-zinc-900 mb-4">
                 Contact Information
               </h2>
               <p className="text-zinc-600 leading-relaxed text-sm">
-                For any privacy-related inquiries or to report a concern:
+                For any privacy inquiries, data requests, or compliance questions:
                 <br />
                 <a
-                  href="mailto:legal@archrevenues.com"
-                  className="text-zinc-900 underline hover:text-zinc-600 transition-colors"
+                  href="mailto:shivam@archrevenues.com"
+                  className="text-zinc-900 font-medium underline hover:text-zinc-600 transition-colors"
                 >
-                  legal@archrevenues.com
+                  shivam@archrevenues.com
                 </a>
                 <br />
-                ARCH Revenues
+                ARCH Revenues • Shivam Sharma
+                <br />
+                Hyderabad, Telangana, India
               </p>
             </div>
           </div>

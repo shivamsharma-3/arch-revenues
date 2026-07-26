@@ -8,14 +8,24 @@ import { usePathname } from "next/navigation";
 
 const resources = [
   {
+    name: "Outbound Resources & Playbooks",
+    href: "/resources",
+    description: "Technical email blueprints, ICP guides, and sequence architectures",
+  },
+  {
     name: "Free Cold Email Generator",
     href: "/tools/email-generator",
     description: "AI-writes a personalised outbound email from your prospect's site",
   },
   {
-    name: "ICP Worksheet",
+    name: "5-Min ICP Lead Magnet",
+    href: "/icp-worksheet",
+    description: "Download the 1-page worksheet to map your ICP in 5 minutes",
+  },
+  {
+    name: "45-Min ICP Deep Dive",
     href: "/audit",
-    description: "Define your ideal customer profile before you start sending",
+    description: "Interactive teardown tool to map triggers, pain points & disqualifiers",
   },
 ];
 

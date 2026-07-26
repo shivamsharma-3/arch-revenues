@@ -36,14 +36,17 @@ export function Footer() {
           <p className="text-center md:text-left text-sm text-zinc-500">
             © {new Date().getFullYear()} ARCH Revenues. Serving founder-led agencies in US, UK, AU, CA • Hyderabad, India • shivam@archrevenues.com
           </p>
-          <div className="flex items-center justify-center gap-6 text-sm text-zinc-500">
-            <Link href="/audit" className="hover:text-white transition-colors">
-              ICP Worksheet
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-zinc-500">
+            <Link href="/resources" className="hover:text-white transition-colors">
+              Resources
             </Link>
-            <Link
-              href="/privacy"
-              className="hover:text-white transition-colors"
-            >
+            <Link href="/icp-worksheet" className="hover:text-white transition-colors">
+              ICP Lead Magnet
+            </Link>
+            <Link href="/audit" className="hover:text-white transition-colors">
+              ICP Deep Dive
+            </Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy
             </Link>
             <Link href="/terms" className="hover:text-white transition-colors">

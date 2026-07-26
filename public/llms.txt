@@ -1,24 +1,34 @@
-# ARCH Revenues - B2B SaaS Outbound Growth
+# ARCH Revenues — Outbound Acquisition Systems for Agencies
 
-ARCH Revenues is a specialized outbound lead generation service for B2B SaaS companies in the $20K-$100K MRR range. Founded by Shivam Sharma, based in Hyderabad, India.
+ARCH Revenues is a specialized done-for-you outbound acquisition service for founder-led marketing and development agencies. Founded and operated by Shivam Sharma, based in Hyderabad, India.
 
 ## Core Offerings
-- Done-for-you cold email and LinkedIn outbound systems.
-- ICP definition, lead list building using Apollo, and AI-driven personalization.
-- Infrastructure setup (SPF, DKIM, DMARC, domain rotation, inbox warmup) to ensure deliverability.
-- Response handling (positive, negative, unsubscribe) within 4 business hours.
-
-## Pricing
-- $1,499/month flat retainer (Founding Client Rate).
-- Performance guarantee: If we book fewer than 5 qualified demos in a month, the client does not pay for that month.
-- No annual contracts. Month-to-month after the initial 30 days.
+- Done-for-you cold email and LinkedIn multi-channel outbound systems.
+- ICP (Ideal Customer Profile) definition, B2B lead list building using Apollo (up to 300 target accounts per month), and AI-driven personalization.
+- Infrastructure setup: 3 dedicated sending domains, Google Workspace inboxes, SPF, DKIM, DMARC configuration, domain rotation, and 14-day inbox warmup.
+- Response handling (positive, negative, unsubscribe) managed within 4 business hours.
+- Weekly Monday reporting tracking opens, replies, and booked qualified demos.
 
 ## Target Audience
-- B2B SaaS companies with $20K to $100K MRR.
-- Companies that cannot afford a full-time SDR but need to stop relying on referrals.
-- Serving clients primarily in the US, UK, Australia, and Canada.
+- Founder-led marketing agencies, dev agencies, and software consultancies.
+- Agencies primarily serving clients in the US, UK, Australia, and Canada.
+- Founders who need consistent qualified sales calls (5-12 demos/month) without relying solely on referrals or hiring a full-time internal SDR team.
 
-## Contact Information
-- Founder: Shivam Sharma
-- Email: shivam@archrevenues.com
+## Performance Pilot & Pricing
+- Founding Client Rate (Performance Pilot): $499 one-time setup fee + $1,499/month flat retainer (locked for 90 days, 3 spots only).
+- Standard Rate: Moves to $4,000/month after the first 3 founding client spots are filled.
+- Performance Guarantee: If we book fewer than 5 qualified demos in any month, that month's retainer is fully refunded. Setup fee is non-refundable.
+- Case Study Trade-off: In exchange for the discounted $1,499/mo rate, clients agree to be featured as a public case study once 5 qualified meetings are booked.
+- Flexibility: Cancel anytime after the initial 30 days. No long-term annual contracts.
+
+## Free AI Tools & Resources
+- AI Cold Email Generator: https://www.archrevenues.com/tools/email-generator (Free interactive tool that analyzes a prospect's website and generates tailored cold emails).
+- ICP Audit Worksheet: https://www.archrevenues.com/audit (Self-serve audit to define and validate your target client profile).
+
+## Key Links & Contact
 - Website: https://www.archrevenues.com
+- Strategy Call Booking: https://calendly.com/archrevenues/book-your-strategy-call
+- Founder & Primary Contact: Shivam Sharma (shivam@archrevenues.com)
+- Location: Hyderabad, Telangana, India
+- Privacy Policy: https://www.archrevenues.com/privacy
+- Terms of Service: https://www.archrevenues.com/terms
