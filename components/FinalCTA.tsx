@@ -10,14 +10,14 @@ export function FinalCTA() {
           Ready to stop relying on referrals?
         </h2>
         <p className="text-lg text-zinc-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Book a 20-min call. If we&apos;re not a fit, I&apos;ll tell you in 10 minutes.
+          Book a 30-min call. If we&apos;re not a fit, I&apos;ll tell you in 10 minutes.
         </p>
         <div className="flex flex-col items-center gap-6">
           <Link
             href="/strategy-call"
             className="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 text-white border-0 px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg"
           >
-            Book a 20-min strategy call →
+            Book a 30-min strategy call →
           </Link>
         </div>
       </div>

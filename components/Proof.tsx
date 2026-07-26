@@ -13,11 +13,18 @@ export function Proof() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-xs font-mono font-bold tracking-wider uppercase mb-6 border border-zinc-200">
-              Agency Results
+              Building In Public
             </div>
             <h2 className="text-3xl md:text-5xl font-semibold text-zinc-900 tracking-tight mb-4">
-              Real pipeline built for agencies.
+              Transparent Cohort Dashboard
             </h2>
             <p className="text-lg text-zinc-600 leading-relaxed max-w-2xl mx-auto">
               Our founding cohort is currently live. Case studies will be published here once we cross 8 booked meetings for Client #1.
@@ -47,7 +54,7 @@ export function Proof() {
               <h3 className="text-2xl font-bold text-white">Cohort 1 Infrastructure & Campaign Metrics</h3>
             </div>
             <span className="text-xs font-mono bg-zinc-800 text-zinc-300 px-3 py-1.5 rounded-full border border-zinc-700">
-              Updated Live — July 2026
+              Last updated: 27 July 2026
             </span>
           </div>
 

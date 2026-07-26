@@ -60,7 +60,7 @@ export default function PricingPage() {
           <div>
             <p className="font-semibold text-amber-900 text-sm">Founding rate — early cohort clients</p>
             <p className="text-amber-800 text-sm mt-0.5 leading-relaxed">
-              The $1,499/mo retainer is a founding rate locked for the initial cohort. From client #4 onwards, the retainer moves to $4,000/mo as capacity fills. Secure your founding spot for July 2026.
+              The $1,499/mo retainer is a founding rate locked for the initial cohort. From client #4 onwards, the retainer moves to $4,000/mo as capacity fills. Cohort 1 is live; Cohort 2 onboarding opens August 2026.
             </p>
           </div>
         </div>
@@ -89,8 +89,8 @@ export default function PricingPage() {
                 <strong>The guarantee:</strong> If I book fewer than 5 qualified demos in any month, that month&apos;s retainer is refunded in full. See Section 04 of our <Link href="/terms" className="underline font-semibold text-teal-700 hover:text-teal-900">Terms of Service</Link> for complete details.
               </div>
             </div>
-            <div>
-              Most clients see 5–7 demos in month 1, 7–12 by month 2.
+            <div className="text-sm bg-white border border-zinc-200 p-4 rounded-xl text-zinc-600">
+              <strong className="text-zinc-900">Target range:</strong> 5–7 demos in Month 1, scaling to 7–12 by Month 2. These are the benchmark targets the system is engineered around — actual results for Cohort 1 will be published as verified case studies once 8+ meetings are booked.
             </div>
           </div>
           
@@ -99,9 +99,9 @@ export default function PricingPage() {
               href="/strategy-call"
               className="inline-block bg-zinc-900 text-white px-8 py-5 rounded-xl text-lg font-semibold hover:bg-zinc-800 transition-all shadow-lg w-full sm:w-auto"
             >
-              Book a strategy call
+              Book a 30-min strategy call
             </Link>
-            <p className="text-zinc-400 text-sm mt-3">20 minutes. No deck. No pitch.</p>
+            <p className="text-zinc-400 text-sm mt-3">30 minutes. No deck. No pitch.</p>
           </div>
         </div>
       </section>

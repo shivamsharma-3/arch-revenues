@@ -27,10 +27,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-4xl md:text-5xl font-semibold text-zinc-900 leading-[1.1] mb-6"
+            className="text-4xl md:text-5xl font-semibold text-zinc-900 leading-[1.1] mb-4"
           >
             5-12 qualified leads per month for founder-led agencies. Guaranteed.
           </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="text-xs font-mono font-semibold text-teal-800 bg-teal-50 border border-teal-200 px-4 py-2 rounded-full mb-6 max-w-2xl"
+          >
+            Cohort 1 is live. Performance metrics are published transparently every week. If I miss 5 demos in any month, that month&apos;s retainer is refunded — no argument.
+          </motion.p>
 
           <div className="mb-10">
             <motion.p
@@ -53,7 +62,7 @@ export function Hero() {
               href="/strategy-call"
               className="w-full sm:w-auto flex items-center justify-center bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-teal-400 hover:to-teal-500 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(20,184,166,0.3)]"
             >
-              Book a 20-min strategy call →
+              Book a 30-min strategy call →
             </Link>
             <Link
               href="/tools/email-generator"

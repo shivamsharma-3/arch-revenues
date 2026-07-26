@@ -60,7 +60,7 @@ export function Pricing() {
               href="/strategy-call"
               className="group inline-flex items-center justify-center gap-2 w-full bg-zinc-900 text-white px-8 py-5 rounded-xl text-lg font-semibold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20 mb-4"
             >
-              Book a 20-min strategy call →
+              Book a 30-min strategy call →
             </Link>
             <p className="text-xs text-zinc-500 max-w-lg mx-auto leading-relaxed">
               In exchange for the founding rate, you agree to be featured as a public case study once I hit your first 5 booked meetings.

@@ -20,6 +20,8 @@ const guides = [
       "Why 90% of agency cold email lands in spam and how to set up secondary lookalike domains, Google Workspace inboxes, and gradual inbox warmup for 95%+ deliverability.",
     readTime: "8 min read",
     tag: "Technical Setup",
+    href: "/how-it-works",
+    status: "Interactive Blueprint",
   },
   {
     icon: Target,
@@ -29,15 +31,19 @@ const guides = [
       "How to filter out unqualified leads, define trigger events that signal buying intent, and build verified 200-account decision-maker prospect lists.",
     readTime: "6 min read",
     tag: "Strategy",
+    href: "/icp-worksheet",
+    status: "5-Min Lead Magnet",
   },
   {
     icon: Mail,
     category: "Sequence Engineering",
     title: "The 7-Touch Cold Email + LinkedIn Sequence Architecture",
     description:
-      "A complete breakdown of pattern-interrupt openers, value-add follow-ups, case study proof touches, and LinkedIn voice notes that generate 15-25% reply rates.",
+      "A complete breakdown of pattern-interrupt openers, value-add follow-ups, case study proof touches, and LinkedIn voice notes engineered to target industry benchmark 15–25% positive reply rates.",
     readTime: "10 min read",
     tag: "Copywriting",
+    href: "/tools/email-generator",
+    status: "Interactive AI Tool",
   },
 ];
 
@@ -94,8 +100,9 @@ export default function ResourcesPage() {
             {guides.map((guide, idx) => {
               const IconComponent = guide.icon;
               return (
-                <div
+                <Link
                   key={idx}
+                  href={guide.href}
                   className="bg-white border border-zinc-200 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
                 >
                   <div>
@@ -120,10 +127,10 @@ export default function ResourcesPage() {
                   <div className="pt-4 border-t border-zinc-100 flex items-center justify-between text-xs font-medium text-zinc-500">
                     <span>{guide.readTime}</span>
                     <span className="text-zinc-900 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                      Read Guide <ArrowRight className="w-3.5 h-3.5" />
+                      {guide.status} <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -140,7 +147,7 @@ export default function ResourcesPage() {
               href="/strategy-call"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl text-base font-bold hover:from-teal-400 hover:to-teal-500 transition-all shadow-md"
             >
-              Book a 20-min strategy call <ArrowRight className="w-4 h-4" />
+              Book a 30-min strategy call <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

@@ -44,8 +44,8 @@ export default function AboutPage() {
                  <strong className="text-zinc-900">US, UK, AU, CA</strong>
                </div>
                <div className="flex justify-between text-zinc-600">
-                 <span>Deliverability Rate:</span>
-                 <strong className="text-teal-600">95%+ Verified</strong>
+                 <span>Deliverability Floor:</span>
+                 <strong className="text-teal-600">95% (Live Cohort Metrics)</strong>
                </div>
              </div>
              <a 
@@ -68,7 +68,7 @@ export default function AboutPage() {
                    <h3 className="text-2xl font-semibold text-zinc-900">Enterprise Infrastructure First</h3>
                 </div>
                 <p className="text-lg text-zinc-600 leading-relaxed">
-                   My core background is in building the technical foundation that separates high-converting outbound from spam. We configure dedicated lookalike domains, Google Workspace inboxes, multi-layer DNS records (SPF, DKIM, DMARC), and 14-day inbox warmup protocols to guarantee maximum primary inbox placement.
+                   After 6 months of building and testing outbound sequences on my own network, ARCH Revenues is the system I now run for paying clients. My core focus is building the technical foundation that separates high-converting outbound from spam: dedicated lookalike domains, Google Workspace inboxes, multi-layer DNS records (SPF, DKIM, DMARC), and 14-day inbox warmup protocols to guarantee maximum primary inbox placement.
                 </p>
              </section>
              
@@ -119,7 +119,7 @@ export default function AboutPage() {
               href="/strategy-call"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-8 py-4 rounded-xl text-lg font-bold hover:from-teal-400 hover:to-teal-500 transition-all shadow-lg hover:shadow-[0_0_20px_rgba(20,184,166,0.3)]"
             >
-              Book a 20-min strategy call <ArrowRight className="w-5 h-5" />
+              Book a 30-min strategy call <ArrowRight className="w-5 h-5" />
             </Link>
             <Link
               href="/pricing"

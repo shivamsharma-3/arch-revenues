@@ -80,7 +80,8 @@ export default function HowItWorksPage() {
           bullets: [
             "Write a 7-touch email + LinkedIn sequence tailored to your ICP's specific pain points (not generic templates)",
             "Each email personalized with 2-3 prospect-specific data points (recent role change, company news, podcast appearance, etc.)",
-            "Send 30-50 emails per day per domain (90-150/day total across 3 domains) — the sweet spot for deliverability",
+            "Send 30-50 emails per day per domain (90-150/day total across 3 domains) — the deliverability sweet spot based on Apollo's 2024 deliverability benchmark and Mail-Tester placement data",
+            "Industry benchmark for hyper-personalized founder-to-founder sequences is a 15–25% positive reply rate (Apollo 2024 outbound benchmark). Our system is engineered to hit this range; Cohort 1 actuals will be published transparently",
             "Layer in LinkedIn touches (connection request → voice note → engagement on their posts) between email touches",
             "Monitor deliverability daily — if any domain's open rate drops below 40%, we pause sending and investigate",
             "A/B test subject lines on the first 200 emails to find your ICP's highest-reply variant",
@@ -253,7 +254,7 @@ export default function HowItWorksPage() {
             href="/strategy-call"
             className="w-full sm:w-auto inline-flex items-center justify-center bg-zinc-900 text-white px-8 py-4 rounded-xl text-lg font-bold hover:bg-zinc-800 transition-all shadow-lg hover:shadow-zinc-900/20"
           >
-            Book a 20-min strategy call →
+            Book a 30-min strategy call →
           </Link>
           <Link
             href="/audit"
