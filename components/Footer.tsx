@@ -41,10 +41,10 @@ export function Footer() {
               Resources
             </Link>
             <Link href="/icp-worksheet" className="hover:text-white transition-colors">
-              ICP Lead Magnet
+              Quick ICP Check
             </Link>
-            <Link href="/audit" className="hover:text-white transition-colors">
-              ICP Deep Dive
+            <Link href="/ICP-Teardown-Worksheet.pdf" target="_blank" className="hover:text-white transition-colors">
+              Full ICP Worksheet
             </Link>
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy

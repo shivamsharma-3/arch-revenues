@@ -18,14 +18,9 @@ const resources = [
     description: "AI writes personalized outbound email copy instantly",
   },
   {
-    name: "5-Min ICP Lead Magnet",
+    name: "Quick ICP Check (3 min)",
     href: "/icp-worksheet",
-    description: "Download the 1-page worksheet to map your ICP in 5 minutes",
-  },
-  {
-    name: "45-Min ICP Deep Dive",
-    href: "/audit",
-    description: "Interactive teardown tool for triggers & disqualifiers",
+    description: "Get the full 45-min ICP worksheet + a 5-min Loom review",
   },
 ];
 
@@ -114,7 +109,7 @@ export function Header() {
           >
             <button
               onClick={() => setIsResourcesOpen((v) => !v)}
-              className={`flex items-center gap-1 py-1 transition-colors duration-200 whitespace-nowrap ${isResourcesOpen || pathname?.startsWith("/resources") || pathname?.startsWith("/tools") || pathname === "/icp-worksheet" || pathname === "/audit" ? activeNavColorClass : navHoverColorClass} focus:outline-none`}
+              className={`flex items-center gap-1 py-1 transition-colors duration-200 whitespace-nowrap ${isResourcesOpen || pathname?.startsWith("/resources") || pathname?.startsWith("/tools") || pathname === "/icp-worksheet" ? activeNavColorClass : navHoverColorClass} focus:outline-none`}
               aria-haspopup="true"
               aria-expanded={isResourcesOpen}
             >

@@ -33,24 +33,13 @@ const resources: ResourceItem[] = [
   {
     id: "icp-worksheet",
     category: "tools",
-    tag: "1-Page PDF Lead Magnet",
-    title: "5-Minute ICP Mapping Worksheet",
+    tag: "3-Min Quick Check",
+    title: "Quick ICP Check & Loom Review",
     description:
-      "The 8-question framework agency founders use to define target accounts, buyer titles, trigger events, and disqualification rules.",
-    readTime: "5 min exercise",
-    status: "Download Worksheet",
+      "A 3-minute, 6-question check for agency founders. Get the full 45-minute ICP Teardown Worksheet + a 5-minute personal Loom review within 48 hours.",
+    readTime: "3 min check",
+    status: "Start Quick Check",
     href: "/icp-worksheet",
-  },
-  {
-    id: "audit-tool",
-    category: "tools",
-    tag: "Interactive Teardown",
-    title: "45-Minute ICP Deep Dive Teardown",
-    description:
-      "Interactive strategy teardown tool to map buying triggers, pain points, and disqualification rules before spending on outbound.",
-    readTime: "Interactive Tool",
-    status: "Start Teardown",
-    href: "/audit",
   },
   {
     id: "tech-infrastructure",
