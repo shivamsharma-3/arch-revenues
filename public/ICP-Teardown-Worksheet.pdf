@@ -1,63 +1,100 @@
-%PDF-1.0
+%PDF-1.4
 1 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<<
-/Type /Pages
-/Kids [3 0 R]
-/Count 1
->>
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 612 792]
-/Contents 4 0 R
-/Resources <<
-/ProcCet  [/PDF /Text]
-/Font <<
-/F1 5 0 R
->>
->>
->>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
 endobj
 4 0 obj
-<<
-/Length 73
->>
+<< /Length 1150 >>
 stream
-BTD
-/F1 24 Tf
-100 700 Td
-(ARGH Revenues ICP Worksheet) Tj
-ETC
+BT
+/F2 20 Tf
+50 740 Td
+(ARCH Revenues - 8-Question ICP Worksheet) Tj
+ET
+BT
+/F1 10 Tf
+50 715 Td
+(The 1-Page Worksheet for Founder-Led B2B Agencies) Tj
+ET
+BT
+/F2 12 Tf
+50 680 Td
+(1. Target Niche & Vertical:) Tj
+/F1 10 Tf
+50 665 Td
+(   Exact industry segment, size (e.g. 10-50 employees), and business model.) Tj
+/F2 12 Tf
+50 635 Td
+(2. Primary Buyer Persona:) Tj
+/F1 10 Tf
+50 620 Td
+(   Decision maker title (e.g. CEO, Founder, VP Sales) & primary KPI responsibility.) Tj
+/F2 12 Tf
+50 590 Td
+(3. Specific Trigger Events:) Tj
+/F1 10 Tf
+50 575 Td
+(   Recent hiring, key product launches, funding rounds, or software stack changes.) Tj
+/F2 12 Tf
+50 545 Td
+(4. Urgent Pain Points:) Tj
+/F1 10 Tf
+50 530 Td
+(   What problem is costing them +/year if left unaddressed right now?) Tj
+/F2 12 Tf
+50 500 Td
+(5. Clear Disqualification Rules:) Tj
+/F1 10 Tf
+50 485 Td
+(   Red flags that immediately eliminate accounts from cold outreach lists.) Tj
+/F2 12 Tf
+50 455 Td
+(6. Pattern-Interrupt Offer Angle:) Tj
+/F1 10 Tf
+50 440 Td
+(   What specific outcome or audit asset can you offer for free on a 15-min call?) Tj
+/F2 12 Tf
+50 410 Td
+(7. Primary Proof Metric:) Tj
+/F1 10 Tf
+50 395 Td
+(   Case study or benchmark metric (e.g. +14 demos in 30 days for similar agency).) Tj
+/F2 12 Tf
+50 365 Td
+(8. Risk-Reversal Hook:) Tj
+/F1 10 Tf
+50 350 Td
+(   Performance guarantee or low-risk entry offer to lower friction.) Tj
+ET
+BT
+/F1 9 Tf
+50 50 Td
+(www.archrevenues.com | Founder Outbound Growth Engines) Tj
+ET
 endstream
 endobj
 5 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 xref
-0 6
+0 7
 0000000000 65535 f 
 0000000009 00000 n 
-0000000056 00000 n 
-0000000111 00000 n 
-0000000213 00000 n 
-0000000337 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000248 00000 n 
+0000001450 00000 n 
+0000001517 00000 n 
 trailer
-<<
-/Size 6
-/Root 1 0 R
->>
+<< /Size 7 /Root 1 0 R >>
 startxref
-425
+1589
 %%EOF

@@ -73,7 +73,16 @@ export default function ICPWorksheetPage() {
                 {isSubmitting ? "Sending..." : "Download the 5-Min Worksheet"}
               </button>
             </form>
-            <div className="mt-6 pt-6 border-t border-zinc-100 text-center">
+            <div className="mt-6 pt-6 border-t border-zinc-100 flex flex-col gap-2 text-center">
+              <a
+                href="/ICP-Teardown-Worksheet.pdf"
+                download="ICP-Teardown-Worksheet.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-zinc-600 hover:text-zinc-900 font-semibold underline transition-colors"
+              >
+                Or download 1-Page PDF directly without waiting →
+              </a>
               <a
                 href="/audit"
                 className="text-xs text-teal-600 hover:text-teal-800 font-semibold underline transition-colors"

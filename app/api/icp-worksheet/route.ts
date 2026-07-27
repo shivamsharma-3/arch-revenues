@@ -6,10 +6,11 @@ const getResend = () => new Resend(process.env.RESEND_API_KEY || "dummy_key_for_
 export async function POST(req: Request) {
   try {
     const payload = await req.json();
-    const { yourName, email } = payload;
+    const name = payload.firstName || payload.yourName || payload.name || "Agency Founder";
+    const { email } = payload;
 
-    if (!yourName || !email) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+    if (!email) {
+      return NextResponse.json({ error: 'Missing required email field' }, { status: 400 });
     }
 
     if (!process.env.RESEND_API_KEY) {
@@ -32,7 +33,7 @@ export async function POST(req: Request) {
         to: email,
         subject: 'Your ICP Worksheet Received',
         html: `
-          <p>Hi ${yourName},</p>
+          <p>Hi ${name},</p>
           <p>Thanks for submitting your ICP worksheet.</p>
           <p>I'll be reviewing your details and will send over a 5-minute Loom teardown within 48 hours.</p>
           <p>Best,<br>Shivam Sharma</p>
@@ -41,10 +42,10 @@ export async function POST(req: Request) {
       resend.emails.send({
         from: 'ARCH Revenues <hello@archrevenues.com>',
         to: 'shivam@archrevenues.com',
-        subject: `New ICP Worksheet: ${yourName}`,
+        subject: `New ICP Worksheet: ${name}`,
         html: `
           <h2>New ICP Worksheet Submission</h2>
-          <p><strong>Name:</strong> ${yourName}</p>
+          <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <table style="border-collapse: collapse; width: 100%;">
             ${htmlPayload}

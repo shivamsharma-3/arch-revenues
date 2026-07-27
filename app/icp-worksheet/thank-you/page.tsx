@@ -18,9 +18,10 @@ export default function ICPThankYouPage() {
           
           <a
             href="/ICP-Teardown-Worksheet.pdf"
+            download="ICP-Teardown-Worksheet.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-zinc-900 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-zinc-800 transition-colors mb-16"
+            className="inline-block bg-zinc-900 text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-zinc-800 transition-colors mb-16 shadow-md"
           >
             Download PDF
           </a>
