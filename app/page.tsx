@@ -1,7 +1,6 @@
 "use client";
 import { Hero } from "@/components/Hero";
 import { SocialProof } from "@/components/SocialProof";
-import { Proof } from "@/components/Proof";
 import { Problem } from "@/components/Problem";
 import { Teardown } from "@/components/Teardown";
 import { HowItWorks } from "@/components/HowItWorks";
@@ -18,7 +17,6 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <SocialProof />
-        <Proof />
         <Problem />
         <Teardown />
         <HowItWorks />
