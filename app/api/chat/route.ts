@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 import Groq from "groq-sdk";
+import { GoogleGenAI } from "@google/genai";
 
-const getGroqClient = () => new Groq({ apiKey: process.env.GROQ_API_KEY || "" });
+const getGroqClient = () => {
+  const apiKey = process.env.GROQ_API_KEY?.replace(/^"|"$/g, "").trim() || "";
+  return apiKey ? new Groq({ apiKey }) : null;
+};
+
+const getGeminiClient = () => {
+  const apiKey = process.env.GEMINI_API_KEY?.replace(/^"|"$/g, "").trim() || "";
+  return apiKey ? new GoogleGenAI({ apiKey }) : null;
+};
 
 const SYSTEM_PROMPT = `You are the website chatbot for ARCH Revenues (archrevenues.com), a B2B outbound lead generation service run by Shivam Sharma. You speak directly to founder-led marketing and dev agencies. Your job is to qualify, answer honestly, and route to one of two actions.
 
@@ -29,20 +38,20 @@ CRITICAL: Do NOT use any Markdown formatting like bold (**), italics (*), or hea
 
 # FREE TOOLS ON THE SITE
 - AI Cold Email Generator (/tools/email-generator): visitors enter their own business description + a prospect's URL. The AI crawls the prospect's site and writes a personalised cold email FROM the visitor's perspective — not from ARCH. The visitor can copy-paste and send it themselves.
-- ICP Worksheet (/audit): 45-min self-serve form to define your ideal customer profile.
+- ICP Worksheet (/icp-worksheet): 45-min self-serve form to define your ideal customer profile.
 Both are free. No signup required. Found under the "Resources" dropdown in the nav.
 
 # ROUTING — every conversation ends with one of two CTAs
 1. Strategy call (high-intent): https://calendly.com/archrevenues/book-your-strategy-call
    - Use when: visitor asks about fit, pricing, wants to start, asks anything specific about their company.
-2. ICP Worksheet (low-commitment): https://www.archrevenues.com/audit
+2. ICP Worksheet (low-commitment): https://www.archrevenues.com/icp-worksheet
    - Use when: visitor is early-stage, not ready for a call, wants something free first.
 
 # KEY URLS
 - Home: https://www.archrevenues.com/
 - How it works: https://www.archrevenues.com/how-it-works
 - Pricing (Performance Pilot): https://www.archrevenues.com/pricing
-- ICP worksheet: https://www.archrevenues.com/audit
+- ICP worksheet: https://www.archrevenues.com/icp-worksheet
 - Free email generator: https://www.archrevenues.com/tools/email-generator
 - About: https://www.archrevenues.com/about
 - Strategy call: https://calendly.com/archrevenues/book-your-strategy-call
@@ -103,46 +112,104 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Invalid messages format" }, { status: 400 });
     }
 
-    const groqMessages: any[] = [
-      { role: "system", content: SYSTEM_PROMPT },
-      ...messages.map((m: any) => ({
-        role: m.role === "model" ? "assistant" : "user",
-        content: m.text,
-      })),
-    ];
-
-    const chatCompletion = await getGroqClient().chat.completions.create({
-      messages: groqMessages,
-      model: "llama-3.3-70b-versatile",
-      temperature: 0.4,
-      max_tokens: 500,
-      stream: true,
-    });
-
     const encoder = new TextEncoder();
-    const stream = new ReadableStream({
-      async start(controller) {
-        try {
-          for await (const chunk of chatCompletion) {
-            const content = chunk.choices[0]?.delta?.content || "";
-            if (content) {
-              controller.enqueue(encoder.encode(content));
-            }
-          }
-          controller.close();
-        } catch (error) {
-          controller.error(error);
-        }
-      },
-    });
 
-    return new Response(stream, {
-      headers: {
-        "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache",
-        Connection: "keep-alive",
-      },
-    });
+    // 1. Try Groq (qwen/qwen3.8-27b)
+    const groq = getGroqClient();
+    if (groq) {
+      try {
+        const groqMessages: any[] = [
+          { role: "system", content: SYSTEM_PROMPT },
+          ...messages.map((m: any) => ({
+            role: m.role === "model" ? "assistant" : "user",
+            content: m.text,
+          })),
+        ];
+
+        const chatCompletion = await groq.chat.completions.create({
+          messages: groqMessages,
+          model: "qwen/qwen3.8-27b",
+          temperature: 0.4,
+          max_tokens: 500,
+          stream: true,
+        });
+
+        const stream = new ReadableStream({
+          async start(controller) {
+            try {
+              for await (const chunk of chatCompletion) {
+                const content = chunk.choices[0]?.delta?.content || "";
+                if (content) {
+                  controller.enqueue(encoder.encode(content));
+                }
+              }
+              controller.close();
+            } catch (error) {
+              controller.error(error);
+            }
+          },
+        });
+
+        return new Response(stream, {
+          headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache",
+            Connection: "keep-alive",
+          },
+        });
+      } catch (groqError: any) {
+        console.warn("Groq streaming failed, falling back to Gemini:", groqError?.message || groqError);
+      }
+    }
+
+    // 2. Fallback to Gemini (gemini-2.5-flash)
+    const gemini = getGeminiClient();
+    if (gemini) {
+      let startIndex = 0;
+      while (startIndex < messages.length && messages[startIndex].role === "model") {
+        startIndex++;
+      }
+      const geminiContents = messages.slice(startIndex).map((m: any) => ({
+        role: m.role === "model" ? "model" : "user",
+        parts: [{ text: m.text }],
+      }));
+
+      const geminiStream = await gemini.models.generateContentStream({
+        model: "gemini-2.5-flash",
+        contents: geminiContents,
+        config: {
+          systemInstruction: SYSTEM_PROMPT,
+          temperature: 0.4,
+          maxOutputTokens: 500,
+        },
+      });
+
+      const stream = new ReadableStream({
+        async start(controller) {
+          try {
+            for await (const chunk of geminiStream) {
+              const text = chunk.text || "";
+              if (text) {
+                controller.enqueue(encoder.encode(text));
+              }
+            }
+            controller.close();
+          } catch (error) {
+            controller.error(error);
+          }
+        },
+      });
+
+      return new Response(stream, {
+        headers: {
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-cache",
+          Connection: "keep-alive",
+        },
+      });
+    }
+
+    throw new Error("No available AI provider configured (missing GROQ_API_KEY and GEMINI_API_KEY)");
   } catch (error: any) {
     console.error("Chat API Error:", error);
     return NextResponse.json(
