@@ -53,7 +53,7 @@ export function FAQ() {
     },
     {
       q: "What does it cost?",
-      a: "$499 setup (one-time) + $1,499/mo retainer. Founding rate for first 3 clients — moves to $4,000/mo after.",
+      a: "$499 setup (one-time) + $1,499/mo retainer. Founding rate for first 3 clients, then moves to $4,000/mo.",
     },
     {
       q: "Can I cancel?",

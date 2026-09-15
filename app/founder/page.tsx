@@ -15,13 +15,13 @@ export default function FounderPage() {
           
           <div className="bg-zinc-50 rounded-2xl p-8 md:p-12 text-zinc-900 text-lg leading-relaxed mb-12 space-y-6">
             <p>
-              I&apos;m Shivam Sharma. I&apos;ve spent 10+ years running B2B outbound — cold email, LinkedIn, and the unglamorous infrastructure underneath (SPF, DKIM, DMARC, inbox rotation, the works).
+              I&apos;m Shivam Sharma. I&apos;ve spent 10+ years running B2B outbound (cold email, LinkedIn, and the unglamorous infrastructure underneath that nobody talks about — SPF, DKIM, DMARC, inbox rotation, the works).
             </p>
             <p>
               I started ARCH Revenues because I watched too many agency founders try cold email themselves, fail, and conclude that cold email doesn&apos;t work. It does work. They were just missing the infrastructure layer that no Apollo tutorial talks about.
             </p>
             <p>
-              I work from Hyderabad, India. My clients are in the US, UK, and Australia. The geography is not a handicap — it is the reason I can charge $1,000/mo for a service that US-based agencies charge $3,500/mo to deliver, and still book calls with the same caliber of agency founder.
+              I work from Hyderabad, India. My clients are in the US, UK, and Australia. The geography isn&apos;t a handicap. It&apos;s why I can charge $1,000/mo for a service that US-based agencies charge $3,500/mo to deliver, and still book calls with the same caliber of agency founder.
             </p>
             <p>
               If you run a marketing or dev agency and you&apos;re tired of relying on referrals, book a strategy call. If I can&apos;t help, I&apos;ll tell you in the first 10 minutes.

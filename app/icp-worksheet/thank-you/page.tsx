@@ -31,7 +31,7 @@ export default function ICPThankYouPage() {
               Want us to review your ICP teardown?
             </h2>
             <p className="text-base text-zinc-600 leading-relaxed mb-8">
-              Book a 30-min fit call — we&apos;ll go through it together.
+              Book a 30-min fit call and we&apos;ll go through it together.
             </p>
             <Link
               href="/strategy-call"

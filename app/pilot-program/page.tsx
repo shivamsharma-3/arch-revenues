@@ -35,7 +35,7 @@ export default function PilotProgramPage() {
             <h2 className="text-2xl font-semibold text-zinc-900 mb-6">Why a Paid Performance Pilot?</h2>
             <div className="space-y-4 text-lg text-zinc-600 leading-relaxed">
               <p>
-                We&apos;re serious about building predictable outbound pipelines for founder-led agencies — whether you run a Webflow, branding, UI/UX, dev, or marketing studio. If you&apos;re tired of feast-or-famine project cycles and referrals you can&apos;t control, this is built for you.
+                We&apos;re serious about building predictable outbound pipelines for founder-led agencies, whether you run a Webflow, branding, UI/UX, dev, or marketing studio. If you&apos;re tired of feast-or-famine project cycles and referrals you can&apos;t control, this is built for you.
               </p>
               <p>
                 The Performance Pilot starts with a one-time $499 setup fee that covers your sending infrastructure (domains, DNS, Apollo, warmup). The $1,499/mo retainer only starts when the system is live and sending. See <Link href="/pricing" className="underline hover:text-zinc-900 transition-colors">Pricing</Link> for the full breakdown.
@@ -47,7 +47,7 @@ export default function PilotProgramPage() {
                 This program is a partnership. We provide the infrastructure, the data, and the execution. We align our success entirely with yours.
               </p>
               <p>
-                If it generates real qualified calls for your agency, great — we transition to a standard monthly engagement afterward.
+                If it generates real qualified calls for your agency, great. We then transition to a standard monthly engagement.
               </p>
               <p className="font-medium text-zinc-900 pt-4">
                 Sound fair? Apply for the pilot today.

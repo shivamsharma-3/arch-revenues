@@ -48,7 +48,7 @@ export default function StrategyCallPage() {
     },
     {
       q: "What do I need to bring?",
-      a: "Nothing. If you have your ICP or current outbound metrics, great — but I'll ask the questions."
+      a: "Nothing. If you have your ICP or current outbound metrics, great. I'll ask the questions."
     },
     {
       q: "What if I'm not ready to start this month?",
@@ -116,7 +116,7 @@ export default function StrategyCallPage() {
                     </li>
                     <li className="flex items-start gap-2 text-zinc-600">
                       <div className="w-1 h-1 rounded-full bg-zinc-400 mt-1.5 shrink-0" />
-                      <span className="text-xs">Specific outbound opportunities for your ICP — channels, sequence structure, and expected meeting volume</span>
+                      <span className="text-xs">Specific outbound opportunities for your ICP, including channels, sequence structure, and expected meeting volume</span>
                     </li>
                   </ul>
                 </div>

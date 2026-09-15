@@ -36,7 +36,7 @@ export async function POST(req: Request) {
         html: `
           <div style="font-family: sans-serif; font-size: 15px; color: #18181b; line-height: 1.6;">
             <p>Hey ${firstName},</p>
-            <p>Got your Quick ICP Check — thanks for sending it over.</p>
+            <p>Got your Quick ICP Check. Thanks for sending it over.</p>
             <p>Two things are coming your way:</p>
             <ol style="padding-left: 20px;">
               <li style="margin-bottom: 12px;">
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
               </li>
               <li style="margin-bottom: 12px;">
                 <strong>A 5-minute Loom from me, reviewing your short-form answers</strong><br>
-                I'll record this within the next 48 hours and email you the link. No sales pitch — just my honest take on what your answers tell me about your ICP, and where I'd start if I were running outbound for you.
+                 I'll record this within the next 48 hours and email you the link. No sales pitch, just my honest take on what your answers tell me about your ICP and where I'd start if I were running outbound for you.
               </li>
             </ol>
             <p style="margin-top: 20px;">While you wait (2 optional things):</p>
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
                 Want to see what a real cold email from me looks like? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488;">Try the AI Cold Email Generator</a> on one of your actual prospects. It's free.
               </li>
               <li style="margin-bottom: 8px;">
-                Curious about what the full done-for-you system costs? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a> — $499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back.
+                Curious about what the full done-for-you system costs? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a>. $499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back.
               </li>
             </ul>
             <p style="margin-top: 20px;">
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
               <a href="mailto:shivam@archrevenues.com" style="color: #0d9488;">shivam@archrevenues.com</a>
             </p>
             <p style="font-size: 12px; color: #71717a; margin-top: 28px; border-t: 1px solid #e4e4e7; padding-top: 12px;">
-              P.S. If this email lands in spam, mark it "not spam" — that helps my domain reputation, which is mildly ironic given what I do for a living.
+              P.S. If this email lands in spam, mark it "not spam". That helps my domain reputation, which is mildly ironic given what I do for a living.
             </p>
           </div>
         `,

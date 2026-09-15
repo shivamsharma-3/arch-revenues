@@ -9,8 +9,8 @@ export function Pricing() {
     "5-12 qualified demos booked per month (or you don't pay)",
     "Cold email + LinkedIn multi-channel sequence",
     "3 warmed sending domains + full infra setup",
-    "Weekly Monday report — opens, replies, meetings",
-    "Cancel anytime after first 30 days — no annual contract"
+    "Weekly Monday report covering opens, replies, and meetings",
+    "Cancel anytime after the first 30 days. No annual contract."
   ];
 
   const serviceSchema = {
@@ -35,7 +35,7 @@ export function Pricing() {
         <div className="bg-white border-2 border-zinc-900 rounded-2xl p-6 md:p-8 shadow-xl shadow-zinc-900/5">
           <div className="text-center mb-8">
             <div className="inline-block bg-zinc-50 text-zinc-900 text-xs font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-6 border border-zinc-200">
-              FOUNDING CLIENT RATE (PERFORMANCE PILOT) — JULY 2026 COHORT
+              FOUNDING CLIENT RATE (PERFORMANCE PILOT) · JULY 2026 COHORT
             </div>
             <div className="flex items-center justify-center gap-2 mb-2">
               <span className="text-6xl font-semibold text-zinc-900 leading-none">$1,499</span>

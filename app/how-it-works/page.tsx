@@ -11,9 +11,9 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Build a 200-account list of target clients matching your ICP — pulled from Apollo, cross-referenced with LinkedIn",
+            "Build a 200-account list of target clients matching your ICP, pulled from Apollo, cross-referenced with LinkedIn",
             "Each account manually verified against your revenue range, headcount, and industry criteria",
-            "Identify the named decision-maker for each account (CEO, Founder, Head of Growth, CMO — whoever owns the problem you solve)",
+            "Identify the named decision-maker for each account (CEO, Founder, Head of Growth, CMO, whoever owns the problem you solve)",
             "Verify each contact's email deliverability with a 4-step verification process (syntax → domain → mailbox → catch-all)",
             "Flag accounts showing trigger events (recent funding, leadership change, product launch) for prioritized outreach",
             "Tag each prospect with 2-3 personalization hooks from their LinkedIn profile (recent post, role change, company news)",
@@ -22,7 +22,7 @@ export default function HowItWorksPage() {
         {
           heading: "What you do:",
           bullets: [
-            "Approve the final list before any email goes out — you have veto power on every account",
+            "Approve the final list before any email goes out. You have veto power on every account",
             "Provide 1-2 example clients you'd like us to model the ICP on (optional but speeds things up)",
           ]
         },
@@ -43,13 +43,13 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Purchase 3 lookalike sending domains (e.g. youragency-mail.com, try-youragency.com, get-youragency.com) — never send from your main domain",
+            "Purchase 3 lookalike sending domains (e.g. youragency-mail.com, try-youragency.com, get-youragency.com). Never send from your main domain",
             "Set up Google Workspace inboxes for each sending domain (3 inboxes total)",
-            "Configure SPF, DKIM, and DMARC DNS records on each sending domain — the technical layer that prevents emails from landing in spam",
+            "Configure SPF, DKIM, and DMARC DNS records on each sending domain. This is the technical layer that prevents emails from landing in spam",
             "Connect Brevo (SMTP relay) for high-volume sending + Apollo for sequence orchestration",
-            "Start inbox warmup on all 3 inboxes — 2-3 weeks of gradual volume ramping before any cold email goes out",
+            "Start inbox warmup on all 3 inboxes. This runs for 2-3 weeks of gradual volume ramping before any cold email goes out",
             "Set up deliverability monitoring (Inbox Insights, Mail-Tester) so we catch any spam-folder placement within 24 hours",
-            "Configure reply routing — every reply lands in a shared inbox you have access to",
+            "Configure reply routing. Every reply lands in a shared inbox you have access to",
           ]
         },
         {
@@ -80,10 +80,10 @@ export default function HowItWorksPage() {
           bullets: [
             "Write a 7-touch email + LinkedIn sequence tailored to your ICP's specific pain points (not generic templates)",
             "Each email personalized with 2-3 prospect-specific data points (recent role change, company news, podcast appearance, etc.)",
-            "Send 30-50 emails per day per domain (90-150/day total across 3 domains) — the deliverability sweet spot based on Apollo's 2024 deliverability benchmark and Mail-Tester placement data",
+            "Send 30-50 emails per day per domain (90-150/day total across 3 domains). This is the deliverability sweet spot based on Apollo's 2024 deliverability benchmark and Mail-Tester placement data",
             "Industry benchmark for hyper-personalized founder-to-founder sequences is a 15–25% positive reply rate (Apollo 2024 outbound benchmark). Our system is engineered to hit this range; Cohort 1 actuals will be published transparently",
             "Layer in LinkedIn touches (connection request → voice note → engagement on their posts) between email touches",
-            "Monitor deliverability daily — if any domain's open rate drops below 40%, we pause sending and investigate",
+            "Monitor deliverability daily. If any domain's open rate drops below 40%, we pause sending and investigate",
             "A/B test subject lines on the first 200 emails to find your ICP's highest-reply variant",
             "Every reply logged in the shared inbox with timestamp, sentiment (positive/negative/neutral), and next-step recommendation",
           ]
@@ -91,12 +91,12 @@ export default function HowItWorksPage() {
         {
           heading: "Sequence structure (7 touches over 14 days):",
           bullets: [
-            "Day 1: Email #1 — pattern-interrupt opener",
+            "Day 1: Email #1 (pattern-interrupt opener)",
             "Day 3: LinkedIn connection request",
-            "Day 5: Email #2 — value-add follow-up",
+            "Day 5: Email #2 (value-add follow-up)",
             "Day 7: LinkedIn voice note",
-            "Day 9: Email #3 — case study / proof point",
-            "Day 12: Email #4 — soft breakup",
+            "Day 9: Email #3 (case study / proof point)",
+            "Day 12: Email #4 (soft breakup)",
             "Day 14: LinkedIn engagement on their recent post",
           ]
         },
@@ -118,7 +118,7 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Reply to every prospect within 4 business hours — positive, negative, and unsubscribe",
+            "Reply to every prospect within 4 business hours. We handle positive, negative, and unsubscribe replies.",
             "Qualify leads against your ICP criteria before they ever hit your calendar (no junk demos)",
             "Handle common objections (timing, budget, \"send me some info\") without losing the lead",
             "Route qualified prospects directly to your Calendly with a pre-meeting brief (their pain, their stack, why they said yes)",

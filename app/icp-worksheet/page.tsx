@@ -12,7 +12,7 @@ export default function ICPWorksheetPage() {
   const [website, setWebsite] = useState("");
   const [agencyService, setAgencyService] = useState("");
   const [targetClients, setTargetClients] = useState("");
-  const [pipelineProblem, setPipelineProblem] = useState("Referrals are inconsistent — feast or famine");
+  const [pipelineProblem, setPipelineProblem] = useState("Referrals are unpredictable, feast or famine");
   const [customProblem, setCustomProblem] = useState("");
   const [retainerValue, setRetainerValue] = useState("$2K–$5K");
 
@@ -63,7 +63,7 @@ export default function ICPWorksheetPage() {
               <div className="text-center mb-10">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-700 text-xs font-mono font-bold uppercase tracking-wider mb-6">
                   <FileText className="w-3.5 h-3.5 text-teal-600" />
-                  Quick ICP Check — 3 Min
+                  Quick ICP Check · 3 Min
                 </span>
                 <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-4">
                   Quick ICP Check
@@ -91,7 +91,7 @@ export default function ICPWorksheetPage() {
                   {/* Section 0: Contact info */}
                   <div>
                     <h3 className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider mb-4 pb-2 border-b border-zinc-100">
-                      Section 0 — Contact Info
+                      Contact Info
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
@@ -150,7 +150,7 @@ export default function ICPWorksheetPage() {
                   {/* Section 1: About your agency */}
                   <div>
                     <h3 className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider mb-4 pb-2 border-b border-zinc-100">
-                      Section 1 — About Your Agency
+                      About Your Agency
                     </h3>
                     <div className="space-y-4">
                       <div>
@@ -162,7 +162,7 @@ export default function ICPWorksheetPage() {
                           required
                           value={agencyService}
                           onChange={(e) => setAgencyService(e.target.value)}
-                          placeholder='1 line — e.g. "Webflow development & CRO for B2B SaaS"'
+                          placeholder='e.g. "Webflow development & CRO for B2B SaaS"'
                           className="w-full px-4 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
                         />
                       </div>
@@ -185,14 +185,14 @@ export default function ICPWorksheetPage() {
                   {/* Section 2: Where you're stuck */}
                   <div>
                     <h3 className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider mb-4 pb-2 border-b border-zinc-100">
-                      Section 2 — Where You&apos;re Stuck
+                      Where You&apos;re Stuck
                     </h3>
                     <label className="block text-xs font-semibold text-zinc-900 mb-3">
                       What&apos;s your biggest pipeline problem right now? <span className="text-teal-600">*</span>
                     </label>
                     <div className="space-y-2.5">
                       {[
-                        "Referrals are inconsistent — feast or famine",
+                        "Referrals are unpredictable, feast or famine",
                         "Tried cold email before, didn't work",
                         "No time to prospect while delivering",
                         "Don't really know who to target",
@@ -234,7 +234,7 @@ export default function ICPWorksheetPage() {
                   {/* Section 3: One optional number */}
                   <div>
                     <h3 className="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider mb-4 pb-2 border-b border-zinc-100">
-                      Section 3 — Project / Retainer Value
+                      Project / Retainer Value
                     </h3>
                     <label className="block text-xs font-semibold text-zinc-900 mb-1.5">
                       Average project/retainer value <span className="text-zinc-400 font-normal">(Optional)</span>

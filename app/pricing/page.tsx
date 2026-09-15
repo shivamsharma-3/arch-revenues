@@ -4,7 +4,7 @@ import { FAQ } from "@/components/FAQ";
 import { Check, Shield, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Performance Pilot — Pricing | ARCH Revenues",
+  title: "Performance Pilot Pricing | ARCH Revenues",
   description: "$499 setup + $1,499/mo. 5-12 qualified demos/mo guaranteed, or that month's retainer is refunded. 1-month commit. Founding rate for first 3 clients.",
 };
 
@@ -35,7 +35,7 @@ export default function PricingPage() {
       <section className="text-center px-6 py-12 md:py-20">
         <div className="inline-flex items-center gap-2 bg-teal-50 border border-teal-200 text-teal-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
           <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse inline-block" />
-          Founding Rate — Early Cohort Edition (July 2026)
+          Founding Rate, Early Cohort Edition (July 2026)
         </div>
         <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-zinc-900 mb-4">
           The Performance Pilot
@@ -58,7 +58,7 @@ export default function PricingPage() {
             <Clock className="w-6 h-6" />
           </div>
           <div>
-            <p className="font-semibold text-amber-900 text-sm">Founding rate — early cohort clients</p>
+            <p className="font-semibold text-amber-900 text-sm">Founding rate for early cohort clients</p>
             <p className="text-amber-800 text-sm mt-0.5 leading-relaxed">
               The $1,499/mo retainer is a founding rate locked for the initial cohort. From client #4 onwards, the retainer moves to $4,000/mo as capacity fills. Cohort 1 is live; Cohort 2 onboarding opens August 2026.
             </p>
@@ -90,7 +90,7 @@ export default function PricingPage() {
               </div>
             </div>
             <div className="text-sm bg-white border border-zinc-200 p-4 rounded-xl text-zinc-600">
-              <strong className="text-zinc-900">Target range:</strong> 5–7 demos in Month 1, scaling to 7–12 by Month 2. These are the benchmark targets the system is engineered around — actual results for Cohort 1 will be published as verified case studies once 8+ meetings are booked.
+              <strong className="text-zinc-900">Target range:</strong> 5–7 demos in Month 1, scaling to 7–12 by Month 2. These are the benchmark targets the system is engineered around. Actual results for Cohort 1 will be published as verified case studies once 8+ meetings are booked.
             </div>
           </div>
           

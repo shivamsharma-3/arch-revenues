@@ -24,7 +24,7 @@ export function PricingSummaryStrip() {
             $499 setup · $1,499/mo
           </h2>
           <p className="text-zinc-500 mt-2 text-lg">
-            5+ qualified demos/mo — guaranteed or your money back.
+            5+ qualified demos/mo. Guaranteed or your money back.
           </p>
         </div>
 

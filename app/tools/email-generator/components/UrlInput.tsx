@@ -43,7 +43,7 @@ export function UrlInput({ onSubmit, usageCount, error, hasEmail }: UrlInputProp
 
       <div>
         <label htmlFor="sender-business" className="block text-sm font-medium text-zinc-700 mb-2">
-          Your business <span className="text-zinc-400 font-normal">(1 line — what you sell, to whom)</span>
+          Your business <span className="text-zinc-400 font-normal">(1 line on what you sell and who you sell to)</span>
         </label>
         <input
           id="sender-business"

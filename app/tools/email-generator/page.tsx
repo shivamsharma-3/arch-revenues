@@ -135,7 +135,7 @@ export default function EmailGeneratorPage() {
             AI Cold Email Generator
           </h1>
           <p className="text-lg text-zinc-600 mb-6">
-            Tell us who you are, drop a prospect URL — we crawl their site, spot the gaps, and write a cold email you can actually send.
+            Tell us who you are, drop a prospect URL. We'll crawl their site, spot the gaps, and write a cold email you can actually send.
           </p>
           
           <div className="bg-amber-50/50 border border-amber-200/50 rounded-xl p-5 text-sm text-amber-900/90 leading-relaxed max-w-2xl mx-auto text-center">

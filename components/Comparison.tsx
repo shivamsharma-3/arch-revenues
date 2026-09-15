@@ -54,7 +54,7 @@ export function Comparison() {
               </li>
               <li className="flex gap-3">
                 <X className="w-6 h-6 text-red-500 shrink-0" />
-                <span className="text-zinc-600">High churn risk — if they leave, you start over</span>
+                <span className="text-zinc-600">High churn risk. If they leave, you start over</span>
               </li>
             </ul>
           </motion.div>
@@ -78,7 +78,7 @@ export function Comparison() {
               </li>
               <li className="flex gap-3">
                 <Check className="w-6 h-6 text-teal-400 shrink-0" />
-                <span className="text-zinc-300"><strong className="text-white">Live in 3 weeks</strong> — campaigns launching fast</span>
+                <span className="text-zinc-300"><strong className="text-white">Live in 3 weeks.</strong> Campaigns launching fast.</span>
               </li>
               <li className="flex gap-3">
                 <Check className="w-6 h-6 text-teal-400 shrink-0" />

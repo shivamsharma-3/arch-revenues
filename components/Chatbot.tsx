@@ -9,7 +9,7 @@ export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [messages, setMessages] = useState<{ role: "user" | "model"; text: string }[]>([
-    { role: "model", text: "Hey — I'm Shivam's AI assistant. I can answer questions about his outbound system, pricing, and whether we're a fit. What does your agency do?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
+    { role: "model", text: "Hey! I'm Shivam's AI assistant. I can answer questions about his outbound system, pricing, and whether we're a fit. What does your agency do?\n\n[OPTION] How does it work?\n[OPTION] Tell me about pricing\n[OPTION] Book a strategy call" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
