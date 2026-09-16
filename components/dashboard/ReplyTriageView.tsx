@@ -8,7 +8,6 @@ import {
   Send,
   User,
   Sparkles,
-  ShieldAlert,
   Edit3,
   Check,
   Building2,
@@ -64,10 +63,6 @@ export function ReplyTriageView({ replies, onUpdateReplyStatus }: ReplyTriageVie
       {/* Top Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-700 mb-1">
-            <ShieldAlert className="h-3.5 w-3.5 text-teal-600" />
-            Classifier Agent & Human-in-the-Loop Safety Gate
-          </span>
           <h2 className="text-2xl font-bold text-zinc-900">AI Reply Triage</h2>
           <p className="text-xs text-zinc-500 max-w-2xl">
             Incoming prospect emails are automatically classified by intent. High-stakes inquiries (pricing, alternative solutions) trigger a human safety gate with drafted replies ready for 1-click review.

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import {
-  TrendingUp,
   Mail,
   CheckCircle,
   Calendar,
@@ -18,10 +17,6 @@ export function AnalyticsView() {
       {/* Top Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-700 mb-1">
-            <TrendingUp className="h-3.5 w-3.5 text-teal-600" />
-            Executive Telemetry & Outbound Reporting
-          </span>
           <h2 className="text-2xl font-bold text-zinc-900">Campaign Analytics</h2>
           <p className="text-xs text-zinc-500">
             Real-time outbound performance, inbox health, and meeting conversion rates.

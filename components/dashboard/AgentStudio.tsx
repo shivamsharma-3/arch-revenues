@@ -10,7 +10,6 @@ import {
   AlertCircle,
   Copy,
   Check,
-  Zap,
   Target,
   Send,
   RefreshCw,
@@ -142,10 +141,6 @@ export function AgentStudio({ onAddProspect }: AgentStudioProps) {
       <div className="bg-white rounded-3xl border border-zinc-200/80 shadow-sm p-6 sm:p-8">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-zinc-100">
           <div>
-            <span className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-teal-50 text-teal-700 text-xs font-mono font-bold uppercase tracking-wider border border-teal-200/60 mb-3">
-              <Zap className="h-3.5 w-3.5 text-teal-600 animate-pulse" />
-              Groq LPU™ Engine • 20B & 120B Models
-            </span>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900">
               Live Prospector & Sequence Generator
             </h1>

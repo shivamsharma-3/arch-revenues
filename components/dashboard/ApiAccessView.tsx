@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Terminal, Copy, Check, ShieldCheck, Code2, Cpu, ExternalLink } from 'lucide-react';
+import { Copy, Check, ShieldCheck, Code2, Cpu, ExternalLink } from 'lucide-react';
 
 export function ApiAccessView() {
   const [copiedKey, setCopiedKey] = useState<string | null>(null);
@@ -58,10 +58,6 @@ print("Cold Email:\\n", data["sequence"]["email_1"])`;
   return (
     <div className="space-y-6">
       <div>
-        <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-teal-700 mb-1">
-          <Terminal className="h-3.5 w-3.5 text-teal-600" />
-          Programmatic & LLM Agent Access
-        </span>
         <h2 className="text-2xl font-bold text-zinc-900">API & AI Agent Integration</h2>
         <p className="text-xs text-zinc-500 max-w-2xl">
           Connect your Claude, Cursor, ChatGPT, or Python workflows directly to the ARCH SDR Agent using your founder passkey.

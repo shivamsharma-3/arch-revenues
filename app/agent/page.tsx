@@ -8,7 +8,6 @@ import {
   Inbox,
   BarChart3,
   Lock,
-  Zap,
   Terminal,
   ShieldCheck,
   Globe
@@ -133,16 +132,6 @@ export default function AgentPage() {
         {/* Top Header Section */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-zinc-200">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-zinc-100 text-zinc-700 text-xs font-mono font-bold uppercase tracking-wider border border-zinc-200">
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-900" />
-                Autonomous SDR Agent · Founder Console
-              </span>
-              <span className="inline-flex items-center gap-1 py-1 px-2.5 rounded-full bg-teal-50 text-teal-700 text-xs font-mono font-bold border border-teal-200">
-                <Zap className="w-3 h-3 text-teal-600 animate-pulse" />
-                Groq 20B/120B Connected
-              </span>
-            </div>
 
             <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-900">
               ARCH SDR Agent
