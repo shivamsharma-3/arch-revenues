@@ -14,10 +14,38 @@ function getGroqClient() {
 
 function cleanJson(text: string) {
   let cleaned = text.trim();
+
+  // Strip markdown code fences if present
   if (cleaned.startsWith('```')) {
-    cleaned = cleaned.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '');
+    cleaned = cleaned.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
   }
-  return JSON.parse(cleaned);
+
+  // Extract outer-most JSON object if there is leading/trailing text
+  const firstBrace = cleaned.indexOf('{');
+  const lastBrace = cleaned.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    cleaned = cleaned.substring(firstBrace, lastBrace + 1);
+  }
+
+  try {
+    return JSON.parse(cleaned);
+  } catch (initialErr) {
+    try {
+      // Replace literal unescaped newlines within string literals
+      const sanitized = cleaned.replace(/"(?:[^"\\]|\\.)*"/g, (match) => {
+        return match.replace(/\n/g, '\\n').replace(/\r/g, '').replace(/\t/g, '\\t');
+      });
+      return JSON.parse(sanitized);
+    } catch {
+      // Secondary fallback: sanitize raw control characters
+      const sanitized2 = cleaned.replace(/[\u0000-\u001F]+/g, (match) => {
+        if (match.includes('\n')) return '\\n';
+        if (match.includes('\t')) return '\\t';
+        return ' ';
+      });
+      return JSON.parse(sanitized2);
+    }
+  }
 }
 
 export async function GET() {
@@ -150,12 +178,13 @@ Extract the research data as instructed.`;
     try {
       const researchCompletion = await groq.chat.completions.create({
         model: researcherModel,
+        response_format: { type: 'json_object' },
         messages: [
           { role: 'system', content: researcherSystemPrompt },
           { role: 'user', content: researcherUserContent }
         ],
         temperature: 0.2,
-        max_tokens: 1200,
+        max_tokens: 2000,
       });
 
       const rawResearchText = researchCompletion.choices[0]?.message?.content || '{}';
@@ -164,11 +193,13 @@ Extract the research data as instructed.`;
       console.error('Researcher agent fallback to 120b:', rErr);
       const fallbackCompletion = await groq.chat.completions.create({
         model: 'openai/gpt-oss-120b',
+        response_format: { type: 'json_object' },
         messages: [
           { role: 'system', content: researcherSystemPrompt },
           { role: 'user', content: researcherUserContent }
         ],
         temperature: 0.2,
+        max_tokens: 2000,
       });
       research = cleanJson(fallbackCompletion.choices[0]?.message?.content || '{}');
     }
@@ -218,12 +249,13 @@ Write the 5-part outreach sequence as instructed in valid JSON only.`;
 
     const writerCompletion = await groq.chat.completions.create({
       model: writerModel,
+      response_format: { type: 'json_object' },
       messages: [
         { role: 'system', content: writerSystemPrompt },
         { role: 'user', content: writerUserContent }
       ],
       temperature: 0.4,
-      max_tokens: 1500,
+      max_tokens: 2500,
     });
 
     const rawWriterText = writerCompletion.choices[0]?.message?.content || '{}';

@@ -39,9 +39,18 @@ def load_prompt(name: str) -> str:
 def _extract_json(text: str) -> dict:
     text = text.strip()
     if text.startswith("```"):
-        text = re.sub(r"^```(json)?", "", text).strip()
-        text = re.sub(r"```$", "", text).strip()
-    return json.loads(text)
+        text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE).strip()
+        text = re.sub(r"\s*```$", "", text).strip()
+    first_brace = text.find("{")
+    last_brace = text.rfind("}")
+    if first_brace != -1 and last_brace != -1 and last_brace > first_brace:
+        text = text[first_brace:last_brace + 1]
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        # Sanitize literal unescaped newlines inside strings
+        sanitized = re.sub(r'("(?:[^"\\]|\\.)*")', lambda m: m.group(1).replace("\n", "\\n").replace("\r", ""), text)
+        return json.loads(sanitized)
 
 
 def _use_groq() -> bool:
@@ -54,6 +63,7 @@ def _call_groq(system_prompt: str, user_content: str, model: str, max_tokens: in
     client = Groq(api_key=settings.groq_api_key)
     response = client.chat.completions.create(
         model=groq_model,
+        response_format={"type": "json_object"},
         max_tokens=max_tokens,
         messages=[
             {"role": "system", "content": system_prompt},
