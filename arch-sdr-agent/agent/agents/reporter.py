@@ -14,21 +14,21 @@ from agent.tools.llm import load_prompt
 
 class ReporterAgent:
     def __init__(self):
-        settings.require("anthropic_api_key")
-        self.client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        from agent.tools.llm import _use_groq
+        if not _use_groq():
+            settings.require("anthropic_api_key")
+            self.client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        else:
+            self.client = None
         self.system_prompt = load_prompt("reporter_system.txt")
         self.model = settings.model_cheap
 
     def write_report(self, metrics: dict) -> str:
-        response = self.client.messages.create(
-            model=self.model,
-            max_tokens=800,
-            system=self.system_prompt,
-            messages=[{"role": "user", "content": json.dumps(metrics, indent=2)}],
-        )
-        return "".join(
-            block.text for block in response.content if getattr(block, "type", None) == "text"
-        ).strip()
+        from agent.tools.llm import _use_groq, _call_groq, _call_anthropic
+        content = json.dumps(metrics, indent=2)
+        if _use_groq():
+            return _call_groq(self.system_prompt, content, self.model, 800)
+        return _call_anthropic(self.system_prompt, content, self.model, 800)
 
 
 if __name__ == "__main__":

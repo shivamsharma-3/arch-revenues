@@ -37,7 +37,7 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
         </motion.div>
       </AnimatePresence>
       {!isAuditPage && <Footer />}
-      <Chatbot />
+      {!isAuditPage && <Chatbot />}
     </>
   );
 }

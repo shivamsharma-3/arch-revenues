@@ -26,6 +26,9 @@ from agent.tools.llm import LLMError
 
 
 def main():
+    if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     if len(sys.argv) < 2:
         print("Usage: python demo_cli.py <prospect_url> [value_prop]")
         sys.exit(1)
@@ -33,8 +36,8 @@ def main():
     url = sys.argv[1]
     value_prop = sys.argv[2] if len(sys.argv) > 2 else "We build AI SDR agents for agencies"
 
-    if not settings.anthropic_api_key:
-        print("ERROR: ANTHROPIC_API_KEY is not set. Run:\n  export ANTHROPIC_API_KEY=sk-ant-...")
+    if not settings.anthropic_api_key and not settings.groq_api_key:
+        print("ERROR: No API key set. Run one of:\n  export ANTHROPIC_API_KEY=sk-ant-...\n  export GROQ_API_KEY=gsk_...")
         sys.exit(1)
 
     print(f"\n1/2  Researching {url} ...")
@@ -74,7 +77,7 @@ def main():
     print("\n--- FOLLOW-UP (Day 14) ---")
     print(sequence["followup_day14"])
 
-    with open("demo_output.json", "w") as f:
+    with open("demo_output.json", "w", encoding="utf-8") as f:
         json.dump({"research": research, "sequence": sequence}, f, indent=2)
     print("\nSaved full output to demo_output.json")
 

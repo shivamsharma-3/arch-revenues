@@ -6,7 +6,13 @@ import os
 from dataclasses import dataclass
 
 try:
+    from pathlib import Path
     from dotenv import load_dotenv
+    # Look for .env and .env.local in this package and root workspace
+    current = Path(__file__).resolve().parent.parent
+    for candidate in [current / ".env", current / ".env.local", current.parent / ".env.local", current.parent / ".env"]:
+        if candidate.exists():
+            load_dotenv(candidate, override=False)
     load_dotenv()
 except ImportError:
     # python-dotenv is optional; if it's not installed we just rely on
@@ -17,6 +23,8 @@ except ImportError:
 @dataclass
 class Settings:
     anthropic_api_key: str = os.getenv("ANTHROPIC_API_KEY", "")
+    groq_api_key: str = os.getenv("GROQ_API_KEY", "")
+    groq_model: str = os.getenv("GROQ_MODEL", "")
 
     database_url: str = os.getenv("DATABASE_URL", "")
 

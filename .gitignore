@@ -5,3 +5,7 @@ coverage/
 *.log
 .env*
 !.env.example
+__pycache__/
+*.pyc
+demo_output.json
+tsconfig.tsbuildinfo

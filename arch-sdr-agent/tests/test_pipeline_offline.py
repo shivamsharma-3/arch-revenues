@@ -18,7 +18,8 @@ import types
 from unittest.mock import MagicMock, patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-os.environ.setdefault("ANTHROPIC_API_KEY", "sk-ant-fake-for-tests")
+os.environ["ANTHROPIC_API_KEY"] = "sk-ant-fake-for-tests"
+os.environ["GROQ_API_KEY"] = ""
 
 FAKE_HTML = """
 <html><head><title>Acme Roofing Co</title></head>

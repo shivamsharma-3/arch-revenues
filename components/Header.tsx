@@ -8,6 +8,11 @@ import { usePathname } from "next/navigation";
 
 const resources = [
   {
+    name: "ARCH SDR Agent",
+    href: "/agent",
+    description: "Autonomous B2B outbound research & 5-step sequence generator",
+  },
+  {
     name: "Outbound Resources & Playbooks",
     href: "/resources",
     description: "Technical email blueprints, guides & sequence architectures",
