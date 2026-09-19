@@ -131,7 +131,7 @@ export default function SamplePipelinePage() {
                           required
                           value={name}
                           onChange={(e) => setName(e.target.value)}
-                          placeholder="Shivam Sharma"
+                          placeholder="Your name"
                           className="w-full px-4 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
                         />
                       </div>
@@ -144,7 +144,7 @@ export default function SamplePipelinePage() {
                           required
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="shivam@agency.com"
+                          placeholder="you@youragency.com"
                           className="w-full px-4 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
                         />
                       </div>
@@ -157,7 +157,7 @@ export default function SamplePipelinePage() {
                           required
                           value={companyName}
                           onChange={(e) => setCompanyName(e.target.value)}
-                          placeholder="Nexus Growth Studio"
+                          placeholder="Your agency name"
                           className="w-full px-4 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
                         />
                       </div>
@@ -170,7 +170,7 @@ export default function SamplePipelinePage() {
                           required
                           value={website}
                           onChange={(e) => setWebsite(e.target.value)}
-                          placeholder="https://nexusgrowth.com"
+                          placeholder="https://youragency.com"
                           className="w-full px-4 py-2.5 border border-zinc-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-zinc-900 transition-all"
                         />
                         <p className="text-[10px] text-zinc-400 mt-1">
