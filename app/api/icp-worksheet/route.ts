@@ -27,30 +27,75 @@ export async function POST(req: Request) {
       .join('');
 
     const company = payload.companyName ? payload.companyName.trim() : 'your agency';
-    const emailSubject = `5 target accounts for ${company}`;
+    const emailSubject = `Your 5 Target Accounts & Custom Outbound Pitch (Incoming)`;
 
     const textBody = `Hey ${firstName},
 
-Got your submission—thanks for sharing your details and case study.
+Got your request! Thanks for sharing your agency details and case study.
 
-I'm personally reviewing ${payload.website || 'your website'} now. Within the next 48 hours, I'll email you:
+I'm personally reviewing your agency website and niche. Within the next 48 hours, I will send you:
 
-1. 5 verified, exact-match target accounts screened for active buying signals.
-2. Key decision-maker titles to contact (Founder, CEO, VP Growth).
-3. 1 custom cold outreach draft tailored around your client win.
+1. 5 Verified, Exact-Match Target Accounts
+Hand-picked companies in your vertical that match your sweet spot and deal size, screened for active buying signals.
 
-Quick question while I put this together: what's been your primary channel for client acquisition so far—mostly word of mouth / referrals, or have you already experimented with cold outbound?
+2. Key Decision-Maker Titles
+The exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
 
-Talk soon,
-Shivam
+3. 1 Custom Pattern-Interrupt Cold Email
+A tailored outreach script using your real client win as the proof hook.
 
---
+No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
+
+While you wait (2 quick options):
+- Test our AI Cold Email Generator on any target URL: https://www.archrevenues.com/tools/email-generator
+- Book a 30-min strategy call to review your pipeline together: https://www.archrevenues.com/strategy-call
+
+Talk within 48 hours,
+
 Shivam Sharma
 Founder, ARCH Revenues
 shivam@archrevenues.com
 `;
 
-    const htmlBody = `<div dir="ltr">Hey ${firstName},<br><br>Got your submission—thanks for sharing your agency details and case study.<br><br>I'm personally reviewing your website now. Within the next 48 hours, I'll email you:<br><br>1. 5 verified, exact-match target accounts screened for active buying signals.<br>2. Key decision-maker titles to contact (Founder, CEO, VP Growth).<br>3. 1 custom cold outreach draft tailored around your client win.<br><br>Quick question while I put this together: what's been your primary channel for client acquisition so far—mostly word of mouth / referrals, or have you already experimented with cold outbound?<br><br>Talk soon,<br>Shivam<br><br>--<br>Shivam Sharma<br>Founder, ARCH Revenues<br>shivam@archrevenues.com</div>`;
+    const htmlBody = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #18181b; line-height: 1.6; max-width: 600px;">
+        <p>Hey ${firstName},</p>
+        <p>Got your request! Thanks for sharing your agency details and case study.</p>
+        <p>I'm personally reviewing your agency website and niche. Within the next <strong>48 hours</strong>, I will send you:</p>
+        <ol style="padding-left: 20px; margin: 16px 0;">
+          <li style="margin-bottom: 12px;">
+            <strong>5 Verified, Exact-Match Target Accounts</strong><br>
+            Hand-picked companies in your vertical that match your sweet spot and deal size, screened for active buying signals.
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>Key Decision-Maker Titles</strong><br>
+            The exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong>1 Custom Pattern-Interrupt Cold Email</strong><br>
+            A tailored outreach script using your real client win as the proof hook.
+          </li>
+        </ol>
+        <p style="margin-top: 20px;">
+          No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
+        </p>
+        <p style="margin-top: 20px;">While you wait (2 quick options):</p>
+        <ul style="padding-left: 20px; margin: 12px 0;">
+          <li style="margin-bottom: 8px;">
+            Want to test personalized cold email copy right now? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488; text-decoration: underline;">Try our AI Cold Email Generator</a> on any target URL.
+          </li>
+          <li style="margin-bottom: 8px;">
+            If you'd rather jump straight on a call and look at your pipeline together, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; text-decoration: underline;">book a 30-min strategy call here</a>.
+          </li>
+        </ul>
+        <p style="margin-top: 24px;">
+          Talk within 48 hours,<br><br>
+          <strong>Shivam Sharma</strong><br>
+          Founder, ARCH Revenues<br>
+          <a href="mailto:shivam@archrevenues.com" style="color: #0d9488; text-decoration: none;">shivam@archrevenues.com</a>
+        </p>
+      </div>
+    `;
 
     // Send emails in parallel
     const [userEmail, founderEmail] = await Promise.all([
