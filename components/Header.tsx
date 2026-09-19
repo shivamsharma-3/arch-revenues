@@ -23,9 +23,9 @@ const resources = [
     description: "AI writes personalized outbound email copy instantly",
   },
   {
-    name: "Quick ICP Check (3 min)",
+    name: "Agency ICP Teardown",
     href: "/icp-worksheet",
-    description: "Get the full 45-min ICP worksheet + a 5-min Loom review",
+    description: "5-min custom video review + 4-page agency playbook",
   },
 ];
 

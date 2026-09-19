@@ -33,12 +33,12 @@ const resources: ResourceItem[] = [
   {
     id: "icp-worksheet",
     category: "tools",
-    tag: "3-Min Quick Check",
-    title: "Quick ICP Check & Loom Review",
+    tag: "Diagnostic & Playbook",
+    title: "Agency ICP Teardown & Playbook",
     description:
-      "A 3-minute, 6-question check for agency founders. Get the full 45-minute ICP Teardown Worksheet + a 5-minute personal Loom review within 48 hours.",
+      "A 3-minute diagnostic for a custom 5-minute Loom video review from Shivam, plus our complete 4-page agency targeting playbook with real examples.",
     readTime: "3 min check",
-    status: "Start Quick Check",
+    status: "Get Teardown",
     href: "/icp-worksheet",
   },
   {

@@ -32,34 +32,34 @@ export async function POST(req: Request) {
         from: 'Shivam Sharma <shivam@archrevenues.com>',
         to: email,
         replyTo: 'shivam@archrevenues.com',
-        subject: 'Your full ICP worksheet + my 5-min review (incoming)',
+        subject: 'Your ICP Diagnostic & 5-Min Loom Review (Incoming)',
         html: `
           <div style="font-family: sans-serif; font-size: 15px; color: #18181b; line-height: 1.6;">
             <p>Hey ${firstName},</p>
-            <p>Got your Quick ICP Check. Thanks for sending it over.</p>
-            <p>Two things are coming your way:</p>
+            <p>Got your Quick ICP Check. Thanks for sending your agency details over.</p>
+            <p>Here is what happens next:</p>
             <ol style="padding-left: 20px;">
               <li style="margin-bottom: 12px;">
-                <strong>The full 45-minute ICP Teardown Worksheet</strong><br>
-                This is the deep version. Same structure, but with 30+ fields covering firmographics, pain points, trigger events, behavioral signals, disqualifiers, and your top 5 dream accounts.<br>
-                👉 <a href="https://www.archrevenues.com/ICP-Teardown-Worksheet.pdf" target="_blank" style="color: #0d9488; font-weight: bold;">Download the Full PDF Worksheet</a>
+                <strong>I'm recording your 5-minute Loom video teardown</strong><br>
+                I'll personally review your answers within the next 48 hours and email you the link. No sales deck, just my candid take on whether your niche is narrow enough for cold outbound, what buying triggers to track, and where I would focus your pipeline.
               </li>
               <li style="margin-bottom: 12px;">
-                <strong>A 5-minute Loom from me, reviewing your short-form answers</strong><br>
-                 I'll record this within the next 48 hours and email you the link. No sales pitch, just my honest take on what your answers tell me about your ICP and where I'd start if I were running outbound for you.
+                <strong>Our 4-Page Agency ICP Playbook (for reference)</strong><br>
+                In the meantime, you can review our internal framework—complete with an annotated agency example and the 8-point outbound matrix:<br>
+                👉 <a href="https://www.archrevenues.com/ICP-Teardown-Worksheet.pdf" target="_blank" style="color: #0d9488; font-weight: bold;">Download the Agency ICP Playbook (PDF)</a>
               </li>
             </ol>
-            <p style="margin-top: 20px;">While you wait (2 optional things):</p>
+            <p style="margin-top: 20px;">While you wait (2 quick things):</p>
             <ul style="padding-left: 20px;">
               <li style="margin-bottom: 8px;">
-                Want to see what a real cold email from me looks like? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488;">Try the AI Cold Email Generator</a> on one of your actual prospects. It's free.
+                Want to see what a personalized cold email from me looks like? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488;">Try the AI Cold Email Generator</a> on one of your target accounts. It's free.
               </li>
               <li style="margin-bottom: 8px;">
-                Curious about what the full done-for-you system costs? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a>. $499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back.
+                Curious about what the full done-for-you outbound system costs? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a>. $499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back.
               </li>
             </ul>
             <p style="margin-top: 20px;">
-              If you'd rather just jump on a call instead of doing the worksheet dance, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; font-weight: bold;">book a 30-min strategy call here</a>. No deck, no pressure.
+              If you'd rather jump straight on a live call, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; font-weight: bold;">book a 30-min strategy call here</a>. No deck, no pressure.
             </p>
             <p style="margin-top: 24px;">
               Talk within 48 hours,<br><br>

@@ -139,13 +139,13 @@ export default function StrategyCallPage() {
                 <div className="mt-10 pt-6 border-t border-zinc-100 w-full">
                   <h3 className="text-base font-semibold text-zinc-900 mb-2">Not ready for a call yet?</h3>
                   <p className="text-xs text-zinc-600 mb-4">
-                    Get the ICP Teardown Worksheet and a 5-min Loom review from Shivam within 48 hours.
+                    Get a 5-min custom video review from Shivam or download the 4-page agency playbook.
                   </p>
                   <Link 
-                    href="/audit" 
+                    href="/icp-worksheet" 
                     className="inline-flex items-center justify-center px-5 py-2 rounded-lg font-medium bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors text-xs"
                   >
-                    Fill out the ICP worksheet →
+                    Get the ICP Teardown →
                   </Link>
                 </div>
               </div>

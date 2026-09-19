@@ -63,26 +63,61 @@ export default function ICPWorksheetPage() {
               <div className="text-center mb-10">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 text-zinc-700 text-xs font-mono font-bold uppercase tracking-wider mb-6">
                   <FileText className="w-3.5 h-3.5 text-teal-600" />
-                  Quick ICP Check · 3 Min
+                  Agency ICP Teardown
                 </span>
                 <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 mb-4">
-                  Quick ICP Check
+                  The Agency ICP Teardown
                 </h1>
-                <p className="text-xl text-zinc-600 font-medium mb-6">
-                  3 minutes. 6 questions. Zero fluff.
+                <p className="text-xl text-zinc-600 font-medium mb-8 max-w-xl mx-auto">
+                  Is your targeting tight enough to book qualified demos through cold outbound?
                 </p>
-                <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 text-left text-sm text-zinc-600 leading-relaxed max-w-2xl mx-auto space-y-3">
-                  <p className="font-semibold text-zinc-900">
-                    Tell me a bit about your agency. Within 48 hours, I&apos;ll send you:
-                  </p>
-                  <ul className="space-y-2 pl-4 list-disc marker:text-teal-600">
-                    <li><strong className="text-zinc-900">The full 45-minute ICP Teardown Worksheet</strong> (the deep version)</li>
-                    <li><strong className="text-zinc-900">A 5-minute Loom</strong> reviewing your answers specifically</li>
-                  </ul>
-                  <p className="text-xs text-zinc-500 pt-2 border-t border-zinc-200/80">
-                    No sales pitch in the Loom. If your answers tell me you&apos;re not a fit for outbound, I&apos;ll say so and point you somewhere better.
-                  </p>
+
+                {/* Path Selector / Instant PDF option */}
+                <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-left mb-4">
+                  <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-zinc-500 mb-2">
+                        <span>Option 1 · Self-Serve</span>
+                      </div>
+                      <h3 className="font-semibold text-zinc-900 text-sm mb-1">
+                        Download Internal Playbook
+                      </h3>
+                      <p className="text-xs text-zinc-600 leading-relaxed mb-4">
+                        Get our complete 4-page framework with an annotated agency example, 8-point matrix, and disqualifier checklist.
+                      </p>
+                    </div>
+                    <a
+                      href="/ICP-Teardown-Worksheet.pdf"
+                      target="_blank"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white border border-zinc-300 rounded-xl text-xs font-bold text-zinc-900 hover:border-zinc-900 hover:bg-zinc-100 transition-all group"
+                    >
+                      <span>Download 4-Page PDF</span>
+                      <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-zinc-900 group-hover:translate-x-0.5 transition-all" />
+                    </a>
+                  </div>
+
+                  <div className="bg-teal-50/70 border border-teal-200/80 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-teal-700 mb-2">
+                        <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+                        <span>Option 2 · Expert Review</span>
+                      </div>
+                      <h3 className="font-semibold text-zinc-900 text-sm mb-1">
+                        Get Shivam&apos;s 5-Min Loom Teardown
+                      </h3>
+                      <p className="text-xs text-zinc-600 leading-relaxed mb-4">
+                        Answer 6 quick questions below. I&apos;ll record a candid 5-minute video analyzing your positioning within 48h.
+                      </p>
+                    </div>
+                    <div className="text-xs font-semibold text-teal-700 flex items-center gap-1.5">
+                      <span>Fill 3-Min Form Below</span> ↓
+                    </div>
+                  </div>
                 </div>
+
+                <p className="text-xs text-zinc-400 mt-3">
+                  No sales pitch in the Loom. If your agency isn&apos;t a fit for outbound, I&apos;ll tell you straight up.
+                </p>
               </div>
 
               {/* Form Container */}
@@ -257,13 +292,13 @@ export default function ICPWorksheetPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold text-base py-4 rounded-xl hover:from-teal-400 hover:to-teal-500 transition-all shadow-lg hover:shadow-teal-500/20 disabled:opacity-60 flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold text-base py-4 rounded-xl hover:from-teal-400 hover:to-teal-500 transition-all shadow-lg hover:shadow-teal-500/20 disabled:opacity-60 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {isSubmitting ? (
                       "Submitting..."
                     ) : (
                       <>
-                        Get the full ICP worksheet + 5-min Loom <ArrowRight className="w-4 h-4" />
+                        Get My 5-Minute Video Teardown <ArrowRight className="w-4 h-4" />
                       </>
                     )}
                   </button>
@@ -271,7 +306,7 @@ export default function ICPWorksheetPage() {
                   <div className="flex items-center justify-center gap-2 text-center text-xs text-zinc-500 pt-2">
                     <ShieldCheck className="w-4 h-4 text-teal-600 shrink-0" />
                     <span>
-                      Your information is secure. Submitting sends your answers directly to shivam@archrevenues.com.
+                      Your answers are sent directly to shivam@archrevenues.com for personal review.
                     </span>
                   </div>
                 </form>
@@ -289,15 +324,24 @@ export default function ICPWorksheetPage() {
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                Got it. Check your inbox in 48 hours.
+                Diagnostic Received!
               </h1>
-              <p className="text-lg text-zinc-600 max-w-xl mx-auto leading-relaxed mb-8">
-                I&apos;ll review your answers personally and send over your 5-minute Loom teardown along with the full 45-minute worksheet.
+              <p className="text-lg text-zinc-600 max-w-xl mx-auto leading-relaxed mb-4">
+                Shivam is personally reviewing your answers. Look for your 5-minute video teardown in your inbox within 48 hours.
               </p>
+
+              <div className="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 text-left text-sm text-zinc-600 leading-relaxed max-w-xl mx-auto mb-8 space-y-2">
+                <p className="font-semibold text-zinc-900">What Shivam will break down in your video:</p>
+                <ul className="space-y-1.5 pl-4 list-disc marker:text-teal-600 text-xs text-zinc-600">
+                  <li><strong>Niche sharpness:</strong> Is your vertical narrow enough to convert cold prospects?</li>
+                  <li><strong>Trigger events:</strong> What real-time buying signals you should track to open inboxes.</li>
+                  <li><strong>Offer angle &amp; unit economics:</strong> The exact hook and risk reversal to lead with.</li>
+                </ul>
+              </div>
 
               <div className="bg-zinc-50 border border-zinc-200 rounded-3xl p-8 max-w-xl mx-auto text-left space-y-4 mb-10">
                 <h3 className="text-sm font-bold text-zinc-900 uppercase tracking-wider font-mono">
-                  While you wait, you can:
+                  While you wait, explore:
                 </h3>
                 <div className="space-y-3">
                   <Link
@@ -305,22 +349,31 @@ export default function ICPWorksheetPage() {
                     target="_blank"
                     className="flex items-center justify-between p-3.5 bg-white border border-zinc-200 rounded-xl hover:border-teal-500 hover:text-teal-600 transition-all group"
                   >
-                    <span className="text-sm font-semibold">Download Full ICP Worksheet (PDF) instantly</span>
-                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all" />
+                    <div>
+                      <span className="text-sm font-semibold block text-zinc-900 group-hover:text-teal-600">Download 4-Page ICP Playbook (PDF)</span>
+                      <span className="text-xs text-zinc-500">Reference our internal framework &amp; annotated agency examples</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all shrink-0" />
                   </Link>
                   <Link
                     href="/tools/email-generator"
                     className="flex items-center justify-between p-3.5 bg-white border border-zinc-200 rounded-xl hover:border-teal-500 hover:text-teal-600 transition-all group"
                   >
-                    <span className="text-sm font-semibold">Try the AI Cold Email Generator</span>
-                    <Sparkles className="w-4 h-4 text-teal-500" />
+                    <div>
+                      <span className="text-sm font-semibold block text-zinc-900 group-hover:text-teal-600">Try the AI Cold Email Generator</span>
+                      <span className="text-xs text-zinc-500">Generate personalized cold emails for your target accounts</span>
+                    </div>
+                    <Sparkles className="w-4 h-4 text-teal-500 shrink-0" />
                   </Link>
                   <Link
                     href="/resources/5-touch-sequence"
                     className="flex items-center justify-between p-3.5 bg-white border border-zinc-200 rounded-xl hover:border-teal-500 hover:text-teal-600 transition-all group"
                   >
-                    <span className="text-sm font-semibold">Read our 5-Touch Dynamic Sequence Architecture</span>
-                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all" />
+                    <div>
+                      <span className="text-sm font-semibold block text-zinc-900 group-hover:text-teal-600">5-Touch Dynamic Sequence Architecture</span>
+                      <span className="text-xs text-zinc-500">The multi-touch outbound playbook we deploy for clients</span>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all shrink-0" />
                   </Link>
                 </div>
               </div>

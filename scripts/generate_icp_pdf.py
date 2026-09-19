@@ -178,12 +178,12 @@ def create_pdf(output_path: str):
     # Title & Badge block
     title_table_data = [
         [
-            Paragraph("<b>THE ICP TEARDOWN WORKSHEET</b>", h1_style),
+            Paragraph("<b>THE AGENCY ICP PLAYBOOK</b>", h1_style),
             Paragraph("<b>EXECUTIVE 1-PAGE BLUEPRINT</b>", badge_style)
         ],
         [
             Paragraph("The Outbound Targeting & Positioning Architecture for Founder-Led B2B Agencies", sub_style),
-            Paragraph("Takes ~45 min | Complete & Hand off to SDR/Team", field_hint_style)
+            Paragraph("Internal Playbook & Working Template | ARCH Revenues", field_hint_style)
         ]
     ]
     t_title = Table(title_table_data, colWidths=[380, 160])
@@ -314,7 +314,7 @@ def create_pdf(output_path: str):
     # Page 1 footer note
     p1_note = Table([[
         Paragraph(
-            "<b>Need help dialing this in?</b> Submit your answers at <b>archrevenues.com/icp-worksheet</b> for a complimentary 5-minute video teardown from Shivam Sharma. See Pages 2-4 for the full 45-minute deep dive exercise.",
+            "<b>Want expert eyes on your positioning?</b> Submit your diagnostic at <b>archrevenues.com/icp-worksheet</b> to get a candid 5-minute video teardown from Shivam within 48 hours. See Pages 2-4 for the complete targeting criteria and real agency examples.",
             field_hint_style
         )
     ]], colWidths=[540])
