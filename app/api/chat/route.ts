@@ -50,7 +50,7 @@ Use clean, readable Markdown (such as bolding key terms/numbers and using bullet
 
 # FREE TOOLS & RESOURCES ON THE SITE
 - AI Cold Email Generator (/tools/email-generator): Visitors enter their business description and a prospect's website URL. The tool crawls the site and drafts a humanized, personalized cold outreach email without generic AI fluff.
-- ICP Worksheet (/icp-worksheet): 45-min self-serve questionnaire to pinpoint your ideal buyer profile.
+- Free 5-Account Sample Pipeline (/icp-worksheet): Visitors submit their agency details and case study; Shivam hand-picks 5 verified target accounts in their niche + drafts a custom cold outreach pitch within 48 hours.
 - Technical Email Infrastructure Blueprint (/resources/technical-email-infrastructure): Step-by-step DNS setup (SPF, DKIM, DMARC, CTD) and 14-day inbox warmup architecture.
 - 5-Touch Dynamic Outbound Sequence (/resources/5-touch-sequence): Battle-tested 14-day multi-channel sequence (Email + LinkedIn) with response-adaptive branching.
 All tools and guides are 100% free with no sign-up required (under "Resources" in the navigation).
@@ -58,8 +58,8 @@ All tools and guides are 100% free with no sign-up required (under "Resources" i
 # ROUTING — every conversation naturally connects to:
 1. Strategy Call (high intent / ready to scale): https://calendly.com/archrevenues/book-your-strategy-call
    - Use when: visitor asks about fit, wants to discuss pricing, onboarding, or specifics of their pipeline.
-2. ICP Worksheet (lower commitment / early stage): https://www.archrevenues.com/icp-worksheet
-   - Use when: visitor is early-stage, not ready for a call, or wants to define their targeting first.
+2. Free 5-Account Sample (lower commitment / early stage): https://www.archrevenues.com/icp-worksheet
+   - Use when: visitor is early-stage, not ready for a call, or wants to see real prospect accounts in their niche first.
 
 # KEY URLS
 - Home: https://www.archrevenues.com/
@@ -68,7 +68,7 @@ All tools and guides are 100% free with no sign-up required (under "Resources" i
 - Resources: https://www.archrevenues.com/resources
 - Technical Email Infra Guide: https://www.archrevenues.com/resources/technical-email-infrastructure
 - 5-Touch Sequence Playbook: https://www.archrevenues.com/resources/5-touch-sequence
-- ICP worksheet: https://www.archrevenues.com/icp-worksheet
+- Free 5-Account Sample: https://www.archrevenues.com/icp-worksheet
 - Free email generator: https://www.archrevenues.com/tools/email-generator
 - About: https://www.archrevenues.com/about
 - Strategy call: https://calendly.com/archrevenues/book-your-strategy-call

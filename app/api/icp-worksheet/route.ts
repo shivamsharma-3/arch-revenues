@@ -32,34 +32,40 @@ export async function POST(req: Request) {
         from: 'Shivam Sharma <shivam@archrevenues.com>',
         to: email,
         replyTo: 'shivam@archrevenues.com',
-        subject: 'Your ICP Diagnostic & 5-Min Loom Review (Incoming)',
+        subject: 'Your 5 Free Target Accounts & Custom Outbound Pitch (Incoming)',
         html: `
           <div style="font-family: sans-serif; font-size: 15px; color: #18181b; line-height: 1.6;">
             <p>Hey ${firstName},</p>
-            <p>Got your Quick ICP Check. Thanks for sending your agency details over.</p>
-            <p>Here is what happens next:</p>
+            <p>Got your request! Thanks for sharing your agency details and case study.</p>
+            <p>I'm personally reviewing your agency website and niche. Within the next <strong>48 hours</strong>, I will send you:</p>
             <ol style="padding-left: 20px;">
               <li style="margin-bottom: 12px;">
-                <strong>I'm recording your 5-minute Loom video teardown</strong><br>
-                I'll personally review your answers within the next 48 hours and email you the link. No sales deck, just my candid take on whether your niche is narrow enough for cold outbound, what buying triggers to track, and where I would focus your pipeline.
+                <strong>5 Verified, Exact-Match Target Accounts</strong><br>
+                Hand-picked companies in your vertical that match your sweet spot and deal size, screened for active buying signals.
               </li>
               <li style="margin-bottom: 12px;">
-                <strong>Our 4-Page Agency ICP Playbook (for reference)</strong><br>
-                In the meantime, you can review our internal framework—complete with an annotated agency example and the 8-point outbound matrix:<br>
-                👉 <a href="https://www.archrevenues.com/ICP-Teardown-Worksheet.pdf" target="_blank" style="color: #0d9488; font-weight: bold;">Download the Agency ICP Playbook (PDF)</a>
+                <strong>Key Decision-Maker Titles</strong><br>
+                The exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
+              </li>
+              <li style="margin-bottom: 12px;">
+                <strong>1 Custom Pattern-Interrupt Cold Email</strong><br>
+                A tailored outreach script using your real client win as the proof hook.
               </li>
             </ol>
+            <p style="margin-top: 20px;">
+              No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
+            </p>
             <p style="margin-top: 20px;">While you wait (2 quick things):</p>
             <ul style="padding-left: 20px;">
               <li style="margin-bottom: 8px;">
-                Want to see what a personalized cold email from me looks like? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488;">Try the AI Cold Email Generator</a> on one of your target accounts. It's free.
+                Want to test personalized cold email copy right now? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488;">Try our AI Cold Email Generator</a> on any target URL.
               </li>
               <li style="margin-bottom: 8px;">
-                Curious about what the full done-for-you outbound system costs? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a>. $499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back.
+                Curious how our full done-for-you outbound system works? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a> ($499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back).
               </li>
             </ul>
             <p style="margin-top: 20px;">
-              If you'd rather jump straight on a live call, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; font-weight: bold;">book a 30-min strategy call here</a>. No deck, no pressure.
+              If you'd rather jump straight on a call and look at your pipeline together, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; font-weight: bold;">book a 30-min strategy call here</a>.
             </p>
             <p style="margin-top: 24px;">
               Talk within 48 hours,<br><br>
@@ -67,8 +73,8 @@ export async function POST(req: Request) {
               Founder, ARCH Revenues<br>
               <a href="mailto:shivam@archrevenues.com" style="color: #0d9488;">shivam@archrevenues.com</a>
             </p>
-            <p style="font-size: 12px; color: #71717a; margin-top: 28px; border-t: 1px solid #e4e4e7; padding-top: 12px;">
-              P.S. If this email lands in spam, mark it "not spam". That helps my domain reputation, which is mildly ironic given what I do for a living.
+            <p style="font-size: 12px; color: #71717a; margin-top: 28px; border-top: 1px solid #e4e4e7; padding-top: 12px;">
+              P.S. If this email lands in spam, please mark it "not spam" so you receive your 5 target accounts safely.
             </p>
           </div>
         `,
@@ -76,11 +82,12 @@ export async function POST(req: Request) {
       resend.emails.send({
         from: 'ARCH Revenues <hello@archrevenues.com>',
         to: 'shivam@archrevenues.com',
-        subject: `New Quick ICP Check: ${name}`,
+        subject: `New 5-Account Sample Request: ${name} (${payload.companyName || 'Agency'})`,
         html: `
-          <h2>New Quick ICP Check Submission</h2>
+          <h2>New 5-Account Sample Pipeline Request</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Website:</strong> <a href="${payload.website}">${payload.website}</a></p>
           <table style="border-collapse: collapse; width: 100%;">
             ${htmlPayload}
           </table>

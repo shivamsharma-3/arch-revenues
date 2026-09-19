@@ -23,9 +23,9 @@ const resources = [
     description: "AI writes personalized outbound email copy instantly",
   },
   {
-    name: "Agency ICP Teardown",
+    name: "Free 5-Account Sample Pipeline",
     href: "/icp-worksheet",
-    description: "5-min custom video review + 4-page agency playbook",
+    description: "Get 5 verified target accounts & a tailored cold pitch",
   },
 ];
 

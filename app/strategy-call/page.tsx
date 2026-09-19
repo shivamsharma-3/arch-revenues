@@ -139,13 +139,13 @@ export default function StrategyCallPage() {
                 <div className="mt-10 pt-6 border-t border-zinc-100 w-full">
                   <h3 className="text-base font-semibold text-zinc-900 mb-2">Not ready for a call yet?</h3>
                   <p className="text-xs text-zinc-600 mb-4">
-                    Get a 5-min custom video review from Shivam or download the 4-page agency playbook.
+                    Get 5 verified target accounts in your niche + custom outreach copy within 48 hours. 100% free.
                   </p>
                   <Link 
                     href="/icp-worksheet" 
                     className="inline-flex items-center justify-center px-5 py-2 rounded-lg font-medium bg-zinc-100 text-zinc-900 hover:bg-zinc-200 transition-colors text-xs"
                   >
-                    Get the ICP Teardown →
+                    Get 5 Free Target Accounts →
                   </Link>
                 </div>
               </div>

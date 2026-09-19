@@ -33,12 +33,12 @@ const resources: ResourceItem[] = [
   {
     id: "icp-worksheet",
     category: "tools",
-    tag: "Diagnostic & Playbook",
-    title: "Agency ICP Teardown & Playbook",
+    tag: "Free Sample Pipeline",
+    title: "5 Free Target Accounts & Custom Pitch",
     description:
-      "A 3-minute diagnostic for a custom 5-minute Loom video review from Shivam, plus our complete 4-page agency targeting playbook with real examples.",
-    readTime: "3 min check",
-    status: "Get Teardown",
+      "Tell us what your agency does. Within 48 hours, Shivam hand-picks 5 verified prospect accounts in your niche + crafts the exact cold email we'd send them.",
+    readTime: "2 min request",
+    status: "Get 5 Free Accounts",
     href: "/icp-worksheet",
   },
   {
