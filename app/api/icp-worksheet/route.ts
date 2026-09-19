@@ -27,7 +27,7 @@ export async function POST(req: Request) {
       .join('');
 
     const company = payload.companyName ? payload.companyName.trim() : 'your agency';
-    const emailSubject = `Your 5 Target Accounts & Custom Outbound Pitch (Incoming)`;
+    const emailSubject = `5 target accounts for ${company}`;
 
     const textBody = `Hey ${firstName},
 
@@ -35,14 +35,11 @@ Got your request! Thanks for sharing your agency details and case study.
 
 I'm personally reviewing your agency website and niche. Within the next 48 hours, I will send you:
 
-1. 5 Verified, Exact-Match Target Accounts
-Hand-picked companies in your vertical that match your sweet spot and deal size, screened for active buying signals.
+1. 5 Verified, Exact-Match Target Accounts — hand-picked companies in your vertical that match your sweet spot, screened for active buying signals.
 
-2. Key Decision-Maker Titles
-The exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
+2. Key Decision-Maker Titles — the exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
 
-3. 1 Custom Pattern-Interrupt Cold Email
-A tailored outreach script using your real client win as the proof hook.
+3. 1 Custom Cold Email Draft — a tailored outreach script using your real client win as the proof hook.
 
 No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
 
@@ -57,29 +54,20 @@ shivam@archrevenues.com
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; color: #18181b; line-height: 1.6; max-width: 600px;">
         <p>Hey ${firstName},</p>
         <p>Got your request! Thanks for sharing your agency details and case study.</p>
-        <p>I'm personally reviewing your agency website and niche. Within the next <strong>48 hours</strong>, I will send you:</p>
-        <ol style="padding-left: 20px; margin: 16px 0;">
-          <li style="margin-bottom: 12px;">
-            <strong>5 Verified, Exact-Match Target Accounts</strong><br>
-            Hand-picked companies in your vertical that match your sweet spot and deal size, screened for active buying signals.
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong>Key Decision-Maker Titles</strong><br>
-            The exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong>1 Custom Pattern-Interrupt Cold Email</strong><br>
-            A tailored outreach script using your real client win as the proof hook.
-          </li>
-        </ol>
-        <p style="margin-top: 20px;">
+        <p>I'm personally reviewing your agency website and niche. Within the next 48 hours, I will send you:</p>
+        <p style="margin: 16px 0; line-height: 1.8;">
+          <strong>1. 5 Verified, Exact-Match Target Accounts</strong> &mdash; hand-picked companies in your vertical that match your sweet spot, screened for active buying signals.<br><br>
+          <strong>2. Key Decision-Maker Titles</strong> &mdash; the exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).<br><br>
+          <strong>3. 1 Custom Cold Email Draft</strong> &mdash; a tailored outreach script using your real client win as the proof hook.
+        </p>
+        <p style="margin-top: 16px;">
           No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
         </p>
         <p style="margin-top: 24px;">
           Talk within 48 hours,<br><br>
           <strong>Shivam Sharma</strong><br>
           Founder, ARCH Revenues<br>
-          <a href="mailto:shivam@archrevenues.com" style="color: #0d9488; text-decoration: none;">shivam@archrevenues.com</a>
+          shivam@archrevenues.com
         </p>
       </div>
     `;
