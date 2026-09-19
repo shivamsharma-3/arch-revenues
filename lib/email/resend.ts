@@ -46,13 +46,13 @@ ${body}
 
 — Shivam
 ARCH Revenues
-shivam@archrevenues.com
+hello@archrevenues.com
 `;
 
   const result = await resend.emails.send({
-    from: 'Shivam Sharma <shivam@archrevenues.com>',
+    from: 'Shivam Sharma <hello@archrevenues.com>',
     to: [to],
-    replyTo: 'shivam@archrevenues.com',
+    replyTo: 'hello@archrevenues.com',
     subject: `Your personalized cold email for ${companyUrl}`,
     text,
     html,

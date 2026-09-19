@@ -47,7 +47,7 @@ Talk within 48 hours,
 
 Shivam Sharma
 Founder, ARCH Revenues
-shivam@archrevenues.com
+hello@archrevenues.com
 `;
 
     const htmlBody = `
@@ -67,7 +67,7 @@ shivam@archrevenues.com
           Talk within 48 hours,<br><br>
           <strong>Shivam Sharma</strong><br>
           Founder, ARCH Revenues<br>
-          shivam@archrevenues.com
+          hello@archrevenues.com
         </p>
       </div>
     `;
@@ -75,9 +75,9 @@ shivam@archrevenues.com
     // Send emails in parallel
     const [userEmail, founderEmail] = await Promise.all([
       resend.emails.send({
-        from: 'Shivam Sharma <shivam@archrevenues.com>',
+        from: 'Shivam Sharma <hello@archrevenues.com>',
         to: email,
-        replyTo: 'shivam@archrevenues.com',
+        replyTo: 'hello@archrevenues.com',
         subject: emailSubject,
         text: textBody,
         html: htmlBody,
