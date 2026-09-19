@@ -26,58 +26,58 @@ export async function POST(req: Request) {
       .map(([key, value]) => `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">${key}</td><td style="padding: 8px; border: 1px solid #ddd;">${value}</td></tr>`)
       .join('');
 
+    const company = payload.companyName ? payload.companyName.trim() : 'your agency';
+    const emailSubject = `5 target accounts for ${company}`;
+
+    const textBody = `Hey ${firstName},
+
+Got your submission—thanks for sharing your details and case study.
+
+I'm personally reviewing ${payload.website || 'your website'} now. Within the next 48 hours, I'll email you:
+
+1. 5 verified, exact-match target accounts screened for active buying signals.
+2. Key decision-maker titles to contact (Founder, CEO, VP Growth).
+3. 1 custom cold outreach draft tailored around your client win.
+
+Quick question while I put this together: what's been your primary channel for client acquisition so far—mostly word of mouth / referrals, or have you already experimented with cold outbound?
+
+Talk soon,
+Shivam
+
+--
+Shivam Sharma
+Founder, ARCH Revenues
+shivam@archrevenues.com
+`;
+
+    const htmlBody = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #1f2937;">
+        <p>Hey ${firstName},</p>
+        <p>Got your submission—thanks for sharing your details and case study.</p>
+        <p>I'm personally reviewing ${payload.website ? `<a href="${payload.website}" style="color: #1f2937; text-decoration: underline;">${payload.website}</a>` : 'your website'} now. Within the next 48 hours, I'll email you:</p>
+        <p style="padding-left: 12px; border-left: 2px solid #e5e7eb; margin: 16px 0; line-height: 1.8;">
+          <strong>1.</strong> 5 verified, exact-match target accounts screened for active buying signals.<br/>
+          <strong>2.</strong> Key decision-maker titles to contact (Founder, CEO, VP Growth).<br/>
+          <strong>3.</strong> 1 custom cold outreach draft tailored around your client win.
+        </p>
+        <p>Quick question while I put this together: what's been your primary channel for client acquisition so far—mostly word of mouth / referrals, or have you already experimented with cold outbound?</p>
+        <p style="margin-top: 20px;">Talk soon,<br/>Shivam</p>
+        <p style="color: #6b7280; font-size: 12px; margin-top: 24px; border-top: 1px solid #f3f4f6; padding-top: 12px;">
+          Shivam Sharma &bull; Founder, ARCH Revenues<br/>
+          <a href="mailto:shivam@archrevenues.com" style="color: #6b7280; text-decoration: none;">shivam@archrevenues.com</a>
+        </p>
+      </div>
+    `;
+
     // Send emails in parallel
     const [userEmail, founderEmail] = await Promise.all([
       resend.emails.send({
         from: 'Shivam Sharma <shivam@archrevenues.com>',
         to: email,
         replyTo: 'shivam@archrevenues.com',
-        subject: 'Your 5 Free Target Accounts & Custom Outbound Pitch (Incoming)',
-        html: `
-          <div style="font-family: sans-serif; font-size: 15px; color: #18181b; line-height: 1.6;">
-            <p>Hey ${firstName},</p>
-            <p>Got your request! Thanks for sharing your agency details and case study.</p>
-            <p>I'm personally reviewing your agency website and niche. Within the next <strong>48 hours</strong>, I will send you:</p>
-            <ol style="padding-left: 20px;">
-              <li style="margin-bottom: 12px;">
-                <strong>5 Verified, Exact-Match Target Accounts</strong><br>
-                Hand-picked companies in your vertical that match your sweet spot and deal size, screened for active buying signals.
-              </li>
-              <li style="margin-bottom: 12px;">
-                <strong>Key Decision-Maker Titles</strong><br>
-                The exact cheque-signers to contact (e.g. Founder/CEO, CMO, or VP Growth).
-              </li>
-              <li style="margin-bottom: 12px;">
-                <strong>1 Custom Pattern-Interrupt Cold Email</strong><br>
-                A tailored outreach script using your real client win as the proof hook.
-              </li>
-            </ol>
-            <p style="margin-top: 20px;">
-              No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
-            </p>
-            <p style="margin-top: 20px;">While you wait (2 quick things):</p>
-            <ul style="padding-left: 20px;">
-              <li style="margin-bottom: 8px;">
-                Want to test personalized cold email copy right now? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488;">Try our AI Cold Email Generator</a> on any target URL.
-              </li>
-              <li style="margin-bottom: 8px;">
-                Curious how our full done-for-you outbound system works? <a href="https://www.archrevenues.com/pricing" style="color: #0d9488;">Pricing is here</a> ($499 setup + $1,499/mo, 5+ qualified demos guaranteed or your money back).
-              </li>
-            </ul>
-            <p style="margin-top: 20px;">
-              If you'd rather jump straight on a call and look at your pipeline together, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; font-weight: bold;">book a 30-min strategy call here</a>.
-            </p>
-            <p style="margin-top: 24px;">
-              Talk within 48 hours,<br><br>
-              <strong>Shivam Sharma</strong><br>
-              Founder, ARCH Revenues<br>
-              <a href="mailto:shivam@archrevenues.com" style="color: #0d9488;">shivam@archrevenues.com</a>
-            </p>
-            <p style="font-size: 12px; color: #71717a; margin-top: 28px; border-top: 1px solid #e4e4e7; padding-top: 12px;">
-              P.S. If this email lands in spam, please mark it "not spam" so you receive your 5 target accounts safely.
-            </p>
-          </div>
-        `,
+        subject: emailSubject,
+        text: textBody,
+        html: htmlBody,
       }),
       resend.emails.send({
         from: 'ARCH Revenues <hello@archrevenues.com>',

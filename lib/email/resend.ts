@@ -38,10 +38,23 @@ ${body}
     </div>
   `;
 
+  const text = `Here's the cold email our tool generated for ${companyUrl}:
+
+Subject: ${subject}
+
+${body}
+
+— Shivam
+ARCH Revenues
+shivam@archrevenues.com
+`;
+
   const result = await resend.emails.send({
-    from: 'ARCH Revenues <noreply@archrevenues.com>',
+    from: 'Shivam Sharma <shivam@archrevenues.com>',
     to: [to],
+    replyTo: 'shivam@archrevenues.com',
     subject: `Your personalized cold email for ${companyUrl}`,
+    text,
     html,
   });
   console.log("RESEND RESULT:", result);
