@@ -159,10 +159,10 @@ export default function TermsPage() {
                 If you have questions regarding these Terms of Service or wish to issue a notice:
                 <br />
                 <a
-                  href="mailto:shivam@archrevenues.com"
+                  href="mailto:hello@archrevenues.com"
                   className="text-zinc-900 font-medium underline hover:text-zinc-600 transition-colors"
                 >
-                  shivam@archrevenues.com
+                  hello@archrevenues.com
                 </a>
                 <br />
                 ARCH Revenues • Shivam Sharma

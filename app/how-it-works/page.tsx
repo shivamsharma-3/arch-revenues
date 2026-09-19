@@ -255,10 +255,10 @@ export default function HowItWorksPage() {
             Book a 30-min strategy call →
           </Link>
           <Link
-            href="/audit"
+            href="/icp-worksheet"
             className="text-zinc-900 text-base underline hover:text-zinc-600 transition-colors"
           >
-            Fill out the ICP worksheet →
+            Get 5 free target accounts →
           </Link>
         </div>
       </motion.main>

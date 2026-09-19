@@ -145,7 +145,7 @@ export function Chatbot() {
       console.error("Chat error:", error);
       setMessages((prev) => [
         ...prev,
-        { role: "model", text: "I'm having trouble right now. Email Shivam directly at shivam@archrevenues.com or book a strategy call: https://calendly.com/archrevenues/book-your-strategy-call" },
+        { role: "model", text: "I'm having trouble right now. Email us directly at hello@archrevenues.com or book a strategy call: https://calendly.com/archrevenues/book-your-strategy-call" },
       ]);
     } finally {
       setIsLoading(false);

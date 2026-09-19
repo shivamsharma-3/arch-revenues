@@ -184,10 +184,10 @@ export default function PricingPage() {
               Book a strategy call
             </Link>
             <Link
-              href="/audit"
+              href="/icp-worksheet"
               className="bg-white text-zinc-900 border border-zinc-200 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-zinc-50 transition-all shadow-sm"
             >
-              Fill out the ICP worksheet
+              Get 5 free target accounts
             </Link>
           </div>
         </div>

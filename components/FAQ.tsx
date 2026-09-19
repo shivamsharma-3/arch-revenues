@@ -108,10 +108,10 @@ export function FAQ() {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
-            href="/audit"
+            href="/icp-worksheet"
             className="text-zinc-900 text-lg underline hover:text-zinc-600 transition-colors"
           >
-            Fill out the ICP worksheet →
+            Get 5 Free Target Accounts →
           </Link>
         </div>
       </div>
