@@ -46,10 +46,6 @@ A tailored outreach script using your real client win as the proof hook.
 
 No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
 
-While you wait (2 quick options):
-- Test our AI Cold Email Generator on any target URL: https://www.archrevenues.com/tools/email-generator
-- Book a 30-min strategy call to review your pipeline together: https://www.archrevenues.com/strategy-call
-
 Talk within 48 hours,
 
 Shivam Sharma
@@ -79,15 +75,6 @@ shivam@archrevenues.com
         <p style="margin-top: 20px;">
           No automated bulk CSVs—I review every submission personally to show you what high-signal outbound actually looks like for your agency.
         </p>
-        <p style="margin-top: 20px;">While you wait (2 quick options):</p>
-        <ul style="padding-left: 20px; margin: 12px 0;">
-          <li style="margin-bottom: 8px;">
-            Want to test personalized cold email copy right now? <a href="https://www.archrevenues.com/tools/email-generator" style="color: #0d9488; text-decoration: underline;">Try our AI Cold Email Generator</a> on any target URL.
-          </li>
-          <li style="margin-bottom: 8px;">
-            If you'd rather jump straight on a call and look at your pipeline together, <a href="https://www.archrevenues.com/strategy-call" style="color: #0d9488; text-decoration: underline;">book a 30-min strategy call here</a>.
-          </li>
-        </ul>
         <p style="margin-top: 24px;">
           Talk within 48 hours,<br><br>
           <strong>Shivam Sharma</strong><br>
