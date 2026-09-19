@@ -305,7 +305,7 @@ export default function ICPWorksheetPage() {
                     target="_blank"
                     className="flex items-center justify-between p-3.5 bg-white border border-zinc-200 rounded-xl hover:border-teal-500 hover:text-teal-600 transition-all group"
                   >
-                    <span className="text-sm font-semibold">Download 1-Page PDF Worksheet instantly</span>
+                    <span className="text-sm font-semibold">Download Full ICP Worksheet (PDF) instantly</span>
                     <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all" />
                   </Link>
                   <Link
