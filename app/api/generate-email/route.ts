@@ -32,8 +32,8 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Could not fetch website content' }, { status: 400 });
     }
 
-    // Extract pains
-    const painPoints = await extractPains(url, pages);
+    // Extract pains tailored to sender's business
+    const painPoints = await extractPains(url, pages, senderBusiness);
     
     // Compose email
     const generatedContent = await composeEmail(url, painPoints, senderBusiness);

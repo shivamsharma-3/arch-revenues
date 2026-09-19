@@ -8,7 +8,7 @@ export class InsufficientDataError extends Error {
   }
 }
 
-export async function extractPains(url: string, pages: {url: string, text: string}[]) {  
+export async function extractPains(url: string, pages: {url: string, text: string}[], senderBusiness: string = 'B2B Services & Growth') {  
   let pagesContent = '';
   for (const page of pages) {
     pagesContent += `\n\n[PAGE]\nURL: ${page.url}\nContent: ${page.text}\n`;
@@ -22,7 +22,8 @@ export async function extractPains(url: string, pages: {url: string, text: strin
   }
   
   const prompt = PAIN_EXTRACTION_PROMPT
-    .replace('{company_url}', url)
+    .replace(/{company_url}/g, url)
+    .replace(/{sender_business}/g, senderBusiness)
     .replace('{pages_content}', pagesContent);
 
   let text = '';

@@ -47,20 +47,22 @@ export async function composeEmail(url: string, painPoints: string, senderBusine
     rawText = "";
   }
 
-  // Validate: count content lines (ignore blank separator lines used in the new format)
+  // Validate: ensure subject exists and body has meaningful structure (at least 3 paragraphs/lines, 30+ chars)
   const parsed = parseEmailResponse(rawText);
   const contentLines = parsed.body.split('\n').filter(l => l.trim().length > 0);
-  if (contentLines.length < 5 || !parsed.subject) {
+  const wordCount = parsed.body.split(/\s+/).filter(Boolean).length;
+
+  if (contentLines.length < 3 || !parsed.subject || wordCount < 20) {
     console.warn(
-      `composeEmail: LLM produced ${contentLines.length} content lines, subject="${parsed.subject}". Retrying.`
+      `composeEmail: LLM produced ${contentLines.length} content lines (${wordCount} words), subject="${parsed.subject}". Retrying.`
     );
 
     const retryPrompt =
       prompt +
       `\n\nYOUR PREVIOUS RESPONSE WAS INCOMPLETE OR MISSING THE SUBJECT LINE. ` +
-      `You produced ${contentLines.length} content lines. ` +
-      `Rewrite following the SHAPE exactly: HOOK -> COST -> OFFER -> PROOF (optional) -> CLOSE -> SIGN-OFF. ` +
-      `One idea per line, blank line between each. Include the SUBJECT: line.`;
+      `You produced ${contentLines.length} content lines (${wordCount} words). ` +
+      `Rewrite following the SHAPE exactly: OBSERVATION HOOK -> RELEVANCE BRIDGE -> VALUE OFFER -> PROOF (optional) -> LOW-FRICTION CTA -> SIGN-OFF. ` +
+      `Keep it strictly between 50 and 90 words. Short paragraphs with blank lines in between. Make sure to start with "SUBJECT: [subject line]".`;
 
     let retryRaw = "";
     try {

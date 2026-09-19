@@ -9,3 +9,11 @@ __pycache__/
 *.pyc
 demo_output.json
 tsconfig.tsbuildinfo
+leads_from_sheet.json
+outreach_campaign.json
+sheet_update.tsv
+create_sheet_tsv.py
+find_leads.py
+generate_campaign.py
+search_transcripts.py
+validate_campaign.py

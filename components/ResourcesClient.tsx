@@ -48,20 +48,20 @@ const resources: ResourceItem[] = [
     title: "Technical Email Infrastructure Blueprint",
     description:
       "Why 90% of agency cold email lands in spam and how to set up secondary lookalike domains, Google Workspace inboxes, and inbox warmup for 95%+ deliverability.",
-    readTime: "8 min read",
+    readTime: "10 min read",
     status: "Read Blueprint",
-    href: "/how-it-works",
+    href: "/resources/technical-email-infrastructure",
   },
   {
     id: "sequence-architecture",
     category: "playbooks",
-    tag: "Copywriting Architecture",
-    title: "7-Touch Cold Email + LinkedIn Sequence",
+    tag: "Sequence Playbook",
+    title: "5-Touch Dynamic Outbound Sequence",
     description:
-      "A complete breakdown of pattern-interrupt openers, value-add follow-ups, case study proof touches, and LinkedIn voice notes engineered for 15–25% positive reply rates.",
-    readTime: "10 min read",
+      "A response-adaptive 14-day sequence (Email + LinkedIn) with exact humanized copy templates, condition branches, and objection triage.",
+    readTime: "8 min read",
     status: "Explore Playbook",
-    href: "/tools/email-generator",
+    href: "/resources/5-touch-sequence",
   },
 ];
 
