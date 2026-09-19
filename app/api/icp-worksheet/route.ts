@@ -50,24 +50,7 @@ Founder, ARCH Revenues
 shivam@archrevenues.com
 `;
 
-    const htmlBody = `
-      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #1f2937;">
-        <p>Hey ${firstName},</p>
-        <p>Got your submission—thanks for sharing your details and case study.</p>
-        <p>I'm personally reviewing ${payload.website ? `<a href="${payload.website}" style="color: #1f2937; text-decoration: underline;">${payload.website}</a>` : 'your website'} now. Within the next 48 hours, I'll email you:</p>
-        <p style="padding-left: 12px; border-left: 2px solid #e5e7eb; margin: 16px 0; line-height: 1.8;">
-          <strong>1.</strong> 5 verified, exact-match target accounts screened for active buying signals.<br/>
-          <strong>2.</strong> Key decision-maker titles to contact (Founder, CEO, VP Growth).<br/>
-          <strong>3.</strong> 1 custom cold outreach draft tailored around your client win.
-        </p>
-        <p>Quick question while I put this together: what's been your primary channel for client acquisition so far—mostly word of mouth / referrals, or have you already experimented with cold outbound?</p>
-        <p style="margin-top: 20px;">Talk soon,<br/>Shivam</p>
-        <p style="color: #6b7280; font-size: 12px; margin-top: 24px; border-top: 1px solid #f3f4f6; padding-top: 12px;">
-          Shivam Sharma &bull; Founder, ARCH Revenues<br/>
-          <a href="mailto:shivam@archrevenues.com" style="color: #6b7280; text-decoration: none;">shivam@archrevenues.com</a>
-        </p>
-      </div>
-    `;
+    const htmlBody = `<div dir="ltr">Hey ${firstName},<br><br>Got your submission—thanks for sharing your agency details and case study.<br><br>I'm personally reviewing your website now. Within the next 48 hours, I'll email you:<br><br>1. 5 verified, exact-match target accounts screened for active buying signals.<br>2. Key decision-maker titles to contact (Founder, CEO, VP Growth).<br>3. 1 custom cold outreach draft tailored around your client win.<br><br>Quick question while I put this together: what's been your primary channel for client acquisition so far—mostly word of mouth / referrals, or have you already experimented with cold outbound?<br><br>Talk soon,<br>Shivam<br><br>--<br>Shivam Sharma<br>Founder, ARCH Revenues<br>shivam@archrevenues.com</div>`;
 
     // Send emails in parallel
     const [userEmail, founderEmail] = await Promise.all([
