@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export function SocialProof() {
   const items = [
     { value: "Up to 300", label: "Account ICP list per client" },
-    { value: "7-touch sequence", label: "Email + LinkedIn / Personalized per prospect" },
+    { value: "5-touch sequence", label: "Email + LinkedIn / Personalized per prospect" },
     { value: "5/mo minimum", label: "Or that month's retainer is refunded" },
     { value: "Weekly", label: "Monday report with every reply and metric" },
   ];

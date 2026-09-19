@@ -80,7 +80,7 @@ export default function AboutPage() {
                    <h3 className="text-2xl font-semibold text-zinc-900">Solving the SDR Failure Rate</h3>
                 </div>
                 <p className="text-lg text-zinc-600 leading-relaxed">
-                   I founded ARCH Revenues after analyzing why internal SDR hires and generic outbound agencies consistently fail: they send unverified mass templates without domain isolation. Our done-for-you framework combines hyper-personalized research hooks with 7-touch sequences designed specifically for founder-to-founder acquisition.
+                   I founded ARCH Revenues after analyzing why internal SDR hires and generic outbound agencies consistently fail: they send unverified mass templates without domain isolation. Our done-for-you framework combines hyper-personalized research hooks with 5-touch dynamic sequences designed specifically for founder-to-founder acquisition.
                 </p>
              </section>
 

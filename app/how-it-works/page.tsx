@@ -78,26 +78,24 @@ export default function HowItWorksPage() {
         {
           heading: "What we do:",
           bullets: [
-            "Write a 7-touch email + LinkedIn sequence tailored to your ICP's specific pain points (not generic templates)",
+            "Write a 5-touch dynamic email + LinkedIn sequence tailored to your ICP's specific pain points (not generic templates)",
             "Each email personalized with 2-3 prospect-specific data points (recent role change, company news, podcast appearance, etc.)",
             "Send 30-50 emails per day per domain (90-150/day total across 3 domains). This is the deliverability sweet spot based on Apollo's 2024 deliverability benchmark and Mail-Tester placement data",
             "Industry benchmark for hyper-personalized founder-to-founder sequences is a 15–25% positive reply rate (Apollo 2024 outbound benchmark). Our system is engineered to hit this range; Cohort 1 actuals will be published transparently",
-            "Layer in LinkedIn touches (connection request → voice note → engagement on their posts) between email touches",
+            "Layer in LinkedIn touches (connection request → engagement on their posts → contextual DM) between email touches",
             "Monitor deliverability daily. If any domain's open rate drops below 40%, we pause sending and investigate",
             "A/B test subject lines on the first 200 emails to find your ICP's highest-reply variant",
             "Every reply logged in the shared inbox with timestamp, sentiment (positive/negative/neutral), and next-step recommendation",
           ]
         },
         {
-          heading: "Sequence structure (7 touches over 14 days):",
+          heading: "Sequence structure (5 touches over 14 days):",
           bullets: [
-            "Day 1: Email #1 (pattern-interrupt opener)",
-            "Day 3: LinkedIn connection request",
-            "Day 5: Email #2 (value-add follow-up)",
-            "Day 7: LinkedIn voice note",
-            "Day 9: Email #3 (case study / proof point)",
-            "Day 12: Email #4 (soft breakup)",
-            "Day 14: LinkedIn engagement on their recent post",
+            "Day 1: Email #1 (observation hook & relevance bridge)",
+            "Day 3: LinkedIn connection request (or soft profile view)",
+            "Day 6: Email #2 (same-thread 16-word contrast bump)",
+            "Day 10: Email #3 or LinkedIn (signal-based dynamic value drop / teardown)",
+            "Day 14: Email #4 (clean permission closeout & open door)",
           ]
         },
         {

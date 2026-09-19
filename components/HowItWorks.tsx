@@ -18,7 +18,7 @@ export function HowItWorks() {
       timing: "Week 2",
       title: "Sequence live",
       bullets: [
-        "7-touch email + LinkedIn sequence",
+        "5-touch email + LinkedIn sequence",
         "30–50 emails/day per domain",
         "Every reply logged in shared inbox"
       ]

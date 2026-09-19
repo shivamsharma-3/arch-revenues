@@ -36,7 +36,7 @@ Use clean, readable Markdown (such as bolding key terms/numbers and using bullet
   * Google Workspace inboxes created
   * Full DNS authentication: SPF, DKIM, DMARC, and MX records
   * Ideal Customer Profile (ICP) build using Apollo data (up to 300 verified accounts)
-  * Multi-touch sequence copywriting tailored to your offer
+  * 5-touch dynamic sequence copywriting (Cold Email + LinkedIn) tailored to your offer with behavioral response branching
   * Strict 14-day automated inbox warmup to establish sender reputation
 - Monthly Execution Phase:
   * 90-150 personalized cold emails sent daily across the warmed domains
@@ -48,10 +48,12 @@ Use clean, readable Markdown (such as bolding key terms/numbers and using bullet
 - Guarantee: 5-12 qualified demos booked per month. If we book fewer than 5 qualified demos in any month, that month's $1,499 retainer is refunded in full (setup fee is non-refundable).
 - "Qualified Demo" = An agreed ICP-matched decision maker who actually attends the scheduled video call. No-shows do not count toward the quota.
 
-# FREE TOOLS ON THE SITE
-- AI Cold Email Generator (/tools/email-generator): Visitors enter their business description and a prospect's website URL. The tool crawls the site and drafts a personalized cold outreach email from the visitor's perspective.
+# FREE TOOLS & RESOURCES ON THE SITE
+- AI Cold Email Generator (/tools/email-generator): Visitors enter their business description and a prospect's website URL. The tool crawls the site and drafts a humanized, personalized cold outreach email without generic AI fluff.
 - ICP Worksheet (/icp-worksheet): 45-min self-serve questionnaire to pinpoint your ideal buyer profile.
-Both tools are 100% free with no sign-up required (under "Resources" in the navigation).
+- Technical Email Infrastructure Blueprint (/resources/technical-email-infrastructure): Step-by-step DNS setup (SPF, DKIM, DMARC, CTD) and 14-day inbox warmup architecture.
+- 5-Touch Dynamic Outbound Sequence (/resources/5-touch-sequence): Battle-tested 14-day multi-channel sequence (Email + LinkedIn) with response-adaptive branching.
+All tools and guides are 100% free with no sign-up required (under "Resources" in the navigation).
 
 # ROUTING — every conversation naturally connects to:
 1. Strategy Call (high intent / ready to scale): https://calendly.com/archrevenues/book-your-strategy-call
@@ -63,6 +65,9 @@ Both tools are 100% free with no sign-up required (under "Resources" in the navi
 - Home: https://www.archrevenues.com/
 - How it works: https://www.archrevenues.com/how-it-works
 - Pricing: https://www.archrevenues.com/pricing
+- Resources: https://www.archrevenues.com/resources
+- Technical Email Infra Guide: https://www.archrevenues.com/resources/technical-email-infrastructure
+- 5-Touch Sequence Playbook: https://www.archrevenues.com/resources/5-touch-sequence
 - ICP worksheet: https://www.archrevenues.com/icp-worksheet
 - Free email generator: https://www.archrevenues.com/tools/email-generator
 - About: https://www.archrevenues.com/about

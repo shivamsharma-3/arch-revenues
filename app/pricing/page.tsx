@@ -20,7 +20,7 @@ export default function PricingPage() {
   const includes = [
     "200-account prospect list, built from your ICP, verified",
     "3 warmed sending domains + full infra setup",
-    "7-touch email + LinkedIn sequence, personalized per prospect",
+    "5-touch dynamic sequence (Email + LinkedIn), personalized per prospect",
     "90-150 emails/day across 3 domains",
     "Reply handling within 4 business hours (positive, negative, unsubscribe)",
     "Qualified demos routed to your Calendly with pre-meeting brief",

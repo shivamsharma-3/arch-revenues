@@ -316,10 +316,10 @@ export default function ICPWorksheetPage() {
                     <Sparkles className="w-4 h-4 text-teal-500" />
                   </Link>
                   <Link
-                    href="/how-it-works"
+                    href="/resources/5-touch-sequence"
                     className="flex items-center justify-between p-3.5 bg-white border border-zinc-200 rounded-xl hover:border-teal-500 hover:text-teal-600 transition-all group"
                   >
-                    <span className="text-sm font-semibold">Read our 7-Touch Sequence Architecture</span>
+                    <span className="text-sm font-semibold">Read our 5-Touch Dynamic Sequence Architecture</span>
                     <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-teal-600 group-hover:translate-x-1 transition-all" />
                   </Link>
                 </div>
