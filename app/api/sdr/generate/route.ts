@@ -106,7 +106,7 @@ export async function POST(req: Request) {
     const queryPasskey = reqUrl.searchParams.get('passkey') || reqUrl.searchParams.get('key');
     const providedPasskey = headerPasskey || bodyPasskey || queryPasskey;
 
-    const expectedPasscode = process.env.DASHBOARD_PASSCODE || 'arch2026';
+    const expectedPasscode = process.env.DASHBOARD_PASSCODE || 'Shiv321@@';
     if (!providedPasskey || providedPasskey.trim() !== expectedPasscode) {
       return NextResponse.json({
         error: "Unauthorized: Invalid or missing founder passkey. Provide via header 'x-passkey', 'Authorization: Bearer <key>', query '?passkey=<key>', or JSON body { 'passkey': '<key>' }."

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(req: Request) {
   try {
     const { passcode } = await req.json();
-    const correctPasscode = process.env.DASHBOARD_PASSCODE || 'arch2026';
+    const correctPasscode = process.env.DASHBOARD_PASSCODE || 'Shiv321@@';
 
     if (!passcode || passcode.trim() !== correctPasscode) {
       return NextResponse.json({ success: false, error: 'Invalid founder passcode' }, { status: 401 });
